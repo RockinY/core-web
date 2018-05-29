@@ -8,11 +8,9 @@ import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import queryString from 'query-string'
 import Loadable from 'react-loadable'
-import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { HelmetProvider } from 'react-helmet-async'
-import webPushManager from './helpers/webPushManager'
 import { history } from './helpers/history'
-import { client, wsLink } from './graphql'
+import { client } from './graphql'
 import { initStore } from './store'
 import { getItemFromStorage } from './helpers/localStorage'
 import Routes from './routes'
@@ -80,3 +78,4 @@ function render () {
   )
 }
 
+Loadable.preLoadReady().then(render)
