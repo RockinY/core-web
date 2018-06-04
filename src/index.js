@@ -1,6 +1,5 @@
 // @flow
 import './helpers/env'
-import './helpers/consolidateStreamedStyles'
 import 'css.escape'
 import React from 'react'
 import ReactDOM from 'react-dom'
