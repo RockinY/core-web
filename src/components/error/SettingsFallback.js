@@ -5,8 +5,8 @@ import {
   SectionTitle,
   SectionSubtitle,
   SectionCardFooter,
-} from 'src/components/settingsViews/style'
-import { Button } from 'src/components/buttons'
+} from '../settingsViews/style'
+import { Button } from '../buttons'
 
 class SettingsFallback extends React.Component<{}> {
   render() {

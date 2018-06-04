@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router'
 import styled, { ThemeProvider } from 'styled-components'
 import Loadable from 'react-loadable'
-import { ErrorBoundary } from 'components/error'
+import { ErrorBoundary } from './components/error'
 import generateMetaInfo from './utils/generateMetaInfo'
 import { theme } from './theme'
 import { Loading } from './components/loading'
@@ -42,7 +42,6 @@ class Routes extends React.Component<{||}> {
         <ErrorBoundary fallbackComponent={ErrorFallback}>
           <ScrollManager>
             <Body>
-              /* Default Header */
               <Head title={title} description={description} />
               <Switch>
                 <Route exact path='/about' component={Pages} />

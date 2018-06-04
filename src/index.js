@@ -78,4 +78,4 @@ function render () {
   )
 }
 
-Loadable.preLoadReady().then(render)
+Loadable.preloadReady().then(render)

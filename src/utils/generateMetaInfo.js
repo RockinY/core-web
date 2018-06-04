@@ -131,4 +131,4 @@ function generateMetaInfo (input: Input): Meta {
   }
 }
 
-module.exports = generateMetaInfo
+export default generateMetaInfo

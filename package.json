@@ -12,12 +12,14 @@
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
     "apollo-link": "^1.2.2",
+    "apollo-link-retry": "^2.2.3",
     "apollo-link-ws": "^1.0.8",
     "apollo-upload-client": "^8.0.0",
     "apollo-utilities": "^1.0.12",
     "css.escape": "^1.5.1",
     "debounce": "^1.1.0",
     "draft-js": "^0.10.5",
+    "graphql": "^0.13.2",
     "history": "^4.7.2",
     "offline-plugin": "^5.0.3",
     "query-string": "^6.1.0",
@@ -33,7 +35,8 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "striptags": "^3.1.1",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "subscriptions-transport-ws": "^0.9.9"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
