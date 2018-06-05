@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import Loadable from 'react-loadable'
 import { ErrorBoundary } from './components/error'
 import generateMetaInfo from './utils/generateMetaInfo'
+import signedOutFallback from './helpers/signedOutFallback'
 import { theme } from './theme'
 import { Loading } from './components/loading'
 import ScrollManager from './components/scrollManager'
@@ -29,6 +30,8 @@ const Pages = Loadable({
   loading: ({ isLoading }) => isLoading && null
 })
 
+const DashboardFallback = signedOutFallback(Dashboard, Pages)
+
 class Routes extends React.Component<{||}> {
   componentDidMount () {
     // setup the amplitude
@@ -45,6 +48,9 @@ class Routes extends React.Component<{||}> {
             <Body>
               <Head title={title} description={description} />
               <Switch>
+                <Route exact path='/' component={DashboardFallback} />
+
+                {/* Public Business Pages */}
                 <Route exact path='/about' component={Pages} />
               </Switch>
             </Body>
