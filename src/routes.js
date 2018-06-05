@@ -1,4 +1,5 @@
 import React from 'react'
+import './reset.css.js'
 import { Route, Switch } from 'react-router'
 import styled, { ThemeProvider } from 'styled-components'
 import Loadable from 'react-loadable'

@@ -42,6 +42,7 @@
     "babel-eslint": "^8.2.3",
     "eslint-plugin-flowtype": "^2.47.1",
     "flow-bin": "^0.72.0",
+    "raw-loader": "^0.5.1",
     "standard": "^11.0.1"
   },
   "standard": {
