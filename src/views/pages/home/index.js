@@ -4,9 +4,7 @@ import React from 'react'
 class Splash extends React.Component<{}> {
   render () {
     return (
-      <div>
-        Hello world
-      </div>
+      <div>Home page for xlab</div>
     )
   }
 }

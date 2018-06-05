@@ -10,7 +10,6 @@ class Pages extends React.Component<Props> {
   renderPage = () => {
     switch (this.props.match.path) {
       case '/':
-      case '/about':
       default: {
         return <Home {...this.props} />
       }
