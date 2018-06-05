@@ -7,11 +7,11 @@ import {
   IntrospectionFragmentMatcher
 } from 'apollo-cache-inmemory'
 import { split } from 'apollo-link'
-import { WebSocketLink } from 'apollo-link-ws'
+// import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 import introspectionQueryResultData from './schema.json'
 import getSharedApolloClientOptions from './apolloClientOptions'
-import { API_URI, WS_URI } from './constants'
+import { API_URI } from './constants'
 
 // Fixes a bug with ReactNative, see https://github.com/facebook/react-native/issues/9599
 if (typeof global.self === 'undefined') {
@@ -22,12 +22,12 @@ type CreateClientOptions = {
   token?: ?string
 }
 
-export const wsLink = new WebSocketLink({
-  uri: WS_URI,
-  options: {
-    reconnect: true
-  }
-})
+// export const wsLink = new WebSocketLink({
+//   uri: WS_URI,
+//   options: {
+//     reconnect: true
+//   }
+// })
 
 export const createClient = (options?: CreateClientOptions = {}) => {
   const cache = new InMemoryCache({
@@ -71,7 +71,7 @@ export const createClient = (options?: CreateClientOptions = {}) => {
       const { kind, operation } = getMainDefinition(query)
       return kind === 'OperationDefinition' && operation === 'subscription'
     },
-    wsLink,
+    // wsLink,
     httpLink
   )
 
