@@ -39,11 +39,6 @@ const Dashboard = Loadable({
 const DashboardFallback = signedOutFallback(Dashboard, Pages)
 
 class Routes extends React.Component<{||}> {
-  componentDidMount () {
-    // setup the amplitude
-    console.warn('No amplitude api key, tracking in development mode')
-  }
-
   render () {
     const { title, description } = generateMetaInfo()
 
@@ -55,9 +50,6 @@ class Routes extends React.Component<{||}> {
               <Head title={title} description={description} />
               <Switch>
                 <Route exact path='/' component={DashboardFallback} />
-
-                {/* Public Business Pages */}
-                <Route exact path='/about' component={Pages} />
               </Switch>
             </Body>
           </ScrollManager>
