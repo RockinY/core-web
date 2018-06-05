@@ -8,6 +8,7 @@ import generateMetaInfo from './utils/generateMetaInfo'
 import signedOutFallback from './helpers/signedOutFallback'
 import { theme } from './theme'
 import { Loading } from './components/loading'
+import LoadingDashboard from './views/dashboard/components/dashboardLoading'
 import ScrollManager from './components/scrollManager'
 import { FlexCol } from './components/globals'
 import Head from './components/head'
@@ -28,6 +29,11 @@ const ErrorFallback = Loadable({
 const Pages = Loadable({
   loader: () => import('./views/pages'),
   loading: ({ isLoading }) => isLoading && null
+})
+
+const Dashboard = Loadable({
+  loader: () => import('./views/dashboard'),
+  loading: ({ isLoading }) => isLoading && <LoadingDashboard />
 })
 
 const DashboardFallback = signedOutFallback(Dashboard, Pages)
