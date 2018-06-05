@@ -4,10 +4,28 @@ import { storeItem, getItemFromStorage } from '../../../helpers/localStorage'
 import PageFooter from '../components/footer'
 import { Wrapper } from '../style'
 
-class Splash extends React.Component<{}> {
+type State = {
+  preferredSigninMethod: string
+}
+
+class Splash extends React.Component<{}, State> {
+  constructor () {
+    super()
+    const preferredSigninMethod = getItemFromStorage('preferred_signin_method')
+    this.state = {
+      preferredSigninMethod
+    }
+  }
+
+  trackSignin = (type: string, method: string) => {
+    storeItem('preferred_signin_method', method)
+  }
+
   render () {
     return (
-      <div>Home page for xlab</div>
+      <Wrapper data-cy='home-page'>
+        <PageFooter />
+      </Wrapper>
     )
   }
 }
