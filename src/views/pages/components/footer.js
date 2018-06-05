@@ -8,7 +8,7 @@ import {
   Safety,
   SocialLinks
 } from '../style'
-import { Link } from 'react-router-dom'
+import Link from '../../../components/link'
 import { IconButton } from '../../../components/buttons'
 import { Logo } from '../../../components/logo'
 
