@@ -3,6 +3,7 @@ import React from 'react'
 import { storeItem, getItemFromStorage } from '../../../helpers/localStorage'
 import PageFooter from '../components/footer'
 import { Wrapper } from '../style'
+import { Overview } from '../view'
 
 type State = {
   preferredSigninMethod: string
@@ -24,6 +25,7 @@ class Splash extends React.Component<{}, State> {
   render () {
     return (
       <Wrapper data-cy='home-page'>
+        <Overview />
         <PageFooter />
       </Wrapper>
     )
