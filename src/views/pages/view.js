@@ -100,7 +100,7 @@ export const Overview = (props: Props) => {
   `
 
   return (
-    <Section background='constellations' goop={2}>
+    <Section background='constellations' goop={0}>
       <ThisContent>
         <ThisText>
           <ThisTagline>The community platform for the future.</ThisTagline>
