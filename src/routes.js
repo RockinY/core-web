@@ -1,6 +1,6 @@
 import React from 'react'
 import './reset.css.js'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, Redirect } from 'react-router'
 import styled, { ThemeProvider } from 'styled-components'
 import Loadable from 'react-loadable'
 import { ErrorBoundary } from './components/error'
@@ -12,6 +12,7 @@ import LoadingDashboard from './views/dashboard/components/dashboardLoading'
 import ScrollManager from './components/scrollManager'
 import { FlexCol } from './components/globals'
 import Head from './components/head'
+import Login from './views/login'
 
 const Body = styled(FlexCol)`
   display: flex;
@@ -37,6 +38,7 @@ const Dashboard = Loadable({
 })
 
 const DashboardFallback = signedOutFallback(Dashboard, Pages)
+const LoginFallback = signedOutFallback(() => <Redirect to='/' />, Login)
 
 class Routes extends React.Component<{||}> {
   render () {
@@ -50,6 +52,7 @@ class Routes extends React.Component<{||}> {
               <Head title={title} description={description} />
               <Switch>
                 <Route exact path='/' component={DashboardFallback} />
+                <Route path='/login' component={LoginFallback} />
               </Switch>
             </Body>
           </ScrollManager>
