@@ -4,18 +4,18 @@ import {
   SectionCard,
   SectionTitle,
   SectionSubtitle,
-  SectionCardFooter,
+  SectionCardFooter
 } from '../settingsViews/style'
 import { Button } from '../buttons'
 
 class SettingsFallback extends React.Component<{}> {
-  render() {
+  render () {
     return (
       <SectionCard>
         <SectionTitle>
           <span
-            role="img"
-            aria-label="sad emoji"
+            role='img'
+            aria-label='sad emoji'
             style={{ marginRight: '8px' }}
           >
             😔
@@ -30,15 +30,15 @@ class SettingsFallback extends React.Component<{}> {
         <SectionCardFooter>
           <Button
             large={false}
-            icon="view-reload"
+            icon='view-reload'
             onClick={() => window.location.reload(true)}
           >
             Refresh the page
           </Button>
         </SectionCardFooter>
       </SectionCard>
-    );
+    )
   }
 }
 
-export default SettingsFallback;
+export default SettingsFallback

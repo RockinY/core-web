@@ -1,6 +1,6 @@
 // @flow
-import styled from 'styled-components';
-import { Tooltip } from '../globals';
+import styled from 'styled-components'
+import { Tooltip } from '../globals'
 
 export const View = styled.main`
   display: flex;
@@ -11,7 +11,7 @@ export const View = styled.main`
   @media (max-width: 768px) {
     width: 100%;
   }
-`;
+`
 
 export const SectionsContainer = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ export const SectionsContainer = styled.div`
   @media (max-width: 768px) {
     padding: 8px 0;
   }
-`;
+`
 
 export const Column = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ export const Column = styled.div`
       padding-top: 8px;
     }
   }
-`;
+`
 
 export const SectionCard = styled.div`
   border-radius: 4px;
@@ -54,7 +54,7 @@ export const SectionCard = styled.div`
   @media (max-width: 768px) {
     border-radius: 0;
   }
-`;
+`
 
 export const SectionCardFooter = styled.div`
   border-top: 1px solid ${props => props.theme.bg.border};
@@ -64,7 +64,7 @@ export const SectionCardFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`;
+`
 
 export const SectionSubtitle = styled.h4`
   font-size: 14px;
@@ -75,7 +75,7 @@ export const SectionSubtitle = styled.h4`
   a {
     color: ${props => props.theme.brand.alt};
   }
-`;
+`
 
 export const SectionTitle = styled.h3`
   font-size: 18px;
@@ -84,13 +84,13 @@ export const SectionTitle = styled.h3`
   margin-bottom: 8px;
   display: flex;
   align-items: center;
-`;
+`
 
 export const SectionTitleWithIcon = styled(SectionTitle)`
   .icon {
     margin-right: 12px;
   }
-`;
+`
 
 export const Heading = styled.h1`
   margin-left: 16px;
@@ -98,7 +98,7 @@ export const Heading = styled.h1`
   color: ${props => props.theme.text.default};
   font-weight: 600;
   line-height: 1;
-`;
+`
 
 export const Subheading = styled.h3`
   margin-left: 16px;
@@ -110,7 +110,7 @@ export const Subheading = styled.h3`
   &:hover {
     color: ${props => props.theme.brand.alt};
   }
-`;
+`
 
 export const StyledHeader = styled.div`
   display: flex;
@@ -124,7 +124,7 @@ export const StyledHeader = styled.div`
   @media (max-width: 768px) {
     display: none;
   }
-`;
+`
 
 export const StyledSubnav = styled.div`
   display: flex;
@@ -140,13 +140,13 @@ export const StyledSubnav = styled.div`
     justify-content: center;
     overflow-x: scroll;
   }
-`;
+`
 
 export const SubnavList = styled.ul`
   list-style-type: none;
   display: flex;
   align-items: center;
-`;
+`
 
 export const SubnavListItem = styled.li`
   position: relative;
@@ -165,13 +165,13 @@ export const SubnavListItem = styled.li`
     padding: 16px;
     display: inline-block;
   }
-`;
+`
 
 export const HeaderText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`;
+`
 
 export const GrowthText = styled.span`
   color: ${props =>
@@ -181,13 +181,13 @@ export const GrowthText = styled.span`
   display: inline-block;
   margin-right: 6px;
   font-size: 14px;
-`;
+`
 
 export const MessageIcon = styled.div`
   color: ${props => props.theme.brand.alt};
   cursor: pointer;
   ${Tooltip} top: 2px;
-`;
+`
 
 export const EditDropdownContainer = styled.div`
   position: relative;
@@ -196,7 +196,7 @@ export const EditDropdownContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export const Dropdown = styled.div`
   border-radius: 4px;
@@ -208,7 +208,7 @@ export const Dropdown = styled.div`
   z-index: 100;
   width: 320px;
   overflow: hidden;
-`;
+`
 
 export const DropdownSectionDivider = styled.div`
   width: 100%;
@@ -216,7 +216,7 @@ export const DropdownSectionDivider = styled.div`
   background: ${props => props.theme.bg.wash};
   border-top: 1px solid ${props => props.theme.bg.border};
   border-bottom: 1px solid ${props => props.theme.bg.border};
-`;
+`
 
 export const DropdownSection = styled.div`
   padding: 12px 8px;
@@ -233,28 +233,28 @@ export const DropdownSection = styled.div`
   &:hover {
     background: ${props => props.theme.bg.wash};
   }
-`;
+`
 
 export const DropdownSectionText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-`;
+`
 
 export const DropdownSectionTitle = styled.p`
   font-size: 14px;
   font-weight: 500;
   color: ${props => props.theme.text.default};
   line-height: 1.3;
-`;
+`
 
 export const DropdownSectionSubtitle = styled.p`
   font-size: 13px;
   font-weight: 400;
   color: ${props => props.theme.text.alt};
   line-height: 1.2;
-`;
+`
 
 export const DropdownSectionCardInfo = styled(DropdownSectionSubtitle)`
   margin-top: 6px;
@@ -263,7 +263,7 @@ export const DropdownSectionCardInfo = styled(DropdownSectionSubtitle)`
   img {
     margin-right: 6px;
   }
-`;
+`
 
 export const DropdownAction = styled.div`
   display: flex;
@@ -271,4 +271,4 @@ export const DropdownAction = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-`;
+`

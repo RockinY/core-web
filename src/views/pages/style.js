@@ -243,7 +243,7 @@ export const ButtonTwitter = styled(Button)`
 
   &:hover {
     color: ${props =>
-      props.whitebg ? props.theme.social.twitter.default : '#fff'};
+    props.whitebg ? props.theme.social.twitter.default : '#fff'};
   }
 `
 
@@ -257,7 +257,7 @@ export const ButtonFacebook = styled(Button)`
 
   &:hover {
     color: ${props =>
-      props.whitebg ? props.theme.social.facebook.default : '#fff'};
+    props.whitebg ? props.theme.social.facebook.default : '#fff'};
   }
 `
 
@@ -271,7 +271,7 @@ export const ButtonGoogle = styled(Button)`
 
   &:hover {
     color: ${props =>
-      props.whitebg ? props.theme.social.google.default : '#fff'};
+    props.whitebg ? props.theme.social.google.default : '#fff'};
   }
 `
 
@@ -522,11 +522,11 @@ export const Tab = styled(Link)`
 
   &:hover {
     color: ${props =>
-      props.selected
-        ? props.dark ? props.theme.text.reverse : props.theme.text.default
-        : props.dark ? props.theme.text.reverse : props.theme.text.alt};
+    props.selected
+      ? props.dark ? props.theme.text.reverse : props.theme.text.default
+      : props.dark ? props.theme.text.reverse : props.theme.text.alt};
     text-shadow: ${props =>
-      props.dark ? `0 0 32px ${hexa(props.theme.text.reverse, 0.75)}` : 'none'};
+    props.dark ? `0 0 32px ${hexa(props.theme.text.reverse, 0.75)}` : 'none'};
   }
 `
 
@@ -585,7 +585,7 @@ const DropdownLink = styled(Link)`
   &:hover {
     transition: ${Transition.hover.on};
     color: ${props =>
-      props.selected ? props.theme.text.alt : props.theme.brand.default};
+    props.selected ? props.theme.text.alt : props.theme.brand.default};
 
     > div:last-of-type {
       opacity: 1;
@@ -703,12 +703,12 @@ export const MenuTab = styled.div`
 
   > button {
     color: ${props =>
-      props.dark ? props.theme.brand.border : props.theme.brand.alt};
+    props.dark ? props.theme.brand.border : props.theme.brand.alt};
     transform: none;
 
     &:hover {
       color: ${props =>
-        props.dark ? props.theme.text.reverse : props.theme.brand.default};
+    props.dark ? props.theme.text.reverse : props.theme.brand.default};
       transform: none;
     }
   }
@@ -755,7 +755,7 @@ export const AuthTab = styled.div`
     font-weight: 700;
 
     ${props =>
-      props.dark &&
+    props.dark &&
       css`
         color: ${props => props.theme.brand.alt};
         background-image: none;
@@ -771,7 +771,7 @@ export const AuthTab = styled.div`
 
   > a > div {
     box-shadow: ${props =>
-      props.dark ? `0 0 0 2px ${props.theme.bg.default}` : 'none'};
+    props.dark ? `0 0 0 2px ${props.theme.bg.default}` : 'none'};
   }
 
   @media (max-width: 768px) {

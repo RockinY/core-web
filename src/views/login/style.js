@@ -1,14 +1,14 @@
 // @flow
-import styled from 'styled-components';
+import styled from 'styled-components'
 import {
   FlexRow,
   FlexCol,
   Gradient,
   Shadow,
   hexa,
-  zIndex,
-} from '../../components/globals';
-import { Button } from '../../components/buttons';
+  zIndex
+} from '../../components/globals'
+import { Button } from '../../components/buttons'
 
 export const Title = styled.h1`
   color: ${props => props.theme.text.default};
@@ -21,24 +21,24 @@ export const Title = styled.h1`
   font-size: 24px;
   text-align: center;
   letter-spacing: 0.2px;
-`;
+`
 
 export const LargeTitle = styled(Title)`
   font-size: 40px;
   font-weight: 900;
   letter-spacing: 0.3px;
   margin-bottom: 16px;
-`;
+`
 
 export const SmallTitle = styled(Title)`
   font-size: 18px;
-`;
+`
 
 export const MiniTitle = styled(Title)`
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.25;
-`;
+`
 
 export const Actions = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ export const Actions = styled.div`
   button {
     margin: 0 8px;
   }
-`;
+`
 
 export const Subtitle = styled.h2`
   width: 100%;
@@ -72,27 +72,27 @@ export const Subtitle = styled.h2`
     margin-top: 8px;
     list-style-type: none;
   }
-`;
+`
 
 export const LargeSubtitle = styled(Subtitle)`
   font-size: 20px;
-`;
+`
 
 export const MiniSubtitle = styled(Subtitle)`
   font-weight: 600;
   color: ${props => props.theme.text.alt};
   font-size: 0.875rem;
   line-height: 1.4;
-`;
+`
 
 export const SmallSubtitle = styled(Subtitle)`
   font-size: 15px;
-`;
+`
 
 export const Cost = styled(Subtitle)`
   margin-top: 8px;
   font-weight: bold;
-`;
+`
 
 export const NullCol = styled(FlexCol)`
   background-image: ${props =>
@@ -111,7 +111,7 @@ export const NullCol = styled(FlexCol)`
   align-items: center;
   position: relative;
   align-self: center;
-`;
+`
 
 export const NullRow = styled(FlexRow)`
   background-image: url('/img/fills/${props =>
@@ -123,14 +123,14 @@ export const NullRow = styled(FlexRow)`
   width: 100%;
   height: auto;
   padding: 1rem 15%;
-`;
+`
 
 export const UpgradeError = styled.p`
   color: ${props => props.theme.warn.default};
   font-size: 14px;
   text-align: center;
   margin: 16px 0 0;
-`;
+`
 
 export const Profile = styled.div`
   position: relative;
@@ -145,7 +145,7 @@ export const Profile = styled.div`
   span {
     background-color: ${({ theme }) => theme.success.default};
     background-image: ${({ theme }) =>
-      Gradient(theme.success.alt, theme.success.default)};
+    Gradient(theme.success.alt, theme.success.default)};
     position: absolute;
     left: 75%;
     top: 48px;
@@ -158,7 +158,7 @@ export const Profile = styled.div`
     border: 2px solid #fff;
     z-index: ${zIndex.avatar + 1};
   }
-`;
+`
 
 export const UpsellIconContainer = styled.div`
   display: flex;
@@ -167,7 +167,7 @@ export const UpsellIconContainer = styled.div`
   margin-bottom: 16px;
   margin-top: 32px;
   color: ${props => props.theme.text.alt};
-`;
+`
 
 export const SignupButton = styled(Button)`
   font-size: 18px;
@@ -178,7 +178,7 @@ export const SignupButton = styled(Button)`
   box-shadow: ${props =>
     `${Shadow.high} ${hexa(props.theme.bg.reverse, 0.15)}`};
   margin-top: 8px;
-`;
+`
 
 export const SignupFooter = styled.div`
   display: flex;
@@ -190,13 +190,13 @@ export const SignupFooter = styled.div`
   border-top: 2px solid ${props => props.theme.bg.wash};
   margin-top: 40px;
   width: 100%;
-`;
+`
 
 export const SigninLink = styled.span`
   color: ${props => props.theme.brand.default};
   margin-left: 6px;
   cursor: pointer;
-`;
+`
 
 export const FullscreenContent = styled.div`
   width: 100%;
@@ -206,7 +206,7 @@ export const FullscreenContent = styled.div`
   flex-direction: column;
   padding: 32px 16px;
   flex: 1 0 auto;
-`;
+`
 
 export const CodeOfConduct = styled.p`
   display: inline-block;
@@ -225,4 +225,4 @@ export const CodeOfConduct = styled.p`
     color: ${props => props.theme.brand.default};
     font-weight: 600;
   }
-`;
+`

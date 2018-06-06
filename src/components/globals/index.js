@@ -1,99 +1,99 @@
 /* eslint no-eval: 0 */
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components'
 
 export const Gradient = (g1, g2) =>
-  css`radial-gradient(ellipse farthest-corner at top left, ${g1} 0%, ${g2} 100%)`;
+  css`radial-gradient(ellipse farthest-corner at top left, ${g1} 0%, ${g2} 100%)`
 
 export const Truncate = width => css`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   min-width: 0;
-`;
+`
 
 export const hexa = (hex, alpha) => {
   var r = parseInt(hex.slice(1, 3), 16),
     g = parseInt(hex.slice(3, 5), 16),
-    b = parseInt(hex.slice(5, 7), 16);
+    b = parseInt(hex.slice(5, 7), 16)
 
   if (alpha >= 0) {
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
   } else {
-    return `rgb(${r}, ${g}, ${b})`;
+    return `rgb(${r}, ${g}, ${b})`
   }
-};
+}
 
 export const Shadow = {
   low: '0 2px 8px',
   mid: '0 4px 12px',
-  high: '0 8px 16px',
-};
+  high: '0 8px 16px'
+}
 
 export const Transition = {
   hover: {
     on: 'all 0.2s ease-in',
-    off: 'all 0.2s ease-out',
+    off: 'all 0.2s ease-out'
   },
   reaction: {
     on: 'all 0.15s ease-in',
-    off: 'all 0.1s ease-out',
+    off: 'all 0.1s ease-out'
   },
   dropdown: {
-    off: 'all 0.35s ease-out',
-  },
-};
+    off: 'all 0.35s ease-out'
+  }
+}
 
-export const zIndex = new function() {
+export const zIndex = new function () {
   // Write down a camel-cased element descriptor as the name (e.g. modal or chatInput).
   // Define at a component level here, then use math to handle order at a local level.
   // (e.g. const ModalInput = styled.input`z-index: zIndex.modal + 1`;)
   // This uses constructor syntax because that allows self-referential math
 
-  this.base = 1; // z-index: auto content will go here or inherit z-index from a parent
+  this.base = 1 // z-index: auto content will go here or inherit z-index from a parent
 
-  this.background = this.base - 1; // content that should always be behind other things (e.g. textures/illos)
-  this.hidden = this.base - 2; // this content should be hidden completely (USE ADD'L MEANS OF HIDING)
+  this.background = this.base - 1 // content that should always be behind other things (e.g. textures/illos)
+  this.hidden = this.base - 2 // this content should be hidden completely (USE ADD'L MEANS OF HIDING)
 
-  this.card = this.base + 1; // all cards should default to one layer above the base content
-  this.loading = this.card + 1; // loading elements should never appear behind cards
-  this.avatar = this.card + 1; // avatars should never appear behind cards
-  this.form = this.card + 1; // form elements should never appear behind cards
-  this.search = this.form; // search is a type of form and should appear at the same level
-  this.dmInput = this.form;
+  this.card = this.base + 1 // all cards should default to one layer above the base content
+  this.loading = this.card + 1 // loading elements should never appear behind cards
+  this.avatar = this.card + 1 // avatars should never appear behind cards
+  this.form = this.card + 1 // form elements should never appear behind cards
+  this.search = this.form // search is a type of form and should appear at the same level
+  this.dmInput = this.form
 
-  this.composerToolbar = 2000; // composer toolbar - should sit in between most elements
+  this.composerToolbar = 2000 // composer toolbar - should sit in between most elements
 
-  this.chrome = 3000; // chrome should be visible in modal contexts
-  this.navBar = this.chrome; // navBar is chrome and should appear at the same level
-  this.mobileInput = this.chrome + 1; // the chatInput on mobile should appear above the navBar
-  this.dropDown = this.chrome + 1; // dropDowns shouldn't appear behind the navBar
+  this.chrome = 3000 // chrome should be visible in modal contexts
+  this.navBar = this.chrome // navBar is chrome and should appear at the same level
+  this.mobileInput = this.chrome + 1 // the chatInput on mobile should appear above the navBar
+  this.dropDown = this.chrome + 1 // dropDowns shouldn't appear behind the navBar
 
-  this.slider = window.innerWidth < 768 ? this.chrome + 1 : this.chrome; // slider should appear significantly above the base to leave room for other elements
-  this.composer = this.slider - 2; // composer should never appear above the slider
-  this.chatInput = this.slider + 1; // the slider chatInput should always appear above the slider
-  this.flyout = this.chatInput + 3; // flyout may overlap with chatInput and should take precedence
+  this.slider = window.innerWidth < 768 ? this.chrome + 1 : this.chrome // slider should appear significantly above the base to leave room for other elements
+  this.composer = this.slider - 2 // composer should never appear above the slider
+  this.chatInput = this.slider + 1 // the slider chatInput should always appear above the slider
+  this.flyout = this.chatInput + 3 // flyout may overlap with chatInput and should take precedence
 
-  this.fullscreen = 4000; // fullscreen elements should cover all screen content except toasts
+  this.fullscreen = 4000 // fullscreen elements should cover all screen content except toasts
 
-  this.modal = 5000; // modals should completely cover base content and slider as well
-  this.gallery = this.modal + 1; // gallery should never appear behind a modal
+  this.modal = 5000 // modals should completely cover base content and slider as well
+  this.gallery = this.modal + 1 // gallery should never appear behind a modal
 
-  this.toast = 6000; // toasts should be visible in every context
-  this.tooltip = this.toast + 1; // tooltips should always be on top
-}();
+  this.toast = 6000 // toasts should be visible in every context
+  this.tooltip = this.toast + 1 // tooltips should always be on top
+}()
 
 export const fontStack = css`
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Segoe',
     sans-serif;
-`;
+`
 
 export const monoStack = css`
   font-family: 'Input Mono', 'Menlo', 'Inconsolata', 'Roboto Mono', monospace;
-`;
+`
 
 const spin = keyframes`
   to {transform: rotate(360deg);}
-`;
+`
 
 export const Spinner = styled.span`
   width: ${props => (props.size ? `${props.size}px` : '32px')};
@@ -109,22 +109,22 @@ export const Spinner = styled.span`
     width: ${props => (props.size !== undefined ? `${props.size}px` : '16px')};
     height: ${props => (props.size !== undefined ? `${props.size}px` : '16px')};
     margin-top: ${props =>
-      props.size !== undefined ? `-${props.size / 2}px` : '-8px'};
+    props.size !== undefined ? `-${props.size / 2}px` : '-8px'};
     margin-left: ${props =>
-      props.size !== undefined ? `-${props.size / 2}px` : '-8px'};
+    props.size !== undefined ? `-${props.size / 2}px` : '-8px'};
     border-radius: 50%;
     border: ${props => '2px'} solid
       ${props =>
-        props.color
-          ? eval(`props.theme.${props.color}`)
-          : props.theme.brand.alt};
+    props.color
+      ? eval(`props.theme.${props.color}`)
+      : props.theme.brand.alt};
     border-top-color: transparent;
     border-right-color: ${props =>
-      props.color ? eval(`props.theme.${props.color}`) : props.theme.brand.alt};
+    props.color ? eval(`props.theme.${props.color}`) : props.theme.brand.alt};
     border-bottom-color: transparent;
     animation: ${spin} 2s linear infinite;
   }
-`;
+`
 
 export const Label = styled.label`
   display: flex;
@@ -143,7 +143,7 @@ export const Label = styled.label`
   a {
     text-decoration: underline;
   }
-`;
+`
 
 export const PrefixLabel = styled.label`
   display: flex;
@@ -157,7 +157,7 @@ export const PrefixLabel = styled.label`
   > input {
     margin-left: 2px;
   }
-`;
+`
 
 export const Input = styled.input`
   flex: 1 0 auto;
@@ -193,7 +193,7 @@ export const Input = styled.input`
   &:focus {
     border-color: ${({ theme }) => theme.brand.default};
   }
-`;
+`
 
 export const TextArea = styled.textarea`
   flex: 1 0 auto;
@@ -223,7 +223,7 @@ export const TextArea = styled.textarea`
   &:focus {
     border-color: ${({ theme }) => theme.brand.default};
   }
-`;
+`
 
 export const UnderlineInput = styled.input`
   font-size: inherit;
@@ -234,7 +234,7 @@ export const UnderlineInput = styled.input`
   &:focus {
     border-color: ${({ theme }) => theme.brand.default};
   }
-`;
+`
 
 export const H1 = styled.h1`
   ${fontStack};
@@ -244,7 +244,7 @@ export const H1 = styled.h1`
   line-height: 1.25;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const H2 = styled.h2`
   color: ${({ theme }) => theme.text.default};
@@ -254,7 +254,7 @@ export const H2 = styled.h2`
   line-height: 1.25;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const H3 = styled.h3`
   color: ${({ theme }) => theme.text.default};
@@ -264,7 +264,7 @@ export const H3 = styled.h3`
   line-height: 1.5;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const H4 = styled.h4`
   color: ${({ theme }) => theme.text.default};
@@ -274,7 +274,7 @@ export const H4 = styled.h4`
   line-height: 1.4;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const H5 = styled.h5`
   color: ${({ theme }) => theme.text.default};
@@ -284,7 +284,7 @@ export const H5 = styled.h5`
   line-height: 1.4;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const H6 = styled.h6`
   color: ${({ theme }) => theme.text.default};
@@ -295,7 +295,7 @@ export const H6 = styled.h6`
   line-height: 1.5;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const P = styled.p`
   color: ${({ theme }) => theme.text.default};
@@ -305,7 +305,7 @@ export const P = styled.p`
   line-height: 1.4;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const Span = styled.span`
   color: ${({ theme }) => theme.text.default};
@@ -315,21 +315,21 @@ export const Span = styled.span`
   line-height: 1.4;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-`;
+`
 
 export const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-`;
+`
 
 const returnTooltip = props => {
   switch (props.tipLocation) {
@@ -345,10 +345,10 @@ const returnTooltip = props => {
             transform: translateX(-100%);
             border-bottom-width: 0;
             border-top-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
           }
-      `;
+      `
     case 'top-right':
       return `
           &:after {
@@ -361,10 +361,10 @@ const returnTooltip = props => {
             transform: translateX(100%);
             border-bottom-width: 0;
             border-top-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
           }
-      `;
+      `
     case 'top':
       return `
           &:after {
@@ -378,10 +378,10 @@ const returnTooltip = props => {
             transform: translateX(-50%);
             border-bottom-width: 0;
             border-top-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
           }
-      `;
+      `
     case 'right':
     default:
       return `
@@ -395,10 +395,10 @@ const returnTooltip = props => {
             left: 100%;
             border-left-width: 0;
             border-right-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
           }
-      `;
+      `
     case 'bottom-left':
       return `
           &:after {
@@ -411,10 +411,10 @@ const returnTooltip = props => {
             transform: translateX(-100%);
             border-top-width: 0;
             border-bottom-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
           }
-      `;
+      `
     case 'bottom-right':
       return `
           &:after {
@@ -427,10 +427,10 @@ const returnTooltip = props => {
             transform: translateX(100%);
             border-top-width: 0;
             border-bottom-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
           }
-      `;
+      `
     case 'bottom':
       return `
         &:after {
@@ -444,10 +444,10 @@ const returnTooltip = props => {
           transform: translateX(-50%);
           border-top-width: 0;
           border-bottom-color: ${
-            props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-          };
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
+};
         }
-      `;
+      `
     case 'left':
       return `
           &:after {
@@ -460,12 +460,12 @@ const returnTooltip = props => {
             top: calc(50% - 5px);
             border-right-width: 0;
             border-left-color: ${
-              props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
-            };
-          }
-      `;
-  }
+  props.onboarding ? props.theme.brand.alt : props.theme.bg.reverse
 };
+          }
+      `
+  }
+}
 
 export const Tooltip = props => css`
   position: relative;
@@ -489,8 +489,8 @@ export const Tooltip = props => css`
 
   &:after {
     content: ${props.tipText && !props.onboarding
-      ? `'${CSS.escape(props.tipText)}'`
-      : "''"};
+    ? `'${CSS.escape(props.tipText)}'`
+    : "''"};
     z-index: ${zIndex.tooltip};
     ${fontStack};
     font-size: 14px;
@@ -514,7 +514,7 @@ export const Tooltip = props => css`
     opacity: 1;
     transition: opacity 0.1s ease-in 0.1s;
   }
-`;
+`
 
 export const Onboarding = props => css`
   position: relative;
@@ -564,7 +564,7 @@ export const Onboarding = props => css`
     opacity: 1;
     transition: opacity 0.1s ease-in 0.1s;
   }
-`;
+`
 
 export const HorizontalRule = styled(FlexRow)`
   position: relative;
@@ -582,4 +582,4 @@ export const HorizontalRule = styled(FlexRow)`
   div {
     margin: 0 16px;
   }
-`;
+`

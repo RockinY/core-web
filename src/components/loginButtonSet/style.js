@@ -1,6 +1,6 @@
 // @flow
-import styled from 'styled-components';
-import { zIndex } from '../globals';
+import styled from 'styled-components'
+import { zIndex } from '../globals'
 
 export const Container = styled.div`
   display: grid;
@@ -10,11 +10,11 @@ export const Container = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`;
+`
 
 export const A = styled.a`
   display: flex;
-`;
+`
 
 export const SigninButton = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ export const SigninButton = styled.div`
     `} svg {
     fill: currentColor !important;
   }
-`;
+`
 
 export const Label = styled.span`
   display: flex;
@@ -65,7 +65,7 @@ export const Label = styled.span`
   word-break: keep-all;
   white-space: nowrap;
   color: currentColor;
-`;
+`
 
 export const TwitterButton = styled(SigninButton)`
   background: ${props =>
@@ -76,7 +76,7 @@ export const TwitterButton = styled(SigninButton)`
   &:after {
     color: ${props => props.theme.social.twitter.default};
   }
-`;
+`
 
 export const FacebookButton = styled(SigninButton)`
   background: ${props =>
@@ -87,7 +87,7 @@ export const FacebookButton = styled(SigninButton)`
   &:after {
     color: ${props => props.theme.social.facebook.default};
   }
-`;
+`
 
 export const GoogleButton = styled(SigninButton)`
   background: ${props =>
@@ -98,7 +98,7 @@ export const GoogleButton = styled(SigninButton)`
   &:after {
     color: ${props => props.theme.social.google.default};
   }
-`;
+`
 
 export const GithubButton = styled(SigninButton)`
   background: ${props =>
@@ -109,4 +109,4 @@ export const GithubButton = styled(SigninButton)`
   &:after {
     color: ${props => props.theme.text.default};
   }
-`;
+`

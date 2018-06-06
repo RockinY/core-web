@@ -1,6 +1,6 @@
 // @flow
-import styled, { css } from 'styled-components';
-import { zIndex } from '../globals';
+import styled, { css } from 'styled-components'
+import { zIndex } from '../globals'
 
 export const FullscreenViewContainer = styled.div`
   position: fixed;
@@ -19,7 +19,7 @@ export const FullscreenViewContainer = styled.div`
   z-index: ${zIndex.fullscreen};
   overflow-y: scroll;
   -webkit-transform: translate3d(0, 0, 0);
-`;
+`
 
 export const Illustrations = styled.span`
   z-index: ${zIndex.background};
@@ -31,7 +31,7 @@ export const Illustrations = styled.span`
         display: none;
       }
     `};
-`;
+`
 
 export const Close = styled.div`
   color: ${props => props.theme.text.default};
@@ -39,4 +39,4 @@ export const Close = styled.div`
   top: 8px;
   right: 8px;
   cursor: pointer;
-`;
+`

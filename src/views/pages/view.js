@@ -116,14 +116,14 @@ export const Overview = (props: Props) => {
           </ThisCopy>
           <Actions>
             <Link
-              to="/login"
+              to='/login'
             >
-              <ThisPrimaryCTA icon="welcome">Join Spectrum</ThisPrimaryCTA>
+              <ThisPrimaryCTA icon='welcome'>Join Spectrum</ThisPrimaryCTA>
             </Link>
             <Link
-              to="/new/community"
+              to='/new/community'
             >
-              <ThisSecondaryCTA icon="plus-fill">
+              <ThisSecondaryCTA icon='plus-fill'>
                 Create your community
               </ThisSecondaryCTA>
             </Link>

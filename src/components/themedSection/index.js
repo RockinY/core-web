@@ -107,35 +107,35 @@ const Section = (props: ThemeProps) => {
     default:
       return (
         <Default>
-          <ClusterOne src="/img/cluster-1.svg" role="presentation" />
-          <ClusterTwo src="/img/cluster-2.svg" role="presentation" />
-          <ClusterThree src="/img/cluster-5.svg" role="presentation" />
-          <ClusterFour src="/img/cluster-4.svg" role="presentation" />
+          <ClusterOne src='/img/cluster-1.svg' role='presentation' />
+          <ClusterTwo src='/img/cluster-2.svg' role='presentation' />
+          <ClusterThree src='/img/cluster-5.svg' role='presentation' />
+          <ClusterFour src='/img/cluster-4.svg' role='presentation' />
           {props.children}
           <Goop {...props} />
         </Default>
-      );
+      )
     case 'blank':
       return (
         <Default>
           {props.children}
           <Goop {...props} />
         </Default>
-      );
+      )
     case 'primary':
       return (
         <Primary>
           {props.children}
           <Goop {...props} />
         </Primary>
-      );
+      )
     case 'brand':
       return (
         <Brand>
           {props.children}
           <Goop {...props} />
         </Brand>
-      );
+      )
     case 'constellations':
       return (
         <Primary>
@@ -143,42 +143,42 @@ const Section = (props: ThemeProps) => {
           <Constellations />
           <Goop {...props} />
         </Primary>
-      );
+      )
     case 'dark':
       return (
         <Dark>
           {props.children}
           <Goop {...props} />
         </Dark>
-      );
+      )
     case 'space':
       return (
         <Space>
           {props.children}
           <Goop {...props} />
         </Space>
-      );
+      )
     case 'bright':
       return (
         <Bright>
           {props.children}
           <Goop {...props} />
         </Bright>
-      );
+      )
     case 'light':
       return (
         <Light>
           {props.children}
           <Goop {...props} />
         </Light>
-      );
+      )
     case 'grayscale':
       return (
         <Grayscale>
           {props.children}
           <Goop {...props} />
         </Grayscale>
-      );
+      )
     case 'illustrated':
       return (
         <Illustrated>
@@ -186,15 +186,15 @@ const Section = (props: ThemeProps) => {
           {props.children}
           <Goop {...props} />
         </Illustrated>
-      );
+      )
     case 'reverse':
       return (
         <Reverse>
           {props.children}
           <Goop {...props} />
         </Reverse>
-      );
+      )
   }
-};
+}
 
 export default Section

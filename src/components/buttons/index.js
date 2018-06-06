@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Label,
   StyledSolidButton,
@@ -7,10 +7,10 @@ import {
   StyledOutlineButton,
   StyledFauxOutlineButton,
   SpinnerContainer,
-  StyledButtonRow,
-} from './style';
-import { Spinner } from '../globals';
-import Icon from '../icons';
+  StyledButtonRow
+} from './style'
+import { Spinner } from '../globals'
+import Icon from '../icons'
 
 type ButtonProps = {
   loading?: boolean,
@@ -45,7 +45,7 @@ export const Button = (props: ButtonProps) => (
     {props.icon ? (
       props.loading ? (
         <SpinnerContainer>
-          <Spinner color="text.reverse" size="16" />
+          <Spinner color='text.reverse' size='16' />
         </SpinnerContainer>
       ) : (
         <Icon glyph={props.icon} />
@@ -53,12 +53,12 @@ export const Button = (props: ButtonProps) => (
     ) : (
       ''
     )}
-    {props.loading && !props.icon && <Spinner color="text.reverse" size="16" />}
+    {props.loading && !props.icon && <Spinner color='text.reverse' size='16' />}
     <Label loading={props.loading} hasIcon={props.icon}>
       {props.children}
     </Label>
   </StyledSolidButton>
-);
+)
 
 export const OutlineButton = (props: ButtonProps) => (
   <StyledOutlineButton
@@ -69,7 +69,7 @@ export const OutlineButton = (props: ButtonProps) => (
     {props.icon ? (
       props.loading ? (
         <SpinnerContainer>
-          <Spinner color="brand.alt" size="16" />
+          <Spinner color='brand.alt' size='16' />
         </SpinnerContainer>
       ) : (
         <Icon glyph={props.icon} />
@@ -77,12 +77,12 @@ export const OutlineButton = (props: ButtonProps) => (
     ) : (
       ''
     )}
-    {props.loading && !props.icon && <Spinner color="brand.alt" size="16" />}
+    {props.loading && !props.icon && <Spinner color='brand.alt' size='16' />}
     <Label loading={props.loading} hasIcon={props.icon}>
       {props.children}
     </Label>
   </StyledOutlineButton>
-);
+)
 
 // looks like a button, but isn't a button so it won't submit forms
 export const FauxOutlineButton = (props: ButtonProps) => (
@@ -94,7 +94,7 @@ export const FauxOutlineButton = (props: ButtonProps) => (
     {props.icon ? (
       props.loading ? (
         <SpinnerContainer>
-          <Spinner color="brand.alt" size="16" />
+          <Spinner color='brand.alt' size='16' />
         </SpinnerContainer>
       ) : (
         <Icon glyph={props.icon} />
@@ -102,19 +102,19 @@ export const FauxOutlineButton = (props: ButtonProps) => (
     ) : (
       ''
     )}
-    {props.loading && !props.icon && <Spinner color="brand.alt" size="16" />}
+    {props.loading && !props.icon && <Spinner color='brand.alt' size='16' />}
     <Label loading={props.loading} hasIcon={props.icon}>
       {props.children}
     </Label>
   </StyledFauxOutlineButton>
-);
+)
 
 export const TextButton = (props: ButtonProps) => (
   <StyledTextButton disabled={props.loading} data-cy={props.dataCy} {...props}>
     {props.icon ? (
       props.loading ? (
         <SpinnerContainer>
-          <Spinner color="text.alt" size="16" />
+          <Spinner color='text.alt' size='16' />
         </SpinnerContainer>
       ) : (
         <Icon glyph={props.icon} />
@@ -122,12 +122,12 @@ export const TextButton = (props: ButtonProps) => (
     ) : (
       ''
     )}
-    {props.loading && !props.icon && <Spinner color="text.alt" size="16" />}
+    {props.loading && !props.icon && <Spinner color='text.alt' size='16' />}
     <Label loading={props.loading} hasIcon={props.icon}>
       {props.children}
     </Label>
   </StyledTextButton>
-);
+)
 
 export const IconButton = (props: IconProps) => (
   <StyledIconButton disabled={props.loading} data-cy={props.dataCy} {...props}>
@@ -137,8 +137,8 @@ export const IconButton = (props: IconProps) => (
       tipLocation={props.tipLocation}
     />
   </StyledIconButton>
-);
+)
 
 export const ButtonRow = props => (
   <StyledButtonRow>{props.children}</StyledButtonRow>
-);
+)

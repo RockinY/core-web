@@ -1,8 +1,8 @@
 // @flow
 /* eslint no-eval: 0 */
 // $FlowFixMe
-import styled, { css } from 'styled-components';
-import { Gradient, Shadow, Transition, hexa } from '../globals';
+import styled, { css } from 'styled-components'
+import { Gradient, Shadow, Transition, hexa } from '../globals'
 
 const baseButton = css`
   display: flex;
@@ -28,9 +28,9 @@ const baseButton = css`
   &:hover {
     transition: ${Transition.hover.on};
     box-shadow: ${props =>
-      props.disabled
-        ? 'none'
-        : `${Shadow.high} ${hexa(props.theme.bg.reverse, 0.15)}`};
+    props.disabled
+      ? 'none'
+      : `${Shadow.high} ${hexa(props.theme.bg.reverse, 0.15)}`};
     opacity: ${props => (props.disabled ? '0.5' : '1')};
   }
 
@@ -39,7 +39,7 @@ const baseButton = css`
   span + span {
     margin: 0 8px;
   }
-`;
+`
 
 export const Label = styled.span`
   display: block;
@@ -49,7 +49,7 @@ export const Label = styled.span`
   ${props => (props.loading && !props.hasIcon ? 'opacity: 0;' : 'opacity: 1;')};
   align-self: center;
   margin: auto;
-`;
+`
 
 export const StyledSolidButton = styled.button`
   ${baseButton} background-color: ${props =>
@@ -61,28 +61,28 @@ export const StyledSolidButton = styled.button`
       ? 'none'
       : props.gradientTheme
         ? Gradient(
-            eval(`props.theme.${props.gradientTheme}.alt`),
-            eval(`props.theme.${props.gradientTheme}.default`)
-          )
+          eval(`props.theme.${props.gradientTheme}.alt`),
+          eval(`props.theme.${props.gradientTheme}.default`)
+        )
         : Gradient(props.theme.brand.alt, props.theme.brand.default)};
   color: ${props => props.theme.text.reverse};
 
   &:hover {
     background-color: ${props =>
-      props.disabled
-        ? props.theme.bg.inactive
-        : eval(
-            `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
-          )};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(
+        `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
+      )};
   }
 
   &:active {
     box-shadow: ${props =>
-      props.disabled
-        ? 'none'
-        : `${Shadow.low} ${hexa(props.theme.bg.reverse, 0.15)}`};
+    props.disabled
+      ? 'none'
+      : `${Shadow.low} ${hexa(props.theme.bg.reverse, 0.15)}`};
   }
-`;
+`
 
 export const StyledTextButton = styled(StyledSolidButton)`
   background: transparent;
@@ -106,21 +106,21 @@ export const StyledTextButton = styled(StyledSolidButton)`
     background-color: transparent;
     box-shadow: none;
     color: ${props =>
-      props.disabled
-        ? props.theme.bg.inactive
-        : eval(
-            `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
-          )};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(
+        `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
+      )};
     transition: color 0.1s ease-in, box-shadow 0.2s ease-in 0.1s, padding 0.2s ease-in;
   }
-`;
+`
 
 export const StyledOutlineButton = styled(StyledTextButton)`
   box-shadow: inset 0 0 0 1px
     ${props =>
-      props.disabled
-        ? props.theme.bg.inactive
-        : eval(`props.theme.${props.color ? props.color : 'brand.default'}`)};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(`props.theme.${props.color ? props.color : 'brand.default'}`)};
   color: ${props =>
     props.disabled
       ? props.theme.bg.inactive
@@ -130,21 +130,21 @@ export const StyledOutlineButton = styled(StyledTextButton)`
   &:hover {
     background-color: transparent;
     color: ${props =>
-      props.disabled
-        ? props.theme.bg.inactive
-        : eval(
-            `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
-          )};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(
+        `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
+      )};
     box-shadow: inset 0 0 0 1px
       ${props =>
-        props.disabled
-          ? props.theme.bg.inactive
-          : eval(
-              `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
-            )};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(
+        `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
+      )};
     transition: ${Transition.hover.on};
   }
-`;
+`
 
 export const StyledFauxOutlineButton = styled.span`
   ${baseButton} box-shadow: inset 0 0 0 1px ${props =>
@@ -160,21 +160,21 @@ export const StyledFauxOutlineButton = styled.span`
   &:hover {
     background-color: transparent;
     color: ${props =>
-      props.disabled
-        ? props.theme.bg.inactive
-        : eval(
-            `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
-          )};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(
+        `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
+      )};
     box-shadow: inset 0 0 0 1px
       ${props =>
-        props.disabled
-          ? props.theme.bg.inactive
-          : eval(
-              `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
-            )};
+    props.disabled
+      ? props.theme.bg.inactive
+      : eval(
+        `props.theme.${props.hoverColor ? props.hoverColor : 'brand.alt'}`
+      )};
     transition: ${Transition.hover.on};
   }
-`;
+`
 
 export const StyledIconButton = styled.button`
   ${baseButton} padding: 0;
@@ -191,24 +191,24 @@ export const StyledIconButton = styled.button`
 
   &:hover {
     color: ${props =>
-      props.disabled
-        ? props.theme.bg.inactive
-        : props.hoverColor
-          ? eval(`props.theme.${props.hoverColor}`)
-          : props.color
-            ? eval(`props.theme.${props.color}`)
-            : props.theme.brand.alt};
+    props.disabled
+      ? props.theme.bg.inactive
+      : props.hoverColor
+        ? eval(`props.theme.${props.hoverColor}`)
+        : props.color
+          ? eval(`props.theme.${props.color}`)
+          : props.theme.brand.alt};
     transform: ${props => (props.disabled ? 'none' : 'scale(1.05)')};
     box-shadow: none;
     opacity: 1;
   }
-`;
+`
 
 export const SpinnerContainer = styled.div`
   width: 32px;
   height: 32px;
   position: relative;
-`;
+`
 
 export const StyledButtonRow = styled.div`
   display: flex;
@@ -219,4 +219,4 @@ export const StyledButtonRow = styled.div`
   > a {
     margin: 8px;
   }
-`;
+`
