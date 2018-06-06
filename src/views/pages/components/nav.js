@@ -74,20 +74,29 @@ class Nav extends React.Component<Props, State> {
             Support
           </SupportTab>
           <AuthTab dark={this.props.dark}>
-            <Link
-              to='/login'
-            >
-              <Button
-                data-cy='navbar-splash-signin'
-                style={{
-                  fontWeight: '700',
-                  fontSize: '16px',
-                  letterSpacing: '0.5px'
-                }}
+            {this.props.currentUser ? (
+              <Link to='/' data-cy='navbar-splash-profile'>
+                <Avatar
+                  src={this.props.currentUser.profilePhoto}
+                  user={this.props.currentUser}
+                />
+              </Link>
+            ) : (
+              <Link
+                to='/login'
               >
-                Sign In
-              </Button>
-            </Link>
+                <Button
+                  data-cy='navbar-splash-signin'
+                  style={{
+                    fontWeight: '700',
+                    fontSize: '16px',
+                    letterSpacing: '0.5px'
+                  }}
+                >
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </AuthTab>
 
           <MenuTab dark={this.props.dark} open={this.state.menuIsOpen}>
