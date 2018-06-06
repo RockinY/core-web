@@ -5,6 +5,7 @@ import { Button, IconButton } from '../../../components/buttons'
 import Link from '../../../components/link'
 import Icon from '../../../components/icons'
 import { Logo } from '../../../components/logo'
+import Avatar from '../../../components/avatar'
 import Head from '../../../components/head'
 import {
   NavContainer,
