@@ -7,7 +7,7 @@ const addToast = (
   kind: Toasts,
   message: string,
   timeout?: number
- ) => {
+) => {
   return {
     type: 'ADD_TOAST',
     payload: {

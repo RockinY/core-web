@@ -7,7 +7,7 @@ Payload shape:
 
 payload: {
   kind: 'error' | 'success',
-  message: string
+  message: strin
 }
 */
 
