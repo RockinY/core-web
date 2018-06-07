@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Avatar from '../avatar';
-import Icon from '../icons';
-import { FauxOutlineButton } from '../buttons';
+import * as React from 'react'
+import Avatar from '../avatar'
+import Icon from '../icons'
+import { FauxOutlineButton } from '../buttons'
 
 import {
   StyledLabel,
@@ -16,8 +16,8 @@ import {
   PhotoInputLabel,
   CoverInputLabel,
   InputOverlay,
-  CoverImage,
-} from './style';
+  CoverImage
+} from './style'
 
 type InputProps = {
   children?: React.Node,
@@ -49,14 +49,14 @@ export const Input = (props: InputProps) => {
         data-cy={props.dataCy}
       />
     </StyledLabel>
-  );
-};
+  )
+}
 
 export const PhotoInput = (props: InputProps) => {
   return (
     <PhotoInputLabel user={props.user} size={props.size || 48}>
       <InputOverlay user={props.user}>
-        <Icon glyph="photo" />
+        <Icon glyph='photo' />
       </InputOverlay>
       <Avatar
         style={{ boxShadow: '0 0 0 2px white' }}
@@ -66,9 +66,9 @@ export const PhotoInput = (props: InputProps) => {
         community={props.community}
       />
       <StyledHiddenInput
-        type="file"
-        id="file"
-        name="file"
+        type='file'
+        id='file'
+        name='file'
         accept={
           props.allowGif ? '.png, .jpg, .jpeg, .gif, .mp4' : '.png, .jpg, .jpeg'
         }
@@ -77,8 +77,8 @@ export const PhotoInput = (props: InputProps) => {
         data-cy={props.dataCy}
       />
     </PhotoInputLabel>
-  );
-};
+  )
+}
 
 export const CoverInput = (props: InputProps) => {
   return (
@@ -94,12 +94,12 @@ export const CoverInput = (props: InputProps) => {
       </InputOverlay>
       <CoverImage
         src={`${props.defaultValue}${props.preview ? '' : '?w=320&dpr=2'}`}
-        role="presentation"
+        role='presentation'
       />
       <StyledHiddenInput
-        type="file"
-        id="file"
-        name="file"
+        type='file'
+        id='file'
+        name='file'
         accept={
           props.allowGif ? '.png, .jpg, .jpeg, .gif, .mp4' : '.png, .jpg, .jpeg'
         }
@@ -108,8 +108,8 @@ export const CoverInput = (props: InputProps) => {
         data-cy={props.dataCy}
       />
     </CoverInputLabel>
-  );
-};
+  )
+}
 
 export const Checkbox = (props: InputProps) => {
   return (
@@ -119,9 +119,9 @@ export const Checkbox = (props: InputProps) => {
         align={props.align || 'center'}
         data-cy={`${props.dataCy}-${props.checked ? 'checked' : 'unchecked'}`}
       >
-        {props.checked ? <Icon glyph="checkmark" /> : <Icon glyph="checkbox" />}
+        {props.checked ? <Icon glyph='checkmark' /> : <Icon glyph='checkbox' />}
         <StyledHiddenInput
-          type="checkbox"
+          type='checkbox'
           id={props.id}
           checked={props.checked}
           disabled={props.disabled || false}
@@ -131,8 +131,8 @@ export const Checkbox = (props: InputProps) => {
         {props.children}
       </StyledCheckboxWrapper>
     </StyledLabel>
-  );
-};
+  )
+}
 
 export const TextArea = (props: InputProps) => {
   return (
@@ -147,16 +147,16 @@ export const TextArea = (props: InputProps) => {
         data-cy={props.dataCy}
       />
     </StyledLabel>
-  );
-};
+  )
+}
 
 export class UnderlineInput extends React.Component {
-  render() {
+  render () {
     return (
       <StyledPrefixLabel disabled={this.props.disabled}>
         {this.props.children}
         <StyledUnderlineInput
-          type="text"
+          type='text'
           id={this.props.id}
           placeholder={this.props.placeholder}
           value={this.props.value || this.props.defaultValue}
@@ -166,14 +166,14 @@ export class UnderlineInput extends React.Component {
           data-cy={this.props.dataCy}
         />
       </StyledPrefixLabel>
-    );
+    )
   }
 }
 
 export const Error = (props: Object) => {
-  return <StyledError data-cy={props.dataCy}>{props.children}</StyledError>;
-};
+  return <StyledError data-cy={props.dataCy}>{props.children}</StyledError>
+}
 
 export const Success = (props: Object) => {
-  return <StyledSuccess data-cy={props.dataCy}>{props.children}</StyledSuccess>;
-};
+  return <StyledSuccess data-cy={props.dataCy}>{props.children}</StyledSuccess>
+}

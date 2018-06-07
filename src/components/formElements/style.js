@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { FlexRow, Transition, hexa, zIndex } from '../globals';
-import Textarea from 'react-textarea-autosize';
+import styled, { css } from 'styled-components'
+import { FlexRow, Transition, hexa, zIndex } from '../globals'
+import Textarea from 'react-textarea-autosize'
 
 export const StyledLabel = styled.label`
   display: flex;
@@ -21,16 +21,16 @@ export const StyledLabel = styled.label`
   &:hover > input,
   &:hover > textarea {
     border-color: ${props =>
-      props.disabled ? props.theme.bg.border : props.theme.text.alt};
+    props.disabled ? props.theme.bg.border : props.theme.text.alt};
     transition: ${Transition.hover.on};
   }
 
   &:hover > input:focus,
   &:hover > textarea:focus {
     border-color: ${props =>
-      props.disabled ? props.theme.bg.inactive : props.theme.brand.alt};
+    props.disabled ? props.theme.bg.inactive : props.theme.brand.alt};
   }
-`;
+`
 
 export const StyledPrefixLabel = styled.label`
   display: flex;
@@ -48,10 +48,10 @@ export const StyledPrefixLabel = styled.label`
 
   &:hover > input {
     border-color: ${props =>
-      props.disabled ? props.theme.bg.inactive : props.theme.text.alt};
+    props.disabled ? props.theme.bg.inactive : props.theme.text.alt};
     transition: ${Transition.hover.on};
   }
-`;
+`
 
 export const StyledInput = styled.input`
   flex: 1 0 auto;
@@ -62,7 +62,7 @@ export const StyledInput = styled.input`
   font-size: 14px;
   border: 2px solid
     ${props =>
-      props.disabled ? props.theme.bg.border : props.theme.bg.inactive};
+    props.disabled ? props.theme.bg.border : props.theme.bg.inactive};
   border-radius: 4px;
   padding: 8px 12px;
   margin-top: 2px;
@@ -99,7 +99,7 @@ export const StyledInput = styled.input`
     top: -9999px;
     visibility: hidden;
   }
-`;
+`
 
 export const StyledTextArea = styled(Textarea)`
   flex: 1 0 auto;
@@ -131,7 +131,7 @@ export const StyledTextArea = styled(Textarea)`
     border-color: ${({ theme }) => theme.brand.default};
     transition: ${Transition.hover.on};
   }
-`;
+`
 
 export const StyledUnderlineInput = styled.input`
   font-size: inherit;
@@ -154,13 +154,13 @@ export const StyledUnderlineInput = styled.input`
     border-color: ${({ theme }) => theme.brand.default};
     transition: ${Transition.hover.on};
   }
-`;
+`
 
 export const StyledHiddenInput = styled.input`
   visibility: hidden;
   width: 0;
   height: 0;
-`;
+`
 
 export const StyledCheckboxWrapper = styled(FlexRow)`
   color: ${({ theme }) => theme.text.alt};
@@ -171,7 +171,7 @@ export const StyledCheckboxWrapper = styled(FlexRow)`
 
   &:hover {
     color: ${({ theme, disabled }) =>
-      disabled ? theme.text.alt : theme.brand.alt};
+    disabled ? theme.text.alt : theme.brand.alt};
   }
 
   > div {
@@ -194,7 +194,7 @@ export const StyledCheckboxWrapper = styled(FlexRow)`
       transition: ${Transition.hover.on};
     }
   }
-`;
+`
 
 export const StyledError = styled.p`
   font-size: 14px;
@@ -202,7 +202,7 @@ export const StyledError = styled.p`
   padding: 8px 0 16px;
   line-height: 1.4;
   font-weight: 600;
-`;
+`
 
 export const StyledSuccess = styled.p`
   font-size: 14px;
@@ -210,7 +210,7 @@ export const StyledSuccess = styled.p`
   padding: 8px 0 16px;
   line-height: 1.4;
   font-weight: 600;
-`;
+`
 
 export const PhotoInputLabel = styled.label`
   position: relative;
@@ -220,7 +220,7 @@ export const PhotoInputLabel = styled.label`
   border-radius: ${props => (props.user ? '100%' : '8px')};
   margin-top: 8px;
   background-color: ${({ theme }) => theme.bg.reverse};
-`;
+`
 
 export const CoverInputLabel = styled.label`
   position: relative;
@@ -230,7 +230,7 @@ export const CoverInputLabel = styled.label`
   margin-top: 8px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.bg.reverse};
-`;
+`
 
 export const ProfileImage = styled.img`
   position: absolute;
@@ -244,7 +244,7 @@ export const ProfileImage = styled.img`
   height: 100%;
   border-radius: ${props => (props.user ? '100%' : '8px')};
   border: 2px solid ${({ theme }) => theme.text.reverse};
-`;
+`
 
 export const CoverImage = styled.div`
   background-color: ${props => props.theme.brand.default};
@@ -260,7 +260,7 @@ export const CoverImage = styled.div`
   width: 100%;
   height: 96px;
   border-radius: 8px;
-`;
+`
 
 export const InputOverlay = styled.div`
   position: absolute;
@@ -295,4 +295,4 @@ export const InputOverlay = styled.div`
   &:hover div {
     transition: ${Transition.hover.on};
   }
-`;
+`

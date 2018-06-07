@@ -1,6 +1,6 @@
 // @flow
-import styled, { css } from 'styled-components';
-import { FlexCol } from '../../../../components/globals';
+import styled, { css } from 'styled-components'
+import { FlexCol } from '../../../../components/globals'
 
 export const ImageInputWrapper = styled(FlexCol)`
   position: relative;
@@ -13,25 +13,25 @@ export const ImageInputWrapper = styled(FlexCol)`
     bottom: -24px;
     left: 24px;
   }
-`;
+`
 
 export const Spacer = styled.div`
   height: ${props => (props.height ? `${props.height}px` : 'auto')};
   width: ${props => (props.width ? `${props.width}px` : 'auto')};
   display: block;
-`;
+`
 
 export const CommunitySuggestionsText = styled.p`
   margin: 16px 0px 8px;
   font-size: 14px;
   color: ${props => props.theme.text.default};
-`;
+`
 
 export const CommunitySuggestionsWrapper = styled.ul`
   list-style-type: none;
   padding: 0;
   margin: 0 0 24px;
-`;
+`
 
 export const CommunitySuggestion = styled.li`
   padding: 8px 12px;
@@ -62,7 +62,7 @@ export const CommunitySuggestion = styled.li`
     padding-bottom: 8px;
     border-bottom: 1px solid ${props => props.theme.bg.border};
   }
-`;
+`
 
 export const PrivacySelector = styled.div`
   display: flex;
@@ -70,7 +70,7 @@ export const PrivacySelector = styled.div`
   border: 2px solid ${props => props.theme.bg.border};
   margin-top: 16px;
   overflow: hidden;
-`;
+`
 
 export const PrivacyOption = styled.label`
   display: flex;
@@ -107,7 +107,7 @@ export const PrivacyOption = styled.label`
         `} &:first-of-type {
     border-right: 2px solid ${props => props.theme.bg.border};
   }
-`;
+`
 
 export const PrivacyOptionLabel = styled.p`
   display: flex;
@@ -118,11 +118,11 @@ export const PrivacyOptionLabel = styled.p`
   input {
     margin-right: 8px;
   }
-`;
+`
 
 export const PrivacyOptionText = styled.p`
   font-size: 14px;
   font-weight: 400;
   margin-top: 8px;
   line-height: 1.4;
-`;
+`
