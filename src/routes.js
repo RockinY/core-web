@@ -13,6 +13,7 @@ import ScrollManager from './components/scrollManager'
 import { FlexCol } from './components/globals'
 import Head from './components/head'
 import Login from './views/login'
+import { CLIENT_URL } from './constants.js'
 
 const Body = styled(FlexCol)`
   display: flex;
@@ -37,8 +38,16 @@ const Dashboard = Loadable({
   loading: ({ isLoading }) => isLoading && <LoadingDashboard />
 })
 
+const NewCommunity = Loadable({
+  loader: () => import('./views/newCommunity'),
+  loading: ({ isLoading }) => isLoading && <Loading />
+})
+
 const DashboardFallback = signedOutFallback(Dashboard, Pages)
 const LoginFallback = signedOutFallback(() => <Redirect to='/' />, Login)
+const NewCommunityFallback = signedOutFallback(NewCommunity, () => (
+  <Redirect to={`/login?r=${CLIENT_URL}/new/community`} />
+))
 
 class Routes extends React.Component<{||}> {
   render () {
@@ -53,6 +62,7 @@ class Routes extends React.Component<{||}> {
               <Switch>
                 <Route exact path='/' component={DashboardFallback} />
                 <Route path='/login' component={LoginFallback} />
+                <Route path='/new/community' component={NewCommunityFallback} />
               </Switch>
             </Body>
           </ScrollManager>

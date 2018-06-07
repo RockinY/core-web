@@ -38,6 +38,7 @@
     "recompose": "^0.27.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
+    "slugg": "^1.2.1",
     "striptags": "2.x",
     "styled-components": "^3.2.6",
     "subscriptions-transport-ws": "^0.9.9"
