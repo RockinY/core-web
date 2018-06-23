@@ -23,6 +23,10 @@ type AvatarProps = {
   showProfile?: boolean
 }
 
+type State = {
+  isHovering: boolean,
+}
+
 export default class Avatar extends Component<AvatarProps, State> {
   render () {
     const {

@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import { FillSpaceError, LargeEmoji, Heading, Subheading } from './style'
 import { Button } from '../buttons'
 import { removeItemFromStorage } from '../../helpers/localStorage'

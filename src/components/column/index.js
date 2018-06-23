@@ -57,7 +57,7 @@ const OnlyColumn = styled(PrimaryColumn)`
   }
 `
 
-export const Column = props => {
+export const Column = (props: Object): React$Element<any> => {
   if (props.type === 'primary') {
     return <PrimaryColumn {...props}>{props.children}</PrimaryColumn>
   } else if (props.type === 'secondary') {

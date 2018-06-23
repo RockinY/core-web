@@ -24,6 +24,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 
     if (error) {
       if (this.props.fallbackComponent) {
+        // $FlowFixMe
         return <FallbackComponent />
       }
 
