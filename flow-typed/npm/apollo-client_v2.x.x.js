@@ -1,7 +1,7 @@
 // flow-typed signature: 0d02f15b125c45c1078bc160f58c9a9d
 // flow-typed version: 9ed2af6be6/apollo-client_v2.x.x/flow_>=v0.57.x
 
-declare module "apollo-client" {
+declare module 'apollo-client' {
   /**
    * Types From graphql
    * graphql types are maintained in the graphql-js repo

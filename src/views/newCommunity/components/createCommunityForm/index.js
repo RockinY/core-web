@@ -1,6 +1,8 @@
 import React from 'react'
-import Link from '../../components/link'
+import Link from '../../../../components/link'
+import compose from 'recompose/compose'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import slugg from 'slugg'
 import { withApollo } from 'react-apollo'
 import { Notice } from '../../../../components/listItems/style'
@@ -30,7 +32,7 @@ import {
   PrivacySelector,
   PrivacyOption,
   PrivacyOptionLabel,
-  PrivacyOptionText,
+  PrivacyOptionText
 } from './style'
 import { FormContainer, Form, Actions } from '../../style'
 import type { Dispatch } from 'redux'
@@ -319,7 +321,6 @@ class CreateCommunityForm extends React.Component<Props, State> {
         this.props.dispatch(
           addToastWithTimeout('success', 'Community created')
         )
-        return
       })
       .catch(err => {
         this.setState({
@@ -365,16 +366,16 @@ class CreateCommunityForm extends React.Component<Props, State> {
       ? communitySuggestions && communitySuggestions.length > 0
         ? 'Were you looking for one of these communities?'
         : null
-      : "This community name and url are available! We also found communities that might be similar to what you're trying to create, just in case you would rather join an existing community instead!";
+      : "This community name and url are available! We also found communities that might be similar to what you're trying to create, just in case you would rather join an existing community instead!"
 
     return (
-      <FormContainer data-cy='create-community-form>
+      <FormContainer data-cy='create-community-form'>
         <Form>
           <ImageInputWrapper>
             <CoverInput
               onChange={this.setCommunityCover}
               defaultValue={coverPhoto}
-              preview={true}
+              preview
               allowGif
             />
             <PhotoInput
@@ -453,14 +454,14 @@ class CreateCommunityForm extends React.Component<Props, State> {
                       {suggestion.metaData.members.toLocaleString()} members
                     </CommunitySuggestion>
                   </Link>
-                );
+                )
               })}
           </CommunitySuggestionsWrapper>
 
           <TextArea
             defaultValue={description}
             onChange={this.changeDescription}
-            dataCy="community-description-input"
+            dataCy='community-description-input'
           >
             Describe it in 140 characters or less
           </TextArea>
@@ -474,7 +475,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
           <Input
             defaultValue={website}
             onChange={this.changeWebsite}
-            dataCy="community-website-input"
+            dataCy='community-website-input'
           >
             Optional: Add your community’s website
           </Input>
@@ -483,11 +484,11 @@ class CreateCommunityForm extends React.Component<Props, State> {
             <PrivacyOption selected={!isPrivate} onClick={this.setPublic}>
               <PrivacyOptionLabel>
                 <input
-                  type="radio"
-                  value="public"
+                  type='radio'
+                  value='public'
                   checked={!isPrivate}
                   onChange={this.setPublic}
-                  data-cy="community-public-selector-input"
+                  data-cy='community-public-selector-input'
                 />
                 Public
               </PrivacyOptionLabel>
@@ -502,11 +503,11 @@ class CreateCommunityForm extends React.Component<Props, State> {
             <PrivacyOption selected={isPrivate} onClick={this.setPrivate}>
               <PrivacyOptionLabel>
                 <input
-                  type="radio"
+                  type='radio'
                   checked={isPrivate}
-                  value="private"
+                  value='private'
                   onChange={this.setPrivate}
-                  data-cy="community-private-selector-input"
+                  data-cy='community-private-selector-input'
                 />
                 Private
               </PrivacyOptionLabel>
@@ -520,22 +521,17 @@ class CreateCommunityForm extends React.Component<Props, State> {
           </PrivacySelector>
 
           <Checkbox
-            id="isPrivate"
+            id='isPrivate'
             checked={agreeCoC}
             onChange={this.changeCoC}
-            dataCy="community-coc-input"
+            dataCy='community-coc-input'
           >
             <span>
               I have read the{' '}
               <a
-                href="https://github.com/withspectrum/code-of-conduct"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  track(events.CODE_OF_CONDUCT_CLICKED, {
-                    location: 'community onboarding',
-                  })
-                }
+                href='https://github.com/withspectrum/code-of-conduct'
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Spectrum Code of Conduct
               </a>{' '}
@@ -565,7 +561,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
               !agreeCoC
             }
             loading={isLoading}
-            dataCy="community-create-button"
+            dataCy='community-create-button'
           >
             Create Community & Continue
           </Button>
@@ -581,4 +577,3 @@ export default compose(
   connect(),
   withApollo
 )(CreateCommunityForm)
-

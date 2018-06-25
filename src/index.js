@@ -1,5 +1,5 @@
 // @flow
-import './helpers/env'
+import 'dotenv/config'
 import 'css.escape'
 import React from 'react'
 import ReactDOM from 'react-dom'

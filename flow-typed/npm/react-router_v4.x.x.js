@@ -1,7 +1,7 @@
 // flow-typed signature: e15aeed0d3686f71822b54cde7b71c83
 // flow-typed version: fbf3e77efa/react-router_v4.x.x/flow_>=v0.63.x
 
-declare module "react-router" {
+declare module 'react-router' {
   // NOTE: many of these are re-exported by react-router-dom and
   // react-router-native, so when making changes, please be sure to update those
   // as well.
@@ -98,7 +98,6 @@ declare module "react-router" {
     exact?: boolean,
     strict?: boolean
   |}> {}
-
 
   declare export class Route extends React$Component<{|
     component?: React$ComponentType<*>,

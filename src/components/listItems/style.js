@@ -3,6 +3,7 @@ import Link from '../link'
 import {
   Truncate,
   FlexCol,
+  FlexRow,
   H3,
   H4,
   Transition

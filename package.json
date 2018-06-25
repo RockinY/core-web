@@ -60,7 +60,8 @@
     "globals": [
       "window",
       "localStorage",
-      "requestAnimationFrame"
+      "requestAnimationFrame",
+      "FileReader"
     ]
   }
 }

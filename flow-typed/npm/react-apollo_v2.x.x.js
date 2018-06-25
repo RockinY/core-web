@@ -1,7 +1,7 @@
 // flow-typed signature: 5c9a9783e7e81a3585c1f797363aec1c
 // flow-typed version: 4f7bc36465/react-apollo_v2.x.x/flow_>=v0.58.x
 
-declare module "react-apollo" {
+declare module 'react-apollo' {
   /**
    * Copied types from Apollo Client libdef
    * Please update apollo-client libdef as well if updating these types

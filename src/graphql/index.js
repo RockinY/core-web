@@ -21,8 +21,10 @@ type CreateClientOptions = {
   token?: ?string
 }
 
+console.log(process.env)
+
 export const wsLink = new WebSocketLink({
-  uri: process.env.WS_URI,
+  uri: process.env.REACT_APP_WS_URI,
   options: {
     reconnect: true
   }
@@ -59,7 +61,7 @@ export const createClient = (options?: CreateClientOptions = {}) => {
 
   const httpLink = retryLink.concat(
     createUploadLink({
-      uri: process.env.API_URI,
+      uri: process.env.REACT_APP_API_URI,
       credentials: 'include',
       headers
     })
