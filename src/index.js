@@ -64,6 +64,7 @@ function render () {
     <Provider store={store}>
       <HelmetProvider>
         <ApolloProvider client={client}>
+          {/* $FlowFixMe */}
           <Router history={history}>
             <Routes
               maintenanceMode={
@@ -74,6 +75,7 @@ function render () {
         </ApolloProvider>
       </HelmetProvider>
     </Provider>,
+    // $FlowFixMe
     document.querySelector('#root')
   )
 }
