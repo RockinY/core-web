@@ -15,3 +15,16 @@ import Stepper from './components/stepper'
 import { Login } from '../../views/login'
 import { getCommunityByIdQuery } from '../../graphql/queries/community/getCommunity'
 import type { GetCommunityType } from '../../graphql/queries/community/getCommunity'
+import getCurrentUserSettings from '../../graphql/queries/user/getCurrentUserSettings'
+import type { GetCurrentUserSettingsType } from '../../graphql/queries/user/getCurrentUserSettings'
+import {
+  Actions,
+  Container,
+  Title,
+  Description,
+  Divider,
+  ContentContainer
+} from './style'
+import viewNetworkHandler, {
+  type ViewNetworkHandlerType,
+} from '../../components/viewNetworkHandler'
