@@ -1,6 +1,6 @@
 // @flow
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
 
 export type DeleteCommunityType = {
   data: {
@@ -12,17 +12,17 @@ export const deleteCommunityMutation = gql`
   mutation deleteCommunity($communityId: ID!) {
     deleteCommunity(communityId: $communityId)
   }
-`;
+`
 
 const deleteCommunityOptions = {
   props: ({ mutate }) => ({
     deleteCommunity: (communityId: string) =>
       mutate({
         variables: {
-          communityId,
-        },
-      }),
-  }),
-};
+          communityId
+        }
+      })
+  })
+}
 
-export default graphql(deleteCommunityMutation, deleteCommunityOptions);
+export default graphql(deleteCommunityMutation, deleteCommunityOptions)

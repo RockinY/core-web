@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import compose from 'recompose/compose';
-import { withRouter } from 'react-router';
-import Link from '../../components/link';
-import Icon from '../../components/icons';
-import { IconButton } from '../../components/buttons';
-import { TitleBar, Text, Subtitle, Title } from './style';
+import React, { Component } from 'react'
+import compose from 'recompose/compose'
+import { withRouter } from 'react-router'
+import Link from '../../components/link'
+import Icon from '../../components/icons'
+import { IconButton } from '../../components/buttons'
+import { TitleBar, Text, Subtitle, Title } from './style'
 
 const TextHeading = ({ title, subtitle }) => (
   <Text>
     {subtitle && <Subtitle>{subtitle}</Subtitle>}
     {title && <Title large={!subtitle}>{title}</Title>}
   </Text>
-);
+)
 
 class Titlebar extends Component {
   handleBack = () => {
-    const { history } = this.props;
-    const length = history.length;
+    const { history } = this.props
+    const length = history.length
 
     /*
       We don't have a reliable way to know exactly where a user should navigate
@@ -37,13 +37,13 @@ class Titlebar extends Component {
       page, the back button can take them to the community for that channel).
     */
     if (length > 3) {
-      history.goBack();
+      history.goBack()
     } else {
-      history.push(this.props.backRoute);
+      history.push(this.props.backRoute)
     }
   };
 
-  render() {
+  render () {
     const {
       title,
       subtitle,
@@ -51,14 +51,14 @@ class Titlebar extends Component {
       noComposer,
       hasChildren,
       children,
-      messageComposer,
-    } = this.props;
+      messageComposer
+    } = this.props
     return (
       <TitleBar>
         {provideBack ? (
           <IconButton
-            glyph="view-back"
-            color="text.reverse"
+            glyph='view-back'
+            color='text.reverse'
             onClick={this.handleBack}
           />
         ) : hasChildren ? (
@@ -67,20 +67,20 @@ class Titlebar extends Component {
         {title || subtitle ? (
           <TextHeading subtitle={subtitle} title={title} />
         ) : (
-          <Icon glyph="logo" />
+          <Icon glyph='logo' />
         )}
         {noComposer ? null : messageComposer ? (
           <Link to={`/messages/new`}>
-            <IconButton glyph="message-new" color="text.reverse" />
+            <IconButton glyph='message-new' color='text.reverse' />
           </Link>
         ) : (
           <Link to={`/new/thread`}>
-            <IconButton glyph="post" color="text.reverse" />
+            <IconButton glyph='post' color='text.reverse' />
           </Link>
         )}
       </TitleBar>
-    );
+    )
   }
 }
 
-export default compose(withRouter)(Titlebar);
+export default compose(withRouter)(Titlebar)

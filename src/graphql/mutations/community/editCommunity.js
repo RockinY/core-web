@@ -1,8 +1,8 @@
 // @flow
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-import communityInfoFragment from '../../fragments/community/communityInfo';
-import type { CommunityInfoType } from '../../fragments/community/communityInfo';
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
+import communityInfoFragment from '../../fragments/community/communityInfo'
+import type { CommunityInfoType } from '../../fragments/community/communityInfo'
 
 export type EditCommunityType = {
   data: {
@@ -29,17 +29,17 @@ export const editCommunityMutation = gql`
     }
   }
   ${communityInfoFragment}
-`;
+`
 
 const editCommunityOptions = {
   props: ({ mutate }) => ({
     editCommunity: (input: EditCommunityInput) =>
       mutate({
         variables: {
-          input,
-        },
-      }),
-  }),
-};
+          input
+        }
+      })
+  })
+}
 
-export default graphql(editCommunityMutation, editCommunityOptions);
+export default graphql(editCommunityMutation, editCommunityOptions)

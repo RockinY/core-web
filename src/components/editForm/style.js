@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import Card from '../card';
-import { FlexRow, FlexCol, Truncate } from '../globals';
+import styled from 'styled-components'
+import Card from '../card'
+import { FlexRow, FlexCol, Truncate } from '../globals'
 
 export const StyledCard = styled(Card)`
   padding: 16px;
-`;
+`
 
 export const Form = styled.form`
   display: inline-block;
@@ -12,7 +12,7 @@ export const Form = styled.form`
   align-self: stretch;
   flex: none;
   max-width: 100%;
-`;
+`
 
 export const FormTitle = styled.h1`
   font-size: 20px;
@@ -21,7 +21,7 @@ export const FormTitle = styled.h1`
   line-height: 1.2;
   flex: 1 0 auto;
   ${Truncate};
-`;
+`
 
 export const Subtitle = styled.h4`
   font-size: 14px;
@@ -29,7 +29,7 @@ export const Subtitle = styled.h4`
   line-height: 1.3;
   width: 100%;
   ${Truncate};
-`;
+`
 
 export const Description = styled.p`
   font-size: 14px;
@@ -40,12 +40,12 @@ export const Description = styled.p`
   a {
     color: ${props => props.theme.brand.default};
   }
-`;
+`
 
 export const TertiaryActionContainer = styled(FlexRow)`
   justify-content: flex-start;
   flex-grow: 1;
-`;
+`
 
 export const Actions = styled(FlexRow)`
   margin: 24px -16px 0;
@@ -58,7 +58,7 @@ export const Actions = styled(FlexRow)`
   button + button {
     margin-left: 8px;
   }
-`;
+`
 
 export const PhotoPreview = styled.div`
   position: relative;
@@ -67,7 +67,7 @@ export const PhotoPreview = styled.div`
   object-fit: cover;
   border-radius: 4px;
   background-image: url('${props => props.src}')
-`;
+`
 
 export const GeneralNotice = styled.span`
   padding: 8px 12px;
@@ -79,7 +79,7 @@ export const GeneralNotice = styled.span`
   margin-top: 24px;
   line-height: 1.4;
   display: inline-block;
-`;
+`
 
 export const ImageInputWrapper = styled(FlexCol)`
   position: relative;
@@ -92,7 +92,7 @@ export const ImageInputWrapper = styled(FlexCol)`
     bottom: -24px;
     left: 24px;
   }
-`;
+`
 
 export const Location = styled(FlexRow)`
   font-weight: 500;
@@ -117,13 +117,13 @@ export const Location = styled(FlexRow)`
   @media (max-width: 768px) {
     display: none;
   }
-`;
+`
 
 export const Loading = styled.span`
   display: inline-block;
   position: absolute;
   right: 19px;
   top: 45px;
-`;
+`
 
-export const GithubSignin = styled.div``;
+export const GithubSignin = styled.div``

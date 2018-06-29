@@ -1,5 +1,5 @@
 // @flow
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export type UserInfoType = {
   id: string,
@@ -30,4 +30,4 @@ export default gql`
     timezone
     totalReputation
   }
-`;
+`

@@ -1,14 +1,14 @@
 // @flow
 // $FlowFixMe
-import styled from 'styled-components';
-import { zIndex } from '../../../../components/globals';
+import styled from 'styled-components'
+import { zIndex } from '../../../../components/globals'
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 24px;
-`;
+`
 
 export const Line = styled.span`
   position: absolute;
@@ -19,7 +19,7 @@ export const Line = styled.span`
   right: 24px;
   transform: translateY(-50%);
   z-index: ${zIndex.base};
-`;
+`
 
 export const Step = styled.div`
   width: 32px;
@@ -34,9 +34,9 @@ export const Step = styled.div`
   border-radius: 16px;
   border: 2px solid
     ${props =>
-      props.active ? props.theme.brand.default : props.theme.bg.border};
+    props.active ? props.theme.brand.default : props.theme.bg.border};
   box-shadow: 0 0 0 4px #fff;
   font-weight: 700;
   z-index: ${zIndex.base + 1};
   position: relative;
-`;
+`

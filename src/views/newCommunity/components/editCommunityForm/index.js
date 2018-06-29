@@ -1,25 +1,25 @@
 // @flow
-import * as React from 'react';
-import compose from 'recompose/compose';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import editCommunityMutation from '../../../../graphql/mutations/community/editCommunity';
-import deleteCommunityMutation from '../../../../graphql/mutations/community/deleteCommunity';
-import type { GetCommunityType } from '../../../../graphql/queries/community/getCommunity';
-import { addToastWithTimeout } from '../../../../actions/toasts';
-import { Button } from '../../../../components/buttons';
-import { Notice } from '../../../../components/listItems/style';
+import * as React from 'react'
+import compose from 'recompose/compose'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+import editCommunityMutation from '../../../../graphql/mutations/community/editCommunity'
+import deleteCommunityMutation from '../../../../graphql/mutations/community/deleteCommunity'
+import type { GetCommunityType } from '../../../../graphql/queries/community/getCommunity'
+import { addToastWithTimeout } from '../../../../actions/toasts'
+import { Button } from '../../../../components/buttons'
+import { Notice } from '../../../../components/listItems/style'
 import {
   Input,
   UnderlineInput,
   TextArea,
   PhotoInput,
   CoverInput,
-  Error,
-} from '../../../../components/formElements';
-import { ImageInputWrapper } from '../../../../components/editForm/style';
-import { Actions, FormContainer, Form } from '../../style';
-import type { Dispatch } from 'redux';
+  Error
+} from '../../../../components/formElements'
+import { ImageInputWrapper } from '../../../../components/editForm/style'
+import { Actions, FormContainer, Form } from '../../style'
+import type { Dispatch } from 'redux'
 
 type State = {
   name: string,
@@ -45,10 +45,10 @@ type Props = {
 };
 
 class CommunityWithData extends React.Component<Props, State> {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    const { community } = this.props;
+    const { community } = this.props
     this.state = {
       name: community.name,
       slug: community.slug,
@@ -62,64 +62,64 @@ class CommunityWithData extends React.Component<Props, State> {
       communityData: community,
       photoSizeError: false,
       nameError: false,
-      isLoading: false,
-    };
+      isLoading: false
+    }
   }
 
   changeName = e => {
-    const name = e.target.value;
+    const name = e.target.value
 
     if (name.length >= 20) {
       this.setState({
         name,
-        nameError: true,
-      });
+        nameError: true
+      })
 
-      return;
+      return
     }
 
     this.setState({
       name,
-      nameError: false,
-    });
+      nameError: false
+    })
   };
 
   changeDescription = e => {
-    const description = e.target.value;
+    const description = e.target.value
     this.setState({
-      description,
-    });
+      description
+    })
   };
 
   changeSlug = e => {
-    const slug = e.target.value;
+    const slug = e.target.value
     this.setState({
-      slug,
-    });
+      slug
+    })
   };
 
   changeWebsite = e => {
-    const website = e.target.value;
+    const website = e.target.value
     this.setState({
-      website,
-    });
+      website
+    })
   };
 
   setCommunityPhoto = e => {
-    let reader = new FileReader();
-    let file = e.target.files[0];
+    let reader = new FileReader()
+    let file = e.target.files[0]
 
-    if (!file) return;
+    if (!file) return
 
     this.setState({
-      isLoading: true,
-    });
+      isLoading: true
+    })
 
     if (file && file.size > 3000000) {
       return this.setState({
         photoSizeError: true,
-        isLoading: false,
-      });
+        isLoading: false
+      })
     }
 
     reader.onloadend = () => {
@@ -128,30 +128,30 @@ class CommunityWithData extends React.Component<Props, State> {
         // $FlowFixMe
         image: reader.result,
         photoSizeError: false,
-        isLoading: false,
-      });
-    };
+        isLoading: false
+      })
+    }
 
     if (file) {
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file)
     }
   };
 
   setCommunityCover = e => {
-    let reader = new FileReader();
-    let file = e.target.files[0];
+    let reader = new FileReader()
+    let file = e.target.files[0]
 
-    if (!file) return;
+    if (!file) return
 
     this.setState({
-      isLoading: true,
-    });
+      isLoading: true
+    })
 
     if (file && file.size > 3000000) {
       return this.setState({
         photoSizeError: true,
-        isLoading: false,
-      });
+        isLoading: false
+      })
     }
 
     reader.onloadend = () => {
@@ -160,17 +160,17 @@ class CommunityWithData extends React.Component<Props, State> {
         // $FlowFixMe
         coverPhoto: reader.result,
         photoSizeError: false,
-        isLoading: false,
-      });
-    };
+        isLoading: false
+      })
+    }
 
     if (file) {
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file)
     }
   };
 
   save = e => {
-    e.preventDefault();
+    e.preventDefault()
     const {
       name,
       description,
@@ -178,58 +178,57 @@ class CommunityWithData extends React.Component<Props, State> {
       file,
       coverFile,
       communityId,
-      photoSizeError,
-    } = this.state;
+      photoSizeError
+    } = this.state
     const input = {
       name,
       description,
       website,
       file,
       coverFile,
-      communityId,
-    };
+      communityId
+    }
 
     if (photoSizeError) {
-      return;
+      return
     }
 
     this.setState({
-      isLoading: true,
-    });
+      isLoading: true
+    })
 
     this.props
       .editCommunity(input)
       .then(({ data: { editCommunity } }) => {
-        const community = editCommunity;
+        const community = editCommunity
 
         this.setState({
-          isLoading: false,
-        });
+          isLoading: false
+        })
 
         // community was returned
         if (community !== undefined) {
           this.props.dispatch(
             addToastWithTimeout('success', 'Community saved!')
-          );
-          this.props.communityUpdated(community);
+          )
+          this.props.communityUpdated(community)
         }
-        return;
       })
       .catch(err => {
         this.setState({
-          isLoading: false,
-        });
+          isLoading: false
+        })
 
         this.props.dispatch(
           addToastWithTimeout(
             'error',
             `Something went wrong and we weren't able to save these changes. ${err}`
           )
-        );
-      });
+        )
+      })
   };
 
-  render() {
+  render () {
     const {
       name,
       slug,
@@ -239,8 +238,8 @@ class CommunityWithData extends React.Component<Props, State> {
       website,
       photoSizeError,
       nameError,
-      isLoading,
-    } = this.state;
+      isLoading
+    } = this.state
 
     return (
       <FormContainer>
@@ -249,7 +248,7 @@ class CommunityWithData extends React.Component<Props, State> {
             <CoverInput
               onChange={this.setCommunityCover}
               defaultValue={coverPhoto}
-              preview={true}
+              preview
               allowGif
             />
 
@@ -281,7 +280,7 @@ class CommunityWithData extends React.Component<Props, State> {
           <Input
             defaultValue={website}
             onChange={this.changeWebsite}
-            autoFocus={true}
+            autoFocus
           >
             Optional: Add your community’s website
           </Input>
@@ -304,7 +303,7 @@ class CommunityWithData extends React.Component<Props, State> {
           </Button>
         </Actions>
       </FormContainer>
-    );
+    )
   }
 }
 
@@ -315,5 +314,5 @@ const Community = compose(
   // $FlowFixMe
   withRouter,
   connect()
-)(CommunityWithData);
-export default Community;
+)(CommunityWithData)
+export default Community

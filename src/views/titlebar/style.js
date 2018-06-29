@@ -27,7 +27,7 @@ export const TitleBar = styled(FlexRow)`
   @media (min-width: 768px) {
     display: none;
   }
-`;
+`
 
 export const Text = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ export const Text = styled.div`
   grid-area: center;
   max-width: calc(100vw - 96px);
   overflow: hidden;
-`;
+`
 
 export const Title = styled.h3`
   font-size: ${props => (props.large ? '18px' : '14px')};
@@ -52,7 +52,7 @@ export const Title = styled.h3`
   overflow: hidden;
   word-break: break-word;
   white-space: nowrap;
-`;
+`
 
 export const Subtitle = styled.p`
   color: ${({ theme }) => hexa(theme.text.reverse, 0.75)};
@@ -65,4 +65,4 @@ export const Subtitle = styled.p`
   overflow: hidden;
   word-break: break-word;
   white-space: nowrap;
-`;
+`

@@ -1,6 +1,6 @@
 // @flow
-import React from 'react';
-import hoistStatics from 'hoist-non-react-statics';
+import React from 'react'
+import hoistStatics from 'hoist-non-react-statics'
 
 /*
 
@@ -17,7 +17,6 @@ if (isFetchingMore) {
 }
 
 If you need to override this at any point, the original data prop is returned as well, so in your component you can still access this.props.data.networkStatus.
-
 
 Apollo NetworkStatus indicators:
 
@@ -52,20 +51,19 @@ export type ViewNetworkHandlerType = {
 const viewNetworkHandler = Component => {
   const C = props => {
     // $FlowFixMe
-    const { data, wrappedComponentRef, ...remainingProps } = props;
+    const { data, wrappedComponentRef, ...remainingProps } = props
 
     // safety check against the data prop not existing
-    if (!data)
-      return <Component {...remainingProps} ref={wrappedComponentRef} />;
+    if (!data) { return <Component {...remainingProps} ref={wrappedComponentRef} /> }
 
     // 1: if  the view is running a query for the first time
     // 2: the view has already mounted but the variables have changed, the component should be loading. For example, if you are viewing a user profile but click directly onto another user's profile from a thread facepile, the userProfile component has already loaded, but now the variable (userId) has been changed. This should force a loading state.
-    const isLoading = data.networkStatus === 1 || data.networkStatus === 2;
-    const queryVarIsChanging = data.networkStatus === 2;
-    const isFetchingMore = data.networkStatus === 3;
-    const isRefetching = data.networkStatus === 4;
-    const isPolling = data.networkStatus === 6;
-    const hasError = data.networkStatus === 8;
+    const isLoading = data.networkStatus === 1 || data.networkStatus === 2
+    const queryVarIsChanging = data.networkStatus === 2
+    const isFetchingMore = data.networkStatus === 3
+    const isRefetching = data.networkStatus === 4
+    const isPolling = data.networkStatus === 6
+    const hasError = data.networkStatus === 8
 
     return (
       <Component
@@ -79,11 +77,11 @@ const viewNetworkHandler = Component => {
         queryVarIsChanging={queryVarIsChanging}
         ref={wrappedComponentRef}
       />
-    );
-  };
+    )
+  }
 
-  C.WrappedComponent = Component;
-  return hoistStatics(C, Component);
-};
+  C.WrappedComponent = Component
+  return hoistStatics(C, Component)
+}
 
-export default viewNetworkHandler;
+export default viewNetworkHandler

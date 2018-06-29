@@ -1,5 +1,5 @@
-import React from 'react';
-import { Step, Line, Container } from './style';
+import React from 'react'
+import { Step, Line, Container } from './style'
 
 const Stepper = ({ activeStep }) => {
   return (
@@ -9,7 +9,7 @@ const Stepper = ({ activeStep }) => {
       <Step active={activeStep === 2}>2</Step>
       <Step active={activeStep === 3}>3</Step>
     </Container>
-  );
-};
+  )
+}
 
-export default Stepper;
+export default Stepper

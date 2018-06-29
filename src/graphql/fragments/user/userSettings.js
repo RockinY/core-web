@@ -1,5 +1,5 @@
 // @flow
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export type UserSettingsType = {
   settings: {
@@ -55,4 +55,4 @@ export default gql`
       }
     }
   }
-`;
+`

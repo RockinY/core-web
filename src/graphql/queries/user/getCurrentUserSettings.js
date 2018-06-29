@@ -1,10 +1,10 @@
 // @flow
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import userInfoFragment from '../../fragments/user/userInfo';
-import type { UserInfoType } from '../../fragments/user/userInfo';
-import userSettingsFragment from '../../fragments/user/userSettings';
-import type { UserSettingsType } from '../../fragments/user/userSettings';
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
+import userInfoFragment from '../../fragments/user/userInfo'
+import type { UserInfoType } from '../../fragments/user/userInfo'
+import userSettingsFragment from '../../fragments/user/userSettings'
+import type { UserSettingsType } from '../../fragments/user/userSettings'
 
 export type GetCurrentUserSettingsType = {
   ...$Exact<UserInfoType>,
@@ -24,8 +24,8 @@ export const getCurrentUserSettings = gql`
   }
   ${userInfoFragment}
   ${userSettingsFragment}
-`;
+`
 
 export default graphql(getCurrentUserSettings, {
-  options: { fetchPolicy: 'network-only' },
-});
+  options: { fetchPolicy: 'network-only' }
+})
