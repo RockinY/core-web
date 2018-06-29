@@ -15,6 +15,10 @@ RUN yarn global add serve
 # Bundle app source
 COPY . .
 
+# Prepare env
+RUN touch .env
+RUN env > .env
+
 # Build the app
 RUN yarn run build
 
