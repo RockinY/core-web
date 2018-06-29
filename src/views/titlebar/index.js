@@ -50,7 +50,6 @@ class Titlebar extends Component {
       provideBack,
       noComposer,
       hasChildren,
-      filter,
       children,
       messageComposer,
     } = this.props;
