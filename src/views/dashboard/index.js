@@ -1,5 +1,22 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
+import compose from 'recompose/compose'
+import generateMetaInfo from '../../utils/generateMetaInfo'
+import { connect } from 'react-redux'
+import { removeItemFromStorage } from '../../helpers/localStorage'
+import getEverythingThreads from '../../graphql/queries/user/getCurrentUserEverythingFeed'
+import Titlebar from '../../views/titlebar'
+import {
+  DashboardWrapper,
+  InboxWrapper,
+  InboxScroller,
+  FeedHeaderContainer,
+  ThreadWrapper,
+  ThreadScroller,
+  SearchStringHeader,
+  Sidebar
+} from './style'
+import { ErrorBoundary } from '../../components/error'
 
 type State = {
   isHovered: boolean,

@@ -7,10 +7,10 @@ import type { CommunityInfoType } from '../../fragments/community/communityInfo'
 export type CreateCommunityType = {
   data: {
     createCommunity: {
-      ...$Exact<CommunityInfoType>
-    }
-  }
-}
+      ...$Exact<CommunityInfoType>,
+    },
+  },
+};
 
 type CreateCommunityInput = {
   name: string,
@@ -18,8 +18,8 @@ type CreateCommunityInput = {
   description: string,
   website: string,
   file: Object,
-  coverFile: Object
-}
+  coverFile: Object,
+};
 
 export const createCommunityMutation = gql`
   mutation createCommunity($input: CreateCommunityInput!) {
@@ -32,13 +32,12 @@ export const createCommunityMutation = gql`
 
 const createCommunityOptions = {
   props: ({ mutate }) => ({
-    createCommunity: (input: CreateCommunityInput) => {
-      return mutate({
+    createCommunity: (input: CreateCommunityInput) =>
+      mutate({
         variables: {
           input
         }
       })
-    }
   })
 }
 

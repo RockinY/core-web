@@ -28,6 +28,7 @@ export default gql`
     username
     isOnline
     timezone
+    isPro
     totalReputation
   }
 `

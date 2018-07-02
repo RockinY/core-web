@@ -9,20 +9,22 @@ export type CommunityInfoType = {
   description: ?string,
   website: ?string,
   profilePhoto: string,
+  coverPhoto: string,
   pinnedThreadId: ?string,
   isPrivate: boolean,
   communityPermissions: {
     isMember: boolean,
-    isLocked: boolean,
+    isBlocked: boolean,
     isOwner: boolean,
+    isPending: boolean,
     isModerator: boolean,
-    reputation: number
+    reputation: number,
   },
   brandedLogin: {
     isEnabled: boolean,
-    message: ?string
-  }
-}
+    message: ?string,
+  },
+};
 
 export default gql`
   fragment communityInfo on Community {
