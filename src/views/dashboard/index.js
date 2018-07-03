@@ -11,6 +11,11 @@ import { getCurrentUserCommunityConnection } from '../../graphql/queries/user/ge
 import type { GetUserCommunityConnectionType } from '../../graphql/queries/user/getUserCommunityConnection'
 import Titlebar from '../../views/titlebar'
 import DashboardThreadFeed from './components/threadFeed'
+import Head from '../../components/head'
+import Menu from '../../components/menu'
+import DashboardLoading from './components/dashboardLoading'
+import DashboardError from './components/dashboardError'
+import NewActivityIndicator from './components/newActivityIndicator'
 import {
   DashboardWrapper,
   InboxWrapper,
