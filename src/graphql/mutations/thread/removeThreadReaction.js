@@ -41,6 +41,7 @@ const removeThreadReactionOptions = {
           __typename: 'Mutation',
           removeThreadReaction: {
             id: fakeId,
+             // $FlowFixMe
             threadId: ownProps.thread.id,
             type: 'like',
             __typename: 'ThreadReaction'
@@ -51,6 +52,7 @@ const removeThreadReactionOptions = {
           const data = store.readQuery({
             query: getThreadByIdQuery,
             variables: {
+               // $FlowFixMe
               id: ownProps.thread.id
             }
           })
@@ -68,6 +70,7 @@ const removeThreadReactionOptions = {
             query: getThreadByIdQuery,
             data,
             variables: {
+               // $FlowFixMe
               id: ownProps.thread.id
             }
           })

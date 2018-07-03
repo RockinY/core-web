@@ -17,3 +17,13 @@ export const throttle = (func: Function, threshold: number, scope: any) => {
     }
   }
 }
+
+export const sortByDate = (array: Array<any>, key: string, order: string) => {
+  return array.sort((a, b) => {
+    const x = new Date(a[key]).getTime();
+    const y = new Date(b[key]).getTime();
+    // desc = older to newest from top to bottom
+    const val = order === 'desc' ? y - x : x - y;
+    return val;
+  });
+}

@@ -5,7 +5,12 @@ import generateMetaInfo from '../../utils/generateMetaInfo'
 import { connect } from 'react-redux'
 import { removeItemFromStorage } from '../../helpers/localStorage'
 import getEverythingThreads from '../../graphql/queries/user/getCurrentUserEverythingFeed'
+import getCommunityThreads from '../../graphql/queries/community/getCommunityThreadConnection'
+import getChannelThreadConnection from '../../graphql/queries/channel/getChannelThreadConnection'
+import { getCurrentUserCommunityConnection } from '../../graphql/queries/user/getUserCommunityConnection'
+import type { GetUserCommunityConnectionType } from '../../graphql/queries/user/getUserCommunityConnection'
 import Titlebar from '../../views/titlebar'
+import DashboardThreadFeed from './components/threadFeed'
 import {
   DashboardWrapper,
   InboxWrapper,
