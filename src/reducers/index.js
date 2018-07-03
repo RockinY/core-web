@@ -3,7 +3,11 @@ import users from './users'
 import toasts from './toasts'
 import newActivityIndicator from './newActivityIndicator'
 import dashboardFeed from './dashboardFeed'
+import newUserOnboarding from './newUserOnboarding'
+import directMessageThreads from './directMessageThreads'
+import message from './message'
 import modals from './modals'
+import gallery from './gallery';
 import type { Reducer } from 'redux'
 
 const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
@@ -11,8 +15,12 @@ const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
     users,
     modals,
     toasts,
+    gallery,
     newActivityIndicator,
+    newUserOnboarding,
     dashboardFeed,
+    directMessageThreads,
+    message,
     ...extraReducers
   })
 }

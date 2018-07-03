@@ -40,6 +40,7 @@ const sendDirectMessageOptions = {
             messageType: message.messageType,
             author: {
               user: {
+                // $FlowFixMe
                 ...ownProps.currentUser,
                 __typename: 'User'
               },
@@ -76,6 +77,7 @@ const sendDirectMessageOptions = {
           const data = store.readQuery({
             query: getDMThreadMessageConnectionQuery,
             variables: {
+              // $FlowFixMe
               id: ownProps.thread || ownProps.id
             }
           })
@@ -130,6 +132,7 @@ const sendDirectMessageOptions = {
             query: getDMThreadMessageConnectionQuery,
             data,
             variables: {
+              // $FlowFixMe
               id: ownProps.thread
             }
           })

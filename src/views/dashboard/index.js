@@ -16,6 +16,7 @@ import Menu from '../../components/menu'
 import DashboardLoading from './components/dashboardLoading'
 import DashboardError from './components/dashboardError'
 import NewActivityIndicator from './components/newActivityIndicator'
+import DashboardThread from '../dashboardThread'
 import {
   DashboardWrapper,
   InboxWrapper,
