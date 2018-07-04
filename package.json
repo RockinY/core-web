@@ -44,6 +44,7 @@
     "query-string": "5",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
+    "react-clipboard.js": "^2.0.0",
     "react-dom": "^16.4.0",
     "react-flip-move": "^3.0.2",
     "react-helmet-async": "^0.1.0",
@@ -59,9 +60,11 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "slugg": "^1.2.1",
+    "string-replace-to-array": "^1.0.3",
     "striptags": "2.x",
     "styled-components": "^3.2.6",
-    "subscriptions-transport-ws": "^0.9.9"
+    "subscriptions-transport-ws": "^0.9.9",
+    "validator": "^10.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
