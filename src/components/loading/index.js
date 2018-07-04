@@ -1,10 +1,7 @@
 // @flow
 import React from 'react';
-//$FlowFixMe
 import branch from 'recompose/branch';
-//$FlowFixMe
 import renderComponent from 'recompose/renderComponent';
-// $FlowFixMe
 import styled from 'styled-components';
 import { Spinner, FlexCol } from '../globals';
 import { Card } from '../card';

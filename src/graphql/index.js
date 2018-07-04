@@ -21,8 +21,6 @@ type CreateClientOptions = {
   token?: ?string
 }
 
-console.log(process.env)
-
 export const wsLink = new WebSocketLink({
   uri: process.env.REACT_APP_WS_URI,
   options: {

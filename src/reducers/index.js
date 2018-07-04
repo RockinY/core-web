@@ -8,10 +8,12 @@ import directMessageThreads from './directMessageThreads'
 import message from './message'
 import modals from './modals'
 import gallery from './gallery';
+import composer from './composer';
 import type { Reducer } from 'redux'
 
 const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
   return combineReducers({
+    composer,
     users,
     modals,
     toasts,

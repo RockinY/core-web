@@ -1,10 +1,8 @@
 // @flow
-// $FlowFixMe
 import styled, { keyframes } from 'styled-components';
 import { Card } from '../card';
 import { hexa, FlexCol, zIndex } from '../globals';
-// $FlowFixMe
-import Link from 'src/components/link';
+import Link from '../link';
 
 const containerFadeIn = keyframes`
   0%{
