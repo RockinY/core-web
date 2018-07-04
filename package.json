@@ -14,7 +14,7 @@
     "reset": "rm -rf ./node_modules && yarn"
   },
   "dependencies": {
-    "abab": "^2.0.0",
+    "abab": "^1.0.4",
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
     "apollo-link": "^1.2.2",
