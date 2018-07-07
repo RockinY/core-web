@@ -10,9 +10,9 @@ import modals from './modals'
 import gallery from './gallery';
 import composer from './composer';
 import notifications from './notifications'
-import type { Reducer } from 'redux'
+import connectionStatus from './connectionStatus'
 
-const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
+const getReducers = () => {
   return combineReducers({
     composer,
     users,
@@ -25,7 +25,7 @@ const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
     directMessageThreads,
     message,
     notifications,
-    ...extraReducers
+    connectionStatus
   })
 }
 
