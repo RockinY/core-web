@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import Link from '../link'
+// @flow
+import styled from 'styled-components';
+import Link from '../link';
 import {
   FlexRow,
   FlexCol,
@@ -7,18 +8,18 @@ import {
   Transition,
   zIndex,
   Shadow,
-  hexa
-} from '../globals'
-import { Button, OutlineButton, IconButton } from '../buttons'
-import { ReputationWrapper } from '../reputation/style'
-import Card from '../card'
+  hexa,
+} from '../globals';
+import { Button, OutlineButton, IconButton } from '../buttons';
+import { ReputationWrapper } from '../reputation/style';
+import Card from '../card';
 
 export const ProfileHeader = styled(FlexRow)`
   padding: 16px;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
-`
+`;
 
 export const ProfileHeaderLink = styled(Link)`
   display: flex;
@@ -32,7 +33,7 @@ export const ProfileHeaderLink = styled(Link)`
     transition: ${Transition.hover.on};
     color: ${props => props.theme.brand.alt};
   }
-`
+`;
 
 export const ProfileHeaderNoLink = styled.div`
   display: flex;
@@ -46,18 +47,18 @@ export const ProfileHeaderNoLink = styled.div`
     transition: ${Transition.hover.on};
     color: ${props => props.theme.brand.alt};
   }
-`
+`;
 
 export const ProfileHeaderMeta = styled(FlexCol)`
   flex: 1 1 auto;
   flex-wrap: nowrap;
   min-width: 0;
-`
+`;
 
 export const ProfileHeaderAction = styled(IconButton)`
   margin-left: 16px;
   flex: 0 0 auto;
-`
+`;
 
 export const Title = styled.h3`
   font-size: 16px;
@@ -65,12 +66,12 @@ export const Title = styled.h3`
   font-weight: 700;
   line-height: 1.2;
   transition: ${Transition.hover.off};
-`
+`;
 
 export const FullTitle = styled(Title)`
   font-size: 24px;
-  margin-top: 8px;
-`
+  margin-top: 16px;
+`;
 
 export const FullProfile = styled.div`
   margin-left: 32px;
@@ -80,7 +81,7 @@ export const FullProfile = styled.div`
   @media (max-width: 768px) {
     margin-top: -48px;
   }
-`
+`;
 
 export const Subtitle = styled.div`
   display: flex;
@@ -101,7 +102,7 @@ export const Subtitle = styled.div`
       font-size: 16px;
     }
   }
-`
+`;
 
 export const Description = styled.div`
   font-size: 14px;
@@ -118,7 +119,7 @@ export const Description = styled.div`
       text-decoration: underline;
     }
   }
-`
+`;
 
 export const FullDescription = styled.div`
   padding: 0;
@@ -134,7 +135,7 @@ export const FullDescription = styled.div`
       font-weight: 400;
     }
   }
-`
+`;
 
 export const ExtLink = styled(FlexRow)`
   align-items: center;
@@ -155,20 +156,20 @@ export const ExtLink = styled(FlexRow)`
     margin-right: 4px;
     margin-top: 1px;
   }
-`
+`;
 
 export const Actions = styled(FlexRow)`
   padding: 16px;
   padding-top: 0;
   flex: 1 0 100%;
   justify-content: flex-end;
-`
+`;
 
 export const Action = styled(Button)`
   &:last-of-type:not(:first-of-type) {
     margin-left: 8px;
   }
-`
+`;
 
 export const ActionOutline = styled(OutlineButton)`
   flex-grow: 1;
@@ -176,7 +177,7 @@ export const ActionOutline = styled(OutlineButton)`
   &:last-of-type:not(:first-of-type) {
     margin-left: 8px;
   }
-`
+`;
 
 export const Meta = styled.div`
   background: #f8fbfe;
@@ -184,9 +185,9 @@ export const Meta = styled.div`
   padding: 8px 16px;
   width: 100%;
   border-radius: 0 0 12px 12px;
-`
+`;
 
-export const MetaList = styled.ul``
+export const MetaList = styled.ul``;
 
 export const MetaListItem = styled.li`
   list-style-type: none;
@@ -207,7 +208,7 @@ export const MetaListItem = styled.li`
   &:last-child {
     padding-bottom: 0;
   }
-`
+`;
 
 export const Label = styled.span`
   display: flex;
@@ -217,11 +218,11 @@ export const Label = styled.span`
   div {
     margin-right: 8px;
   }
-`
+`;
 
 export const Count = styled.span`
   font-weight: 700;
-`
+`;
 
 export const CoverLink = styled(ProfileHeaderLink)`
   flex: none;
@@ -229,24 +230,24 @@ export const CoverLink = styled(ProfileHeaderLink)`
   flex-direction: column;
   align-items: center;
   padding: 0 16px;
-`
+`;
 
 export const CoverTitle = styled(Title)`
   font-size: 20px;
   margin-top: 8px;
   text-align: center;
-`
+`;
 
 export const CoverSubtitle = styled(Subtitle)`
   text-align: center;
   margin-bottom: 16px;
   justify-content: center;
-`
+`;
 
 export const CoverDescription = styled(Description)`
   text-align: center;
   flex: auto;
-`
+`;
 
 // had a hard time targeting the ChannelListItem component, so this is a janky way to get the overrides I needed.
 export const ProfileCard = styled(Card)`
@@ -259,7 +260,12 @@ export const ProfileCard = styled(Card)`
       text-decoration: underline;
     }
   }
-`
+`;
+
+export const ThreadProfileCard = styled(ProfileCard)`
+  border-radius: 8px;
+  box-shadow: ${Shadow.low} ${({ theme }) => hexa(theme.text.default, 0.1)};
+`;
 
 export const ProUpgrade = styled.div`
   margin: 16px;
@@ -273,7 +279,7 @@ export const ProUpgrade = styled.div`
     width: 100%;
     text-align: center;
   }
-`
+`;
 
 // export const ReputationContainer = styled.div`
 //   border-top: 2px solid ${props => props.theme.bg.border};
@@ -293,7 +299,7 @@ export const CoverPhoto = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   border-radius: ${props => (props.large ? '12px' : '12px 12px 0 0')};
-`
+`;
 
 export const Container = styled.div`
   background: ${props => props.theme.bg.default};
@@ -313,7 +319,7 @@ export const Container = styled.div`
   @media (max-width: 540px) {
     flex-basis: 100%;
   }
-`
+`;
 
 export const ButtonContainer = styled.div`
   padding: 8px 16px 16px;
@@ -321,7 +327,7 @@ export const ButtonContainer = styled.div`
   button {
     width: 100%;
   }
-`
+`;
 
 export const MessageButtonContainer = styled.div`
   width: 100%;
@@ -337,4 +343,4 @@ export const MessageButtonContainer = styled.div`
     justify-content: center;
     text-align: center;
   }
-`
+`;

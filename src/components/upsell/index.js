@@ -8,6 +8,26 @@ import {
   NullCol
 } from './style';
 
+type NullCardProps = {
+  noShadow?: boolean,
+  noPadding?: boolean,
+  bg?: ?string,
+  heading?: string,
+  copy?: string,
+  children?: React.Node,
+  repeat?: boolean,
+  emoji?: string,
+};
+export const NullCard = (props: NullCardProps) => {
+  return (
+    <NullCol bg={props.bg} repeat={props.repeat} noPadding={props.noPadding}>
+      {props.heading && <Title>{props.heading}</Title>}
+      {props.copy && <Subtitle>{props.copy}</Subtitle>}
+      {props.children}
+    </NullCol>
+  );
+};
+
 type NullStateProps = {
   bg?: ?string,
   heading?: string,
