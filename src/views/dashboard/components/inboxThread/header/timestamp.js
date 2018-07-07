@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { timeDifferenceShort } from '../../../../../helpers/timeDifference';
+import { timeDifferenceShort } from '../../../../../utils/timeDifference';
 import { Timestamp, NewThreadTimestamp } from './style';
 import type { HeaderProps } from './index';
 

@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { FillSpaceError, LargeEmoji, Heading, Subheading } from './style'
 import { Button } from '../buttons'
-import { removeItemFromStorage } from '../../helpers/localStorage'
+import { removeItemFromStorage } from '../../utils/localStorage'
 
 /*
   A generic error component which will fill the space of any container its placed in.

@@ -18,7 +18,7 @@ import {
 import getComposerCommunitiesAndChannels from '../../../graphql/queries/composer/getComposerCommunitiesAndChannels';
 import type { GetComposerType } from '../../../graphql/queries/composer/getComposerCommunitiesAndChannels';
 import publishThread from '../../../graphql/mutations/thread/publishThread';
-import { getLinkPreviewFromUrl } from '../../../helpers/utils';
+import { getLinkPreviewFromUrl } from '../../../utils/utils';
 import isURL from 'validator/lib/isURL';
 import { URL, ENDS_IN_WHITESPACE } from '../../../utils/regexps';
 import { TextButton, Button } from '../../buttons';

@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import InfiniteList from '../../../components/infiniteScroll';
 import { deduplicateChildren } from '../../../components/infiniteScroll/deduplicateChildren';
 import FlipMove from 'react-flip-move';
-import { sortByDate } from '../../../helpers/utils';
+import { sortByDate } from '../../../utils/utils';
 import { LoadingInboxThread } from '../../../components/loading';
 import { changeActiveThread } from '../../../actions/dashboardFeed';
 import LoadingThreadFeed from './loadingThreadFeed';

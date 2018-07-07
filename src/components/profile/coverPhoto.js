@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // $FlowFixMe
 import Link from '../link';
 import { ProfileHeaderAction } from './style';
-import { optimize } from '../../helpers/images'
+import { optimize } from '../../utils/images'
 
 const PhotoContainer = styled.div`
   grid-area: cover;

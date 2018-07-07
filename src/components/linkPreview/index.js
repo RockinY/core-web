@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Icon from '../icons';
 import { FlexCol } from '../globals';
-import { truncate } from '../../helpers/utils';
+import { truncate } from '../../utils/utils';
 import {
   LinkPreviewContainer,
   LinkPreviewImage,

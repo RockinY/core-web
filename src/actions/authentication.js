@@ -1,4 +1,4 @@
-import { removeItemFromStorage, storeItem } from '../helpers/localStorage';
+import { removeItemFromStorage, storeItem } from '../utils/localStorage';
 import { clearApolloStore } from '../graphql'
 
 export const logout = dispatch => {

@@ -23,7 +23,7 @@ import {
 import getComposerCommunitiesAndChannels from '../../graphql/queries/composer/getComposerCommunitiesAndChannels';
 import type { GetComposerType } from '../../graphql/queries/composer/getComposerCommunitiesAndChannels';
 import publishThread from '../../graphql/mutations/thread/publishThread';
-import { getLinkPreviewFromUrl } from '../../helpers/utils';
+import { getLinkPreviewFromUrl } from '../../utils/utils';
 import { TextButton, Button } from '../buttons';
 import { FlexRow } from '../../components/globals';
 import { LoadingSelect } from '../loading';

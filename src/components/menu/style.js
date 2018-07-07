@@ -1,7 +1,7 @@
 // @flow
 import styled, { css } from 'styled-components';
 import { Transition, Shadow, zIndex, hexa } from '../../components/globals';
-import { isDesktopApp } from '../../helpers/isDesktopApp';
+import { isDesktopApp } from '../../utils/isDesktopApp';
 
 export const Wrapper = styled.div`
   display: inline-block;

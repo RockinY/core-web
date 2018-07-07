@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modals';
-import { truncateNumber } from '../../helpers/utils';
+import { truncateNumber } from '../../utils/utils';
 import Icon from '../icons';
 import { ReputationWrapper, ReputationLabel } from './style';
 import type { Dispatch } from 'redux';

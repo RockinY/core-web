@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import { storeItem, getItemFromStorage } from '../../../helpers/localStorage'
+import { storeItem, getItemFromStorage } from '../../../utils/localStorage'
 import PageFooter from '../components/footer'
 import { Wrapper } from '../style'
 import { Overview } from '../view'

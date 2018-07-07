@@ -9,10 +9,10 @@ import { Router } from 'react-router'
 import queryString from 'query-string'
 import Loadable from 'react-loadable'
 import { HelmetProvider } from 'react-helmet-async'
-import { history } from './helpers/history'
+import { history } from './utils/history'
 import { client } from './graphql'
 import { initStore } from './store'
-import { getItemFromStorage } from './helpers/localStorage'
+import { getItemFromStorage } from './utils/localStorage'
 import Routes from './routes'
 
 const { thread, t } = queryString.parse(history.location.search)
