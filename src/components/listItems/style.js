@@ -1,13 +1,13 @@
-import styled from 'styled-components'
-import Link from '../link'
+import styled from 'styled-components';
+import Link from '../link';
 import {
   Truncate,
   FlexCol,
   FlexRow,
   H3,
   H4,
-  Transition
-} from '../globals'
+  Transition,
+} from '../globals';
 
 export const Wrapper = styled(FlexCol)`
   flex: 0 0 auto;
@@ -29,7 +29,7 @@ export const Wrapper = styled(FlexCol)`
   &:hover .action {
     color: ${props => (props.clickable ? props.theme.brand.alt : '')};
   }
-`
+`;
 
 export const WrapperLi = styled.li`
   display: flex;
@@ -39,12 +39,12 @@ export const WrapperLi = styled.li`
   justify-content: center;
   max-width: 100%;
   list-style-type: none;
-`
+`;
 
 export const Col = styled(FlexCol)`
   flex: auto;
   min-width: 0;
-`
+`;
 
 export const Row = styled(FlexRow)`
   flex: 0 0 auto;
@@ -54,7 +54,7 @@ export const Row = styled(FlexRow)`
     display: flex;
     align-items: center;
   }
-`
+`;
 
 export const Heading = styled(H3)`
   font-weight: 500;
@@ -69,7 +69,7 @@ export const Heading = styled(H3)`
     color: ${props => props.theme.text.alt};
     margin-right: 4px;
   }
-`
+`;
 
 export const Meta = styled(H4)`
   font-size: 14px;
@@ -81,14 +81,14 @@ export const Meta = styled(H4)`
   }
 
   ${props => (props.nowrap ? Truncate() : '')};
-`
+`;
 
 export const ActionContainer = styled(FlexCol)`
   justify-content: center;
   align-items: center;
   color: ${({ theme }) => theme.text.placeholder};
   transition: ${Transition.hover.off};
-`
+`;
 
 export const StyledCard = styled.div`
   flex-direction: column;
@@ -97,7 +97,7 @@ export const StyledCard = styled.div`
   @media (max-width: 768px) {
     display: ${props => (props.largeOnly ? 'none' : 'flex')};
   }
-`
+`;
 
 export const ListHeading = styled(H3)`
   font-weight: 500;
@@ -105,12 +105,12 @@ export const ListHeading = styled(H3)`
   padding: 16px;
   padding-left: 0;
   color: ${({ theme }) => theme.text.default};
-`
+`;
 
 export const ListContainer = styled(FlexCol)`
   align-items: stretch;
   width: 100%;
-`
+`;
 
 export const MoreLink = styled(Link)`
   display: flex;
@@ -129,27 +129,27 @@ export const MoreLink = styled(Link)`
   > div {
     margin-right: 12px;
   }
-`
+`;
 
 export const ListFooter = styled(FlexRow)`
   padding-top: 8px;
   border-top: 2px solid ${({ theme }) => theme.bg.wash};
   justify-content: flex-start;
   width: 100%;
-`
+`;
 
 export const ListHeader = styled(FlexRow)`
   justify-content: space-between;
   width: 100%;
   border-bottom: 2px solid ${({ theme }) => theme.bg.border};
   margin-top: ${props => (props.secondary ? '24px' : '0')};
-`
+`;
 
 export const LargeListHeading = styled(H3)`
   font-weight: 800;
   font-size: 20px;
   color: ${({ theme }) => theme.text.default};
-`
+`;
 export const Description = styled.div`
   margin-top: 8px;
   font-weight: 400;
@@ -169,7 +169,7 @@ export const Description = styled.div`
   &:only-of-type {
     margin-bottom: 0;
   }
-`
+`;
 
 export const Notice = styled(Description)`
   padding: 8px 12px;
@@ -186,18 +186,18 @@ export const Notice = styled(Description)`
   strong {
     font-weight: 600;
   }
-`
+`;
 
 export const InlineIcon = styled.span`
   position: relative;
   top: 2px;
-`
+`;
 
 export const BadgeContainer = styled(FlexCol)`
   justify-content: center;
   flex: 0 0 40px;
   margin-right: 8px;
-`
+`;
 
 export const Lock = styled.span`
   color: ${props => props.theme.text.alt};
@@ -205,4 +205,4 @@ export const Lock = styled.span`
   top: 2px;
   margin-left: -2px;
   margin-right: 4px;
-`
+`;
