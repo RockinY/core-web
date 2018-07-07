@@ -9,6 +9,7 @@ import message from './message'
 import modals from './modals'
 import gallery from './gallery';
 import composer from './composer';
+import notifications from './notifications'
 import type { Reducer } from 'redux'
 
 const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
@@ -23,6 +24,7 @@ const getReducers = (extraReducers: { [key: string]: Reducer<*, *> }) => {
     dashboardFeed,
     directMessageThreads,
     message,
+    notifications,
     ...extraReducers
   })
 }
