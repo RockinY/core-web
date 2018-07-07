@@ -28,6 +28,20 @@ export const sortByDate = (array: Array<any>, key: string, order: string) => {
   });
 }
 
+export const sortByTitle = (array: Array<any>) => {
+  return array.sort((a, b) => {
+    const x = a['name'];
+    const y = b['name'];
+    const val = x.localeCompare(y, {
+      sensitivity: 'base',
+      numeric: 'true',
+      caseFirst: 'upper',
+    });
+    return val;
+  });
+};
+
+
 export const getLinkPreviewFromUrl = (url: string) =>
   fetch(`https://links.spectrum.chat/?url=${url}`)
     .then(response => {
@@ -59,4 +73,50 @@ export const truncateNumber = (number: number, places: number = 1) => {
   } else {
     return truncated;
   }
+};
+
+/*
+  Best guess at if user is on a mobile device. Used in the modal components
+  to determine where the modal should be positioned, how it should close and
+  scroll, etc
+*/
+export function isMobile() {
+  let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  if (
+    /windows phone/i.test(userAgent) ||
+    /android/i.test(userAgent) ||
+    (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+export const debounce = (func: Function, wait: number, immediate: boolean) => {
+  let timeout;
+  return function() {
+    let context = this,
+      args = arguments;
+    let later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    // $FlowFixMe
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+export const renderMarkdownLinks = (text: string) => {
+  const MARKDOWN_LINK = /(?:\[(.*?)\]\((.*?)\))/g;
+
+  return replace(text, MARKDOWN_LINK, (fullLink, text, url) => (
+    <a href={url} target="_blank" rel="noopener nofollower">
+      {text}
+    </a>
+  ));
 };
