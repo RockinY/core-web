@@ -1,0 +1,70 @@
+// @flow
+import * as React from 'react';
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
+import resetJoinTokenMutation from '../../../graphql/mutations/channel/resetChannelJoinToken';
+import { addToastWithTimeout } from '../../../actions/toasts';
+import { OutlineButton } from '../../../components/buttons';
+import type { Dispatch } from 'redux';
+
+type Props = {
+  id: string,
+  settings: {
+    tokenJoinEnabled: boolean,
+  },
+  resetChannelJoinToken: Function,
+  dispatch: Dispatch<Object>,
+};
+
+type State = {
+  isLoading: boolean,
+};
+
+class ResetJoinToken extends React.Component<Props, State> {
+  state = { isLoading: false };
+
+  reset = () => {
+    this.setState({ isLoading: true });
+    return this.props
+      .resetChannelJoinToken({ id: this.props.id })
+      .then(() => {
+        this.setState({
+          isLoading: false,
+        });
+        return this.props.dispatch(
+          addToastWithTimeout('success', 'Link reset!')
+        );
+      })
+      .catch(err => {
+        this.setState({
+          isLoading: false,
+        });
+        return this.props.dispatch(addToastWithTimeout('error', err.message));
+      });
+  };
+
+  render() {
+    const { isLoading } = this.state;
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginTop: '16px',
+        }}
+      >
+        <OutlineButton
+          loading={isLoading}
+          onClick={this.reset}
+          dataCy="refresh-join-link-token"
+        >
+          Reset this link
+        </OutlineButton>
+      </div>
+    );
+  }
+}
+
+// $FlowFixMe
+export default compose(connect(), resetJoinTokenMutation)(ResetJoinToken);
