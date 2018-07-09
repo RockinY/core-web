@@ -1,14 +1,17 @@
 // @flow
 import * as React from 'react';
 import Icon from '../../components/icons';
-import { Button } from '../buttons';
+import { Button, OutlineButton } from '../buttons';
 import Link from '../link';
 
 import {
   Actions,
   Title,
   Subtitle,
-  NullCol
+  NullCol,
+  LargeEmoji,
+  MiniTitle,
+  MiniSubtitle
 } from './style';
 
 type NullCardProps = {
@@ -47,6 +50,23 @@ export const NullState = (props: NullStateProps) => (
   </NullCol>
 );
 
+export const MiniNullCard = (props: NullCardProps) => {
+  return (
+    <NullCol bg={props.bg} repeat={props.repeat} noPadding={props.noPadding}>
+      {props.emoji && (
+        <LargeEmoji>
+          <span role="img" aria-label="Howdy!">
+            {props.emoji}
+          </span>
+        </LargeEmoji>
+      )}
+      {props.heading && <MiniTitle>{props.heading}</MiniTitle>}
+      {props.copy && <MiniSubtitle>{props.copy}</MiniSubtitle>}
+      {props.children}
+    </NullCol>
+  );
+};
+
 export const UpsellCreateCommunity = ({ close }: { close: Function }) => {
   const title = 'Create a community';
   const subtitle = 'Building communities on Spectrum is easy and free forever';
@@ -71,5 +91,48 @@ export const Upsell404Channel = ({ community }: { community: string }) => {
         <Button large>Take me back</Button>
       </Link>
     </Actions>
+  );
+};
+
+export const Upsell404Community = () => {
+  // if a user doesn't have permission, it means they likely tried to view
+  // the settings page for a community. In this case, we will return
+  // them to the community view.
+  // if the user does have permission, but this component gets rendered, it means
+  // something went wrong - most likely the community doesn't exists (404) so
+  // we should return the user back to homepage
+  return (
+    <Actions>
+      <Link to={'/'}>
+        <OutlineButton large>Take me back</OutlineButton>
+      </Link>
+
+      <Link to={'/new/community'}>
+        <Button large>Create a community</Button>
+      </Link>
+    </Actions>
+  );
+};
+
+type TeamMemberProps = {
+  communitySlug: string,
+  small?: boolean,
+};
+
+export const UpsellTeamMembers = (props: TeamMemberProps) => {
+  return (
+    <MiniNullCard
+      copy={
+        props.small ? '' : "Looks like you haven't added any team members yet!"
+      }
+      noPadding
+      alignItems="flex-end"
+    >
+      <Link to={`/${props.communitySlug}/settings/members`}>
+        <OutlineButton icon={props.small ? null : 'member-add'}>
+          Add {props.small ? 'more' : ''} team members
+        </OutlineButton>
+      </Link>
+    </MiniNullCard>
   );
 };
