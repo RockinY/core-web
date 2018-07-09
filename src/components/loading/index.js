@@ -64,6 +64,7 @@ const LoadingCardContainer = styled(Card)`
   Outputs a spinner only with a transparent background that will fill to the width
   and height of its parent. Useful for inline spinners.
 */
+// $FlowFixMe
 export const Loading = ({
   size,
   color,
@@ -1000,6 +1001,7 @@ export const LoadingNotifications = (): React$Element<any> => (
 );
 
 export const displayLoadingState = branch(
+  // $FlowFixMe
   props => !props.data || props.data.loading,
   renderComponent(Loading)
 );

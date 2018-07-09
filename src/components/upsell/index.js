@@ -1,8 +1,11 @@
 // @flow
 import * as React from 'react';
 import Icon from '../../components/icons';
+import { Button } from '../buttons';
+import Link from '../link';
 
 import {
+  Actions,
   Title,
   Subtitle,
   NullCol
@@ -43,3 +46,20 @@ export const NullState = (props: NullStateProps) => (
     {props.children}
   </NullCol>
 );
+
+export const UpsellCreateCommunity = ({ close }: { close: Function }) => {
+  const title = 'Create a community';
+  const subtitle = 'Building communities on Spectrum is easy and free forever';
+
+  return (
+    <NullCard bg={'onboarding'}>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
+      <Actions>
+        <Link to="/new/community">
+          <Button onClick={close}>Get Started</Button>
+        </Link>
+      </Actions>
+    </NullCard>
+  );
+};
