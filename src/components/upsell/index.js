@@ -63,3 +63,13 @@ export const UpsellCreateCommunity = ({ close }: { close: Function }) => {
     </NullCard>
   );
 };
+
+export const Upsell404Channel = ({ community }: { community: string }) => {
+  return (
+    <Actions>
+      <Link to={`/${community}`}>
+        <Button large>Take me back</Button>
+      </Link>
+    </Actions>
+  );
+};
