@@ -16,7 +16,7 @@ import {
   HzRule,
 } from '../style';
 import Icon from '../../../components/icons';
-import { truncate } from '../../../helpers/utils';
+import { truncate } from '../../../utils/utils';
 import { MessageGroup } from '../../../components/messageGroup/style';
 import Message from '../../../components/message';
 import {

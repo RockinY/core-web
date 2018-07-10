@@ -7,7 +7,7 @@ import debounce from 'debounce';
 import { closeComposer } from '../../../actions/composer';
 import { changeActiveThread } from '../../../actions/dashboardFeed';
 import { addToastWithTimeout } from '../../../actions/toasts';
-import Editor from '../../rich-text-editor';
+import Editor from '../../richTextEditor';
 import {
   toPlainText,
   fromPlainText,
@@ -618,7 +618,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
 
     if (!ENDS_IN_WHITESPACE.test(text)) return;
 
-    const toCheck = text.match(URLS);
+    const toCheck = text.match(URL);
 
     if (toCheck) {
       const len = toCheck.length;

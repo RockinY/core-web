@@ -1,9 +1,9 @@
 // @noflow
 import styled, { css } from 'styled-components';
-import Link from 'src/components/link';
-import { Transition, FlexRow, hexa, zIndex } from 'src/components/globals';
-import Avatar from 'src/components/avatar';
-import { isDesktopApp } from 'src/helpers/is-desktop-app';
+import Link from '../../components/link';
+import { Transition, FlexRow, hexa, zIndex } from '../../components/globals';
+import Avatar from '../../components/avatar';
+import { isDesktopApp } from '../../utils/isDesktopApp';
 
 export const Nav = styled.nav`
   display: grid;
