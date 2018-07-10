@@ -71,10 +71,6 @@ class CreateChannelModal extends React.Component<Props, State> {
     this.checkSlug = throttle(this.checkSlug, 500);
   }
 
-  componentDidMount() {
-    const { community } = this.props;
-  }
-
   close = () => {
     this.props.dispatch(closeModal());
   };

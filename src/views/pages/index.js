@@ -3,7 +3,6 @@ import * as React from 'react';
 import Nav from './components/nav';
 import Support from './support';
 import Features from './features';
-import Pricing from './pricing';
 import Concierge from './concierge';
 import Home from './home';
 import Terms from './terms';

@@ -497,17 +497,6 @@ export const Yours = (props: Props) => {
     align-self: center;
   `;
 
-  const ThisSecondaryCTA = styled(SecondaryCTA)`
-    margin-left: 16px;
-    font-size: 16px;
-    border: 2px solid ${props => props.theme.text.reverse};
-
-    @media (max-width: 768px) {
-      margin-left: 0;
-      margin-top: 16px;
-    }
-  `;
-
   const ThisPrimaryCTA = styled(PrimaryCTA)`
     font-size: 16px;
     color: ${props => props.theme.text.default};

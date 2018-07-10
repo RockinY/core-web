@@ -5,7 +5,6 @@ import { btoa } from 'abab'
 import messageInfoFragment from '../../fragments/message/messageInfo'
 import type { MessageInfoType } from '../../fragments/message/messageInfo'
 import { getDMThreadMessageConnectionQuery } from '../../queries/directMessageThread/getDirectMessageThreadMessageConnection'
-import { getCurrentUserQuery } from '../../queries/user/getUser'
 
 export type SendDirectMessageType = {
   ...$Exact<MessageInfoType>,

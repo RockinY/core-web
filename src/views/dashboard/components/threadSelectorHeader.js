@@ -74,7 +74,6 @@ class Header extends React.Component<Props> {
   render() {
     const {
       dispatch,
-      filter,
       communities,
       user,
       activeCommunity,

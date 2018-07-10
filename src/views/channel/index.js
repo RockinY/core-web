@@ -76,8 +76,6 @@ class ChannelView extends React.Component<Props, State> {
       (prevProps.data.channel &&
         prevProps.data.channel.id !== this.props.data.channel.id)
     ) {
-      const { channel } = this.props.data;
-
       // if the user is new and signed up through a community page, push
       // the community data into the store to hydrate the new user experience
       // with their first community they should join
