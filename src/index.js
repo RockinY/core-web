@@ -4,80 +4,102 @@ import 'css.escape'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
+import webPushManager from './utils/webPushManager'
+import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import queryString from 'query-string'
 import Loadable from 'react-loadable'
 import { HelmetProvider } from 'react-helmet-async'
 import { history } from './utils/history'
-import { client } from './graphql'
+import { client, wsLink } from './graphql'
 import { initStore } from './store'
 import { getItemFromStorage } from './utils/localStorage'
 import Routes from './routes'
 
-const { thread, t } = queryString.parse(history.location.search)
+const storedData: ?Object = getItemFromStorage('xlab');
+const params = queryString.parse(history.location.search);
 
-const existingUser = getItemFromStorage('xlab')
-let initialState
-if (existingUser) {
-  initialState = {
+// Always redirect ?thread=asdfxyz to the thread view
+if (params.thread) history.replace(`/thread/${params.thread}`);
+
+// Redirect ?t=asdfxyz to the thread view only for anonymous users who wouldn't see it
+// in their inbox view (since they don't have an inbox view)
+if ((!storedData || !storedData.currentUser) && params.t)
+  history.replace(`/thread/${params.t}`);
+
+// If the server passes an initial redux state use that, otherwise construct our own
+const store = initStore(
+  window.__SERVER_STATE__ || {
     users: {
-      currentUser: existingUser.currentUser
+      currentUser: storedData ? storedData.currentUser : null,
     },
     dashboardFeed: {
-      activeThread: t || '',
-      mountedWithActiveThread: t || '',
+      activeThread: params.t || '',
+      mountedWithActiveThread: params.t || '',
       search: {
-        isOpen: false
-      }
-    }
+        isOpen: false,
+      },
+    },
   }
-} else {
-  initialState = {}
-}
+);
 
-if (thread) {
-  const hash = window.location.hash.substr(1)
-  if (hash && hash.length > 1) {
-    history.replace(`/thread/${thread}#${hash}`)
-  } else {
-    history.replace(`/thread/${thread}`)
-  }
-}
-
-if (t && (!existingUser || !existingUser.currentUser)) {
-  const hash = window.location.hash.substr(1)
-  if (hash && hash.length > 1) {
-    history.replace(`/thread/${t}#${hash}`)
-  } else {
-    history.replace(`/thread/${t}`)
-  }
-}
-
-const store = initStore(window.__SERVER_STATE__ || initialState)
-
-/* Render */
-const renderMethod = window.__SERVER_STATE__ ? ReactDOM.hydrate : ReactDOM.render
-
-function render () {
-  return renderMethod(
+const App = () => {
+  return (
     <Provider store={store}>
       <HelmetProvider>
         <ApolloProvider client={client}>
           {/* $FlowFixMe */}
           <Router history={history}>
-            <Routes
-              maintenanceMode={
-                process.env.REACT_APP_MAINTENANCE_MODE === 'enabled'
-              }
-            />
+            <Routes currentUser={storedData ? storedData.currentUser : null} />
           </Router>
         </ApolloProvider>
       </HelmetProvider>
-    </Provider>,
-    // $FlowFixMe
+    </Provider>
+  );
+};
+
+const renderMethod = !!window.__SERVER_STATE__
+  ? // $FlowIssue
+    ReactDOM.hydrate
+  : ReactDOM.render;
+
+function render() {
+  return renderMethod(
+    <App />,
+    // $FlowIssue
     document.querySelector('#root')
-  )
+  );
 }
 
-Loadable.preloadReady().then(render)
+Loadable.preloadReady()
+  .then(render)
+  .catch(err => {
+    console.error(err);
+  });
+
+OfflinePluginRuntime.install({
+  // Apply new updates immediately
+  onUpdateReady: () => OfflinePluginRuntime.applyUpdate(),
+  // Set a global variable when an update was installed so that we can reload the page when users
+  // go to a new page, leading to no interruption in the workflow.
+  // Idea from https://zach.codes/handling-client-side-app-updates-with-service-workers/
+  onUpdated: () => (window.appUpdateAvailable = true),
+});
+
+if ('serviceWorker' in navigator && 'PushManager' in window) {
+  // $FlowIssue
+  navigator.serviceWorker.ready.then(registration => {
+    webPushManager.set(registration.pushManager);
+  });
+}
+
+wsLink.subscriptionClient.on('disconnected', () =>
+  store.dispatch({ type: 'WEBSOCKET_CONNECTION', value: 'disconnected' })
+);
+wsLink.subscriptionClient.on('connected', () =>
+  store.dispatch({ type: 'WEBSOCKET_CONNECTION', value: 'connected' })
+);
+wsLink.subscriptionClient.on('reconnected', () =>
+  store.dispatch({ type: 'WEBSOCKET_CONNECTION', value: 'reconnected' })
+);

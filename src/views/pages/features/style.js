@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { SvgWrapper } from 'src/components/icons';
+import { SvgWrapper } from '../../../components/icons';
 
 /* eslint no-eval: 0 */
 
