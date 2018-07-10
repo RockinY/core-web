@@ -16,7 +16,11 @@ import Menu from '../../components/menu'
 import DashboardLoading from './components/dashboardLoading'
 import DashboardError from './components/dashboardError'
 import NewActivityIndicator from './components/newActivityIndicator'
+import NewUserOnboarding from '../../views/newUserOnboarding'
 import DashboardThread from '../dashboardThread'
+import CommunityList from './components/communityList'
+import Header from './components/threadSelectorHeader'
+import viewNetworkHandler from '../../components/viewNetworkHandler'
 import {
   DashboardWrapper,
   InboxWrapper,
@@ -39,10 +43,6 @@ const CommunityThreadFeed = compose(connect(), getCommunityThreads)(
 );
 // $FlowFixMe
 const ChannelThreadFeed = compose(connect(), getChannelThreadConnection)(
-  DashboardThreadFeed
-);
-// $FlowFixMe
-const SearchThreadFeed = compose(connect(), searchThreadsQuery)(
   DashboardThreadFeed
 );
 
@@ -168,18 +168,6 @@ class Dashboard extends React.Component<Props, State> {
                 </SearchStringHeader>
               )}
             <InboxScroller id="scroller-for-inbox">
-              {searchQueryString &&
-                searchQueryString.length > 0 &&
-                searchFilter && (
-                  <ErrorBoundary>
-                    <SearchThreadFeed
-                      queryString={searchQueryString}
-                      filter={searchFilter}
-                      selectedId={activeThread}
-                    />
-                  </ErrorBoundary>
-                )}
-
               {// no community, no search results
               !activeCommunity &&
                 !searchQueryString && (
