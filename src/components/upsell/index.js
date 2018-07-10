@@ -136,3 +136,13 @@ export const UpsellTeamMembers = (props: TeamMemberProps) => {
     </MiniNullCard>
   );
 };
+
+export const UpsellNullNotifications = () => {
+  return (
+    <NullCard bg="notification" heading="You don't have any notifications yet.">
+      <Link to="/">
+        <Button icon="home">Take Me Home</Button>
+      </Link>
+    </NullCard>
+  );
+};
