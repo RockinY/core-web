@@ -1,7 +1,7 @@
 // @flow
-import styled, { css } from 'styled-components'
-import Link from '../../components/link'
-import { Button } from '../../components/buttons'
+import styled, { css } from 'styled-components';
+import Link from '../../components/link';
+import { Button } from '../../components/buttons';
 import {
   H2,
   FlexCol,
@@ -11,8 +11,8 @@ import {
   Shadow,
   zIndex,
   hexa,
-  Gradient
-} from '../../components/globals'
+  Gradient,
+} from '../../components/globals';
 
 export const Page = styled.main`
   position: relative;
@@ -23,7 +23,7 @@ export const Page = styled.main`
   overflow: auto;
   overflow-x: hidden;
   background-color: ${({ theme }) => theme.bg.default};
-`
+`;
 
 export const Wrapper = styled(FlexCol)`
   grid-area: content;
@@ -35,7 +35,7 @@ export const Wrapper = styled(FlexCol)`
   background-color: ${({ theme }) => theme.bg.default};
   overflow: hidden;
   z-index: ${zIndex.base};
-`
+`;
 
 export const Flexer = styled(FlexRow)`
   flex-wrap: wrap;
@@ -43,13 +43,13 @@ export const Flexer = styled(FlexRow)`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`
+`;
 
 export const Header = styled(FlexRow)`
   padding: 32px;
   justify-content: space-between;
   z-index: ${zIndex.card};
-`
+`;
 
 export const Content = styled(FlexRow)`
   flex: auto;
@@ -61,7 +61,7 @@ export const Content = styled(FlexRow)`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`
+`;
 
 export const Tagline = styled(H2)`
   font-weight: 900;
@@ -73,7 +73,7 @@ export const Tagline = styled(H2)`
   @media (max-width: 768px) {
     margin-bottom: 32px;
   }
-`
+`;
 
 export const Copy = styled(P)`
   max-width: 480px;
@@ -90,7 +90,7 @@ export const Copy = styled(P)`
   @media (max-width: 768px) {
     text-align: left;
   }
-`
+`;
 
 export const Bullets = styled(FlexRow)`
   align-self: stretch;
@@ -104,7 +104,7 @@ export const Bullets = styled(FlexRow)`
     flex-direction: column;
     margin-top: 0;
   }
-`
+`;
 
 export const Bullet = styled(FlexCol)`
   display: inline-block;
@@ -119,23 +119,23 @@ export const Bullet = styled(FlexCol)`
     margin: 0;
     margin-top: 48px;
   }
-`
+`;
 
 export const BulletHeading = styled(FlexRow)`
   align-items: center;
   white-space: nowrap;
   position: relative;
-`
+`;
 
 export const BulletTitle = styled.h2`
   font-size: 20px;
   font-weight: 700;
-`
+`;
 
 export const BulletCopy = styled.p`
   margin-top: 8px;
   font-weight: 500;
-`
+`;
 
 export const PrimaryCTA = styled(Button)`
   padding: 8px 12px;
@@ -154,7 +154,7 @@ export const PrimaryCTA = styled(Button)`
     box-shadow: ${Shadow.high} ${props => hexa(props.theme.bg.reverse, 0.5)};
     transition: ${Transition.hover.on};
   }
-`
+`;
 
 export const SecondaryCTA = styled(PrimaryCTA)`
   color: ${props => props.theme.text.reverse};
@@ -167,7 +167,7 @@ export const SecondaryCTA = styled(PrimaryCTA)`
     border-color: ${props => props.theme.bg.default};
     box-shadow: 0 0 8px 4px ${props => hexa(props.theme.bg.default, 0.5)};
   }
-`
+`;
 
 export const SignInButton = styled.a`
   display: flex;
@@ -223,7 +223,7 @@ export const SignInButton = styled.a`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 export const LoginCard = styled.div`
   border-radius: 12px;
@@ -231,7 +231,7 @@ export const LoginCard = styled.div`
   margin-top: 16px;
   align-self: flex-start;
   align-items: flex-start;
-`
+`;
 
 export const ButtonTwitter = styled(Button)`
   background: ${props =>
@@ -243,9 +243,9 @@ export const ButtonTwitter = styled(Button)`
 
   &:hover {
     color: ${props =>
-    props.whitebg ? props.theme.social.twitter.default : '#fff'};
+      props.whitebg ? props.theme.social.twitter.default : '#fff'};
   }
-`
+`;
 
 export const ButtonFacebook = styled(Button)`
   background: ${props =>
@@ -257,9 +257,9 @@ export const ButtonFacebook = styled(Button)`
 
   &:hover {
     color: ${props =>
-    props.whitebg ? props.theme.social.facebook.default : '#fff'};
+      props.whitebg ? props.theme.social.facebook.default : '#fff'};
   }
-`
+`;
 
 export const ButtonGoogle = styled(Button)`
   background: ${props =>
@@ -271,9 +271,9 @@ export const ButtonGoogle = styled(Button)`
 
   &:hover {
     color: ${props =>
-    props.whitebg ? props.theme.social.google.default : '#fff'};
+      props.whitebg ? props.theme.social.google.default : '#fff'};
   }
-`
+`;
 
 export const Footer = styled.div`
   display: flex;
@@ -284,7 +284,7 @@ export const Footer = styled.div`
   padding: 32px;
   background-color: ${({ theme }) => theme.bg.reverse};
   color: ${({ theme }) => theme.text.reverse};
-`
+`;
 
 export const FooterGrid = styled.div`
   flex: auto;
@@ -303,7 +303,7 @@ export const FooterGrid = styled.div`
     grid-row-gap: 32px;
     grid-template-areas: 'masthead' 'support' 'safety';
   }
-`
+`;
 
 export const FooterSection = styled.div`
   display: flex;
@@ -316,11 +316,11 @@ export const FooterSection = styled.div`
     color: ${props => props.theme.text.alt};
     font-weight: 700;
   }
-`
+`;
 
 export const Masthead = styled(FooterSection)`
   grid-area: masthead;
-`
+`;
 
 export const LinkSection = styled(FooterSection)`
   a {
@@ -354,11 +354,11 @@ export const LinkSection = styled(FooterSection)`
   a + a {
     margin-top: 8px;
   }
-`
+`;
 
 export const Support = styled(LinkSection)`
   grid-area: support;
-`
+`;
 
 export const Safety = styled(LinkSection)`
   grid-area: safety;
@@ -367,7 +367,7 @@ export const Safety = styled(LinkSection)`
   a + a {
     margin-top: 8px;
   }
-`
+`;
 
 export const SocialLinks = styled.div`
   display: flex;
@@ -377,7 +377,7 @@ export const SocialLinks = styled.div`
   > a + a {
     margin-left: 8px;
   }
-`
+`;
 
 export const LinkBlock = styled(Link)`
   display: inline-block;
@@ -419,7 +419,7 @@ export const LinkBlock = styled(Link)`
       }
     }
   }
-`
+`;
 
 export const LinkBlockA = styled.a`
   display: inline-block;
@@ -461,7 +461,7 @@ export const LinkBlockA = styled.a`
       }
     }
   }
-`
+`;
 
 export const NavContainer = styled.div`
   display: grid;
@@ -472,7 +472,7 @@ export const NavContainer = styled.div`
   top: 0;
   left: 0;
   right: 0;
-`
+`;
 
 export const Tabs = styled.div`
   display: grid;
@@ -509,7 +509,7 @@ export const Tabs = styled.div`
         }
       }
     `};
-`
+`;
 
 export const Tab = styled(Link)`
   padding: 4px 8px;
@@ -522,13 +522,13 @@ export const Tab = styled(Link)`
 
   &:hover {
     color: ${props =>
-    props.selected
-      ? props.dark ? props.theme.text.reverse : props.theme.text.default
-      : props.dark ? props.theme.text.reverse : props.theme.text.alt};
+      props.selected
+        ? props.dark ? props.theme.text.reverse : props.theme.text.default
+        : props.dark ? props.theme.text.reverse : props.theme.text.alt};
     text-shadow: ${props =>
-    props.dark ? `0 0 32px ${hexa(props.theme.text.reverse, 0.75)}` : 'none'};
+      props.dark ? `0 0 32px ${hexa(props.theme.text.reverse, 0.75)}` : 'none'};
   }
-`
+`;
 
 export const LogoTab = styled(Tab)`
   grid-area: logo;
@@ -550,130 +550,64 @@ export const LogoTab = styled(Tab)`
       display: none;
     }
   }
-`
+`;
 
-const DropdownLink = styled(Link)`
+export const DropdownLink = styled(Link)`
   padding: 16px 0;
-  margin: 0 16px;
   font-weight: 500;
   display: flex;
+  width: 100%;
   align-items: center;
-  display: grid;
-  grid-template-columns: auto auto 1fr auto;
-  grid-template-rows: 1fr;
-  grid-template-areas: 'icon label . arrow';
   transition: ${Transition.hover.off};
   color: ${props =>
     props.selected ? props.theme.text.placeholder : props.theme.brand.alt};
-
-  > div:last-of-type {
-    grid-area: arrow;
-    opacity: 0;
-    display: ${props => (props.selected ? 'none' : 'inline-block')};
-    transition: ${Transition.hover.off};
-  }
-
-  > div:first-of-type {
-    grid-area: icon;
-    margin-right: 16px;
-  }
-
-  > span {
-    grid-area: label;
-  }
+  border-radius: 8px;
 
   &:hover {
     transition: ${Transition.hover.on};
     color: ${props =>
-    props.selected ? props.theme.text.alt : props.theme.brand.default};
-
-    > div:last-of-type {
-      opacity: 1;
-      transition: ${Transition.hover.on};
-    }
+      props.selected ? props.theme.text.alt : props.theme.brand.default};
   }
-`
+`;
 
 export const LogoLink = styled(DropdownLink)`
-  grid-area: logo;
-  padding: 0;
   color: ${props => props.theme.text.placeholder};
-
-  > div:last-of-type {
-    opacity: 1;
-    display: inline-block;
-  }
+  margin-bottom: 16px;
 
   &:hover {
     color: ${props => props.theme.brand.alt};
   }
-`
-
-export const FeaturesLink = styled(DropdownLink)`
-  grid-area: features;
-  border: none;
-`
-
-export const PricingLink = styled(DropdownLink)`
-  grid-area: pricing;
-  border-top: 2px solid ${props => props.theme.bg.border};
-`
-
-export const SupportLink = styled(DropdownLink)`
-  grid-area: support;
-  border-top: 2px solid ${props => props.theme.bg.border};
-`
-
-export const ExploreLink = styled(DropdownLink)`
-  grid-area: explore;
-  border-top: 2px solid ${props => props.theme.bg.border};
-`
+`;
 
 export const AuthLink = styled(DropdownLink)`
-  grid-area: auth;
   margin: 0;
-  padding: 16px;
+  margin-top: 24px;
+  padding: 16px 0;
   font-weight: 700;
   border-top: none;
   color: ${props => props.theme.text.reverse};
-  background-color: ${props => props.theme.brand.alt};
   background-image: ${props =>
     Gradient(props.theme.brand.alt, props.theme.brand.default)};
-
-  > div > div {
-    box-shadow: 0 0 0 2px ${props => props.theme.bg.default};
-  }
+  justify-content: center;
 
   &:hover {
     color: ${props => props.theme.text.reverse};
     text-shadow: 0 0 32px ${props => hexa(props.theme.text.reverse, 0.5)};
   }
-
-  > div:first-of-type {
-    grid-area: icon;
-  }
-
-  > span {
-    grid-area: label;
-  }
-
-  > div:last-of-type {
-    grid-area: arrow;
-  }
-`
+`;
 
 export const MenuContainer = styled.div`
   position: fixed;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto 16px repeat(4, auto) 1fr auto;
-  grid-template-areas: 'logo' '.' 'features' 'pricing' 'support' 'explore' '.' 'auth';
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   left: 0;
   top: 0;
   bottom: 0;
   height: 100vh;
   width: 300px;
+  padding: 16px;
   color: ${props => props.theme.brand.alt};
   background-color: ${props => props.theme.bg.default};
   background-image: ${props =>
@@ -681,7 +615,7 @@ export const MenuContainer = styled.div`
   box-shadow: ${Shadow.high} ${props => hexa(props.theme.bg.reverse, 0.25)};
   padding-top: 32px;
   z-index: 2;
-`
+`;
 
 export const MenuOverlay = styled.div`
   position: fixed;
@@ -696,31 +630,31 @@ export const MenuOverlay = styled.div`
   background-color: ${props => hexa(props.theme.bg.reverse, 0.5)};
   display: ${props => (props.open ? 'block' : 'none')};
   z-index: 1;
-`
+`;
 
 export const MenuTab = styled.div`
   grid-area: menu;
 
   > button {
     color: ${props =>
-    props.dark ? props.theme.brand.border : props.theme.brand.alt};
+      props.dark ? props.theme.brand.border : props.theme.brand.alt};
     transform: none;
 
     &:hover {
       color: ${props =>
-    props.dark ? props.theme.text.reverse : props.theme.brand.default};
+        props.dark ? props.theme.text.reverse : props.theme.brand.default};
       transform: none;
     }
   }
 
   ${MenuContainer} {
-    display: ${props => (props.open ? 'grid' : 'none')};
+    display: ${props => (props.open ? 'flex' : 'none')};
   }
 
   @media (min-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const PricingTab = styled(Tab)`
   grid-area: pricing;
@@ -728,7 +662,7 @@ export const PricingTab = styled(Tab)`
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const FeaturesTab = styled(Tab)`
   grid-area: features;
@@ -736,7 +670,7 @@ export const FeaturesTab = styled(Tab)`
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const SupportTab = styled(Tab)`
   grid-area: support;
@@ -744,7 +678,7 @@ export const SupportTab = styled(Tab)`
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const AuthTab = styled.div`
   grid-area: auth;
@@ -755,7 +689,7 @@ export const AuthTab = styled.div`
     font-weight: 700;
 
     ${props =>
-    props.dark &&
+      props.dark &&
       css`
         color: ${props => props.theme.brand.alt};
         background-image: none;
@@ -771,10 +705,10 @@ export const AuthTab = styled.div`
 
   > a > div {
     box-shadow: ${props =>
-    props.dark ? `0 0 0 2px ${props.theme.bg.default}` : 'none'};
+      props.dark ? `0 0 0 2px ${props.theme.bg.default}` : 'none'};
   }
 
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;

@@ -1,58 +1,64 @@
 // @flow
-import React from 'react'
-import { connect } from 'react-redux'
-import { Button, IconButton } from '../../../components/buttons'
-import Link from '../../../components/link'
-import Icon from '../../../components/icons'
-import { Logo } from '../../../components/logo'
-import Avatar from '../../../components/avatar'
-import Head from '../../../components/head'
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { Button, IconButton } from '../../../components/buttons';
+import Link from '../../../components/link';
+import Icon from '../../../components/icons';
+import { Logo } from '../../../components/logo';
+import Avatar from '../../../components/avatar';
+import Head from '../../../components/head';
 import {
   NavContainer,
   Tabs,
   LogoTab,
   MenuTab,
+  PricingTab,
   SupportTab,
   FeaturesTab,
   AuthTab,
   LogoLink,
   AuthLink,
-  SupportLink,
-  FeaturesLink,
-  ExploreLink,
+  DropdownLink,
   MenuContainer,
-  MenuOverlay
-} from '../style'
+  MenuOverlay,
+} from '../style';
 
 type Props = {
   currentUser: Object,
   location: Object,
-  dark?: boolean
-}
+  dark?: boolean,
+};
 
 type State = {
-  menuIsOpen: boolean
-}
+  menuIsOpen: boolean,
+};
 
 class Nav extends React.Component<Props, State> {
-  state = { menuIsOpen: false }
+  state = { menuIsOpen: false };
 
-  toggleMenu () {
-    this.setState({ menuIsOpen: !this.state.menuIsOpen })
+  toggleMenu() {
+    this.setState({ menuIsOpen: !this.state.menuIsOpen });
   }
 
-  render () {
+  render() {
     return (
-      <NavContainer data-cy='navbar-splash'>
+      <NavContainer data-cy="navbar-splash">
         <Head
-          title='Xlab'
-          description='The community platform for the future'
-        />
+          title={'Spectrum'}
+          description={'The community platform for the future.'}
+        >
+          <link
+            rel="shortcut icon"
+            id="dynamic-favicon"
+            // $FlowIssue
+            href={`${process.env.PUBLIC_URL}/img/favicon.ico`}
+          />
+        </Head>
         <Tabs>
           <LogoTab
             dark={this.props.dark}
-            to='/about'
-            data-cy='navbar-splash-about'
+            to="/about"
+            data-cy="navbar-splash-about"
           >
             <Logo />
             <Icon glyph={'logo'} />
@@ -60,22 +66,33 @@ class Nav extends React.Component<Props, State> {
           <FeaturesTab
             dark={this.props.dark}
             selected={this.props.location === 'features'}
-            to='/features'
-            data-cy='navbar-splash-features'
+            to="/features"
+            data-cy="navbar-splash-features"
           >
             Features
           </FeaturesTab>
+          <PricingTab
+            dark={this.props.dark}
+            selected={
+              this.props.location === 'pricing' ||
+              this.props.location === 'pricing/concierge'
+            }
+            to="/pricing"
+            data-cy="navbar-splash-pricing"
+          >
+            Pricing
+          </PricingTab>
           <SupportTab
             dark={this.props.dark}
             selected={this.props.location === 'support'}
-            to='/support'
-            data-cy='navbar-splash-support'
+            to="/support"
+            data-cy="navbar-splash-support"
           >
             Support
           </SupportTab>
           <AuthTab dark={this.props.dark}>
             {this.props.currentUser ? (
-              <Link to='/' data-cy='navbar-splash-profile'>
+              <Link to={'/'} data-cy="navbar-splash-profile">
                 <Avatar
                   src={this.props.currentUser.profilePhoto}
                   user={this.props.currentUser}
@@ -83,14 +100,14 @@ class Nav extends React.Component<Props, State> {
               </Link>
             ) : (
               <Link
-                to='/login'
+                to="/login"
               >
                 <Button
-                  data-cy='navbar-splash-signin'
+                  data-cy="navbar-splash-signin"
                   style={{
                     fontWeight: '700',
                     fontSize: '16px',
-                    letterSpacing: '0.5px'
+                    letterSpacing: '0.5px',
                   }}
                 >
                   Sign In
@@ -98,41 +115,53 @@ class Nav extends React.Component<Props, State> {
               </Link>
             )}
           </AuthTab>
-
           <MenuTab dark={this.props.dark} open={this.state.menuIsOpen}>
             <IconButton
               glyph={this.state.menuIsOpen ? 'view-close' : 'menu'}
               onClick={() => this.toggleMenu()}
             />
             <MenuContainer open={this.state.menuIsOpen}>
-              <LogoLink to=''>
+              <LogoLink to="/">
                 <Logo />
               </LogoLink>
-              <FeaturesLink
-                to='/features'
+              <DropdownLink
+                to="/features"
                 selected={this.props.location === 'features'}
               >
-                <Icon glyph='checkmark' />Features<Icon glyph='enter' />
-              </FeaturesLink>
-              <SupportLink
-                to='/support'
+                <Icon glyph="checkmark" />Features
+              </DropdownLink>
+              <DropdownLink
+                to="/pricing"
+                selected={
+                  this.props.location === 'pricing' ||
+                  this.props.location === 'pricing/concierge'
+                }
+              >
+                <Icon glyph="payment" />Pricing
+              </DropdownLink>
+              <DropdownLink
+                to="/support"
                 selected={this.props.location === 'support'}
               >
-                <Icon glyph='like' />Support<Icon glyph='enter' />
-              </SupportLink>
-              <ExploreLink
-                to='/explore'
+                <Icon glyph="like" />Support
+              </DropdownLink>
+              <DropdownLink
+                to="/explore"
                 selected={this.props.location === 'explore'}
               >
-                <Icon glyph='explore' />Explore<Icon glyph='enter' />
-              </ExploreLink>
-              <AuthLink
-                to={'/login'}
-              >
-                <Icon glyph='welcome' />
-                <span>Sign in</span>
-                <Icon glyph='enter' />
-              </AuthLink>
+                <Icon glyph="explore" />Explore
+              </DropdownLink>
+              {this.props.currentUser ? (
+                <AuthLink to={'/'}>
+                  <span>Return home</span>
+                </AuthLink>
+              ) : (
+                <AuthLink
+                  to={'/login'}
+                >
+                  <span>Log in or sign up</span>
+                </AuthLink>
+              )}
             </MenuContainer>
             <MenuOverlay
               onClick={() => this.toggleMenu()}
@@ -141,10 +170,11 @@ class Nav extends React.Component<Props, State> {
           </MenuTab>
         </Tabs>
       </NavContainer>
-    )
+    );
   }
 }
 
-const map = state => ({ currentUser: state.users.currentUser })
+const map = state => ({ currentUser: state.users.currentUser });
 
-export default connect(map)(Nav)
+// $FlowIssue
+export default connect(map)(Nav);
