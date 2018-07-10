@@ -44,6 +44,7 @@ const sendMessageOptions = {
             messageType: message.messageType,
             author: {
               user: {
+                // $FlowFixMe
                 ...(ownProps.currentUser || author),
                 __typename: 'User'
               },

@@ -31,6 +31,8 @@ const createDirectMessageThreadOptions = {
   options: {
     refetchQueries: ['currentUserDirectMessageThreads']
   },
+
+  // $FlowFixMe
   props: ({ mutate }) => ({
     createDirectMessageThread: input =>
       mutate({

@@ -36,6 +36,7 @@ export const getDMThreadMessageConnectionQuery = gql`
 `
 
 export const getDMThreadMessageConnectionOptions = {
+  // $FlowFixMe
   options: ({ id }: { id: string }) => ({
     variables: {
       id
