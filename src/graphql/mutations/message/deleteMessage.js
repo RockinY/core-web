@@ -27,11 +27,13 @@ const deleteMessageOptions = {
           // we have to split out the optimistic update by thread type
           // because DMs and story threads have different queries and response
           // shapes
+          // $FlowFixMe
           if (ownProps.threadType === 'story') {
             // Read the data from our cache for this query.
             const data = store.readQuery({
               query: getThreadMessageConnectionQuery,
               variables: {
+                // $FlowFixMe
                 id: ownProps.threadId
               }
             })
@@ -45,6 +47,7 @@ const deleteMessageOptions = {
               query: getThreadMessageConnectionQuery,
               data,
               variables: {
+                // $FlowFixMe
                 id: ownProps.threadId
               }
             })
@@ -53,6 +56,7 @@ const deleteMessageOptions = {
             const data = store.readQuery({
               query: getDMThreadMessageConnectionQuery,
               variables: {
+                // $FlowFixMe
                 id: ownProps.threadId
               }
             })
@@ -65,6 +69,7 @@ const deleteMessageOptions = {
               query: getDMThreadMessageConnectionQuery,
               data,
               variables: {
+                // $FlowFixMe
                 id: ownProps.threadId
               }
             })
