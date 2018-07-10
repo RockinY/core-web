@@ -22,7 +22,7 @@ type Props = {
 };
 class Overview extends React.Component<Props> {
   render() {
-    const { channel, initMessage, community } = this.props;
+    const { channel, initMessage } = this.props;
 
     return (
       <SectionsContainer data-cy="channel-overview">

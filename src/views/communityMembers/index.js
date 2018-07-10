@@ -11,8 +11,6 @@ import JoinTokenSettings from './components/joinTokenSettings';
 import type { Dispatch } from 'redux';
 import {
   SectionsContainer,
-  SectionCard,
-  SectionTitle,
   Column,
 } from '../../components/settingsViews/style';
 import { ErrorBoundary, SettingsFallback } from '../../components/error';

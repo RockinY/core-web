@@ -201,7 +201,6 @@ class ThreadDetailPure extends React.Component<Props, State> {
 
   toggleEdit = () => {
     const { isEditing } = this.state;
-    const { thread } = this.props;
 
     this.setState({
       isEditing: !isEditing,

@@ -29,12 +29,6 @@ type Props = {
 };
 
 class CommunitySettings extends React.Component<Props> {
-  componentDidUpdate(prevProps) {
-    if (!prevProps.data.community && this.props.data.community) {
-      const { community } = this.props.data;
-    }
-  }
-
   render() {
     const {
       data: { community },

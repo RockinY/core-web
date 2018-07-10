@@ -23,12 +23,6 @@ export type PublishThreadInput = {
   },
 };
 
-export type PublishThreadProps = {
-  publishThread: (
-    thread: $PropertyType<PublishThreadInput, 'thread'>
-  ) => Promise<PublishThreadResultType>,
-};
-
 export type PublishThreadResultType = {
   data: {
     publishThread?: {
@@ -43,6 +37,12 @@ export type PublishThreadResultType = {
       },
     },
   },
+};
+
+export type PublishThreadProps = {
+  publishThread: (
+    thread: $PropertyType<PublishThreadInput, 'thread'>
+  ) => Promise<PublishThreadResultType>,
 };
 
 export const publishThreadMutation = gql`

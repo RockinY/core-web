@@ -20,7 +20,6 @@ import {
   type GetCommunityType,
 } from '../../graphql/queries/community/getCommunity';
 import ViewError from '../../components/viewError';
-import queryString from 'query-string';
 
 type Props = {
   data: {
@@ -37,15 +36,6 @@ export class Login extends React.Component<Props> {
   escape = () => {
     this.props.history.push(`/${this.props.match.params.communitySlug}`);
   };
-
-  componentDidMount() {
-    const { location } = this.props;
-    let redirectPath;
-    if (location) {
-      const searchObj = queryString.parse(this.props.location.search);
-      redirectPath = searchObj.r;
-    }
-  }
 
   render() {
     const { data: { community }, isLoading, redirectPath } = this.props;

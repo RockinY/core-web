@@ -10,7 +10,6 @@ import {
   DropdownSectionDivider,
   DropdownSection,
   DropdownSectionSubtitle,
-  DropdownSectionCardInfo,
   DropdownSectionText,
   DropdownSectionTitle,
   DropdownAction,

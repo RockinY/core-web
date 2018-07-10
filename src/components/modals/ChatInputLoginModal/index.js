@@ -21,10 +21,6 @@ class ChatInputLoginModal extends React.Component<Props> {
     this.props.dispatch(closeModal());
   };
 
-  componentDidMount() {
-    const redirectPath = `${window.location.href}`;
-  }
-
   render() {
     const { isOpen } = this.props;
 

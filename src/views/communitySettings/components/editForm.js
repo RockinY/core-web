@@ -235,7 +235,6 @@ class EditForm extends React.Component<Props, State> {
 
   triggerDeleteCommunity = (e, communityId) => {
     e.preventDefault();
-    const { community } = this.props;
     const { name, communityData } = this.state;
     const message = (
       <div>
