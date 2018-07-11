@@ -16,7 +16,6 @@ import {
   ProfileDrop,
   ProfileTab,
   SupportTab,
-  PricingTab,
   Tab,
   Label,
   Navatar,
@@ -174,7 +173,7 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-home"
           >
             <Icon glyph="home" size={isDesktopApp() ? 28 : 32} />
-            <Label>Home</Label>
+            <Label>主页</Label>
           </HomeTab>
 
           <MessagesTab
@@ -263,7 +262,7 @@ class Navbar extends React.Component<Props, State> {
             to="/"
           >
             <Icon glyph="logo" />
-            <Label>About</Label>
+            <Label>关于</Label>
           </HomeTab>
           <ExploreTab
             {...this.getTabProps(history.location.pathname === '/explore')}
@@ -272,7 +271,7 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-explore"
           >
             <Icon glyph="explore" />
-            <Label>Explore</Label>
+            <Label>探索</Label>
           </ExploreTab>
           <SupportTab
             {...this.getTabProps(history.location.pathname === '/support')}
@@ -280,16 +279,8 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-support"
           >
             <Icon glyph="like" />
-            <Label>Support</Label>
+            <Label>支持</Label>
           </SupportTab>
-          <PricingTab
-            {...this.getTabProps(history.location.pathname === '/pricing')}
-            to="/pricing"
-            data-cy="navbar-pricing"
-          >
-            <Icon glyph="payment" />
-            <Label>Pricing</Label>
-          </PricingTab>
         </Nav>
       );
     }

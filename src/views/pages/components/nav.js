@@ -12,7 +12,6 @@ import {
   Tabs,
   LogoTab,
   MenuTab,
-  PricingTab,
   SupportTab,
   FeaturesTab,
   AuthTab,
@@ -69,26 +68,15 @@ class Nav extends React.Component<Props, State> {
             to="/features"
             data-cy="navbar-splash-features"
           >
-            Features
+            特征
           </FeaturesTab>
-          <PricingTab
-            dark={this.props.dark}
-            selected={
-              this.props.location === 'pricing' ||
-              this.props.location === 'pricing/concierge'
-            }
-            to="/pricing"
-            data-cy="navbar-splash-pricing"
-          >
-            Pricing
-          </PricingTab>
           <SupportTab
             dark={this.props.dark}
             selected={this.props.location === 'support'}
             to="/support"
             data-cy="navbar-splash-support"
           >
-            Support
+            支持
           </SupportTab>
           <AuthTab dark={this.props.dark}>
             {this.props.currentUser ? (
@@ -110,7 +98,7 @@ class Nav extends React.Component<Props, State> {
                     letterSpacing: '0.5px',
                   }}
                 >
-                  Sign In
+                  登陆
                 </Button>
               </Link>
             )}

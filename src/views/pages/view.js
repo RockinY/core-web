@@ -144,31 +144,28 @@ export const Overview = (props: Props) => {
   `;
 
   return (
-    <Section background="constellations" goop={2}>
+    <Section background="constellations" goop={0}>
       <ThisContent>
         <ThisText>
-          <ThisTagline>The community platform for the future.</ThisTagline>
-          <ThisCopy>The internet was built for communities.</ThisCopy>
+          <ThisTagline>更有趣的互联网论坛.</ThisTagline>
+          <ThisCopy>论坛真的很久没有更新了</ThisCopy>
           <ThisCopy>
-            But, as the web has changed and improved radically, community
-            software has hardly improved since the heyday of messageboards and
-            IRC.
+            但是，这并不表示我们不需要一个更加「 现代 」更加「 美观 」的新一代论坛，这就是我们想给大家带来的体验，永久免费～还不快来体验
           </ThisCopy>
           <ThisCopy>
-            Spectrum makes it easy to grow safe, successful online communities
-            that are built to last.
+            来这里发现你的兴趣所在～
           </ThisCopy>
           <Actions>
             <Link
               to="/login"
             >
-              <ThisPrimaryCTA icon="welcome">Join Spectrum</ThisPrimaryCTA>
+              <ThisPrimaryCTA icon="welcome">我要加入</ThisPrimaryCTA>
             </Link>
             <Link
               to="/new/community"
             >
               <ThisSecondaryCTA icon="plus-fill">
-                Create your community
+                创建你的社区
               </ThisSecondaryCTA>
             </Link>
           </Actions>
@@ -246,7 +243,7 @@ export const Centralized = (props: Props) => {
   `;
 
   return (
-    <Section goop={6} color={'space.alt'}>
+    <Section goop={0} color={'space.alt'}>
       <ThisContent>
         <Discover />
         <Text>
@@ -319,7 +316,7 @@ export const CommunitySearch = (props: Props) => {
   `;
 
   return (
-    <Section goop={4} background="bright">
+    <Section goop={0} background="bright">
       <ThisContent>
         <ThisTagline>Find a community for you!</ThisTagline>
         <ThisCopy>
@@ -371,7 +368,7 @@ export const Chat = (props: Props) => {
   `;
 
   return (
-    <Section goop={7} color={'bg.reverse'}>
+    <Section goop={2} color={'bg.reverse'}>
       <ThisContent>
         <Conversation />
         <FlexCol>
@@ -427,7 +424,7 @@ export const Sell = (props: Props) => {
   `;
 
   return (
-    <ThisSection goop={2} background="dark" color={'bg.reverse'}>
+    <ThisSection goop={0} background="dark" color={'bg.reverse'}>
       <ThisContent>
         <Text>
           <ThisTagline>Spectrum saves you time and money</ThisTagline>
