@@ -22,7 +22,7 @@ type Props = {
 export class Login extends React.Component<Props> {
   render () {
     const { redirectPath, signinType = 'signin' } = this.props
-    const viewTitle = signinType === 'login' ? 'Welcome back!' : 'Sign in to get started'
+    const viewTitle = signinType === 'login' ? '欢迎回来!' : '选择一个你喜欢的登陆方式'
     const viewSubtitle =
       signinType === 'login'
         ? "We're happy to see you again - sign in below to get back into the conversation!"
