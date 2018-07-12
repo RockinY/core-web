@@ -151,7 +151,7 @@ class Navbar extends React.Component<Props, State> {
             to="/"
             aria-hidden
             tabIndex="-1"
-            isHidden={this.state.isSkipLinkFocused}
+            hidden={this.state.isSkipLinkFocused}
             onClick={() => this.trackNavigationClick('logo')}
             data-cy="navbar-logo"
           >
@@ -242,7 +242,7 @@ class Navbar extends React.Component<Props, State> {
             to="/"
             aria-hidden
             tabIndex="-1"
-            isHidden={this.state.isSkipLinkFocused}
+            hidden={this.state.isSkipLinkFocused}
             data-cy="navbar-logo"
           >
             <Icon glyph="logo" size={28} />

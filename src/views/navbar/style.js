@@ -228,7 +228,7 @@ export const Logo = styled(Tab)`
   }
 
   ${props =>
-    props.isHidden &&
+    props.hidden &&
     css`
       display: none;
     `};
