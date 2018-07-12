@@ -11,6 +11,7 @@ import gallery from './gallery';
 import composer from './composer';
 import notifications from './notifications'
 import connectionStatus from './connectionStatus'
+import threadSlider from './threadSlider'
 
 const getReducers = () => {
   return combineReducers({
@@ -25,7 +26,8 @@ const getReducers = () => {
     directMessageThreads,
     message,
     notifications,
-    connectionStatus
+    connectionStatus,
+    threadSlider
   })
 }
 
