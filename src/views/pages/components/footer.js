@@ -22,39 +22,23 @@ export default () => {
           </Link>
           <SocialLinks>
             <a
-              href="https://github.com/withspectrum"
+              href="https://github.com/branliang"
               target="_blank"
               rel="noopener noreferrer"
             >
               <IconButton glyph="github" hoverColor={'text.reverse'} />
             </a>
-            <a
-              href="https://twitter.com/withspectrum"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IconButton glyph="twitter" hoverColor={'text.reverse'} />
-            </a>
           </SocialLinks>
         </Masthead>
         <Support>
-          <span>Support</span>
-          <Link to={`/spectrum`}>Community</Link>
-          <Link to={`/spectrum/hugs-n-bugs`}>Bug reports</Link>
-          <Link to={`/spectrum/feature-requests`}>Feature requests</Link>
-          <a href="mailto:hi@spectrum.chat">Email support</a>
+          <span>服务</span>
+          <Link to={`/spectrum`}>加入社区</Link>
+          <a href="mailto:lby89757@hotmai.com">发送邮件</a>
         </Support>
         <Safety>
-          <span>Safety</span>
-          <a
-            href="https://github.com/withspectrum/code-of-conduct"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Code of Conduct
-          </a>
-          <Link to="/privacy">Privacy Policy</Link>
-          <Link to="/terms">Terms of Service</Link>
+          <span>条约</span>
+          <Link to="/privacy">隐私政策</Link>
+          <Link to="/terms">服务条款</Link>
         </Safety>
       </FooterGrid>
     </Footer>

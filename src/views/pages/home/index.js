@@ -31,7 +31,7 @@ class Splash extends React.Component<{}, State> {
         <Centralized />
         <CommunitySearch />
         <Chat />
-        <Yours />
+        {/* <Yours /> */}
         <PageFooter />
       </Wrapper>
     );

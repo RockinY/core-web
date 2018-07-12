@@ -247,37 +247,31 @@ export const Centralized = (props: Props) => {
       <ThisContent>
         <Discover />
         <Text>
-          <ThisTagline>Grow together</ThisTagline>
+          <ThisTagline>属于你的地盘</ThisTagline>
           <ThisCopy>
-            By building on Spectrum, communities become easily discoverable
-            through search, curation, and even other community members.
+            这里创建的论坛将会非常容易被别人搜索及发现.
           </ThisCopy>
           <ThisCopy>
-            It also means no more managing multiple logins or playing
-            whack-a-mole with different notifications and preferences. Everyone
-            wins!
+            同时你也将能够同时管理多个论坛话题，你需要的只是一个统一的账户管理，
+            之后所有的消息提示和管理你都将一手掌控!
           </ThisCopy>
           <Actions>
             <Link to="/explore">
               <ThisPrimaryCTA
                 icon="explore"
               >
-                Explore communities
+                发现更多的论坛
               </ThisPrimaryCTA>
             </Link>
           </Actions>
         </Text>
       </ThisContent>
       <LogoSection>
-        <FigmaLogo />
         <BootstrapLogo />
         <ExpoLogo />
-        <ZeitLogo />
         <SketchLogo />
         <AbstractLogo />
-        <RealmLogo />
         <NodeLogo />
-        <InvisionLogo />
       </LogoSection>
     </Section>
   );
@@ -318,9 +312,9 @@ export const CommunitySearch = (props: Props) => {
   return (
     <Section goop={0} background="bright">
       <ThisContent>
-        <ThisTagline>Find a community for you!</ThisTagline>
+        <ThisTagline>尝试寻找一个您感兴趣的论坛!</ThisTagline>
         <ThisCopy>
-          Try searching for topics like “crypto” or for products like “React”!
+          试着搜索一下 「 区块链 」或者 「 酷猿信息技术 」!
         </ThisCopy>
       </ThisContent>
     </Section>
@@ -372,15 +366,12 @@ export const Chat = (props: Props) => {
       <ThisContent>
         <Conversation />
         <FlexCol>
-          <ThisTagline>Real-time messaging with long-term value</ThisTagline>
+          <ThisTagline>令人愉悦的实时通讯体验</ThisTagline>
           <ThisCopy>
-            Conversations on Spectrum are real-time chat, just like your
-            favorite messaging app. But on Spectrum, conversations continue to
-            provide value to more and more people over time.
+            就像你最喜欢的各种其他聊天软件，在这里的交流就像和对方面对面聊天一样方便.
           </ThisCopy>
           <ThisCopy>
-            Every conversation gets a unique link to make it easy for people to
-            discover, share, or save for later.
+            每段聊天都会生成一个独立的链接，你可很方便的存储或者分享这些聊天记录
           </ThisCopy>
 
           <Actions>
@@ -388,7 +379,7 @@ export const Chat = (props: Props) => {
               to="/thread/764331db-16dd-4fc4-a2c5-aabd735a64a9"
             >
               <ThisPrimaryCTA icon="message-fill">
-                Check out a conversation
+                查看我的对话
               </ThisPrimaryCTA>
             </Link>
           </Actions>
