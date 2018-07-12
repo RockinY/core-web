@@ -39,7 +39,7 @@ export const SigninButton = styled.div`
     props.showAfter &&
     `
     &:after {
-        content: 'Previously signed in with';
+        content: '之前登陆方式';
         position: absolute;
         top: -32px;
         font-size: 14px;

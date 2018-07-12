@@ -25,8 +25,8 @@ export class Login extends React.Component<Props> {
     const viewTitle = signinType === 'login' ? '欢迎回来!' : '选择一个你喜欢的登陆方式'
     const viewSubtitle =
       signinType === 'login'
-        ? "We're happy to see you again - sign in below to get back into the conversation!"
-        : 'Spectrum is a place where communities can share, discuss, and grow together. Sign in below to get in on the conversation.'
+        ? "很高心见到你回来 - 登陆一下查看你所关心的内容吧!"
+        : '这是一个你可以自由分享你的想法，故事的地方，你在这里将发现很多有趣的故事。登陆一下开始你的旅程吧！'
 
     return (
       <FullscreenView

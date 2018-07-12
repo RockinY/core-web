@@ -305,7 +305,7 @@ export const SigninButton = styled.a`
     props.after &&
     `
       &:after {
-        content: 'Previously signed in with';
+        content: '之前登陆方式';
         position: absolute;
         top: -32px;
         font-size: 14px;
