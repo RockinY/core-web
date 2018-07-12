@@ -17,11 +17,7 @@ import {
   AbstractLogo,
   BootstrapLogo,
   ExpoLogo,
-  FigmaLogo,
-  InvisionLogo,
-  ZeitLogo,
   SketchLogo,
-  RealmLogo,
   NodeLogo,
 } from './components/logos';
 import {

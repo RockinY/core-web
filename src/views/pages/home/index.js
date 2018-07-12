@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { storeItem, getItemFromStorage } from '../../../utils/localStorage';
-import { Overview, Centralized, CommunitySearch, Chat, Yours } from '../view';
+import { Overview, Centralized, CommunitySearch, Chat } from '../view';
 import PageFooter from '../components/footer';
 import { Wrapper } from '../style';
 

@@ -43,8 +43,8 @@ class ViewError extends React.Component<Props> {
     }
 
     const moji = emoji || '😌'
-    const head = heading || 'We could all use a refresh.'
-    const subhead = subheading || 'Refresh this page to try again.'
+    const head = heading || '好像出现了一点问题'
+    const subhead = subheading || '也许可以试着刷新一下'
 
     return (
       <FillSpaceError small={small} data-cy={dataCy}>
@@ -60,7 +60,7 @@ class ViewError extends React.Component<Props> {
             icon='view-reload'
             onClick={() => window.location.reload(true)}
           >
-            Refresh the page
+            刷新页面
           </Button>
         )}
 
