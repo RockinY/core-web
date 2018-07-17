@@ -47,7 +47,7 @@ export const Nav = styled.nav`
   }
 
   ${props =>
-    props.loggedOut &&
+    props.loggedout &&
     css`
       grid-template-columns: auto auto auto auto 1fr;
       grid-template-areas: 'logo explore support pricing .';
@@ -259,7 +259,7 @@ export const ExploreTab = styled(Tab)`
     `};
 
   ${props =>
-    props.loggedOut &&
+    props.loggedout &&
     css`
       grid-area: explore;
     `} ${Label} {
