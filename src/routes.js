@@ -35,6 +35,11 @@ const Body = styled(FlexCol)`
   background: ${props => props.theme.bg.wash};
 `
 
+const Explore = Loadable({
+  loader: () => import('./views/explore'/* webpackChunkName: "Explore" */),
+  loading: ({ isLoading }) => isLoading && <Loading />
+})
+
 const ErrorFallback = Loadable({
   loader: () => import('./components/error'),
   loading: ({ isLoading }) => isLoading && <Loading />
@@ -167,6 +172,7 @@ class Routes extends React.Component<{||}> {
                 <Route path="/new/thread" component={ComposerFallback} />
 
                 <Route path='/login' component={LoginFallback} />
+                <Route path='/explore' component={Explore}/>
                 <Route path="/messages/new" component={MessagesFallback} />
                 <Route path="/messages/:threadId" component={MessagesFallback} />
                 <Route path="/messages" component={MessagesFallback} />
