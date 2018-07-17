@@ -12,8 +12,7 @@ class MessageErrorFallback extends React.Component<Props> {
 
     return (
       <Text me={me} error>
-        We encountered an error loading this message - the Spectrum team has
-        been alerted.
+        获取信息失败，不过请放心，云社团队已经知晓错误且正在全力修复中.
       </Text>
     );
   }

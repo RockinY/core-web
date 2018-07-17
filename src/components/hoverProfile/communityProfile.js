@@ -78,7 +78,7 @@ class HoverProfile extends Component<ProfileProps> {
                           icon={'checkmark'}
                           gradientTheme="success"
                         >
-                          Member
+                          成员
                         </OutlineButton>
                       );
                     } else {
@@ -88,7 +88,7 @@ class HoverProfile extends Component<ProfileProps> {
                           icon={'plus-fill'}
                           gradientTheme="success"
                         >
-                          Join
+                          加入
                         </Button>
                       );
                     }
@@ -98,7 +98,7 @@ class HoverProfile extends Component<ProfileProps> {
 
             {(isModerator || isOwner) && (
               <Link to={`/${community.slug}/settings`}>
-                <OutlineButton icon={'settings'}>Settings</OutlineButton>
+                <OutlineButton icon={'settings'}>设置</OutlineButton>
               </Link>
             )}
           </Actions>

@@ -47,7 +47,7 @@ class Message extends Component<Props> {
   };
 
   deleteMessage = () => {
-    const message = 'Are you sure you want to delete this message?';
+    const message = '你确定想要删除这条信息吗?';
 
     return this.props.dispatch(
       openModal('DELETE_DOUBLE_CHECK_MODAL', {

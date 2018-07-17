@@ -158,7 +158,7 @@ const Action = (props: ActionProps) => {
           <Icon
             dataCy="reply-to-message"
             glyph="reply"
-            tipText={`Reply`}
+            tipText={`回复`}
             tipLocation={'top'}
             size={24}
             onClick={replyToMessage}
@@ -171,7 +171,7 @@ const Action = (props: ActionProps) => {
           <Icon
             dataCy="delete-message"
             glyph="delete"
-            tipText={'Delete'}
+            tipText={'删除'}
             tipLocation={'top'}
             size={24}
             onClick={() => deleteMessage && deleteMessage()}

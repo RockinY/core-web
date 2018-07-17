@@ -20,11 +20,10 @@ class SettingsFallback extends React.Component<{}> {
           >
             😔
           </span>{' '}
-          Something has gone wrong
+          啊哦，出错了
         </SectionTitle>
         <SectionSubtitle>
-          There was an error loading this information. Our team has been alerted
-          and will fix this as soon as possible.
+          加载信息失败. 云社开发人员已经接收到错误信息并正在全力修复中.
         </SectionSubtitle>
 
         <SectionCardFooter>

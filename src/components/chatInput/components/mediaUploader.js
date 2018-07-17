@@ -18,10 +18,10 @@ class MediaUploader extends React.Component<Props> {
   validate = (validity: Object, file: ?Object) => {
     const { currentUser } = this.props;
 
-    if (!currentUser) return 'You must be signed in to upload images';
+    if (!currentUser) return '请先登陆再上传图片';
     if (!file) return this.props.onError('');
     if (!validity.valid)
-      return "We couldn't validate this upload, please try uploading another file";
+      return "该上传无效，请重新选择一个文件";
 
     // if it makes it this far, there is not an error we can detect
     return null;
@@ -108,7 +108,7 @@ class MediaUploader extends React.Component<Props> {
           <Icon
             glyph="photo"
             tipLocation={'top-right'}
-            tipText="Upload photo"
+            tipText="上传图片"
           />
         </MediaLabel>
       </Form>

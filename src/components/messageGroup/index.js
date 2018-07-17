@@ -219,7 +219,7 @@ class Messages extends Component<MessageGroupProps, State> {
             unseenRobo = (
               <UnseenRobotext key={`unseen${initialMessage.timestamp}`}>
                 <hr />
-                <UnseenTime>New messages</UnseenTime>
+                <UnseenTime>新消息</UnseenTime>
                 <hr />
               </UnseenRobotext>
             );

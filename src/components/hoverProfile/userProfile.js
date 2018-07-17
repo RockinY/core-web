@@ -77,14 +77,14 @@ class HoverProfile extends Component<ProfileProps> {
             {!me && (
               <Link to={'/messages/new'}>
                 <Button icon={'message'} onClick={this.initMessage}>
-                  Message
+                  消息
                 </Button>
               </Link>
             )}
 
             {me && (
               <Link to={'/me'}>
-                <Button>My profile</Button>
+                <Button>我的资料</Button>
               </Link>
             )}
           </Actions>

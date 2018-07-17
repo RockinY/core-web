@@ -96,7 +96,7 @@ class HoverProfile extends Component<ProfileProps> {
               @{user.username}
               {user.isPro && <Badge type="pro" tipText="" />}
               <Reputation
-                tipText={'Total rep across all communities'}
+                tipText={'全部社区的积分值'}
                 size={'large'}
                 reputation={
                   user.contextPermissions
@@ -132,7 +132,7 @@ class HoverProfile extends Component<ProfileProps> {
                     to={'/messages/new'}
                     onClick={() => this.initMessage(dispatch, user)}
                   >
-                    <Button>Message</Button>
+                    <Button>消息</Button>
                   </Link>
                 </MessageButtonContainer>
               )}

@@ -43,7 +43,7 @@ class Badge extends React.Component<Props> {
             tipLocation={'top-left'}
             onClick={this.triggerProModal}
           >
-            Default
+            默认
           </DefaultPaymentMethodBadge>
         );
       case 'pro':
@@ -54,7 +54,7 @@ class Badge extends React.Component<Props> {
             tipLocation={'top-left'}
             onClick={this.triggerProModal}
           >
-            {type}
+            会员
           </ProBadge>
         );
       case 'blocked':
@@ -64,7 +64,7 @@ class Badge extends React.Component<Props> {
             tipText={this.props.tipText}
             tipLocation={'top-left'}
           >
-            {type}
+            屏蔽
           </BlockedBadge>
         );
       case 'pending':
@@ -74,7 +74,7 @@ class Badge extends React.Component<Props> {
             tipText={this.props.tipText}
             tipLocation={'top-left'}
           >
-            {type}
+            等待
           </PendingBadge>
         );
       case 'moderator':
@@ -85,7 +85,7 @@ class Badge extends React.Component<Props> {
             tipText={this.props.tipText}
             tipLocation="top-left"
           >
-            Team
+            成员
           </TeamBadge>
         );
       default:

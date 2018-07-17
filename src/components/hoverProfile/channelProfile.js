@@ -83,7 +83,7 @@ class HoverProfile extends Component<ProfileProps> {
                           icon={'checkmark'}
                           loading={state.isLoading}
                         >
-                          Joined
+                          已经加入
                         </OutlineButton>
                       );
                     } else {
@@ -94,7 +94,7 @@ class HoverProfile extends Component<ProfileProps> {
                           loading={state.isLoading}
                           gradientTheme={'success'}
                         >
-                          Join channel
+                          加入频道
                         </Button>
                       );
                     }
@@ -104,7 +104,7 @@ class HoverProfile extends Component<ProfileProps> {
 
             {(isGlobalModerator || isGlobalOwner) && (
               <Link to={`/${channel.community.slug}/${channel.slug}/settings`}>
-                <OutlineButton icon={'settings'}>Settings</OutlineButton>
+                <OutlineButton icon={'settings'}>设置</OutlineButton>
               </Link>
             )}
           </Actions>

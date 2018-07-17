@@ -8,9 +8,9 @@ import SettingsFallback from './SettingsFallback'
 const BlueScreen = () => {
   return (
     <ViewError
-      heading={'Something went wrong'}
+      heading={'啊哦，出错了'}
       subheading={
-        'Sorry about the issue. Bran has been notified of the problem and should resolve it soon.'
+        '实在非常抱歉. 云社开发人员已经接收到错误信息并正在全力修复中.'
       }
       refresh
     />

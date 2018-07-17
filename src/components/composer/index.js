@@ -422,7 +422,7 @@ class ComposerWithData extends Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Not connected to the internet - check your internet connection or try again'
+          '无法连接到网络，请检查你的网络连接后再次尝试'
         )
       );
     }
@@ -434,7 +434,7 @@ class ComposerWithData extends Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Error connecting to the server - hang tight while we try to reconnect'
+          '无法连接到服务器，我们正在努力重新连接，请稍等'
         )
       );
     }
@@ -511,7 +511,7 @@ class ComposerWithData extends Component<Props, State> {
         // redirect the user to the thread
         // if they are in the inbox, select it
         this.props.dispatch(
-          addToastWithTimeout('success', 'Thread published!')
+          addToastWithTimeout('success', '话题发布成功!')
         );
         if (this.props.isInbox) {
           this.props.history.replace(`/?t=${id}`);
@@ -580,7 +580,7 @@ class ComposerWithData extends Component<Props, State> {
           this.props.dispatch(
             addToastWithTimeout(
               'error',
-              `Oops, we couldn't fetch a preview for ${urlToCheck}. You can publish your story anyways though! 👍`
+              `啊哦～尝试预览 ${urlToCheck} 失败了. 别担心，你的消息仍然可以成功发送! 👍`
             )
           );
         });
@@ -622,7 +622,7 @@ class ComposerWithData extends Component<Props, State> {
 
     return (
       <Container>
-        <Titlebar provideBack title={'New conversation'} noComposer />
+        <Titlebar provideBack title={'新的对话'} noComposer />
         <Dropdowns>
           <span>To:</span>
           {!dataExists ? (
@@ -668,7 +668,7 @@ class ComposerWithData extends Component<Props, State> {
             onChange={this.changeTitle}
             style={ThreadTitle}
             value={this.state.title}
-            placeholder={"What's up?"}
+            placeholder={"取一个有趣的标题吧?"}
             ref={'titleTextarea'}
             autoFocus={!threadSliderIsOpen}
           />
@@ -680,7 +680,7 @@ class ComposerWithData extends Component<Props, State> {
             style={ThreadDescription}
             editorRef={editor => (this.bodyEditor = editor)}
             editorKey="thread-composer"
-            placeholder={'Write more thoughts here...'}
+            placeholder={'详细描述一下你的想法吧...'}
             className={'threadComposer'}
             showLinkPreview={true}
             linkPreview={{
@@ -695,7 +695,7 @@ class ComposerWithData extends Component<Props, State> {
         <Actions>
           {networkDisabled && (
             <DisabledWarning>
-              Lost connection to the internet or server...
+              无法连接到网络或者服务器...
             </DisabledWarning>
           )}
 

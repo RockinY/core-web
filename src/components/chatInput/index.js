@@ -49,7 +49,7 @@ const QuotedMessage = connect()(
       props.dispatch(
         addToastWithTimeout(
           'error',
-          'The message you are replying to was deleted or could not be fetched.'
+          '你所要回复的消息已被删除或者获取失败'
         )
       );
       props.dispatch(
@@ -298,7 +298,7 @@ class ChatInput extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Not connected to the internet - check your internet connection or try again'
+          '无法连接网络，请检查您的网络连接后再重试'
         )
       );
     }
@@ -310,7 +310,7 @@ class ChatInput extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Error connecting to the server - hang tight while we try to reconnect'
+          '无法连接到服务器，我们正在努力重新连接，请稍等'
         )
       );
     }
@@ -473,7 +473,7 @@ class ChatInput extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Not connected to the internet - check your internet connection or try again'
+          '无法连接到网络，请检查您的网络连接后再重试'
         )
       );
     }
@@ -485,7 +485,7 @@ class ChatInput extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Error connecting to the server - hang tight while we try to reconnect'
+          '无法连接到服务器，我们正在努力重新连接，请稍等'
         )
       );
     }
@@ -672,7 +672,7 @@ class ChatInput extends React.Component<Props, State> {
             <Form focus={isFocused}>
               <Input
                 focus={isFocused}
-                placeholder={`Your message here...`}
+                placeholder={`说点什么吧...`}
                 editorState={state}
                 handleReturn={this.handleReturn}
                 onChange={this.onChange}
