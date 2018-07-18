@@ -9,6 +9,7 @@ import getCommunityThreads from '../../graphql/queries/community/getCommunityThr
 import getChannelThreadConnection from '../../graphql/queries/channel/getChannelThreadConnection'
 import { getCurrentUserCommunityConnection } from '../../graphql/queries/user/getUserCommunityConnection'
 import type { GetUserCommunityConnectionType } from '../../graphql/queries/user/getUserCommunityConnection'
+import searchThreadsQuery from '../../graphql/queries/search/searchThreads'
 import Titlebar from '../../views/titlebar'
 import DashboardThreadFeed from './components/threadFeed'
 import Head from '../../components/head'
@@ -43,6 +44,11 @@ const CommunityThreadFeed = compose(connect(), getCommunityThreads)(
 );
 // $FlowFixMe
 const ChannelThreadFeed = compose(connect(), getChannelThreadConnection)(
+  DashboardThreadFeed
+);
+
+// $FlowFixMe
+const SearchThreadFeed = compose(connect(), searchThreadsQuery)(
   DashboardThreadFeed
 );
 
@@ -168,6 +174,18 @@ class Dashboard extends React.Component<Props, State> {
                 </SearchStringHeader>
               )}
             <InboxScroller id="scroller-for-inbox">
+              {searchQueryString &&
+                  searchQueryString.length > 0 &&
+                  searchFilter && (
+                    <ErrorBoundary>
+                      <SearchThreadFeed
+                        queryString={searchQueryString}
+                        filter={searchFilter}
+                        selectedId={activeThread}
+                      />
+                    </ErrorBoundary>
+                  )}
+                  
               {// no community, no search results
               !activeCommunity &&
                 !searchQueryString && (

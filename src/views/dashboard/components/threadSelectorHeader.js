@@ -11,6 +11,7 @@ import {
 } from '../style';
 import { IconButton } from '../../../components/buttons';
 import Menu from '../../../components/menu';
+import ThreadSearch from './threadSearch'
 import CommunityList from './communityList';
 import Link from '../../../components/link';
 import type { Dispatch } from 'redux';
@@ -74,6 +75,7 @@ class Header extends React.Component<Props> {
   render() {
     const {
       dispatch,
+      filter,
       communities,
       user,
       activeCommunity,
@@ -95,6 +97,7 @@ class Header extends React.Component<Props> {
               />
             </Menu>
           </NarrowOnly>
+          <ThreadSearch filter={filter} />
           <IconButton
             data-e2e-id="inbox-view-post-button"
             glyph={'post'}
