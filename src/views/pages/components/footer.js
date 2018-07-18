@@ -20,15 +20,7 @@ export default () => {
           <Link to="/">
             <Logo />
           </Link>
-          <SocialLinks>
-            <a
-              href="https://github.com/branliang"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IconButton glyph="github" hoverColor={'text.reverse'} />
-            </a>
-          </SocialLinks>
+          <span>备案号: 苏ICP备18033476号-1</span>
         </Masthead>
         <Support>
           <span>服务</span>
