@@ -44,15 +44,15 @@ export class NewChannelNotification extends React.Component<Props> {
     const context = parseContext(notification.context);
     const newChannelCount =
       notification.entities.length > 1
-        ? `${notification.entities.length} new channels were`
-        : 'A new channel was';
+        ? `有${notification.entities.length}个新的频道`
+        : '一个新的频道';
 
     return (
       <SegmentedNotificationCard>
         <CreatedContext>
           <Icon glyph="community" />
           <TextContent pointer={true}>
-            {newChannelCount} created in {context.asString} {date}
+            {newChannelCount}创建于{context.asString} {date}
           </TextContent>
         </CreatedContext>
         <ContentWash>
@@ -89,8 +89,8 @@ class MiniNewChannelNotificationWithMutation extends React.Component<Props> {
     const context = parseContext(notification.context);
     const newChannelCount =
       notification.entities.length > 1
-        ? `${notification.entities.length} new channels were`
-        : 'A new channel was';
+        ? `有${notification.entities.length}个新的频道`
+        : '一个新的频道';
 
     return (
       <SegmentedNotificationListRow
@@ -100,7 +100,7 @@ class MiniNewChannelNotificationWithMutation extends React.Component<Props> {
         <CreatedContext>
           <Icon glyph="community" />
           <TextContent pointer={false}>
-            {newChannelCount} created in {context.asString} {date}
+            {newChannelCount}创建于{context.asString} {date}
           </TextContent>
         </CreatedContext>
         <ContentWash mini>

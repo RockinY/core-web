@@ -405,7 +405,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
           </Input>
 
           {nameError && (
-            <Error>社区名字不应该过长.</Error>
+            <Error>社区名字不应该超过20个字符.</Error>
           )}
 
           <UnderlineInput
@@ -462,7 +462,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
             onChange={this.changeDescription}
             dataCy='community-description-input'
           >
-            Describe it in 140 characters or less
+            请用少于140个字符的内容描述它
           </TextArea>
 
           {descriptionError && (
@@ -476,7 +476,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
             onChange={this.changeWebsite}
             dataCy='community-website-input'
           >
-            Optional: Add your community’s website
+            可选: 给社区添加一个网址
           </Input>
 
           <PrivacySelector>
@@ -489,13 +489,11 @@ class CreateCommunityForm extends React.Component<Props, State> {
                   onChange={this.setPublic}
                   data-cy='community-public-selector-input'
                 />
-                Public
+                公共
               </PrivacyOptionLabel>
               <PrivacyOptionText>
-                Anyone can join and view conversations. Public communities will
-                appear in search results, and can appear as suggested
-                communities to non-members. Conversations will be search
-                indexed.
+                任何人都可以加入和浏览其中的对话. 公共社区可以被直接搜索到, 同时公共社区
+                会出现在非会员的建议选项中. 同时社区里的对象也可以被直接搜索.
               </PrivacyOptionText>
             </PrivacyOption>
 
@@ -508,13 +506,11 @@ class CreateCommunityForm extends React.Component<Props, State> {
                   onChange={this.setPrivate}
                   data-cy='community-private-selector-input'
                 />
-                Private
+                私有
               </PrivacyOptionLabel>
               <PrivacyOptionText>
-                All members must be approved before they can view or join
-                conversations. Private communities will not appear in search
-                results or suggested communities. Conversations will not be
-                search indexed.
+                社区的会员必须经过管理员审核才能浏览社区内容，或者进行社区内对话.
+                私有社区无法被直接搜索或被推荐给其他人员. 对话的内容也无法被直接搜索.
               </PrivacyOptionText>
             </PrivacyOption>
           </PrivacySelector>
@@ -526,21 +522,21 @@ class CreateCommunityForm extends React.Component<Props, State> {
             dataCy='community-coc-input'
           >
             <span>
-              I have read the{' '}
+              我已经阅读{' '}
               <a
                 href='https://github.com/withspectrum/code-of-conduct'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Spectrum Code of Conduct
+                云社使用协议
               </a>{' '}
-              and agree to enforce it in my community.
+              并且同意该协议且会应用在社区的日常管理中.
             </span>
           </Checkbox>
 
           {createError && (
             <Error>
-              Please fix any errors above before creating this community.
+              创建该社区之前请先修复错误提示
             </Error>
           )}
         </Form>
@@ -562,7 +558,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
             loading={isLoading}
             dataCy='community-create-button'
           >
-            Create Community & Continue
+            创建社区 & 继续
           </Button>
         </Actions>
       </FormContainer>

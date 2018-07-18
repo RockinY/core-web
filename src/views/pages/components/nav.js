@@ -43,8 +43,8 @@ class Nav extends React.Component<Props, State> {
     return (
       <NavContainer data-cy="navbar-splash">
         <Head
-          title={'Spectrum'}
-          description={'The community platform for the future.'}
+          title={'云社'}
+          description={'更好用的新一代网络社区.'}
         >
           <link
             rel="shortcut icon"
@@ -116,38 +116,29 @@ class Nav extends React.Component<Props, State> {
                 to="/features"
                 selected={this.props.location === 'features'}
               >
-                <Icon glyph="checkmark" />Features
-              </DropdownLink>
-              <DropdownLink
-                to="/pricing"
-                selected={
-                  this.props.location === 'pricing' ||
-                  this.props.location === 'pricing/concierge'
-                }
-              >
-                <Icon glyph="payment" />Pricing
+                <Icon glyph="checkmark" />特征
               </DropdownLink>
               <DropdownLink
                 to="/support"
                 selected={this.props.location === 'support'}
               >
-                <Icon glyph="like" />Support
+                <Icon glyph="like" />支持
               </DropdownLink>
               <DropdownLink
                 to="/explore"
                 selected={this.props.location === 'explore'}
               >
-                <Icon glyph="explore" />Explore
+                <Icon glyph="explore" />探索
               </DropdownLink>
               {this.props.currentUser ? (
                 <AuthLink to={'/'}>
-                  <span>Return home</span>
+                  <span>返回主页</span>
                 </AuthLink>
               ) : (
                 <AuthLink
                   to={'/login'}
                 >
-                  <span>Log in or sign up</span>
+                  <span>注册或者登陆</span>
                 </AuthLink>
               )}
             </MenuContainer>

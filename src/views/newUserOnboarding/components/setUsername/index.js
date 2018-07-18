@@ -97,13 +97,13 @@ class SetUsername extends React.Component<Props, State> {
 
     return (
       <Form onSubmit={this.saveUsername}>
-        <InputLabel>Create your username</InputLabel>
-        <InputSubLabel>You can change this later - no pressure!</InputSubLabel>
+        <InputLabel>创建你的用户名</InputLabel>
+        <InputSubLabel>别紧张，你可以随时修改你的用户名!</InputSubLabel>
 
         <Row>
           {/* $FlowFixMe */}
           <UsernameSearch
-            placeholder={'Set a username...'}
+            placeholder={'设置一个用户名...'}
             autoFocus={true}
             username={username}
             onValidationResult={this.handleUsernameValidation}
@@ -121,7 +121,7 @@ class SetUsername extends React.Component<Props, State> {
             disabled={!username || error}
             loading={isLoading}
           >
-            Save and Continue
+            保存然后继续
           </ContinueButton>
         </Row>
       </Form>

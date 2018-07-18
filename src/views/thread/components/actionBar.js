@@ -272,7 +272,7 @@ class ActionBar extends React.Component<Props, State> {
               <ShareButtons>
                 <ShareButton
                   facebook
-                  tipText={'Share'}
+                  tipText={'分享'}
                   tipLocation={'bottom-right'}
                   data-cy="thread-facebook-button"
                 >
@@ -292,7 +292,7 @@ class ActionBar extends React.Component<Props, State> {
 
                 <ShareButton
                   twitter
-                  tipText={'Tweet'}
+                  tipText={'推特'}
                   tipLocation={'bottom-right'}
                   data-cy="thread-tweet-button"
                 >
@@ -324,7 +324,7 @@ class ActionBar extends React.Component<Props, State> {
                   }
                 >
                   <ShareButton
-                    tipText={'Copy link'}
+                    tipText={'复制链接'}
                     tipLocation={'bottom-right'}
                     data-cy="thread-copy-link-button"
                   >
@@ -352,7 +352,7 @@ class ActionBar extends React.Component<Props, State> {
                   }
                 >
                   <ShareButton
-                    tipText={'Copy link'}
+                    tipText={'复制链接'}
                     tipLocation={'bottom-right'}
                     data-cy="thread-copy-link-button"
                   >
@@ -381,7 +381,7 @@ class ActionBar extends React.Component<Props, State> {
                 onClick={this.toggleNotification}
                 dataCy="thread-notifications-toggle"
               >
-                {thread.receiveNotifications ? 'Subscribed' : 'Notify me'}
+                {thread.receiveNotifications ? '已经订阅' : '通知我'}
               </FollowButton>
             ) : (
               <FollowButton
@@ -392,7 +392,7 @@ class ActionBar extends React.Component<Props, State> {
                   this.props.dispatch(openModal('CHAT_INPUT_LOGIN_MODAL', {}))
                 }
               >
-                Notify me
+                通知我
               </FollowButton>
             )}
 
@@ -447,8 +447,8 @@ class ActionBar extends React.Component<Props, State> {
                                   dataCy={'thread-dropdown-notifications'}
                                 >
                                   {thread.receiveNotifications
-                                    ? 'Subscribed'
-                                    : 'Notify me'}
+                                    ? '已经订阅'
+                                    : '通知我'}
                                 </TextButton>
                               </FlyoutRow>
 
@@ -460,7 +460,7 @@ class ActionBar extends React.Component<Props, State> {
                                     hoverColor={'space.default'}
                                     dataCy={'thread-dropdown-edit'}
                                   >
-                                    <Label>Edit post</Label>
+                                    <Label>编辑内容</Label>
                                   </TextButton>
                                 </FlyoutRow>
                               )}
@@ -480,7 +480,7 @@ class ActionBar extends React.Component<Props, State> {
                                     disabled={isPinningThread}
                                   >
                                     <Label>
-                                      {isPinned ? 'Unpin thread' : 'Pin thread'}
+                                      {isPinned ? '取消置顶' : '话题置顶'}
                                     </Label>
                                   </TextButton>
                                 </FlyoutRow>
@@ -519,8 +519,8 @@ class ActionBar extends React.Component<Props, State> {
                                   >
                                     <Label>
                                       {thread.isLocked
-                                        ? 'Unlock chat'
-                                        : 'Lock chat'}
+                                        ? '取消聊天锁定'
+                                        : '锁定聊天'}
                                     </Label>
                                   </TextButton>
                                 </FlyoutRow>
@@ -534,7 +534,7 @@ class ActionBar extends React.Component<Props, State> {
                                     onClick={this.props.triggerDelete}
                                     dataCy={'thread-dropdown-delete'}
                                   >
-                                    <Label>Delete</Label>
+                                    <Label>删除</Label>
                                   </TextButton>
                                 </FlyoutRow>
                               )}

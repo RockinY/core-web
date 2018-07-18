@@ -174,17 +174,17 @@ class ThreadDetailPure extends React.Component<Props, State> {
     let message;
 
     if (isCommunityOwner && !thread.isAuthor) {
-      message = `You are about to delete another person's thread. As the owner of the ${
+      message = `你即将删除另一个人的话题，作为社区 ${
         thread.community.name
-      } community, you have permission to do this. The thread author will be notified that this thread was deleted.`;
+      } 的主人, 你有权力对此操作. 同时话题的主人将会收到话题被删除的通知.`;
     } else if (isChannelOwner && !thread.isAuthor) {
-      message = `You are about to delete another person's thread. As the owner of the ${
+      message = `你即将删除另一个人的话题，作为频道 ${
         thread.channel.name
-      } channel, you have permission to do this. The thread author will be notified that this thread was deleted.`;
+      } 的主人, 你有权力对此操作. 同时话题的主人将会收到话题被删除的通知.`;
     } else if (thread.isAuthor) {
-      message = 'Are you sure you want to delete this thread?';
+      message = '你确定相删除这个话题吗?';
     } else {
-      message = 'Are you sure you want to delete this thread?';
+      message = '你确定相删除这个话题吗?';
     }
 
     return dispatch(
@@ -216,7 +216,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
 
     if (!title || title.trim().length === 0) {
       dispatch(
-        addToastWithTimeout('error', 'Be sure to save a title for your thread!')
+        addToastWithTimeout('error', '请确保您的话题有一个不为空的标题!')
       );
       return;
     }
@@ -269,12 +269,12 @@ class ThreadDetailPure extends React.Component<Props, State> {
 
         if (editThread && editThread !== null) {
           this.toggleEdit();
-          return dispatch(addToastWithTimeout('success', 'Thread saved!'));
+          return dispatch(addToastWithTimeout('success', '话题已被保存!'));
         } else {
           return dispatch(
             addToastWithTimeout(
               'error',
-              "We weren't able to save these changes. Try again?"
+              "修改保存失败了，再尝试一下吧?"
             )
           );
         }
@@ -349,7 +349,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
         .catch(() => {
           this.setState({
             error:
-              "Oops, that URL didn't seem to want to work. You can still publish your story anyways 👍",
+              "啊哦, 该链接好像无法正常工作. 但是你仍然可以成功发布 👍",
             fetchingLinkPreview: false,
           });
         });
@@ -372,7 +372,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Only threads in public channels can be pinned.'
+          '只有公共频道的话题才可以被置顶.'
         )
       );
     }
@@ -432,7 +432,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
               onChange={this.changeTitle}
               style={ThreadTitle}
               value={this.state.title}
-              placeholder={'A title for your thread...'}
+              placeholder={'起一个标题吧...'}
               ref={c => {
                 this.titleTextarea = c;
               }}
@@ -469,7 +469,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
             state={body}
             onChange={this.changeBody}
             editorKey="thread-detail"
-            placeholder="Write more thoughts here..."
+            placeholder="把你的想法写在这里..."
             showLinkPreview={true}
             editorRef={editor => (this.bodyEditor = editor)}
             version={2}

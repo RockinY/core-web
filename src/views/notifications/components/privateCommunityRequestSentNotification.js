@@ -191,7 +191,7 @@ class MiniPrivateCommunityRequestSentWithMutation extends React.Component<
                       variables={{ input: input }}
                       render={({ isLoading }) => (
                         <OutlineButton loading={isLoading} glyph={'minus'}>
-                          Block
+                          屏蔽
                         </OutlineButton>
                       )}
                     />
@@ -200,7 +200,7 @@ class MiniPrivateCommunityRequestSentWithMutation extends React.Component<
                       variables={{ input: input }}
                       render={({ isLoading }) => (
                         <Button loading={isLoading} glyph={'plus'}>
-                          Approve
+                          通过
                         </Button>
                       )}
                     />

@@ -114,22 +114,22 @@ class NewUserOnboarding extends Component<Props, State> {
 
     const steps = {
       setUsername: {
-        title: 'Welcome to Spectrum!',
+        title: '欢迎来到云社!',
         subtitle:
-          'Spectrum is a place where communities can share, discuss, and grow together. To get started, create a username.',
+          '在云社你可以找到您感兴趣的内容和一群志同道合的人，但是首先请先留下您的用户名.',
         emoji: '👋',
       },
       joinFirstCommunity: {
         // will be triggered if the user signed up via a community, channel, or thread view
-        title: 'Join your first community',
+        title: '加入你的第一个社区',
         subtitle:
-          "You were in the middle of something. Let's get back on track and join your first community!",
+          "加入一个感兴趣的社区来开始这段奇妙的旅程吧!",
         emoji: '🎉',
       },
       discoverCommunities: {
-        title: 'Find your people.',
+        title: '找到你的朋友.',
         subtitle:
-          'There are hundreds of communities on Spectrum to explore. Check out some of our favorites below or search for topics.',
+          '云社里面有着很多不同类型的社区，试着搜索一下，也许会有不一样的惊喜',
         emoji: null,
       },
     };
@@ -180,7 +180,7 @@ class NewUserOnboarding extends Component<Props, State> {
                     style={{ marginTop: '0' }}
                     onClick={() => (window.location.href = '/')}
                   >
-                    Continue to my home feed
+                    回到我的主页
                   </ContinueButton>
                 </StickyRow>
               </Container>

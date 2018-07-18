@@ -53,7 +53,7 @@ class Status extends React.Component<Props, State> {
     const online = window.navigator.onLine;
     this.setState({
       online,
-      label: online ? null : 'Lost internet connection.',
+      label: online ? null : '失去网络连接.',
       color: online ? null : 'warn',
     });
 
@@ -70,7 +70,7 @@ class Status extends React.Component<Props, State> {
     if (websocketConnection === 'disconnected') {
       return this.setState({
         color: 'special',
-        label: 'Reconnecting to server...',
+        label: '正在重新连接服务器...',
         wsConnected: false,
         hidden: false,
       });
@@ -79,7 +79,7 @@ class Status extends React.Component<Props, State> {
     if (websocketConnection === 'reconnected') {
       this.setState({
         color: 'success',
-        label: 'Reconnected!',
+        label: '重新连接成功!',
         hidden: false,
       });
 

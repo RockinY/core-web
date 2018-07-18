@@ -65,7 +65,7 @@ class Search extends React.Component<Props, State> {
             defaultValue={searchString}
             autoFocus={true}
             type="text"
-            placeholder={`Search ${user.name}'s conversations...`}
+            placeholder={`搜索关于 ${user.name} 的对话...`}
             onChange={this.handleChange}
           />
         </SearchContainer>

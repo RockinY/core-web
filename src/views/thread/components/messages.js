@@ -263,8 +263,7 @@ class MessagesWithData extends React.Component<Props, State> {
         <NullMessagesWrapper>
           <Icon glyph={'emoji'} size={64} />
           <NullCopy>
-            No messages have been sent in this conversation yet - why don’t you
-            kick things off below?
+            该对话下面还没有消息 - 试着开始发条消息在里面吧
           </NullCopy>
         </NullMessagesWrapper>
       );
@@ -272,11 +271,11 @@ class MessagesWithData extends React.Component<Props, State> {
 
     return (
       <NullState
-        heading="Sorry, we lost connection to the server..."
-        copy="Mind reloading the page?"
+        heading="很抱歉，服务器连接失败..."
+        copy="尝试刷新一下页面吧"
       >
         <Button icon="view-reload" onClick={() => window.location.reload(true)}>
-          Reload
+          刷新
         </Button>
       </NullState>
     );

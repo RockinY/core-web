@@ -165,20 +165,20 @@ class UserView extends React.Component<Props, State> {
               {currentUser &&
                 user.id !== currentUser.id && (
                   <LoginButton onClick={() => this.initMessage(user)}>
-                    Message {user.name}
+                    给{user.name}发送消息
                   </LoginButton>
                 )}
               {currentUser &&
                 user.id === currentUser.id && (
                   // $FlowFixMe
                   <Link to={`/users/${username}/settings`}>
-                    <LoginButton isMember>My settings</LoginButton>
+                    <LoginButton isMember>我的设置</LoginButton>
                   </Link>
                 )}
 
               <ErrorBoundary fallbackComponent={null}>
                 <MetaMemberships>
-                  <ColumnHeading>Member of</ColumnHeading>
+                  <ColumnHeading>成员属于</ColumnHeading>
                   <CommunityList
                     currentUser={currentUser}
                     user={user}
@@ -194,7 +194,7 @@ class UserView extends React.Component<Props, State> {
                   onClick={() => this.handleSegmentClick('search')}
                   selected={selectedView === 'search'}
                 >
-                  Search
+                  搜索
                 </DesktopSegment>
 
                 <DesktopSegment
@@ -202,7 +202,7 @@ class UserView extends React.Component<Props, State> {
                   onClick={() => this.handleSegmentClick('participant')}
                   selected={selectedView === 'participant'}
                 >
-                  Replies
+                  回复
                 </DesktopSegment>
 
                 <DesktopSegment
@@ -210,28 +210,28 @@ class UserView extends React.Component<Props, State> {
                   onClick={() => this.handleSegmentClick('creator')}
                   selected={selectedView === 'creator'}
                 >
-                  Threads
+                  话题
                 </DesktopSegment>
                 <MobileSegment
                   segmentLabel="search"
                   onClick={() => this.handleSegmentClick('search')}
                   selected={selectedView === 'search'}
                 >
-                  Search
+                  搜索
                 </MobileSegment>
                 <MobileSegment
                   segmentLabel="participant"
                   onClick={() => this.handleSegmentClick('participant')}
                   selected={selectedView === 'participant'}
                 >
-                  Replies
+                  回复
                 </MobileSegment>
                 <MobileSegment
                   segmentLabel="creator"
                   onClick={() => this.handleSegmentClick('creator')}
                   selected={selectedView === 'creator'}
                 >
-                  Threads
+                  话题
                 </MobileSegment>
               </SegmentedControl>
 
@@ -259,7 +259,7 @@ class UserView extends React.Component<Props, State> {
             </Content>
             <Extras>
               <ErrorBoundary fallbackComponent={null}>
-                <ColumnHeading>Member of</ColumnHeading>
+                <ColumnHeading>成员属于</ColumnHeading>
                 <CommunityList
                   currentUser={currentUser}
                   user={user}
@@ -280,13 +280,13 @@ class UserView extends React.Component<Props, State> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'User not found'}
+            title={'无法找到用户'}
             provideBack={true}
             backRoute={'/'}
             noComposer
           />
           <ViewError
-            heading={'We ran into an error loading this user.'}
+            heading={'无法找到该用户.'}
             refresh
           />
         </AppViewWrapper>
@@ -297,18 +297,18 @@ class UserView extends React.Component<Props, State> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'User not found'}
+            title={'无法找到该用户'}
             provideBack={true}
             backRoute={'/'}
             noComposer
           />
           <ViewError
             dataCy="user-not-found"
-            heading={'We couldn’t find anyone with this username.'}
+            heading={'我们找不到任何人符合这个条件.'}
           >
             <ButtonRow>
               <Link to={'/'}>
-                <Button large>Take me home</Button>
+                <Button large>返回主页</Button>
               </Link>
             </ButtonRow>
           </ViewError>

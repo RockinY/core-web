@@ -98,7 +98,7 @@ class MiniPrivateCommunityRequestApprovedWithMutation extends React.Component<
             <Link to={`/${notification.context.payload.slug}`}>
               {notification.context.payload.name}
             </Link>{' '}
-            community {date}{' '}
+            社区 {date}{' '}
           </TextContent>
         </Content>
       </NotificationListRow>

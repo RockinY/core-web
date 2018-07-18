@@ -49,11 +49,11 @@ class WatercoolerActionBar extends React.Component<Props, State> {
 
         if (toggleThreadNotifications.receiveNotifications) {
           return dispatch(
-            addToastWithTimeout('success', 'Notifications activated!')
+            addToastWithTimeout('success', '通知已开启!')
           );
         } else {
           return dispatch(
-            addToastWithTimeout('neutral', 'Notifications turned off')
+            addToastWithTimeout('neutral', '通知已关闭')
           );
         }
       })
@@ -78,7 +78,7 @@ class WatercoolerActionBar extends React.Component<Props, State> {
             <ShareButtons>
               <ShareButton
                 facebook
-                tipText={'Share'}
+                tipText={'分享'}
                 tipLocation={'top-left'}
                 data-cy="thread-facebook-button"
               >
@@ -95,7 +95,7 @@ class WatercoolerActionBar extends React.Component<Props, State> {
 
               <ShareButton
                 twitter
-                tipText={'Tweet'}
+                tipText={'推特'}
                 tipLocation={'top-left'}
                 data-cy="thread-tweet-button"
               >
@@ -119,12 +119,12 @@ class WatercoolerActionBar extends React.Component<Props, State> {
                 }`}
                 onSuccess={() =>
                   this.props.dispatch(
-                    addToastWithTimeout('success', 'Copied to clipboard')
+                    addToastWithTimeout('success', '已保存到剪切板')
                   )
                 }
               >
                 <ShareButton
-                  tipText={'Copy link'}
+                  tipText={'复制链接'}
                   tipLocation={'top-left'}
                   data-cy="thread-copy-link-button"
                 >
@@ -145,28 +145,28 @@ class WatercoolerActionBar extends React.Component<Props, State> {
             }
             tipText={
               thread.receiveNotifications
-                ? 'Turn off notifications'
-                : 'Get notified about replies'
+                ? '关闭通知'
+                : '订阅回复的通知'
             }
             tipLocation={'top-right'}
             loading={notificationStateLoading}
             onClick={this.toggleNotification}
             dataCy="thread-notifications-toggle"
           >
-            {thread.receiveNotifications ? 'Subscribed' : 'Get notifications'}
+            {thread.receiveNotifications ? '已订阅' : '获取通知'}
           </FollowButton>
         ) : (
           <FollowButton
             currentUser={currentUser}
             icon={'notification'}
-            tipText={'Get notified about replies'}
+            tipText={'获取回复的通知'}
             tipLocation={'top-right'}
             dataCy="thread-notifications-login-capture"
             onClick={() =>
               this.props.dispatch(openModal('CHAT_INPUT_LOGIN_MODAL', {}))
             }
           >
-            Notify me
+            通知我
           </FollowButton>
         )}
       </WatercoolerActionBarContainer>

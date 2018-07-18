@@ -108,20 +108,20 @@ class NewCommunity extends React.Component<Props, State> {
     const { activeStep, community } = this.state
     switch (activeStep) {
       case 1: {
-        return community ? 'Update your community' : 'Create a community'
+        return community ? '修改你的社区' : '创建一个社区'
       }
       case 2: {
-        return `Invite people${
+        return `邀请朋友${
           community
-            ? ` to the ${community.name} community`
-            : ' to your community'
+            ? `加入社区 - ${community.name}`
+            : '进入你的社区'
         }`
       }
       case 3: {
-        return 'Done!'
+        return '完成!'
       }
       default: {
-        return 'Create a community'
+        return '创建一个社区'
       }
     }
   };
@@ -130,18 +130,18 @@ class NewCommunity extends React.Component<Props, State> {
     const { activeStep, community } = this.state
     switch (activeStep) {
       case 1: {
-        return 'Creating a community on Spectrum is free, forever. To get started, tell us more about your community below.'
+        return '在云社创建社区是免费的，首先请告诉我们你想创建一个什么样的社区.'
       }
       case 2: {
-        return `Kickstart ${
-          community ? `the ${community.name} community` : 'your community'
-        } by inviting an existing Slack team or by inviting a handful of folks directly by email. You'll be able to invite more people at any point in the future, too, if you're not quite ready.`
+        return `开始为${
+          community ? `社区 - ${community.name}` : '你的社区'
+        }邀请一些朋友，或者如果你还没有准备好你也可以之后再选择邀请.`
       }
       case 3: {
-        return "You're all set! Your community is live - go check it out, start posting threads, and get the conversations started!"
+        return "已经基本完成了，去你的社区里面发布一些内容吧!"
       }
       default: {
-        return 'Create a community'
+        return '创建一个社区'
       }
     }
   };
@@ -169,7 +169,7 @@ class NewCommunity extends React.Component<Props, State> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'Create a Community'}
+            title={'创建一个社区'}
             provideBack
             backRoute={'/'}
             noComposer
@@ -203,7 +203,7 @@ class NewCommunity extends React.Component<Props, State> {
                 activeStep === 2 && (
                   <Actions>
                     <TextButton onClick={() => this.step('previous')}>
-                    Back
+                    返回
                     </TextButton>
                     {hasInvitedPeople ? (
                       <Button onClick={() => this.step('next')}>Continue</Button>
@@ -212,7 +212,7 @@ class NewCommunity extends React.Component<Props, State> {
                         color={'brand.default'}
                         onClick={() => this.step('next')}
                       >
-                      Skip this step
+                      跳过这一步
                       </TextButton>
                     )}
                   </Actions>
@@ -228,7 +228,7 @@ class NewCommunity extends React.Component<Props, State> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'Create a Community'}
+            title={'创建一个社区'}
             provideBack
             backRoute={'/'}
             noComposer
@@ -237,13 +237,12 @@ class NewCommunity extends React.Component<Props, State> {
           <Column type='primary'>
             <Container bg={null}>
               <Title>
-                {user.pendingEmail ? 'Confirm' : 'Add'} Your Email Address
+                {user.pendingEmail ? '确认' : '添加'}你的邮件地址
               </Title>
               <Description>
-                Before creating a community, please{' '}
-                {user.pendingEmail ? 'confirm' : 'add'} your email address. This
-                email address will be used in the future to send you updates
-                about your community, including moderation events.
+                创建社区之前, 请{' '}
+                {user.pendingEmail ? '确认' : '添加'}你的邮件地址. 该邮件地址
+                将会被用于发送更新提示和社区设置变更.
               </Description>
             </Container>
           </Column>
@@ -255,7 +254,7 @@ class NewCommunity extends React.Component<Props, State> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'Create a Community'}
+            title={'创建一个社区'}
             provideBack
             backRoute={'/'}
             noComposer

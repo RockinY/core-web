@@ -8,7 +8,7 @@ export default class Upsell extends React.Component<{}> {
       <ComposerUpsell>
         <UpsellDot />
         <UpsellPulse />
-        <p>在你的社区发布一个新的话题吧✌️.</p>
+        <p>在你的社区发布一个新的话题吧.</p>
       </ComposerUpsell>
     );
   }

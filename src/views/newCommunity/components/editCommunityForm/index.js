@@ -209,7 +209,7 @@ class CommunityWithData extends React.Component<Props, State> {
         // community was returned
         if (community !== undefined) {
           this.props.dispatch(
-            addToastWithTimeout('success', 'Community saved!')
+            addToastWithTimeout('success', '社区已保存!')
           )
           this.props.communityUpdated(community)
         }
@@ -222,7 +222,7 @@ class CommunityWithData extends React.Component<Props, State> {
         this.props.dispatch(
           addToastWithTimeout(
             'error',
-            `Something went wrong and we weren't able to save these changes. ${err}`
+            `出错了，无法保存社区. ${err}`
           )
         )
       })
@@ -260,21 +260,21 @@ class CommunityWithData extends React.Component<Props, State> {
           </ImageInputWrapper>
 
           <Input defaultValue={name} onChange={this.changeName}>
-            Name
+            名字
           </Input>
           <UnderlineInput defaultValue={slug} disabled>
             spectrum.chat/
           </UnderlineInput>
 
           {nameError && (
-            <Error>Community names can be up to 20 characters long.</Error>
+            <Error>社区名字不应该超过20个字符..</Error>
           )}
 
           <TextArea
             defaultValue={description}
             onChange={this.changeDescription}
           >
-            Description
+            描述
           </TextArea>
 
           <Input
@@ -282,12 +282,12 @@ class CommunityWithData extends React.Component<Props, State> {
             onChange={this.changeWebsite}
             autoFocus
           >
-            Optional: Add your community’s website
+            可选: 给社区添加一个网址
           </Input>
 
           {photoSizeError && (
             <Notice style={{ marginTop: '16px' }}>
-              Photo uploads should be less than 3mb
+              上传的图片应该不超过3MB
             </Notice>
           )}
         </Form>
@@ -299,7 +299,7 @@ class CommunityWithData extends React.Component<Props, State> {
             onClick={this.save}
             disabled={photoSizeError}
           >
-            Save & Continue
+            保持 & 继续
           </Button>
         </Actions>
       </FormContainer>

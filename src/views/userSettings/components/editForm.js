@@ -145,7 +145,7 @@ class UserWithData extends React.Component<Props, State> {
       !this.props.currentUser.isPro
     ) {
       return this.setState({
-        photoSizeError: `Upgrade to Pro to upload files up to ${PRO_USER_MAX_IMAGE_SIZE_STRING}. Otherwise, try uploading a photo less than ${FREE_USER_MAX_IMAGE_SIZE_STRING}.`,
+        photoSizeError: `升级到PRO会员提升最大上传尺寸到${PRO_USER_MAX_IMAGE_SIZE_STRING}. 否则请上传小于${FREE_USER_MAX_IMAGE_SIZE_STRING}的图片.`,
         isLoading: false,
       });
     }
@@ -156,7 +156,7 @@ class UserWithData extends React.Component<Props, State> {
       this.props.currentUser.isPro
     ) {
       return this.setState({
-        photoSizeError: `Try uploading a file less than ${PRO_USER_MAX_IMAGE_SIZE_STRING}.`,
+        photoSizeError: `请上传小于${PRO_USER_MAX_IMAGE_SIZE_STRING}尺寸的图片.`,
         isLoading: false,
       });
     }
@@ -200,7 +200,7 @@ class UserWithData extends React.Component<Props, State> {
       !this.props.currentUser.isPro
     ) {
       return this.setState({
-        photoSizeError: `Upgrade to Pro to upload files up to ${PRO_USER_MAX_IMAGE_SIZE_STRING}. Otherwise, try uploading a photo less than ${FREE_USER_MAX_IMAGE_SIZE_STRING}.`,
+        photoSizeError: `升级到PRO会员提升最大上传尺寸到${PRO_USER_MAX_IMAGE_SIZE_STRING}. 否则请上传小于${FREE_USER_MAX_IMAGE_SIZE_STRING}的图片.`,
         isLoading: false,
       });
     }
@@ -211,7 +211,7 @@ class UserWithData extends React.Component<Props, State> {
       this.props.currentUser.isPro
     ) {
       return this.setState({
-        photoSizeError: `Try uploading a file less than ${PRO_USER_MAX_IMAGE_SIZE_STRING}.`,
+        photoSizeError: `请上传小于${PRO_USER_MAX_IMAGE_SIZE_STRING}尺寸的图片.`,
         isLoading: false,
       });
     }
@@ -281,7 +281,7 @@ class UserWithData extends React.Component<Props, State> {
 
         // the mutation returns a user object. if it exists,
         if (user !== undefined) {
-          this.props.dispatch(addToastWithTimeout('success', 'Changes saved!'));
+          this.props.dispatch(addToastWithTimeout('success', '修改已保存!'));
           this.setState({
             file: null,
           });
@@ -338,7 +338,7 @@ class UserWithData extends React.Component<Props, State> {
           <Icon glyph="view-back" size={16} />
           <Link to={`/users/${username}`}>Return to Profile</Link>
         </Location>
-        <SectionTitle>Profile Settings</SectionTitle>
+        <SectionTitle>个人主页设置</SectionTitle>
         <Form onSubmit={this.save}>
           <ImageInputWrapper>
             <CoverInput
@@ -361,7 +361,7 @@ class UserWithData extends React.Component<Props, State> {
 
           {proGifError && (
             <Notice style={{ marginTop: '32px' }}>
-              Upgrade to Pro to use a gif as your profile or cover photo{' '}
+              升级到PRO会员已使用GIF作为个人主页背景图{' '}
               <span role="img" aria-label="finger pointing right emoji">
                 👉
               </span>
@@ -379,7 +379,7 @@ class UserWithData extends React.Component<Props, State> {
             Name
           </Input>
 
-          {nameError && <Error>Names can be up to 50 characters.</Error>}
+          {nameError && <Error>名字最多不能超过50个字符.</Error>}
 
           {/* $FlowFixMe */}
           <UsernameSearch
@@ -398,15 +398,15 @@ class UserWithData extends React.Component<Props, State> {
           <TextArea
             defaultValue={description}
             onChange={this.changeDescription}
-            placeholder={'Introduce yourself to the class...'}
+            placeholder={'介绍一下你自己...'}
           >
-            Bio
+            介绍
           </TextArea>
 
-          {descriptionError && <Error>Bios can be up to 140 characters.</Error>}
+          {descriptionError && <Error>介绍不能超过140个字符.</Error>}
 
           <Input defaultValue={website} onChange={this.changeWebsite}>
-            Optional: Add your website
+            可选: 添加你的个人网站
           </Input>
 
           <GithubProfile
@@ -415,7 +415,7 @@ class UserWithData extends React.Component<Props, State> {
               if (!profile) {
                 return (
                   <GithubSignin>
-                    <StyledLabel>Connect your GitHub Profile</StyledLabel>
+                    <StyledLabel>链接到你的Github账户</StyledLabel>
                     <GithubSigninButton
                       href={`${SERVER_URL}/auth/github${postAuthRedirectPath}`}
                       preferred={true}
@@ -431,7 +431,7 @@ class UserWithData extends React.Component<Props, State> {
                     disabled
                     defaultValue={`github.com/${profile.username}`}
                   >
-                    Your GitHub Profile
+                    你的Github主页
                   </Input>
                 );
               }
@@ -451,7 +451,7 @@ class UserWithData extends React.Component<Props, State> {
           </Actions>
 
           {createError && (
-            <Error>Please fix any errors above to save your profile.</Error>
+            <Error>保存你的个人信息之前请先修复错误提示.</Error>
           )}
         </Form>
       </SectionCard>

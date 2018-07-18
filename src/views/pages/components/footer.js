@@ -5,11 +5,9 @@ import {
   FooterGrid,
   Masthead,
   Support,
-  Safety,
-  SocialLinks,
+  Safety
 } from '../style';
 import Link from '../../../components/link';
-import { IconButton } from '../../../components/buttons';
 import { Logo } from '../../../components/logo';
 
 export default () => {
@@ -20,7 +18,7 @@ export default () => {
           <Link to="/">
             <Logo />
           </Link>
-          <span>备案号: 苏ICP备18033476号-1</span>
+          <span>苏ICP备18033476号-1</span>
         </Masthead>
         <Support>
           <span>服务</span>

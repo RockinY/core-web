@@ -94,7 +94,7 @@ class MiniCommunityInviteNotificationWithMutation extends React.Component<
         <CreatedContext>
           <Icon glyph="community" />
           <TextContent pointer={false}>
-            {actors.asObjects[0].name} invited you to join their community,{' '}
+            {actors.asObjects[0].name}邀请你加入TA的社区,{' '}
             {context.asString} {date}
           </TextContent>
         </CreatedContext>

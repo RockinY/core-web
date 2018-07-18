@@ -71,7 +71,7 @@ class DeleteAccountForm extends React.Component<Props, State> {
     this.props
       .deleteCurrentUser()
       .then(() =>
-        this.props.dispatch(addToastWithTimeout('success', 'Account deleted'))
+        this.props.dispatch(addToastWithTimeout('success', '账户已删除'))
       )
       .then(() => (window.location.href = `${SERVER_URL}/auth/logout`))
       .catch(err =>
@@ -86,9 +86,9 @@ class DeleteAccountForm extends React.Component<Props, State> {
     if (user && user.isPro) {
       return (
         <SectionCard>
-          <SectionTitle>Delete my account</SectionTitle>
+          <SectionTitle>删除我的账户</SectionTitle>
           <SectionSubtitle>
-            Please downgrade from the Pro plan before deleting your account.
+            请先取消你的会员身份.
           </SectionSubtitle>
         </SectionCard>
       );
@@ -97,18 +97,16 @@ class DeleteAccountForm extends React.Component<Props, State> {
     if (user) {
       return (
         <SectionCard data-cy="delete-account-container">
-          <SectionTitle>Delete my account</SectionTitle>
+          <SectionTitle>删除我的账户</SectionTitle>
           <SectionSubtitle>
-            You can delete your account at any time.{' '}
-            <Link to={'/faq'}>Read more about how we delete accounts</Link>.
+            你可以随时删除你的账户.{' '}
+            <Link to={'/faq'}>了解更多关于账户的删除</Link>.
           </SectionSubtitle>
 
           {ownsCommunities && (
             <Notice data-cy="owns-communities-notice">
-              You currently own communities on Spectrum. When your account is
-              deleted these communities will not be deleted. Spectrum reserves
-              the right to manage your communities after your account is
-              deleted.
+              你现在在云社拥有社区，如果你现在删除你的账户. 这些社区不会被立即删除.
+              云社保留继续管理你的社区的权限。
             </Notice>
           )}
 
@@ -127,7 +125,7 @@ class DeleteAccountForm extends React.Component<Props, State> {
                     onClick={this.cancelDelete}
                     style={{ marginBottom: '16px', alignSelf: 'stretch' }}
                   >
-                    Cancel
+                    取消
                   </OutlineButton>
                 )}
                 <Button
@@ -137,7 +135,7 @@ class DeleteAccountForm extends React.Component<Props, State> {
                   gradientTheme={'warn'}
                   onClick={this.confirmDelete}
                 >
-                  Confirm and delete my account
+                  确认删除我的账户
                 </Button>
               </div>
             ) : (
@@ -146,7 +144,7 @@ class DeleteAccountForm extends React.Component<Props, State> {
                 color={'warn.default'}
                 onClick={this.initDelete}
               >
-                Delete my account
+                删除我的账户
               </TextButton>
             )}
           </SectionCardFooter>

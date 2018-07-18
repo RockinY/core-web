@@ -67,23 +67,23 @@ class ThreadCommunityBanner extends React.Component<Props, State> {
 
         let str = '';
         if (isPending) {
-          str = `Your request to join the ${
-            toggleChannelSubscription.name
-          } channel in ${
+          str = `你对社区 ${
             toggleChannelSubscription.community.name
-          } has been sent.`;
+          } 里的 ${
+            toggleChannelSubscription.name
+          } 频道申请已经发送.`;
         }
 
         if (!isPending && isMember) {
-          str = `Joined the ${
+          str = `加入社区 ${
             toggleChannelSubscription.community.name
-          } community!`;
+          }!`;
         }
 
         if (!isPending && !isMember) {
-          str = `Left the channel ${toggleChannelSubscription.name} in ${
-            toggleChannelSubscription.community.name
-          }.`;
+          str = `离开社区 ${toggleChannelSubscription.community.name}里的 ${
+            toggleChannelSubscription.name
+          }频道.`;
         }
 
         const type = isMember || isPending ? 'success' : 'neutral';
@@ -148,11 +148,11 @@ class ThreadCommunityBanner extends React.Component<Props, State> {
               onClick={this.joinChannel}
               loading={isLoading}
             >
-              Join channel
+              加入频道
             </Button>
           ) : (
             <Link to={loginUrl}>
-              <Button gradientTheme={'success'}>Join Community</Button>
+              <Button gradientTheme={'success'}>加入社区</Button>
             </Link>
           )}
         </CommunityHeader>

@@ -74,7 +74,7 @@ export class MentionThreadNotification extends React.Component<Props, State> {
           <SpecialContext>
             <Icon glyph="mention" />
             <TextContent pointer={true}>
-              {actors.asObjects[0].name} mentioned you in {context.asString}{' '}
+              {actors.asObjects[0].name}在{context.asString}里提到了你{' '}
               {date}
             </TextContent>
           </SpecialContext>
@@ -123,7 +123,7 @@ export class MiniMentionThreadNotification extends React.Component<
           </SpecialContext>
           <Content>
             <TextContent pointer={false}>
-              {actors.asString} mentioned you in {context.asString} {date}
+              {actors.asString}在{context.asString}里提到了你 {date}
             </TextContent>
           </Content>
         </CardContent>

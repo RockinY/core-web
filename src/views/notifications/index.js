@@ -152,7 +152,7 @@ class NotificationsPure extends React.Component<Props, State> {
         return this.props.dispatch(
           addToastWithTimeout(
             'error',
-            "Oops, we couldn't enable browser notifications for you. Please try again!"
+            "啊哦，通知开启失败了，请尝试重试一下!"
           )
         );
       });

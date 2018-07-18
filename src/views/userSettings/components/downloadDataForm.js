@@ -32,9 +32,9 @@ class DownloadDataForm extends React.Component<Props> {
 
     return (
       <SectionCard data-cy="download-data-container">
-        <SectionTitle>Download my data</SectionTitle>
+        <SectionTitle>下载我的数据</SectionTitle>
         <SectionSubtitle>
-          You can download your personal data at any time.
+          你可以随时下载你的个人数据.
         </SectionSubtitle>
 
         <SectionCardFooter>
@@ -42,11 +42,11 @@ class DownloadDataForm extends React.Component<Props> {
             href={
               process.env.NODE_ENV === 'production'
                 ? '/api/user.json'
-                : 'http://localhost:3001/api/user.json'
+                : 'http://localhost:3000/api/user.json'
             }
             download
           >
-            Download my data
+            下载我的数据
           </Link>
         </SectionCardFooter>
       </SectionCard>

@@ -99,7 +99,7 @@ class CommunityList extends React.Component<Props> {
             onClick={() => this.changeCommunity('')}
           >
             <Icon glyph={'everything'} />
-            <CommunityListName>Everything</CommunityListName>
+            <CommunityListName>所有内容</CommunityListName>
           </CommunityListItem>
           {sortedCommunities.map(c => (
             <ErrorBoundary fallbackComponent={null} key={c.id}>

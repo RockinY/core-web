@@ -318,12 +318,11 @@ class ThreadContainer extends React.Component<Props, State> {
               size={44}
             />
             <WatercoolerTitle>
-              The {thread.community.name} watercooler
+              社区 {thread.community.name} 水冷
             </WatercoolerTitle>
             <WatercoolerDescription>
-              Welcome to the {thread.community.name} watercooler, a space for
-              general chat with everyone in the community. Jump in to the
-              conversation below or introduce yourself!
+              欢迎来到社区 {thread.community.name} 里的水冷, 一个社区所有人可以
+              自由聊天的地方. 选择一个对话然后简单介绍一下你自己吧.
             </WatercoolerDescription>
           </WatercoolerIntroContainer>
 
@@ -387,8 +386,8 @@ class ThreadContainer extends React.Component<Props, State> {
               <ThreadContentView slider={slider}>
                 <ViewError
                   emoji={'✋'}
-                  heading={'You don’t have permission to view this thread'}
-                  subheading={`This thread may have been deleted or does not exist.`}
+                  heading={'你没有浏览这个话题的权限'}
+                  subheading={`该话题不存在或者已被删除.`}
                 />
               </ThreadContentView>
             </ThreadViewContainer>
@@ -398,10 +397,10 @@ class ThreadContainer extends React.Component<Props, State> {
 
       const isWatercooler = thread.watercooler;
       const headTitle = isWatercooler
-        ? `The Watercooler · ${thread.community.name}`
+        ? `水冷 · ${thread.community.name}`
         : title;
       const headDescription = isWatercooler
-        ? `Watercooler chat for the ${thread.community.name} community`
+        ? `公共聊天 ${thread.community.name} 社区`
         : description;
 
       return (
@@ -465,7 +464,7 @@ class ThreadContainer extends React.Component<Props, State> {
                     isLocked && (
                       <NullState
                         icon="private"
-                        copy="This conversation has been locked."
+                        copy="该对话已经被锁定."
                       />
                     )}
                 </Detail>
@@ -493,10 +492,10 @@ class ThreadContainer extends React.Component<Props, State> {
             slider={slider}
           >
             <ViewError
-              heading={'We had trouble loading this thread.'}
+              heading={'话题加载有误.'}
               subheading={
                 !hasError
-                  ? 'It may be private, or may have been deleted by an author or moderator.'
+                  ? '该话题属于私有或者已经被删除.'
                   : ''
               }
               refresh={hasError}

@@ -57,7 +57,7 @@ class NotificationSettings extends React.Component<Props, State> {
         return this.props.dispatch(
           addToastWithTimeout(
             'error',
-            "Oops, we couldn't enable browser notifications for you. Please try again!"
+            "啊哦，通知开启失败了，请重新尝试!"
           )
         );
       });
@@ -74,7 +74,7 @@ class NotificationSettings extends React.Component<Props, State> {
           return this.props.dispatch(
             addToastWithTimeout(
               'error',
-              "Oops, we couldn't disable browser notifications for you. Please try again!"
+              "啊哦，通知开启失败了，请重新尝试!"
             )
           );
         }
@@ -83,7 +83,7 @@ class NotificationSettings extends React.Component<Props, State> {
         return this.props.dispatch(
           addToastWithTimeout(
             'error',
-            "Oops, we couldn't disable browser notifications for you. Please try again!"
+            "啊哦，通知开启失败了，请重新尝试!"
           )
         );
       });
@@ -100,7 +100,7 @@ class NotificationSettings extends React.Component<Props, State> {
         smallOnly={this.props.smallOnly}
         largeOnly={this.props.largeOnly}
       >
-        <SectionTitle>Notification Preferences</SectionTitle>
+        <SectionTitle>通知设置</SectionTitle>
         <ListContainer>
           <EmailListItem>
             {subscription !== null && (
@@ -109,21 +109,21 @@ class NotificationSettings extends React.Component<Props, State> {
                 disabled={webPushBlocked}
                 onChange={onChange}
               >
-                Enable browser push notifications
+                开启桌面推送通知
               </Checkbox>
             )}
             {webPushBlocked && (
               <Notice>
                 <strong>
-                  You have blocked browser push notifications on this device!
+                  你已经关闭这台设备的桌面通知
                 </strong>{' '}
-                Unblock them by following{' '}
+                重新开启桌面推送通知{' '}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://support.sendpulse.com/456261-How-to-Unblock-Web-Push-Notifications"
                 >
-                  these steps
+                  开启
                 </a>.
               </Notice>
             )}

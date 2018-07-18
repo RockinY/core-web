@@ -53,16 +53,16 @@ class UserSettings extends React.Component<Props> {
       return (
         <React.Fragment>
           <Titlebar
-            title={'No User Found'}
+            title={'用户无法找到'}
             provideBack={true}
             backRoute={'/'}
             noComposer
           />
           <AppViewWrapper>
             <ViewError
-              heading={'We ran into an error finding this user’s settings.'}
+              heading={'获取用户的设置失败.'}
               subheading={
-                'If you are trying to view your own settings, refresh the page below to sign in again.'
+                '如果你正在试着查看自己的设置，请尝试刷新一下页面.'
               }
               clearStorage
               refresh
@@ -78,16 +78,16 @@ class UserSettings extends React.Component<Props> {
         <React.Fragment>
           >
           <Titlebar
-            title={'No User Found'}
+            title={'用户无法找到'}
             provideBack={true}
             backRoute={'/'}
             noComposer
           />
           <AppViewWrapper>
             <ViewError
-              heading={'These aren’t the settings you’re looking for.'}
+              heading={'获取用户的设置失败.'}
               subheading={
-                'You can only view your own user settings. Head on back.'
+                '你只能浏览自己的个人用户设置.'
               }
             />
           </AppViewWrapper>
@@ -118,13 +118,13 @@ class UserSettings extends React.Component<Props> {
       return (
         <AppViewWrapper data-cy="user-settings">
           <Titlebar
-            title={'Settings'}
+            title={'设置'}
             subtitle={user.name}
             provideBack={true}
             backRoute={`/users/${user.username}`}
             noComposer
           />
-          <Head title={`Settings for ${user.name}`} />
+          <Head title={`${user.name}的设置`} />
 
           <View id="main">
             <Header

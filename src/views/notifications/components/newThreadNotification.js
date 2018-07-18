@@ -96,7 +96,7 @@ export class NewThreadNotification extends React.Component<Props, State> {
     );
 
     const newThreadCount =
-      threads.length > 1 ? 'New threads were' : 'A new thread was';
+      threads.length > 1 ? '新的话题' : '一个新的话题';
 
     if (threads && threads.length > 0) {
       return (
@@ -104,7 +104,7 @@ export class NewThreadNotification extends React.Component<Props, State> {
           <ThreadContext>
             <Icon glyph="post-fill" />
             <TextContent pointer={true}>
-              {newThreadCount} published in{' '}
+              {newThreadCount}发布于{' '}
               {communityName && `${communityName}, `} {context.asString} {date}
             </TextContent>
           </ThreadContext>

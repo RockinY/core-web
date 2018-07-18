@@ -104,20 +104,19 @@ class Sidebar extends React.Component<Props> {
         {!currentUser && (
           <ErrorBoundary fallbackComponent={null}>
             <SidebarSection data-cy="thread-sidebar-login">
-              <SidebarSectionTitle>Join the conversation</SidebarSectionTitle>
+              <SidebarSectionTitle>加入对话</SidebarSectionTitle>
               <SidebarSectionBody>
-                Sign in to join this conversation, and others like it, in the
-                communities you care about.
+                登陆一下，开始加入社区的聊天中吧
               </SidebarSectionBody>
               <SidebarSectionAuth>
                 <Link to={loginUrl}>
                   <Button gradientTheme={'brand'} color={'brand.default'}>
-                    Sign up
+                    注册
                   </Button>
                 </Link>
                 <Link to={loginUrl}>
                   <TextButton gradientTheme={'text'} color={'text.alt'}>
-                    Log in
+                    登陆
                   </TextButton>
                 </Link>
               </SidebarSectionAuth>
@@ -160,7 +159,7 @@ class Sidebar extends React.Component<Props> {
               {thread.community.communityPermissions.isMember ? (
                 <Link to={`/${thread.community.slug}`}>
                   <TextButton dataCy="thread-sidebar-view-community-button">
-                    View community
+                    浏览社区
                   </TextButton>
                 </Link>
               ) : currentUser ? (
@@ -173,7 +172,7 @@ class Sidebar extends React.Component<Props> {
                       loading={isLoading}
                       dataCy="thread-sidebar-join-community-button"
                     >
-                      Join community
+                      加入社区
                     </Button>
                   )}
                 />
@@ -184,7 +183,7 @@ class Sidebar extends React.Component<Props> {
                     color={'success.default'}
                     dataCy="thread-sidebar-join-login-button"
                   >
-                    Join community
+                    加入社区
                   </Button>
                 </Link>
               )}
