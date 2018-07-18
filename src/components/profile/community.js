@@ -120,7 +120,7 @@ class CommunityWithData extends React.Component<Props> {
                         style={{ fontSize: '16px' }}
                         loading={isLoading}
                       >
-                        Joined!
+                        已加入
                       </OutlineButton>
                     )}
                   />
@@ -136,7 +136,7 @@ class CommunityWithData extends React.Component<Props> {
                         gradientTheme={'success'}
                         style={{ fontSize: '16px' }}
                       >
-                        Join
+                        加入
                       </Button>
                     )}
                   />
@@ -147,7 +147,7 @@ class CommunityWithData extends React.Component<Props> {
                     gradientTheme={'success'}
                     style={{ fontSize: '16px' }}
                   >
-                    Join
+                    加入
                   </Button>
                 </Link>
               )}
@@ -198,7 +198,7 @@ class CommunityWithData extends React.Component<Props> {
                 <Title>{community.name}</Title>
                 {community.metaData && (
                   <Subtitle>
-                    {community.metaData.members.toLocaleString()} members
+                    {community.metaData.members.toLocaleString()} 成员
                   </Subtitle>
                 )}
               </ProfileHeaderMeta>
@@ -217,7 +217,7 @@ class CommunityWithData extends React.Component<Props> {
                       color="text.placeholder"
                       hoverColor="text.placeholder"
                     >
-                      Joined
+                      已加入
                     </Button>
                   )}
                 />
@@ -234,7 +234,7 @@ class CommunityWithData extends React.Component<Props> {
                       icon="plus-fill"
                       gradientTheme="success"
                     >
-                      Join
+                      加入
                     </Button>
                   )}
                 />
@@ -272,7 +272,7 @@ class CommunityWithData extends React.Component<Props> {
                         color="text.placeholder"
                         hoverColor="text.placeholder"
                       >
-                        Joined
+                        已加入
                       </Button>
                     )}
                   />
@@ -289,7 +289,7 @@ class CommunityWithData extends React.Component<Props> {
                         icon="plus-fill"
                         gradientTheme="success"
                       >
-                        Join
+                        加入
                       </Button>
                     )}
                   />

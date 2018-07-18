@@ -128,7 +128,7 @@ class ExistingThread extends React.Component<Props> {
 
       return (
         <ViewError
-          heading={'We had trouble loading this conversation'}
+          heading={'加载对话出错了'}
           refresh
         />
       );

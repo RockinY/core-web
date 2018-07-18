@@ -45,11 +45,11 @@ class Header extends React.Component<HeaderProps> {
                     active={active}
                     to={`/users/${author.user.username}`}
                   >
-                    By {author.user.name}
+                    通过 {author.user.name}
                   </MetaSubtitle>
                 ) : (
                   <MetaSubtitleText active={active}>
-                    By {author.user.name}
+                    通过 {author.user.name}
                   </MetaSubtitleText>
                 )}
 
@@ -67,21 +67,21 @@ class Header extends React.Component<HeaderProps> {
             {watercooler && (
               <MetaSubtitleWatercooler active={active}>
                 <Divider>·</Divider>
-                Watercooler
+                水冷
               </MetaSubtitleWatercooler>
             )}
 
             {isLocked && (
               <MetaSubtitleLocked active={active}>
                 <Divider>·</Divider>
-                Locked
+                锁定
               </MetaSubtitleLocked>
             )}
 
             {isPinned && (
               <MetaSubtitlePinned active={active}>
                 <Divider>·</Divider>
-                Pinned
+                置顶
               </MetaSubtitlePinned>
             )}
           </TextRow>

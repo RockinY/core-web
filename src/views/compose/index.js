@@ -9,7 +9,7 @@ const Compose = props => {
       <Titlebar
         provideBack
         noComposer
-        title={'New Conversation'}
+        title={'新的对话'}
         style={{ gridArea: 'header' }}
       />
       <Composer style={{ gridArea: 'body' }} />

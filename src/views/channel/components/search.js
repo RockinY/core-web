@@ -65,7 +65,7 @@ class Search extends React.Component<Props, State> {
             defaultValue={searchString}
             autoFocus={true}
             type="text"
-            placeholder={`Search all threads in ${channel.name}...`}
+            placeholder={`搜索所有再频道${channel.name}得话题...`}
             onChange={this.handleChange}
             data-cy="channel-search-input"
           />

@@ -13,7 +13,7 @@ class ThreadTimestamp extends React.Component<HeaderProps> {
     let timestamp = timeDifferenceShort(now, new Date(then).getTime());
     // show 'just now' instead of '0s' for new threads
     if (timestamp.slice(-1) === 's') {
-      timestamp = 'Just now';
+      timestamp = '刚才';
     }
 
     const createdAtTime = new Date(thread.createdAt).getTime();
@@ -27,7 +27,7 @@ class ThreadTimestamp extends React.Component<HeaderProps> {
       !active
     ) {
       return (
-        <NewThreadTimestamp active={active}>New thread</NewThreadTimestamp>
+        <NewThreadTimestamp active={active}>新的话题</NewThreadTimestamp>
       );
     }
 

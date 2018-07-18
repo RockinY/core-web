@@ -59,10 +59,10 @@ class RequestToJoinChannel extends Component<Props, State> {
         }
 
         const str = isPending
-          ? `Requested to join ${toggleChannelSubscription.name} in ${
+          ? `请求加入 ${toggleChannelSubscription.name} 在 ${
               toggleChannelSubscription.community.name
             }!`
-          : `Canceled request to join ${toggleChannelSubscription.name} in ${
+          : `取消加入请求 ${toggleChannelSubscription.name} 再 ${
               toggleChannelSubscription.community.name
             }.`;
 
@@ -93,13 +93,13 @@ class RequestToJoinChannel extends Component<Props, State> {
             loading={isLoading}
             data-cy="cancel-request-to-join-private-channel-button"
           >
-            Cancel request
+            取消请求
           </OutlineButton>
         )}
 
         {isPending && (
           <Link to={`/${community.slug}`}>
-            <Button large>Back to {community.name}</Button>
+            <Button large>返回 {community.name}</Button>
           </Link>
         )}
 
@@ -111,7 +111,7 @@ class RequestToJoinChannel extends Component<Props, State> {
             loading={isLoading}
             data-cy="request-to-join-private-channel-button"
           >
-            Request to join {channel.name}
+            请求加入 {channel.name}
           </Button>
         )}
       </Actions>

@@ -94,7 +94,7 @@ class ChannelMembers extends Component<Props> {
                   loading={isFetchingMore}
                   onClick={() => fetchMore()}
                 >
-                  Load more
+                  加载更多
                 </FetchMoreButton>
               </ListFooter>
             )}

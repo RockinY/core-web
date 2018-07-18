@@ -51,8 +51,8 @@ class NotificationsTogglePure extends React.Component<Props, State> {
           toggleChannelNotifications.channelPermissions.receiveNotifications;
         const type = value ? 'success' : 'neutral';
         const str = value
-          ? 'Notifications activated!'
-          : 'Notifications turned off.';
+          ? '通知已被激活!'
+          : '通知已经关闭.';
         this.props.dispatch(addToastWithTimeout(type, str));
         return;
       })
@@ -73,7 +73,7 @@ class NotificationsTogglePure extends React.Component<Props, State> {
           onChange={this.handleChange}
           dataCy="notifications-checkbox"
         >
-          Get notified when new threads are published in {channel.name}
+          如果有新的话题在 {channel.name} 发布，获取通知信息
         </Checkbox>
       </ListContainer>
     );

@@ -7,11 +7,11 @@ import { NullThreadFeed, NullHeading } from '../style';
 export default props => (
   <NullThreadFeed>
     <NullHeading>
-      There was a problem loading this feed. Please try refreshing the page.
+      话题加载出错了，请尝试刷新一下页面.
     </NullHeading>
 
     <Button>
-      <Link to={'/'}>Refresh</Link>
+      <Link to={'/'}>刷新</Link>
     </Button>
   </NullThreadFeed>
 );

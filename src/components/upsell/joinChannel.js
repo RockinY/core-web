@@ -57,19 +57,19 @@ class JoinChannel extends React.Component<Props, State> {
 
         let str = '';
         if (isPending) {
-          str = `Requested to join ${toggleChannelSubscription.name} in ${
+          str = `请求加入 ${toggleChannelSubscription.name} 在 ${
             toggleChannelSubscription.name
           }`;
         }
 
         if (!isPending && isMember) {
-          str = `Joined ${toggleChannelSubscription.name} in ${
+          str = `加入了 ${toggleChannelSubscription.name} 在 ${
             toggleChannelSubscription.name
           }!`;
         }
 
         if (!isPending && !isMember) {
-          str = `Left the channel ${toggleChannelSubscription.name} in ${
+          str = `离开了频道 ${toggleChannelSubscription.name} 在 ${
             toggleChannelSubscription.name
           }.`;
         }
@@ -94,10 +94,10 @@ class JoinChannel extends React.Component<Props, State> {
       <JoinChannelContainer>
         <JoinChannelContent>
           <JoinChannelTitle>
-            Join the {channel.name} channel in the {community.name} community
+            加入了社区 {community.name} 的 {channel.name} 频道
           </JoinChannelTitle>
           <JoinChannelSubtitle>
-            Once you join this channel you’ll be able to post your replies here!
+            一旦你成功加入了频道，你就可以即刻进行回复
           </JoinChannelSubtitle>
         </JoinChannelContent>
 
@@ -107,7 +107,7 @@ class JoinChannel extends React.Component<Props, State> {
           icon="plus"
           dataCy="thread-join-channel-upsell-button"
         >
-          Join
+          加入
         </Button>
       </JoinChannelContainer>
     );

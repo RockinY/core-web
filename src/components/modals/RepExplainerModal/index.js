@@ -31,7 +31,7 @@ class RepExplainerModal extends React.Component<Props> {
         /* TODO(@mxstbr): Fix this */
         ariaHideApp={false}
         isOpen={isOpen}
-        contentLabel={'Reputation'}
+        contentLabel={'威望'}
         onRequestClose={this.closeModal}
         shouldCloseOnOverlayClick={true}
         style={modalStyles}
@@ -46,17 +46,15 @@ class RepExplainerModal extends React.Component<Props> {
             <IconContainer>
               <Icon glyph={'rep'} size={64} />
             </IconContainer>
-            <Title>Spectrum Rep</Title>
+            <Title>云社威望</Title>
             <Subtitle>
-              Rep provides context about a person's reputation in a community.
-              Rep is earned by starting and joining productive conversations.
+              威望代表了一个人对社区得贡献值. 威望可以通过有效得对话交流获得.
             </Subtitle>
 
             {reputation <= 0 ? (
               currentUser ? (
                 <Rep>
-                  You don't have any rep yet. Earn rep by starting a
-                  conversation or replying to other people in your communities.
+                  您还没有获得任何威望，试着和社区里得人进行一些互动来获取威望吧.
                 </Rep>
               ) : (
                 ''
@@ -70,7 +68,7 @@ class RepExplainerModal extends React.Component<Props> {
                 />
                 <RepWrapper>
                   <Reputation
-                    tipText={'Your total reputation'}
+                    tipText={'你得所有威望'}
                     reputation={currentUser.totalReputation}
                     ignoreClick
                   />

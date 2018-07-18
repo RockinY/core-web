@@ -68,7 +68,7 @@ class ChannelSelector extends React.Component<Props> {
 
     return (
       <ViewError
-        heading={"We couldn't fetch this community's channels."}
+        heading={"我们无法获取改社区得频道."}
         refresh
         small
       />

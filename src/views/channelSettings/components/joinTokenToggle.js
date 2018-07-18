@@ -30,7 +30,7 @@ class TokenJoinToggle extends React.Component<Props> {
       .disableChannelTokenJoin({ id: this.props.id })
       .then(() => {
         return this.props.dispatch(
-          addToastWithTimeout('neutral', 'Link disabled')
+          addToastWithTimeout('neutral', '链接已失效')
         );
       })
       .catch(err => {
@@ -43,7 +43,7 @@ class TokenJoinToggle extends React.Component<Props> {
       .enableChannelTokenJoin({ id: this.props.id })
       .then(() => {
         return this.props.dispatch(
-          addToastWithTimeout('success', 'Link enabled')
+          addToastWithTimeout('success', '链接已激活')
         );
       })
       .catch(err => {
@@ -60,7 +60,7 @@ class TokenJoinToggle extends React.Component<Props> {
         onChange={this.init}
         dataCy="toggle-token-link-invites"
       >
-        Enable users to join via link
+        允许用户通过链接加入
       </Checkbox>
     );
   }

@@ -42,21 +42,21 @@ class Header extends React.Component<HeaderProps> {
             {watercooler && (
               <MetaSubtitleWatercooler active={active}>
                 <Divider>·</Divider>
-                Watercooler
+                冰冷
               </MetaSubtitleWatercooler>
             )}
 
             {isLocked && (
               <MetaSubtitleLocked active={active}>
                 <Divider>·</Divider>
-                Locked
+                锁定
               </MetaSubtitleLocked>
             )}
 
             {isPinned && (
               <MetaSubtitlePinned active={active}>
                 <Divider>·</Divider>
-                Pinned
+                置顶
               </MetaSubtitlePinned>
             )}
           </TextRow>

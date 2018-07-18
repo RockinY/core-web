@@ -99,7 +99,7 @@ class Header extends React.Component<Props> {
             data-e2e-id="inbox-view-post-button"
             glyph={'post'}
             onClick={() => dispatch(changeActiveThread('new'))}
-            tipText={'New conversation'}
+            tipText={'新的对话'}
             tipLocation={'bottom-left'}
           />
         </HeaderWrapper>

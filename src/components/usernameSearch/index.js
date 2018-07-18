@@ -73,12 +73,12 @@ class UsernameSearch extends React.Component<Props, State> {
   notifyParentWithValidationResult = username => {
     if (username.length > 20) {
       this.props.onValidationResult({
-        error: 'Usernames can be up to 20 characters',
+        error: '用户名不得超过20个字符',
         success: '',
       });
     } else if (username.length === 0) {
       this.props.onValidationResult({
-        error: 'Be sure to set a username so that people can find you!',
+        error: '请确保添加了用户名已便其他用户可以找到你!',
         success: '',
       });
     } else {
@@ -111,14 +111,14 @@ class UsernameSearch extends React.Component<Props, State> {
         if (user && user.id) {
           this.props.onValidationResult({
             error:
-              'Someone already swooped this username – not feeling too original today, huh?',
+              '这个用户名已经存在了，换一个再试试吧?',
             success: '',
             username,
           });
         } else {
           this.props.onValidationResult({
             error: '',
-            success: 'That username is available!',
+            success: '这个用户名可以使用!',
             username,
           });
         }

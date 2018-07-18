@@ -41,7 +41,7 @@ class RestoreChannelModal extends React.Component<Props, State> {
     return this.props
       .restoreChannel({ channelId: channel.id })
       .then(() => {
-        dispatch(addToastWithTimeout('success', 'Channel restored'));
+        dispatch(addToastWithTimeout('success', '频道已恢复'));
         this.setState({
           isLoading: false,
         });
@@ -66,7 +66,7 @@ class RestoreChannelModal extends React.Component<Props, State> {
         /* TODO(@mxstbr): Fix this */
         ariaHideApp={false}
         isOpen={isOpen}
-        contentLabel={'Create a Channel'}
+        contentLabel={'创建一个新频道'}
         onRequestClose={this.close}
         shouldCloseOnOverlayClick={true}
         style={styles}
@@ -76,23 +76,22 @@ class RestoreChannelModal extends React.Component<Props, State> {
           We pass the closeModal dispatch into the container to attach
           the action to the 'close' icon in the top right corner of all modals
         */}
-        <ModalContainer title={'Restore Channel'} closeModal={this.close}>
+        <ModalContainer title={'恢复频道'} closeModal={this.close}>
           <Form>
             <Description>
-              Restoring a private channel will automatically resume your
-              subscription at $10 per month.
+              恢复一个私人频道需要您有会员得身份
             </Description>
 
             <Actions>
               <TextButton onClick={this.close} color={'warn.alt'}>
-                Cancel
+                取消
               </TextButton>
               <Button
                 disabled={channel.isPrivate && !hasChargeableSource}
                 loading={isLoading}
                 onClick={this.restore}
               >
-                Restore Channel
+                恢复频道
               </Button>
             </Actions>
           </Form>

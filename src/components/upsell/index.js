@@ -68,8 +68,8 @@ export const MiniNullCard = (props: NullCardProps) => {
 };
 
 export const UpsellCreateCommunity = ({ close }: { close: Function }) => {
-  const title = 'Create a community';
-  const subtitle = 'Building communities on Spectrum is easy and free forever';
+  const title = '创建一个新的社区';
+  const subtitle = '在云社创建您得专属社区，社区将永远免费!';
 
   return (
     <NullCard bg={'onboarding'}>
@@ -77,7 +77,7 @@ export const UpsellCreateCommunity = ({ close }: { close: Function }) => {
       <Subtitle>{subtitle}</Subtitle>
       <Actions>
         <Link to="/new/community">
-          <Button onClick={close}>Get Started</Button>
+          <Button onClick={close}>开始探索</Button>
         </Link>
       </Actions>
     </NullCard>
@@ -88,7 +88,7 @@ export const Upsell404Channel = ({ community }: { community: string }) => {
   return (
     <Actions>
       <Link to={`/${community}`}>
-        <Button large>Take me back</Button>
+        <Button large>返回</Button>
       </Link>
     </Actions>
   );
@@ -104,11 +104,11 @@ export const Upsell404Community = () => {
   return (
     <Actions>
       <Link to={'/'}>
-        <OutlineButton large>Take me back</OutlineButton>
+        <OutlineButton large>返回</OutlineButton>
       </Link>
 
       <Link to={'/new/community'}>
-        <Button large>Create a community</Button>
+        <Button large>创建一个新的社区</Button>
       </Link>
     </Actions>
   );
@@ -123,14 +123,14 @@ export const UpsellTeamMembers = (props: TeamMemberProps) => {
   return (
     <MiniNullCard
       copy={
-        props.small ? '' : "Looks like you haven't added any team members yet!"
+        props.small ? '' : "您的社区还没有任何成员!"
       }
       noPadding
       alignItems="flex-end"
     >
       <Link to={`/${props.communitySlug}/settings/members`}>
         <OutlineButton icon={props.small ? null : 'member-add'}>
-          Add {props.small ? 'more' : ''} team members
+          添加 {props.small ? '更多' : ''} 社区成员
         </OutlineButton>
       </Link>
     </MiniNullCard>
@@ -139,9 +139,9 @@ export const UpsellTeamMembers = (props: TeamMemberProps) => {
 
 export const UpsellNullNotifications = () => {
   return (
-    <NullCard bg="notification" heading="You don't have any notifications yet.">
+    <NullCard bg="notification" heading="你还没有收到任何通知.">
       <Link to="/">
-        <Button icon="home">Take Me Home</Button>
+        <Button icon="home">返回</Button>
       </Link>
     </NullCard>
   );

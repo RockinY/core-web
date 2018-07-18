@@ -173,7 +173,7 @@ class CommunityMembers extends React.Component<Props, State> {
     return (
       <SectionCard>
         <SectionTitle>
-          Community Members · {community.metaData.members.toLocaleString()}
+          社区成员 · {community.metaData.members.toLocaleString()}
         </SectionTitle>
 
         <Filters>
@@ -181,19 +181,19 @@ class CommunityMembers extends React.Component<Props, State> {
             onClick={this.viewMembers}
             active={filter && filter.isMember ? true : false}
           >
-            Members
+            成员
           </Filter>
           <Filter
             onClick={this.viewModerators}
             active={filter && filter.isModerator ? true : false}
           >
-            Team
+            团队
           </Filter>
           <Filter
             onClick={this.viewBlocked}
             active={filter && filter.isBlocked ? true : false}
           >
-            Blocked
+            屏蔽
           </Filter>
 
           {community.isPrivate && (
@@ -202,7 +202,7 @@ class CommunityMembers extends React.Component<Props, State> {
               // $FlowFixMe
               active={filter && filter.isPending ? true : false}
             >
-              Pending
+              等待
             </Filter>
           )}
 
@@ -212,7 +212,7 @@ class CommunityMembers extends React.Component<Props, State> {
               <SearchInput
                 onChange={this.handleChange}
                 type={'text'}
-                placeholder={'Search'}
+                placeholder={'搜索'}
               />
             </SearchForm>
           </SearchFilter>
@@ -233,13 +233,13 @@ class CommunityMembers extends React.Component<Props, State> {
 
                   const heading =
                     searchString.length > 1
-                      ? `We couldn't find anyone matching "${searchString}"`
-                      : 'Search for people in your community';
+                      ? `我们找不到任何人符合 "${searchString}"`
+                      : '搜索你社区的成员';
 
                   const subheading =
                     searchString.length > 1
-                      ? 'Grow your community by inviting people via email, or by importing a Slack team'
-                      : 'Find people by name, username, and profile description - try searching for "designer" or "developer"';
+                      ? '通过分享来不断扩大您社区的影响力'
+                      : '通过用户的用户名和描述来进行搜索';
 
                   return (
                     <ViewError
@@ -266,9 +266,9 @@ class CommunityMembers extends React.Component<Props, State> {
           !queryString && (
             <ViewError
               emoji={' '}
-              heading={'Search for community members'}
+              heading={'搜索社区成员'}
               subheading={
-                'Find people by name or description - try searching for "designer"!'
+                '通过用户的用户名和描述来进行搜索!'
               }
             />
           )}
@@ -290,13 +290,10 @@ class CommunityMembers extends React.Component<Props, State> {
                       filter.isBlocked &&
                       !community.isPrivate && (
                         <Notice>
-                          <strong>A note about blocked users:</strong> Your
-                          community is publicly viewable (except for private
-                          channels). This means that a blocked user may be able
-                          to see the content and conversations in your
-                          community. However, they will be prevented from
-                          creating new conversations, or leaving messages in
-                          existing conversations.
+                          <strong>关于屏蔽用户的通知:</strong> 
+                          你的社区是公共的(除了部分私有频道)，这意味着被屏蔽的用户
+                          仍然可以看到您社区的内容和对话. 但是他们并不能创建新的对话
+                          或者在任何现有的对话下面留言.
                         </Notice>
                       )}
 
@@ -313,7 +310,7 @@ class CommunityMembers extends React.Component<Props, State> {
                             loading={isFetchingMore}
                             onClick={fetchMore}
                           >
-                            Load more
+                            加载更多
                           </FetchMore>
                         </SectionCardFooter>
                       )}
@@ -330,9 +327,9 @@ class CommunityMembers extends React.Component<Props, State> {
                   return (
                     <ViewError
                       emoji={' '}
-                      heading={'No blocked members found'}
+                      heading={'没有发现被屏蔽的用户'}
                       subheading={
-                        'Nobody has been blocked yet - nice! When someone is blocked, they will appear here'
+                        '太棒了还没有用户被屏蔽！如果有新的被屏蔽用户，你可以在这里找到他们'
                       }
                     />
                   );
@@ -342,9 +339,9 @@ class CommunityMembers extends React.Component<Props, State> {
                   return (
                     <ViewError
                       emoji={' '}
-                      heading={'No members found'}
+                      heading={'没有找到社区成员'}
                       subheading={
-                        "We couldn't find any members in your community. That's strange..."
+                        "我们没有找到任何社区成员，太奇怪了..."
                       }
                     />
                   );
@@ -354,9 +351,9 @@ class CommunityMembers extends React.Component<Props, State> {
                   return (
                     <ViewError
                       emoji={' '}
-                      heading={'No team members found'}
+                      heading={'没有找到团队成员'}
                       subheading={
-                        "You haven't added any team members to your community yet."
+                        "你还没添加任何团队成员进入你的社区."
                       }
                     />
                   );
@@ -367,9 +364,9 @@ class CommunityMembers extends React.Component<Props, State> {
                   return (
                     <ViewError
                       emoji={' '}
-                      heading={'No pending members found'}
+                      heading={'没有等待中的成员'}
                       subheading={
-                        'There are no pending members in your community.'
+                        '您的社区没有发现等待中的成员.'
                       }
                     />
                   );

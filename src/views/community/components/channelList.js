@@ -141,8 +141,8 @@ class ChannelList extends React.Component<Props> {
                             tipLocation={'top-left'}
                             tipText={
                               channel.channelPermissions.receiveNotifications
-                                ? 'Turn notifications off'
-                                : 'Turn notifications on'
+                                ? '关闭同时'
+                                : '开启通知'
                             }
                           >
                             {state.isLoading ? (
@@ -198,7 +198,7 @@ class ChannelList extends React.Component<Props> {
                 dispatch(openModal('CREATE_CHANNEL_MODAL', { community }))
               }
             >
-              Create a channel
+              创建一个新的频道
             </OutlineButton>
           )}
         </StyledCard>

@@ -108,7 +108,7 @@ class Indicator extends Component {
 
     return (
       <NewActivityBar active={active} onClick={this.clearActivityIndicator}>
-        New conversations!
+        新的对话!
       </NewActivityBar>
     );
   }

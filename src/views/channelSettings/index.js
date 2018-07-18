@@ -63,7 +63,7 @@ class ChannelSettings extends React.Component<Props> {
           if (action === 'approve') {
           }
 
-          dispatch(addToastWithTimeout('success', 'Saved!'));
+          dispatch(addToastWithTimeout('success', '已保存!'));
         }
         return;
       })
@@ -86,7 +86,7 @@ class ChannelSettings extends React.Component<Props> {
         const { unblockUser } = data;
         // the mutation returns a channel object. if it exists,
         if (unblockUser !== undefined) {
-          dispatch(addToastWithTimeout('success', 'User was un-blocked.'));
+          dispatch(addToastWithTimeout('success', '用户已被取消屏蔽.'));
         }
         return;
       })
@@ -122,16 +122,14 @@ class ChannelSettings extends React.Component<Props> {
         return (
           <AppViewWrapper>
             <Titlebar
-              title={'Channel settings'}
+              title={'频道设置'}
               provideBack={true}
               backRoute={`/${communitySlug}`}
               noComposer
             />
             <ViewError
-              heading={'You don’t have permission to manage this channel.'}
-              subheading={`Head back to the ${
-                channel.community.name
-              } community to get back on track.`}
+              heading={'你没有管理这个频道的权限.'}
+              subheading={`返回.`}
             >
               <Upsell404Channel community={communitySlug} />
             </ViewError>
@@ -167,14 +165,14 @@ class ChannelSettings extends React.Component<Props> {
 
       const subheading = {
         to: `/${channel.community.slug}/settings`,
-        label: `Return to ${channel.community.name} settings`,
+        label: `返回社区 - ${channel.community.name}的设置`,
       };
 
       return (
         <AppViewWrapper>
           <Titlebar
             title={`${channel.name} · ${channel.community.name}`}
-            subtitle={'Settings'}
+            subtitle={'设置'}
             provideBack={true}
             backRoute={`/${channel.community.slug}/${channel.slug}`}
             noComposer
@@ -183,8 +181,8 @@ class ChannelSettings extends React.Component<Props> {
           <View id="main">
             <Header
               subheading={subheading}
-              heading={`${channel.name} Settings ${
-                channel.isArchived ? '(Archived)' : ''
+              heading={`${channel.name} 设置 ${
+                channel.isArchived ? '(已归档)' : ''
               }`}
             />
             <Subnav items={subnavItems} activeTab={activeTab} />
@@ -203,14 +201,14 @@ class ChannelSettings extends React.Component<Props> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'Channel not found'}
+            title={'频道无法找到'}
             provideBack={true}
             backRoute={`/${communitySlug}/${channelSlug}`}
             noComposer
           />
           <ViewError
             refresh
-            heading={'There was an error fetching this channel.'}
+            heading={'获取频道信息失败.'}
           />
         </AppViewWrapper>
       );
@@ -219,14 +217,14 @@ class ChannelSettings extends React.Component<Props> {
     return (
       <AppViewWrapper>
         <Titlebar
-          title={'Channel not found'}
+          title={'频道无法找到'}
           provideBack={true}
           backRoute={`/${communitySlug}`}
           noComposer
         />
         <ViewError
-          heading={'We couldn’t find a channel with this name.'}
-          subheading={`Head back to the ${communitySlug} community to get back on track.`}
+          heading={'找不到与这个名字对应的频道.'}
+          subheading={`返回.`}
         >
           <Upsell404Channel community={communitySlug} />
         </ViewError>

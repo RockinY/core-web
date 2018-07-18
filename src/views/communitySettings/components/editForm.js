@@ -219,7 +219,7 @@ class EditForm extends React.Component<Props, State> {
         // community was returned
         if (community !== undefined) {
           this.props.dispatch(
-            addToastWithTimeout('success', 'Community saved!')
+            addToastWithTimeout('success', '社区已被创建!')
           );
         }
         return;
@@ -239,19 +239,16 @@ class EditForm extends React.Component<Props, State> {
     const message = (
       <div>
         <p>
-          Are you sure you want to delete your community, <b>{name}</b>?
+          确定删除社区, <b>{name}</b>?
         </p>{' '}
         <p>
-          <b>{communityData.metaData.members} members</b> will be removed from
-          the community and the{' '}
-          <b>{communityData.metaData.channels} channels</b> you’ve created will
-          be deleted.
+          社区<b>{communityData.metaData.members}的成员</b>将会从社区删除，
+          <b>同时社区您创建的{communityData.metaData.channels}频道</b>也将会被一并删除.
         </p>
         <p>
-          All threads, messages, reactions, and media shared in your community
-          will be deleted.
+          所有社区的话题，反馈和图片多媒体都将被一并删除.
         </p>
-        <p>This cannot be undone.</p>
+        <p>这个操作不可逆.</p>
       </div>
     );
 

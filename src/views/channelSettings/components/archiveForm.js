@@ -25,8 +25,7 @@ class Channel extends React.Component<Props> {
     const message = (
       <div>
         <p>
-          Are you sure you want to archive this channel? Community members will
-          no longer be able to post to this channel.
+          你确定想归档这个频道吗？社区成员将不能继续在这个频道下面发言.
         </p>
       </div>
     );
@@ -36,7 +35,7 @@ class Channel extends React.Component<Props> {
         id: channel.id,
         entity: 'channel-archive',
         message,
-        buttonLabel: 'Archive',
+        buttonLabel: '归档'
       })
     );
   };
@@ -56,23 +55,21 @@ class Channel extends React.Component<Props> {
     if (!channel.isArchived) {
       return (
         <SectionCard>
-          <SectionTitle>Archive channel</SectionTitle>
+          <SectionTitle>归档频道</SectionTitle>
           {channel.isPrivate ? (
             <SectionSubtitle>
-              Archiving a private channel will automatically remove the private
-              channel item from your subscription. The channel will then become
-              read-only and community members will no longer be able to start
-              new conversations.
+              归档私人频道会自动取消您对这个频道的订阅. 同时频道将处于只读状态，您的社区成员将无法
+              在下面进行相关对话.
             </SectionSubtitle>
           ) : (
             <SectionSubtitle>
-              Archiving a channel will make it read-only and community members
-              will no longer be able to start new conversations.
+              归档频道之后频道将处于只读状态，您的社区成员将无法
+              在下面进行相关对话.
             </SectionSubtitle>
           )}
 
           <SectionCardFooter>
-            <Button onClick={this.initArchiveChannel}>Archive Channel</Button>
+            <Button onClick={this.initArchiveChannel}>归档频道</Button>
           </SectionCardFooter>
         </SectionCard>
       );
@@ -80,23 +77,22 @@ class Channel extends React.Component<Props> {
       return (
         <SectionCard>
           <SectionTitle>
-            Restore channel {channel.isPrivate ? '· $10/mo' : ''}
+            恢复频道 {channel.isPrivate ? '· ¥10/每月' : ''}
           </SectionTitle>
           {channel.isPrivate ? (
             <SectionSubtitle>
-              Restoring a private channel will automatically resume your
-              subscription at $10 per month. The channel will be restored and
-              channel members will be able to start new conversations.
+              恢复一个私人频道需要您处于会员状态. 恢复之后频道将会恢复正常，您的成员也可以正常
+              在里面进行交流.
             </SectionSubtitle>
           ) : (
             <SectionSubtitle>
-              The channel will be restored and channel members will be able to
-              start new conversations.
+              恢复之后频道将会恢复正常，您的成员也可以正常
+              在里面进行交流.
             </SectionSubtitle>
           )}
 
           <SectionCardFooter>
-            <Button onClick={this.initRestoreChannel}>Restore Channel</Button>
+            <Button onClick={this.initRestoreChannel}>恢复频道</Button>
           </SectionCardFooter>
         </SectionCard>
       );

@@ -8,9 +8,9 @@ import { NullThreadFeed, NullHeading } from '../style';
 
 const EmptySearchFeed = ({ dispatch, queryString }) => (
   <NullThreadFeed>
-    <NullHeading>We couldn't find any results for "{queryString}"</NullHeading>
+    <NullHeading>找不到结果关于 "{queryString}"</NullHeading>
     <Button icon={'post'} onClick={() => dispatch(changeActiveThread('new'))}>
-      Be the first to post about it
+      第一个去回复相关内容吧
     </Button>
   </NullThreadFeed>
 );

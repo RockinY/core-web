@@ -99,10 +99,9 @@ class BrandedLogin extends React.Component<Props, State> {
       const { brandedLogin } = community;
       return (
         <SectionCard data-cy="community-settings-branded-login">
-          <SectionTitle>Branded Login</SectionTitle>
+          <SectionTitle>品牌登陆</SectionTitle>
           <SectionSubtitle>
-            Display a custom login message when people are signing up to
-            Spectrum directly from your community’s profile
+            显示一条定制的登陆信息如果用户直接从你社区的主页进行注册
           </SectionSubtitle>
 
           <BrandedLoginToggle settings={brandedLogin} id={community.id} />
@@ -111,7 +110,7 @@ class BrandedLogin extends React.Component<Props, State> {
             {brandedLogin.isEnabled && (
               <TextArea
                 defaultValue={brandedLogin.message}
-                placeholder={'Set a custom message for the login screen'}
+                placeholder={'给登陆页面定制一条信息'}
                 onChange={this.handleChange}
                 dataCy="community-settings-branded-login-input"
               />
@@ -119,7 +118,7 @@ class BrandedLogin extends React.Component<Props, State> {
 
             {messageLengthError && (
               <Error>
-                Custom login messages should be under 280 characters.
+                定制的登陆信息应该不应该超过200个字符.
               </Error>
             )}
 
@@ -138,7 +137,7 @@ class BrandedLogin extends React.Component<Props, State> {
                   loading={this.state.isLoading}
                   data-cy="community-settings-branded-login-save"
                 >
-                  Save
+                  保存
                 </Button>
 
                 <Link
@@ -150,7 +149,7 @@ class BrandedLogin extends React.Component<Props, State> {
                     style={{ alignSelf: 'flex-start' }}
                     data-cy="community-settings-branded-login-preview"
                   >
-                    Preview
+                    预览
                   </OutlineButton>
                 </Link>
               </SectionCardFooter>

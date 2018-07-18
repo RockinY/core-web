@@ -319,7 +319,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
         const { createCommunity } = data
         this.props.communityCreated(createCommunity)
         this.props.dispatch(
-          addToastWithTimeout('success', 'Community created')
+          addToastWithTimeout('success', '社区已创建')
         )
       })
       .catch(err => {
@@ -364,9 +364,9 @@ class CreateCommunityForm extends React.Component<Props, State> {
 
     const suggestionString = slugTaken
       ? communitySuggestions && communitySuggestions.length > 0
-        ? 'Were you looking for one of these communities?'
+        ? '你寻找的社区是下面社区里面的一个吗?'
         : null
-      : "This community name and url are available! We also found communities that might be similar to what you're trying to create, just in case you would rather join an existing community instead!"
+      : `社区名和链接是有效的，只是我们也发现了一些类似的社区，也许你可以尝试加入他们而不是创建一个新的社区!`
 
     return (
       <FormContainer data-cy='create-community-form'>
@@ -389,7 +389,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
 
           {photoSizeError && (
             <Notice style={{ marginTop: '32px' }}>
-              Photo uploads should be less than 3mb
+              上传的图片不得大于3MB
             </Notice>
           )}
 
@@ -401,11 +401,11 @@ class CreateCommunityForm extends React.Component<Props, State> {
             autoFocus={!window.innerWidth < 768}
             dataCy='community-name-input'
           >
-            What is your community called?
+            我该怎么称呼你的社区呢?
           </Input>
 
           {nameError && (
-            <Error>Community names can be up to 20 characters long.</Error>
+            <Error>社区名字不应该过长.</Error>
           )}
 
           <UnderlineInput
@@ -418,12 +418,11 @@ class CreateCommunityForm extends React.Component<Props, State> {
 
           {slugTaken && (
             <Error>
-              This url is already taken - feel free to change it if you’re set
-              on the name {name}!
+              这个链接已经被使用了，尝试换一个吧!
             </Error>
           )}
 
-          {slugError && <Error>Slugs can be up to 24 characters long.</Error>}
+          {slugError && <Error>链接最多不能超过24个字母.</Error>}
 
           {suggestionString &&
             !nameError &&
@@ -451,7 +450,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
                         src={suggestion.profilePhoto}
                       />
                       <strong>{suggestion.name}</strong>{' '}
-                      {suggestion.metaData.members.toLocaleString()} members
+                      {suggestion.metaData.members.toLocaleString()} 成员
                     </CommunitySuggestion>
                   </Link>
                 )
@@ -468,7 +467,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
 
           {descriptionError && (
             <Error>
-              Oop, that’s more than 140 characters - try trimming that up.
+              描述有点过长超过140个字符了，尝试对它进行一点精简吧.
             </Error>
           )}
 

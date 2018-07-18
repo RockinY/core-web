@@ -36,7 +36,7 @@ class Reaction extends React.Component<Props, State> {
 
     if (!currentUser) {
       return dispatch(
-        addToastWithTimeout('error', 'Sign in first to leave a reaction!')
+        addToastWithTimeout('error', '请先登陆之后再进行操作!')
       );
     }
 
@@ -62,7 +62,7 @@ class Reaction extends React.Component<Props, State> {
         dispatch(
           addToastWithTimeout(
             'error',
-            "Couldn't quite save that reaction, try again?"
+            "操作失败了，再试一下吧?"
           )
         );
 

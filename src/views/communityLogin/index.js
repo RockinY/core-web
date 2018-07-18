@@ -60,7 +60,7 @@ export class Login extends React.Component<Props> {
             <Subtitle>
               {brandedLogin.message && brandedLogin.message.length > 0
                 ? brandedLogin.message
-                : 'Spectrum is a place where communities can share, discuss, and grow together. Sign in below to get in on the conversation.'}
+                : '云社是新一代互联网的社区，登陆以开始探索吧.'}
             </Subtitle>
 
             <LoginButtonSet
@@ -69,13 +69,13 @@ export class Login extends React.Component<Props> {
             />
 
             <CodeOfConduct>
-              By using Spectrum, you agree to our{' '}
+              使用云社，您默认同意以下条款{' '}
               <a
                 href="https://github.com/withspectrum/code-of-conduct"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Code of Conduct
+                使用条款
               </a>
             </CodeOfConduct>
           </FullscreenContent>
@@ -95,9 +95,9 @@ export class Login extends React.Component<Props> {
       <FullscreenView close={this.escape}>
         <ViewError
           refresh
-          heading={'We had trouble finding this community'}
+          heading={'该社区无法找到'}
           subheading={
-            'Double check that this community exists or refresh to try again'
+            '再次检查这个社区是否存在或者试着刷新一下'
           }
         />
       </FullscreenView>

@@ -223,7 +223,7 @@ class MessagesTab extends React.Component<Props, State> {
           count={count > 10 ? '10+' : count > 0 ? count.toString() : null}
           size={isDesktopApp() ? 28 : 32}
         />
-        <Label>Messages</Label>
+        <Label>消息</Label>
       </MessageTab>
     );
   }

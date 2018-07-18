@@ -260,13 +260,13 @@ class Editor extends React.Component<Props, State> {
                         <label htmlFor="embed-input">
                           <Icon
                             glyph={'embed'}
-                            tipText={'Embed a URL'}
+                            tipText={'嵌入一个URL'}
                             onClick={this.toggleEmbedInputState}
                           />
                           <input
                             id="embed-input"
                             type="url"
-                            placeholder="Enter a URL to embed"
+                            placeholder="输入一个URL进行嵌入"
                             value={this.state.embedUrl}
                             onChange={this.changeEmbedUrl}
                           />
@@ -346,7 +346,7 @@ class Editor extends React.Component<Props, State> {
           {!readOnly && (
             <MediaRow>
               <MediaInput onChange={this.addImage} multiple>
-                Add
+                添加
               </MediaInput>
             </MediaRow>
           )}

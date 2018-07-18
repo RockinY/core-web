@@ -82,7 +82,7 @@ const ThreadFeedCardPure = (props: Object): React$Element<any> => {
           ) : (
             <MetaNew>
               <Icon size={20} glyph="notification-fill" />
-              <span>Fresh thread!</span>
+              <span>新鲜的话题!</span>
             </MetaNew>
           )}
         </ContentInfo>

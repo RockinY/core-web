@@ -99,7 +99,7 @@ class SidebarChannels extends React.Component<Props> {
           <Link to={`/${community.slug}`}>
             <ChannelListItem>
               <Icon glyph={'link'} size={24} />
-              <CommunityListName>Visit community</CommunityListName>
+              <CommunityListName>浏览社区</CommunityListName>
             </ChannelListItem>
           </Link>
 
@@ -107,7 +107,7 @@ class SidebarChannels extends React.Component<Props> {
             <Link to={`/${community.slug}/settings`}>
               <ChannelListItem>
                 <Icon glyph={'settings'} size={24} />
-                <CommunityListName>Settings</CommunityListName>
+                <CommunityListName>设置</CommunityListName>
               </ChannelListItem>
             </Link>
           )}
@@ -129,7 +129,7 @@ class SidebarChannels extends React.Component<Props> {
                     >
                       <ChannelListItem>
                         <PendingBadge>{members.length}</PendingBadge>
-                        <CommunityListName>Pending requests</CommunityListName>
+                        <CommunityListName>等待申请</CommunityListName>
                       </ChannelListItem>
                     </Link>
                   );
@@ -145,14 +145,14 @@ class SidebarChannels extends React.Component<Props> {
               <Link to={`/${community.slug}/settings/analytics`}>
                 <ChannelListItem>
                   <Icon glyph={'link'} size={24} />
-                  <CommunityListName>Analytics</CommunityListName>
+                  <CommunityListName>分析</CommunityListName>
                 </ChannelListItem>
               </Link>
             )}
 
           {sortedChannels &&
             sortedChannels.length > 1 && (
-              <SectionTitle>Filter by Channel</SectionTitle>
+              <SectionTitle>通过频道进行筛选</SectionTitle>
             )}
           {sortedChannels &&
             sortedChannels.length > 1 &&
@@ -188,7 +188,7 @@ class SidebarChannels extends React.Component<Props> {
           <Link to={`/${slug}`}>
             <ChannelListItem>
               <Icon glyph={'link'} size={24} />
-              <CommunityListName>Visit community</CommunityListName>
+              <CommunityListName>浏览社区</CommunityListName>
             </ChannelListItem>
           </Link>
 
@@ -196,7 +196,7 @@ class SidebarChannels extends React.Component<Props> {
             <Link to={`/${slug}/settings`}>
               <ChannelListItem>
                 <Icon glyph={'settings'} size={24} />
-                <CommunityListName>Settings</CommunityListName>
+                <CommunityListName>设置</CommunityListName>
               </ChannelListItem>
             </Link>
           )}

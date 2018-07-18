@@ -46,23 +46,20 @@ class BlockedUsers extends React.Component<Props> {
 
       return (
         <SectionCard>
-          <SectionTitle>Blocked Users</SectionTitle>
+          <SectionTitle>屏蔽用户</SectionTitle>
           {blockedUsers &&
             blockedUsers.length > 0 && (
               <SectionSubtitle>
-                Blocked users can not see threads or messages posted in this
-                channel. They will still be able to join any other public
-                channels in the Spectrum community and request access to other
-                private channels.
+                被屏蔽的用户将无法看到这个频道下面的话题和消息. TA们仍然可以加入
+                其他的公共社区和私人社区.
               </SectionSubtitle>
             )}
 
           {blockedUsers &&
             blockedUsers.length > 0 && (
               <Notice>
-                Unblocking a user will <b>not</b> add them to this channel. It
-                will only allow them to re-request access in the future as long
-                as this channel remains private.
+                取消用户的并<b>不会</b>自动让他们加入这个频道. 但是他们将可以再次发出加入
+                这个频道的申请只要这个频道仍然是私有的.
               </Notice>
             )}
 
@@ -97,7 +94,7 @@ class BlockedUsers extends React.Component<Props> {
                               </DropdownAction>
                               <DropdownSectionText>
                                 <DropdownSectionTitle>
-                                  Send Direct Message
+                                  直接发送信息
                                 </DropdownSectionTitle>
                               </DropdownSectionText>
                             </DropdownSection>
@@ -111,12 +108,10 @@ class BlockedUsers extends React.Component<Props> {
 
                               <DropdownSectionText>
                                 <DropdownSectionTitle>
-                                  Unblock
+                                  取消屏蔽
                                 </DropdownSectionTitle>
                                 <DropdownSectionSubtitle>
-                                  Allow this user to re-request access in the
-                                  future. They will not be joined to the
-                                  channel.
+                                  允许其再次申请加入
                                 </DropdownSectionSubtitle>
                               </DropdownSectionText>
                             </DropdownSection>
@@ -131,7 +126,7 @@ class BlockedUsers extends React.Component<Props> {
             {blockedUsers &&
               blockedUsers.length <= 0 && (
                 <SectionSubtitle>
-                  There are no blocked users in this channel.
+                  这个频道下面没有被屏蔽的用户
                 </SectionSubtitle>
               )}
           </ListContainer>

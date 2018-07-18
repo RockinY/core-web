@@ -114,7 +114,7 @@ class ChannelWithData extends React.Component<Props, State> {
 
         // the mutation returns a channel object. if it exists,
         if (channel !== undefined) {
-          this.props.dispatch(addToastWithTimeout('success', 'Channel saved!'));
+          this.props.dispatch(addToastWithTimeout('success', '频道已保存!'));
         }
         return;
       })
@@ -133,7 +133,7 @@ class ChannelWithData extends React.Component<Props, State> {
     const message = (
       <div>
         <p>
-          Are you sure you want to delete{' '}
+          你确定你想删除{' '}
           <b>
             {channelData.community.name}/{name}
           </b>
@@ -141,16 +141,14 @@ class ChannelWithData extends React.Component<Props, State> {
         </p>
         {channelData.metaData.threads > 0 && (
           <p>
-            The <b>{channelData.metaData.threads} threads</b> posted in this
-            channel will be deleted.
+            这个频道下面的<b>{channelData.metaData.threads}话题</b>将会被删除.
           </p>
         )}
         <p>
-          All messages, reactions, and media shared in this channel will be
-          deleted.
+          所有这个频道下面的消息, 反馈和图片都会被删除.
         </p>
         <p>
-          <b>This cannot be undone.</b>
+          <b>这个操作不可逆.</b>
         </p>
       </div>
     );
@@ -173,11 +171,11 @@ class ChannelWithData extends React.Component<Props, State> {
       return (
         <NullCard
           bg="channel"
-          heading={"This channel doesn't exist yet."}
-          copy={'Want to make it?'}
+          heading={"这个频道不存在."}
+          copy={'想创建一个吗?'}
         >
           {/* TODO: wire up button */}
-          <Button>Create</Button>
+          <Button>创建</Button>
         </NullCard>
       );
     } else {
@@ -185,10 +183,10 @@ class ChannelWithData extends React.Component<Props, State> {
         <SectionCard>
           <Location>
             <Link to={`/${channel.community.slug}/${channel.slug}`}>
-              View Channel
+              浏览频道
             </Link>
           </Location>
-          <SectionTitle>Channel Settings</SectionTitle>
+          <SectionTitle>频道设置</SectionTitle>
           <Form onSubmit={this.save}>
             <Input
               defaultValue={name}
@@ -196,7 +194,7 @@ class ChannelWithData extends React.Component<Props, State> {
               onChange={this.handleChange}
               dataCy="channel-name-input"
             >
-              Name
+              名字
             </Input>
             <UnderlineInput defaultValue={slug} disabled>
               {`URL: /${channel.community.slug}/`}
@@ -207,7 +205,7 @@ class ChannelWithData extends React.Component<Props, State> {
               onChange={this.handleChange}
               dataCy="channel-description-input"
             >
-              Description
+              描述
             </TextArea>
 
             {/* {slug !== 'general' &&
@@ -220,17 +218,13 @@ class ChannelWithData extends React.Component<Props, State> {
               </Checkbox>} */}
             {isPrivate ? (
               <Description>
-                Only approved people on Spectrum can see the threads, messages,
-                and members in this channel. You can manually approve users who
-                request to join this channel.
+                只有被审核通过的用户才能浏览相关话题，消息和频道成员. 你可以手动审核并选择
+                哪些用户可以加入你的频道.
               </Description>
             ) : (
               <Description>
-                Anyone on Spectrum can join this channel, post threads and
-                messages, and will be able to see other members. If you want to
-                create private channels,{' '}
-                <a href="mailto:hi@spectrum.chat">get in touch</a>
-                .
+                云社上的任何成员都可以加入你的频道并在上面发布话题和消息，同时频道的成员也是
+                对外公开的. 如果你相创建私人频道请先注册会员.
               </Description>
             )}
 
@@ -238,10 +232,9 @@ class ChannelWithData extends React.Component<Props, State> {
             this.props.channel.isPrivate &&
               !isPrivate && (
                 <Notice>
-                  When a private channel is made public all pending users will
-                  be added as members of the channel. Blocked users will remain
-                  blocked from viewing all content in this channel but in the
-                  future any new person will be able to join.
+                  当一个私有频道公开的时候，频道下面所有等待审核的用户都会自动审核成功并
+                  成为频道下会员. 被屏蔽的用户仍然会处于屏蔽状态. 但是之后任何新的云社
+                  成员都将可以自由加入频道.
                 </Notice>
               )}
 
@@ -270,9 +263,8 @@ class ChannelWithData extends React.Component<Props, State> {
 
             {slug === 'general' && (
               <GeneralNotice>
-                The General channel is the default channel for your community.
-                It can't be deleted or private, but you can still change the
-                name and description.
+                通用频道是您社区的默认频道. 它们无法被删除和私有化，但是你仍然可以对它们进行
+                名称和描述的修改.
               </GeneralNotice>
             )}
           </Form>

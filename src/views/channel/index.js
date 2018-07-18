@@ -121,7 +121,7 @@ class ChannelView extends React.Component<Props, State> {
       return (
         <Link to={loginUrl}>
           <LoginButton data-cy="channel-login-join-button">
-            Join {channel.name}
+            加入 {channel.name}
           </LoginButton>
         </Link>
       );
@@ -138,7 +138,7 @@ class ChannelView extends React.Component<Props, State> {
               isMember
               data-cy="channel-settings-button"
             >
-              Settings
+              设置
             </LoginButton>
           </Link>
         );
@@ -156,7 +156,7 @@ class ChannelView extends React.Component<Props, State> {
                   loading={state.isLoading}
                   dataCy="channel-join-button"
                 >
-                  {isChannelMember ? 'Joined' : `Join ${channel.name}`}
+                  {isChannelMember ? '已加入' : `加入 ${channel.name}`}
                 </LoginButton>
               )}
             />
@@ -167,7 +167,7 @@ class ChannelView extends React.Component<Props, State> {
                 isMember
                 data-cy="channel-settings-button"
               >
-                Settings
+                设置
               </LoginButton>
             </Link>
           </React.Fragment>
@@ -185,7 +185,7 @@ class ChannelView extends React.Component<Props, State> {
               loading={state.isLoading}
               dataCy="channel-join-button"
             >
-              {isChannelMember ? 'Joined' : `Join ${channel.name}`}
+              {isChannelMember ? '已加入' : `加入 ${channel.name}`}
             </LoginButton>
           )}
         />
@@ -249,8 +249,8 @@ class ChannelView extends React.Component<Props, State> {
             />
             <ViewError
               emoji={'✋'}
-              heading={'You don’t have permission to view this channel.'}
-              subheading={`Head back to the ${communitySlug} community to get back on track.`}
+              heading={'你没有进入这个频道的权限.'}
+              subheading={`返回.`}
               dataCy={'channel-view-blocked'}
             >
               <Upsell404Channel community={communitySlug} />
@@ -274,17 +274,17 @@ class ChannelView extends React.Component<Props, State> {
               emoji={isPending ? '🕓' : '🔑'}
               heading={
                 isPending
-                  ? 'Your request to join this channel is pending'
-                  : 'This channel is private'
+                  ? '您的频道加入请求正在处理中'
+                  : '这个频道是私人的'
               }
               subheading={
                 isPending
-                  ? `Return to the ${
+                  ? `有新消息之前先返回社区 - ${
                       community.name
-                    } community until you hear back.`
-                  : `Request to join this channel and the admins of ${
+                    }.`
+                  : `请求加入这个频道，社区 - ${
                       community.name
-                    } will be notified.`
+                    }的管理员会收到相应通知.`
               }
               dataCy={'channel-view-is-restricted'}
             >
@@ -463,7 +463,7 @@ class ChannelView extends React.Component<Props, State> {
           />
           <ViewError
             refresh
-            heading={'There was an error fetching this channel.'}
+            heading={'获取频道失败.'}
           />
         </AppViewWrapper>
       );
@@ -472,14 +472,14 @@ class ChannelView extends React.Component<Props, State> {
     return (
       <AppViewWrapper>
         <Titlebar
-          title={'Channel not found'}
+          title={'找不到这个频道'}
           provideBack={true}
           backRoute={`/${communitySlug}`}
           noComposer
         />
         <ViewError
-          heading={'We couldn’t find a channel with this name.'}
-          subheading={`Head back to the ${communitySlug} community to get back on track.`}
+          heading={'找不到这个名字的频道.'}
+          subheading={`返回.`}
           dataCy="channel-not-found"
         >
           <Upsell404Channel community={communitySlug} />

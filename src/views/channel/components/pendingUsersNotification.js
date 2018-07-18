@@ -24,7 +24,7 @@ class PendingUsersNotificationPure extends React.Component<Props> {
       <PendingUserNotificationContainer>
         <Link to={`/${channel.community.slug}/${channel.slug}/settings`}>
           <PendingUserCount>{channel.pendingUsers.length}</PendingUserCount>
-          Pending members
+          等待中成员
         </Link>
       </PendingUserNotificationContainer>
     );

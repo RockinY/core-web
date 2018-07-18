@@ -39,7 +39,7 @@ class RequestToJoinCommunity extends React.Component<Props, State> {
           isLoading: false,
         });
 
-        return dispatch(addToastWithTimeout('success', 'Request sent!'));
+        return dispatch(addToastWithTimeout('success', '请求已发送!'));
       })
       .catch(err => {
         this.setState({
@@ -66,7 +66,7 @@ class RequestToJoinCommunity extends React.Component<Props, State> {
         });
 
         return dispatch(
-          addToastWithTimeout('success', 'Request has been canceled')
+          addToastWithTimeout('success', '请求已被取消')
         );
       })
       .catch(err => {
@@ -94,7 +94,7 @@ class RequestToJoinCommunity extends React.Component<Props, State> {
             loading={isLoading}
             data-cy="cancel-request-to-join-private-community-button"
           >
-            Cancel request
+            取消请求
           </OutlineButton>
         )}
 
@@ -106,7 +106,7 @@ class RequestToJoinCommunity extends React.Component<Props, State> {
             loading={isLoading}
             data-cy="request-to-join-private-community-button"
           >
-            Request to join {community.name}
+            请求加入社区 - {community.name}
           </Button>
         )}
       </React.Fragment>

@@ -122,8 +122,8 @@ class ChannelWithData extends React.Component<Props, State> {
         return (
           <NullCard
             bg="error"
-            heading="Whoa there!"
-            copy="This is uncharted space. Let's get you safely back home, huh?"
+            heading="怎么回事!"
+            copy="这里很危险，我们还是回去吧?"
           >
             <Link to={'/home'}>
               <Button>Take me home</Button>
@@ -143,7 +143,7 @@ class ChannelWithData extends React.Component<Props, State> {
           </Link>
           <FullTitle>
             {channel.name}
-            {channel.isArchived && ' (Archived)'}
+            {channel.isArchived && ' (已归档)'}
           </FullTitle>
           <FullDescription>
             {renderDescriptionWithLinks(channel.description)}
@@ -186,7 +186,7 @@ class ChannelWithData extends React.Component<Props, State> {
                   hoverColor="text.placeholder"
                   onClick={() => this.toggleSubscription(channel.id)}
                 >
-                  Joined
+                  已加入
                 </Button>
               )}
             {currentUser &&
@@ -197,7 +197,7 @@ class ChannelWithData extends React.Component<Props, State> {
                   gradientTheme="success"
                   onClick={() => this.toggleSubscription(channel.id)}
                 >
-                  Join
+                  加入
                 </Button>
               )}
           </ChannelListItem>
@@ -221,7 +221,7 @@ class ChannelWithData extends React.Component<Props, State> {
                 hoverColor="text.placeholder"
                 onClick={() => this.toggleSubscription(channel.id)}
               >
-                Joined
+                已加入
               </Button>
             )}
           {currentUser &&
@@ -234,7 +234,7 @@ class ChannelWithData extends React.Component<Props, State> {
                 gradientTheme="success"
                 onClick={() => this.toggleSubscription(channel.id)}
               >
-                Join
+                加入
               </Button>
             )}
         </ChannelListItemLi>

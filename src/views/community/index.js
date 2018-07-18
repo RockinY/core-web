@@ -161,8 +161,8 @@ class CommunityView extends React.Component<Props, State> {
             <ViewError
               id="main"
               emoji={'✋'}
-              heading={`You don’t have permission to view ${community.name}`}
-              subheading={'Head back home to get on track.'}
+              heading={`你没有浏览社区 - ${community.name}的权限`}
+              subheading={'返回.'}
             >
               <Link to={'/'}>
                 <Button large>Take me home</Button>
@@ -187,7 +187,7 @@ class CommunityView extends React.Component<Props, State> {
           <AppViewWrapper data-cy="community-view-blocked">
             <Head
               title={title}
-              description={`The ${community.name} community on Spectrum`}
+              description={`云社上面的社区 - ${community.name}`}
               image={community.profilePhoto}
             />
 
@@ -202,15 +202,15 @@ class CommunityView extends React.Component<Props, State> {
               emoji={isPending ? '🕓' : '🔑'}
               heading={
                 isPending
-                  ? 'Your request to join this community is pending'
-                  : 'This community is private'
+                  ? '您的加入社区请求仍然处于等待状态'
+                  : '这个社区是私有的'
               }
               subheading={
                 isPending
-                  ? `Return home until you hear back.`
-                  : `Request to join this community and the admins of ${
+                  ? `受到进一步消息之前先返回.`
+                  : `请求加入社区，同时社区 - ${
                       community.name
-                    } will be notified.`
+                    }的管理员将会收到相应消息.`
               }
               dataCy={'community-view-is-restricted'}
             >
@@ -251,7 +251,7 @@ class CommunityView extends React.Component<Props, State> {
               {!isLoggedIn ? (
                 <Link to={loginUrl}>
                   <LoginButton dataCy={'join-community-button-login'}>
-                    Join {community.name}
+                    加入 {community.name}
                   </LoginButton>
                 </Link>
               ) : !isOwner ? (
@@ -267,7 +267,7 @@ class CommunityView extends React.Component<Props, State> {
                       dataCy={'join-community-button'}
                       style={{ marginTop: '16px' }}
                     >
-                      {isMember ? 'Member' : `Join ${community.name}`}
+                      {isMember ? '成员' : `加入 ${community.name}`}
                     </LoginButton>
                   )}
                 />
@@ -281,7 +281,7 @@ class CommunityView extends React.Component<Props, State> {
                       isMember
                       data-cy="community-settings-button"
                     >
-                      Settings
+                      设置
                     </LoginButton>
                   </Link>
                 )}
@@ -294,7 +294,7 @@ class CommunityView extends React.Component<Props, State> {
                   selected={selectedView === 'search'}
                 >
                   <Icon glyph={'search'} />
-                  Search
+                  搜索
                 </DesktopSegment>
 
                 <Segment
@@ -302,7 +302,7 @@ class CommunityView extends React.Component<Props, State> {
                   onClick={() => this.handleSegmentClick('threads')}
                   selected={selectedView === 'threads'}
                 >
-                  Threads
+                  话题
                 </Segment>
 
                 <DesktopSegment
@@ -319,7 +319,7 @@ class CommunityView extends React.Component<Props, State> {
                   onClick={() => this.handleSegmentClick('members')}
                   selected={selectedView === 'members'}
                 >
-                  Members
+                  成员
                 </MobileSegment>
                 <MobileSegment
                   segmentLabel="search"
@@ -402,13 +402,13 @@ class CommunityView extends React.Component<Props, State> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'Community not found'}
+            title={'=无法找到相应社区'}
             provideBack={true}
             backRoute={'/'}
             noComposer
           />
           <ViewError
-            heading={'We weren’t able to load this community.'}
+            heading={'加载社区失败.'}
             refresh
           />
         </AppViewWrapper>
@@ -418,14 +418,14 @@ class CommunityView extends React.Component<Props, State> {
     return (
       <AppViewWrapper>
         <Titlebar
-          title={'Community not found'}
+          title={'社区无法找到'}
           provideBack={true}
           backRoute={'/'}
           noComposer
         />
         <ViewError
-          heading={'We weren’t able to find this community.'}
-          subheading={`If you want to start the ${communitySlug} community yourself, you can get started below.`}
+          heading={'无法找到相应社区.'}
+          subheading={`如果你想创建这个社区，可以从下面开始.`}
         >
           <Upsell404Community />
         </ViewError>

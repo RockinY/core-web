@@ -66,44 +66,44 @@ class EditDropdown extends React.Component<Props, State> {
   permissionConfigurations = {
     owner: {
       id: 'owner',
-      title: 'Owner',
-      subtitle: 'Can manage all members, moderators, channels, and content',
+      title: '拥有者',
+      subtitle: '能够管理所有成员，团队和各种内容',
       selected: false,
     },
     moderator: {
       id: 'moderator',
       title: this.props.community.hasChargeableSource
-        ? 'Team member · $10/mo'
-        : 'Team member',
+        ? '团队成员 · ¥10/每月'
+        : '团队成员',
       subtitle:
-        'Highlighted across the community, and can moderate conversations',
+        '社区里面高亮显示，同时可以管理社区内容',
       selected: false,
     },
     blocked: {
       id: 'blocked',
-      title: 'Blocked',
+      title: '被屏蔽',
       subtitle:
-        'Can not start or join conversations, and will not receive any notifications about community activity',
+        '无法开始或者加入对话，同时不会收到任何通知',
       selected: false,
     },
     member: {
       id: 'member',
-      title: 'Member',
+      title: '成员',
       subtitle:
-        "Can start new conversations and reply to anyone else's conversations",
+        "可以开始或者加入任何人的对话中",
       selected: false,
     },
     approvePendingMember: {
       id: 'approvePending',
-      title: 'Approve',
-      subtitle: 'Approve this person to join your community',
+      title: '通过',
+      subtitle: '允许这个人加入您的社区',
       selected: false,
     },
     blockPendingMember: {
       id: 'blockPending',
-      title: 'Block',
+      title: '屏蔽',
       subtitle:
-        'Block this person from joining your community and requesting to join in the future',
+        '屏蔽这个用户对该社区的申请',
       selected: false,
     },
   };
@@ -239,7 +239,7 @@ class EditDropdown extends React.Component<Props, State> {
                 </DropdownAction>
                 <DropdownSectionText>
                   <DropdownSectionTitle>
-                    Send Direct Message
+                    直接发送消息
                   </DropdownSectionTitle>
                 </DropdownSectionText>
               </DropdownSection>

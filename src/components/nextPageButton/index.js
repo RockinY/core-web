@@ -16,7 +16,7 @@ const NextPageButtonWrapper = (props: Props) => {
         {isFetchingMore ? (
           <Spinner size={16} color={'brand.default'} />
         ) : (
-          'Load previous messages'
+          '加载之前得消息'
         )}
       </NextPageButton>
     </HasNextPage>

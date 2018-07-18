@@ -47,10 +47,9 @@ class JoinTokenSettings extends React.Component<Props, State> {
 
       return (
         <SectionCard data-cy="login-with-token-settings">
-          <SectionTitle>Join community via link</SectionTitle>
+          <SectionTitle>通过链接加入社区</SectionTitle>
           <SectionSubtitle>
-            Allow people to join this private community by visiting a unique
-            link. Anyone with this link will be able to join this community.
+            允许用户通过链接加入这个社区，任何拥有这个链接的人都可以加入这个社区
           </SectionSubtitle>
 
           <LoginTokenToggle settings={joinSettings} id={community.id} />
@@ -63,7 +62,7 @@ class JoinTokenSettings extends React.Component<Props, State> {
               }`}
               onSuccess={() =>
                 this.props.dispatch(
-                  addToastWithTimeout('success', 'Copied to clipboard')
+                  addToastWithTimeout('success', '已保存到剪切板')
                 )
               }
             >

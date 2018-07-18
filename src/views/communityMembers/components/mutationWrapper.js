@@ -35,7 +35,7 @@ class MutationWrapper extends React.Component<Props, State> {
       .mutation(this.props.variables)
       .then(() => {
         this.props.dispatch(
-          addToastWithTimeout('success', 'Saved permissions')
+          addToastWithTimeout('success', '保存权限')
         );
         return this.terminate();
       })

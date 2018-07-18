@@ -626,7 +626,7 @@ class NewThread extends React.Component<Props, State> {
       return this.props.dispatch(
         addToastWithTimeout(
           'error',
-          'Choose some people to send this message to first!'
+          '请先选择一些信息的接收者!'
         )
       );
     }
@@ -657,7 +657,7 @@ class NewThread extends React.Component<Props, State> {
             this.props.dispatch(
               addToastWithTimeout(
                 'error',
-                'Failed to create direct message thread, please try again!'
+                '直接发送信息失败，请再尝试一下!'
               )
             );
             return;
@@ -750,7 +750,7 @@ class NewThread extends React.Component<Props, State> {
             }}
             type="text"
             value={searchString}
-            placeholder="Search for people..."
+            placeholder="搜索用户..."
             onChange={this.handleChange}
           />
 
@@ -792,7 +792,7 @@ class NewThread extends React.Component<Props, State> {
                 <SearchResult>
                   <SearchResultTextContainer>
                     <SearchResultNull>
-                      No users found matching “{searchString}”
+                      没有用户符合 “{searchString}”
                     </SearchResultNull>
                   </SearchResultTextContainer>
                 </SearchResult>

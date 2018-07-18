@@ -29,7 +29,7 @@ class TokenJoinToggle extends React.Component<Props> {
       .disableCommunityTokenJoin({ id: this.props.id })
       .then(() => {
         return this.props.dispatch(
-          addToastWithTimeout('neutral', 'Link disabled')
+          addToastWithTimeout('neutral', '链接失效')
         );
       })
       .catch(err => {
@@ -42,7 +42,7 @@ class TokenJoinToggle extends React.Component<Props> {
       .enableCommunityTokenJoin({ id: this.props.id })
       .then(() => {
         return this.props.dispatch(
-          addToastWithTimeout('success', 'Link enabled')
+          addToastWithTimeout('success', '链接激活')
         );
       })
       .catch(err => {
@@ -59,7 +59,7 @@ class TokenJoinToggle extends React.Component<Props> {
         onChange={this.init}
         dataCy="toggle-token-link-invites"
       >
-        Enable users to join via link
+        允许用户通过链接加入
       </Checkbox>
     );
   }

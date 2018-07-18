@@ -90,7 +90,7 @@ class ChannelMemberGrid extends React.Component<Props> {
                 loading={isFetchingMore}
                 onClick={() => fetchMore()}
               >
-                View more...
+                阅读更多...
               </StyledButton>
             )}
         </FlexCol>
@@ -105,7 +105,7 @@ class ChannelMemberGrid extends React.Component<Props> {
       <Card>
         <ViewError
           refresh
-          heading={'We weren’t able to fetch the members of this channel.'}
+          heading={'获取频道得成员失败了.'}
         />
       </Card>
     );

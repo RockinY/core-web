@@ -82,7 +82,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
           .then(({ data }: DeleteMessageType) => {
             const { deleteMessage } = data;
             if (deleteMessage) {
-              dispatch(addToastWithTimeout('neutral', 'Message deleted.'));
+              dispatch(addToastWithTimeout('neutral', '消息易删除.'));
               this.setState({
                 isLoading: false,
               });
@@ -94,7 +94,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
             dispatch(
               addToastWithTimeout(
                 'error',
-                `Sorry, we weren't able to delete this message. ${err.message}`
+                `很抱歉，我们无法删除这条消息. ${err.message}`
               )
             );
           });
@@ -109,7 +109,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
               // eslint-disable-next-line
               window.location.href = redirect ? redirect : '/';
               // history.push(redirect ? redirect : '/');
-              dispatch(addToastWithTimeout('neutral', 'Thread deleted.'));
+              dispatch(addToastWithTimeout('neutral', '话题已删除.'));
               this.setState({
                 isLoading: false,
               });
@@ -121,7 +121,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
             dispatch(
               addToastWithTimeout(
                 'error',
-                `Sorry, we weren't able to delete this thread. ${err.message}`
+                `很抱歉，我们无法删除这个话题. ${err.message}`
               )
             );
           });
@@ -137,7 +137,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
               // eslint-disable-next-line
               window.location.href = redirect ? redirect : '/';
               // history.push(redirect ? redirect : '/');
-              dispatch(addToastWithTimeout('neutral', 'Channel deleted.'));
+              dispatch(addToastWithTimeout('neutral', '频道已删除.'));
               this.setState({
                 isLoading: false,
               });
@@ -149,7 +149,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
             dispatch(
               addToastWithTimeout(
                 'error',
-                `Sorry, we weren't able to delete this channel. ${err.message}`
+                `很抱歉，我们无法删除改频道. ${err.message}`
               )
             );
           });
@@ -165,7 +165,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
               // eslint-disable-next-line
               window.location.href = redirect ? redirect : '/';
               // history.push(redirect ? redirect : '/');
-              dispatch(addToastWithTimeout('neutral', 'Community deleted.'));
+              dispatch(addToastWithTimeout('neutral', '社区已删除.'));
               this.setState({
                 isLoading: false,
               });
@@ -177,7 +177,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
             dispatch(
               addToastWithTimeout(
                 'error',
-                `Sorry, we weren't able to delete this community. ${
+                `很抱歉，我们无法删除改社区. ${
                   err.message
                 }`
               )
@@ -191,7 +191,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
         return this.props
           .archiveChannel({ channelId: id })
           .then(() => {
-            dispatch(addToastWithTimeout('neutral', 'Channel archived'));
+            dispatch(addToastWithTimeout('neutral', '频道已归档'));
             this.setState({
               isLoading: false,
             });
@@ -212,7 +212,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
         return dispatch(
           addToastWithTimeout(
             'error',
-            'Unable to figure out what you wanted to delete. Whoops!'
+            '不明白您想删除哪个!'
           )
         );
       }
@@ -228,7 +228,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
         /* TODO(@mxstbr): Fix this */
         ariaHideApp={false}
         isOpen={isOpen}
-        contentLabel={'Are you sure?'}
+        contentLabel={'你确定吗?'}
         onRequestClose={this.close}
         shouldCloseOnOverlayClick={true}
         style={styles}
@@ -238,8 +238,8 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
           We pass the closeModal dispatch into the container to attach
           the action to the 'close' icon in the top right corner of all modals
         */}
-        <ModalContainer title={'Are you sure?'} closeModal={this.close}>
-          <Message>{message ? message : 'Are you sure?'}</Message>
+        <ModalContainer title={'你确定吗?'} closeModal={this.close}>
+          <Message>{message ? message : '你确定吗?'}</Message>
 
           <Actions>
             <TextButton onClick={this.close} color={'warn.alt'}>
@@ -251,7 +251,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
               onClick={this.triggerDelete}
               dataCy={'delete-button'}
             >
-              {buttonLabel || 'Delete'}
+              {buttonLabel || '删除'}
             </Button>
           </Actions>
         </ModalContainer>

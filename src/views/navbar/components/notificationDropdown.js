@@ -17,8 +17,8 @@ import { NotificationDropdownList } from '../../notifications/components/notific
 const NullNotifications = () => (
   <NullState
     bg="notification"
-    heading={`No notifications`}
-    copy={`You're all good! 🎉`}
+    heading={`通知是空的`}
+    copy={`一切看起来都很顺利! 🎉`}
   />
 );
 
@@ -76,7 +76,7 @@ const NotificationDropdownPure = props => {
           color={count > 0 ? 'brand.alt' : 'text.alt'}
           onClick={markAllAsSeen}
         >
-          Mark all as seen
+          标记所有为已读
         </TextButton>
       </DropdownHeader>
 
@@ -95,7 +95,7 @@ const NotificationDropdownPure = props => {
               color={'text.alt'}
               onClick={() => history.push('/notifications')}
             >
-              View all
+              查看所有
             </TextButton>
           </DropdownFooter>
         )}

@@ -53,7 +53,7 @@ const renderLanguageSelect = ({
         ))}
       </SwitcherSelect>
       <div>
-        {selectedLabel || 'Select language...'} {String.fromCharCode(9662)}
+        {selectedLabel || '选择你的语言...'} {String.fromCharCode(9662)}
       </div>
     </Switcher>
   </SwitcherContainer>

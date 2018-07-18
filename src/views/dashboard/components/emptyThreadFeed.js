@@ -11,18 +11,18 @@ import { NullThreadFeed, NullHeading, OutlineButton, Hint } from '../style';
 const EmptyThreadFeed = ({ dispatch }) => (
   <NullThreadFeed>
     <NullHeading>
-      Your feed's a little quiet right now, but don't worry...
+      你的社区有点安静，但是请不要担心...
     </NullHeading>
-    <NullHeading>We've got recommendations!</NullHeading>
-    <Hint>Kick your community off right!</Hint>
+    <NullHeading>我们可以提供一些建议!</NullHeading>
+    <Hint>如何更好的管理发展社区!</Hint>
     <Button icon={'post'} onClick={() => dispatch(changeActiveThread('new'))}>
-      Post your first thread
+      发布你的第一条话题
     </Button>
-    <Hint>Find new friends and great conversations!</Hint>
+    <Hint>找到一些朋友然后愉快的在上面交流!</Hint>
     <Link to={'/explore'}>
       <OutlineButton>
         <Icon glyph="explore" />
-        <span>Join more communities</span>
+        <span>加入更多的社区</span>
       </OutlineButton>
     </Link>
   </NullThreadFeed>

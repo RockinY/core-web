@@ -126,7 +126,7 @@ class Indicator extends Component {
 
     return (
       <Pill active={active} onClick={this.clearActivityIndicator}>
-        New conversations!
+        新的对话!
       </Pill>
     );
   }

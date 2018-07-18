@@ -28,7 +28,7 @@ class BrandedLoginToggle extends React.Component<Props> {
       .disableBrandedLogin({ id: this.props.id })
       .then(() => {
         return this.props.dispatch(
-          addToastWithTimeout('neutral', 'Branded login disabled')
+          addToastWithTimeout('neutral', '取消品牌登陆')
         );
       })
       .catch(err => {
@@ -41,7 +41,7 @@ class BrandedLoginToggle extends React.Component<Props> {
       .enableBrandedLogin({ id: this.props.id })
       .then(() => {
         return this.props.dispatch(
-          addToastWithTimeout('success', 'Branded login enabled')
+          addToastWithTimeout('success', '开启品牌登陆')
         );
       })
       .catch(err => {
@@ -54,7 +54,7 @@ class BrandedLoginToggle extends React.Component<Props> {
 
     return (
       <Checkbox checked={isEnabled} onChange={this.init}>
-        Enable custom branded login
+        开启定制品牌登陆
       </Checkbox>
     );
   }

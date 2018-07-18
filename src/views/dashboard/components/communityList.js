@@ -144,7 +144,7 @@ class CommunityList extends React.Component<Props> {
           >
             <CommunityListItem>
               <Icon glyph={'explore'} />
-              <CommunityListName>Find more communities</CommunityListName>
+              <CommunityListName>探索更多社区</CommunityListName>
             </CommunityListItem>
           </Link>
         </Fixed>

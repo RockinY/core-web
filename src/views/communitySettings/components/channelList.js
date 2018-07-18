@@ -42,7 +42,7 @@ class ChannelList extends React.Component<Props> {
 
       return (
         <SectionCard data-cy="channel-list">
-          <SectionTitle>Channels</SectionTitle>
+          <SectionTitle>频道</SectionTitle>
 
           <ListContainer>
             {channels.length > 0 &&
@@ -75,7 +75,7 @@ class ChannelList extends React.Component<Props> {
               }
               data-cy="create-channel-button"
             >
-              Create Channel
+              创建频道
             </Button>
           </SectionCardFooter>
         </SectionCard>

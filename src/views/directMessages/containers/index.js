@@ -124,7 +124,7 @@ class DirectMessages extends React.Component<Props, State> {
     return (
       <View>
         <Titlebar
-          title={isComposing ? 'New Message' : 'Messages'}
+          title={isComposing ? '新消息' : '消息'}
           provideBack={isComposing || isViewingThread}
           backRoute={'/messages'}
           noComposer={isComposing || isViewingThread}

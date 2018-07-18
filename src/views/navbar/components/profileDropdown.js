@@ -48,21 +48,21 @@ export const ProfileDropdown = (props: ProfileProps) => {
         {props.user.username && (
           <Link rel="nofollow" to={`/users/${props.user.username}/settings`}>
             <UserProfileDropdownListItem>
-              My Settings
+              我的设置
             </UserProfileDropdownListItem>
           </Link>
         )}
         <Link to={`/about`}>
           <UserProfileDropdownListItem>
-            About Spectrum
+            关于云社
           </UserProfileDropdownListItem>
         </Link>
         <Link to={`/support`}>
-          <UserProfileDropdownListItem>Support</UserProfileDropdownListItem>
+          <UserProfileDropdownListItem>支持</UserProfileDropdownListItem>
         </Link>
 
         <a href={`${SERVER_URL}/auth/logout`}>
-          <UserProfileDropdownListItem>Log Out</UserProfileDropdownListItem>
+          <UserProfileDropdownListItem>登出</UserProfileDropdownListItem>
         </a>
       </UserProfileDropdownList>
     </UserProfileDropdown>

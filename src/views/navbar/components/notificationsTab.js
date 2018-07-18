@@ -407,7 +407,7 @@ class NotificationsTab extends React.Component<Props, State> {
             count={count > 10 ? '10+' : count > 0 ? count.toString() : null}
             size={isDesktopApp() ? 28 : 32}
           />
-          <Label hideOnDesktop>Notifications</Label>
+          <Label hideOnDesktop>通知</Label>
         </Tab>
 
         {shouldRenderDropdown && (

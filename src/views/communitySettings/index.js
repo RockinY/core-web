@@ -62,9 +62,9 @@ class CommunitySettings extends React.Component<Props> {
             />
 
             <ViewError
-              heading={'You don’t have permission to manage this community.'}
+              heading={'=你没有管理这个社区的权限.'}
               subheading={
-                'If you want to create your own community, you can get started below.'
+                '如果你想创建自己的社区，可以从下面开始.'
               }
             >
               <Upsell404Community />
@@ -76,17 +76,17 @@ class CommunitySettings extends React.Component<Props> {
       const subnavItems = [
         {
           to: `/${community.slug}/settings`,
-          label: 'Overview',
+          label: '概述',
           activeLabel: 'settings',
         },
         {
           to: `/${community.slug}/settings/members`,
-          label: 'Members',
+          label: '成员',
           activeLabel: 'members',
         },
         {
           to: `/${community.slug}/settings/analytics`,
-          label: 'Analytics',
+          label: '分析',
           activeLabel: 'analytics',
         },
       ];
@@ -94,14 +94,14 @@ class CommunitySettings extends React.Component<Props> {
       if (community.communityPermissions.isOwner) {
         subnavItems.push({
           to: `/${community.slug}/settings/billing`,
-          label: 'Billing',
+          label: '会员',
           activeLabel: 'billing',
         });
       }
 
       const subheading = {
         to: `/${community.slug}`,
-        label: `Return to ${community.name}`,
+        label: `返回 ${community.name}`,
       };
 
       const avatar = {
@@ -113,16 +113,16 @@ class CommunitySettings extends React.Component<Props> {
         ({ activeLabel }) => activeLabel === activeTab
       );
       let title = community.name;
-      if (activeItem && activeItem.label !== 'Settings') {
-        title += ` ${activeItem.label} Settings`;
+      if (activeItem && activeItem.label !== '设置') {
+        title += ` ${activeItem.label}设置`;
       } else {
-        title += ' Settings';
+        title += '设置';
       }
       return (
         <AppViewWrapper data-cy="community-settings">
           <Titlebar
             title={community.name}
-            subtitle={'Settings'}
+            subtitle={'设置'}
             provideBack={true}
             // $FlowFixMe
             backRoute={`/${communitySlug}`}
@@ -134,7 +134,7 @@ class CommunitySettings extends React.Component<Props> {
             <Header
               avatar={avatar}
               subheading={subheading}
-              heading={'Settings'}
+              heading={'设置'}
             />
             <Subnav items={subnavItems} activeTab={activeTab} />
 
@@ -166,7 +166,7 @@ class CommunitySettings extends React.Component<Props> {
       return (
         <AppViewWrapper>
           <Titlebar
-            title={'Error fetching community'}
+            title={'无法加载社区'}
             provideBack={true}
             // $FlowFixMe
             backRoute={`/${communitySlug}`}
@@ -175,7 +175,7 @@ class CommunitySettings extends React.Component<Props> {
           <ViewError
             refresh
             error={hasError}
-            heading={'There was an error fetching this community’s settings.'}
+            heading={'加载社区设置出错了.'}
           />
         </AppViewWrapper>
       );
@@ -184,16 +184,16 @@ class CommunitySettings extends React.Component<Props> {
     return (
       <AppViewWrapper>
         <Titlebar
-          title={'No Community Found'}
+          title={'找不到社区'}
           provideBack={true}
           // $FlowFixMe
           backRoute={`/${communitySlug}`}
           noComposer
         />
         <ViewError
-          heading={'We weren’t able to find this community.'}
+          heading={'找不到对应社区信息.'}
           // $FlowFixMe
-          subheading={`If you want to start the ${communitySlug} community yourself, you can get started below.`}
+          subheading={`如果你想创建一个自己的社区，可以从下面开始.`}
         >
           <Upsell404Community />
         </ViewError>

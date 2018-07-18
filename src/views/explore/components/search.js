@@ -245,7 +245,7 @@ class Search extends React.Component<Props, State> {
             }}
             type="text"
             value={searchString}
-            placeholder="Search for communities or topics..."
+            placeholder="搜索社区或者话题..."
             onChange={this.handleChange}
             onFocus={this.onFocus}
           />
@@ -290,9 +290,9 @@ class Search extends React.Component<Props, State> {
                     <SearchResult>
                       <SearchResultTextContainer>
                         <SearchResultNull>
-                          <p>No communities found matching “{searchString}”</p>
+                          <p>没有社区符合 “{searchString}”</p>
                           <Link to={'/new/community'}>
-                            <Button>Create a Community</Button>
+                            <Button>创建一个社区</Button>
                           </Link>
                         </SearchResultNull>
                       </SearchResultTextContainer>

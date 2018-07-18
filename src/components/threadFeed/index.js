@@ -24,23 +24,23 @@ const NullState = ({ viewContext, search }) => {
   let cp;
 
   if (viewContext && viewContext === 'community') {
-    hd = 'This community’s just getting started...';
-    cp = 'Why don’t you kick things off?';
+    hd = '这个社区还很年轻...';
+    cp = '为什么不开始创作点内容呢?';
   }
 
   if (viewContext && viewContext === 'channel') {
-    hd = 'There’s nothing in this channel yet';
-    cp = 'But you could be the first person to post something here!';
+    hd = '这个频道还是空的';
+    cp = '做第一个吃螃蟹得人吧!';
   }
 
   if (viewContext && viewContext === 'profile') {
-    hd = 'This user hasn’t posted yet';
-    cp = 'But you could message them!';
+    hd = '这个用户还没有发布过什么';
+    cp = '但是你可以直接和TA进行交流!';
   }
 
   if (search) {
-    hd = 'Sorry, doesn’t ring a bell';
-    cp = 'You can always try again, though!';
+    hd = '很抱歉，没有找到相关内容';
+    cp = '可以再次尝试其他!';
   }
 
   return <NullCard bg="post" heading={hd} copy={cp} />;
@@ -50,61 +50,39 @@ const UpsellState = ({ community }) => (
   <Upsell>
     <UpsellHeader>
       <Icon glyph={'welcome'} size={48} />
-      <h3>Welcome to your new community!</h3>
+      <h3>欢迎来到您得社区!</h3>
     </UpsellHeader>
     <p>
-      You’ve already taken a huge step, but there’s one problem - there’s no one
-      here yet!
+      你已经走出了一大步，唯一的问题是这里有点空荡荡，还没有别人光顾过你的社区!
     </p>
     <p>
-      This is usually the hardest part for new communities, but don’t worry!
-      We’ve got a few suggestions to help you get things started...
+      我们也知道这是您社区最困难的时刻，但是不要担心😄.
+      这里有一些建议可以帮助您更好得开始您得社区
     </p>
     <p>
-      First things first, you’ll want to <b>start a couple threads</b>.
+      首先最重要的一点，您可以<b>开始创建一些话题</b>.
     </p>
     <p>
-      Open-ended questions are a great start, for example:
+      一些开放性得问题会是一个很好得尝试，例如:
       <ul>
-        <li>ask new members to introduce themselves</li>
+        <li>让您得社区成员进行一下自我介绍</li>
         <li>
-          ask people about their favorite tools or what they’re working on
+          问一下您得社区成员得爱好和关注点
         </li>
-        <li>ask for suggestions on a problem you’re facing</li>
+        <li>询问一下您最近遇到得一些问题</li>
       </ul>
     </p>
     <p>
-      Once you’ve got a couple threads started, make sure to{' '}
-      <b>help people find your community</b>. Talking about your community on
-      social media like Twitter or Facebook is a great start - or you could add
-      our{' '}
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/withspectrum/badge"
-      >
-        badge
-      </a>{' '}
-      to a project repo or your website.
+      在开始了一些话题之后，下一步就是{' '}
+      <b>帮助你得朋友更方便得找到您得社区</b>. 您可以尝试在相关得社交网站上分享您得社区话题.
     </p>
     <p>
-      You can also <b>invite people by email</b> or{' '}
-      <b>import your Slack team</b> in your{' '}
-      <Link to={`/${community.slug}/settings`}>settings</Link>.
+      您也可以 <b>给您得朋友发送邮件邀请</b> or{' '}
+      <Link to={`/${community.slug}/settings`}>设置</Link>.
     </p>
     <UpsellFooter>
       <p>
-        If you’ve encountered an issue, want a new feature, or just need some
-        help, you can always find the Spectrum team in the{' '}
-        <Link to={'/spectrum'}>Spectrum Support</Link> community or on{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/withspectrum"
-        >
-          Twitter
-        </a>{' '}
-        and we’d be more than happy to give you a hand.
+        如果遇到了任何使用上的问题欢迎添加官方微信进行问题反馈。
       </p>
     </UpsellFooter>
   </Upsell>
@@ -351,9 +329,9 @@ class ThreadFeedPure extends React.Component<Props, State> {
     if (networkStatus === 8 || error) {
       return (
         <ViewError
-          heading={'We ran into an issue loading the feed'}
+          heading={'加载信息时出错了'}
           subheading={
-            'Try refreshing the page below. If you’re still seeing this error, you can email us at hi@spectrum.chat.'
+            '请试着刷新一下浏览器. 如果问题仍然存在. 请联系官方客服.'
           }
           refresh
         />

@@ -163,7 +163,7 @@ class Navbar extends React.Component<Props, State> {
             onFocus={this.handleSkipLinkFocus}
             onBlur={this.handleSkipLinkBlur}
           >
-            Skip to content
+            跳到内容
           </SkipLink>
 
           <HomeTab
@@ -187,7 +187,7 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-explore"
           >
             <Icon glyph="explore" size={isDesktopApp() ? 28 : 32} />
-            <Label>Explore</Label>
+            <Label>探索</Label>
           </ExploreTab>
 
           <NotificationsTab
@@ -225,7 +225,7 @@ class Navbar extends React.Component<Props, State> {
             onClick={() => this.trackNavigationClick('profile')}
           >
             <Icon glyph="profile" />
-            <Label>Profile</Label>
+            <Label>简介</Label>
           </ProfileTab>
         </Nav>
       );
@@ -253,7 +253,7 @@ class Navbar extends React.Component<Props, State> {
             onFocus={this.handleSkipLinkFocus}
             onBlur={this.handleSkipLinkBlur}
           >
-            Skip to content
+            跳到内容
           </SkipLink>
 
           <HomeTab

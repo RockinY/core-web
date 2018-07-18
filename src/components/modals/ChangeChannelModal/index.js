@@ -54,7 +54,7 @@ class ChangeChannelModal extends React.Component<Props, State> {
         const { moveThread } = data;
         if (moveThread) {
           dispatch(
-            addToastWithTimeout('success', 'Channel changed successfully.')
+            addToastWithTimeout('success', '频道修改成功.')
           );
           this.setState({
             isLoading: false,
@@ -67,7 +67,7 @@ class ChangeChannelModal extends React.Component<Props, State> {
         dispatch(
           addToastWithTimeout(
             'error',
-            `We weren't able to change channels. ${err.message}`
+            `频道修改失败. ${err.message}`
           )
         );
       });
@@ -98,18 +98,17 @@ class ChangeChannelModal extends React.Component<Props, State> {
               <IconContainer>
                 <Icon glyph={'private'} size={64} />
               </IconContainer>
-              <Title>This thread can't be moved</Title>
+              <Title>改话题无法被移动</Title>
               <Subtitle>
-                This thread was posted in the private channel{' '}
-                {thread.channel.name} - threads in private channels cannot be
-                moved.
+                话题所在社区为私人社区{' '}
+                {thread.channel.name} - 私人频道得话题无法被移动.
               </Subtitle>
             </Section>
           ) : (
             <Section data-cy="move-thread-modal">
-              <Title>Change channel</Title>
+              <Title>修改频道</Title>
               <Subtitle>
-                Move this thread to a new channel in the same community.
+                把话题移动到相同社区得另一个频道.
               </Subtitle>
 
               <ChannelSelector
@@ -121,7 +120,7 @@ class ChangeChannelModal extends React.Component<Props, State> {
 
               <Actions>
                 <TextButton onClick={this.closeModal} color={'warn.alt'}>
-                  Cancel
+                  取消
                 </TextButton>
                 <Button
                   loading={this.state.isLoading}
@@ -129,7 +128,7 @@ class ChangeChannelModal extends React.Component<Props, State> {
                   onClick={this.saveNewChannel}
                   disabled={activeChannel === thread.channel.id}
                 >
-                  Save
+                  保存
                 </Button>
               </Actions>
             </Section>

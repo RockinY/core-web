@@ -241,7 +241,7 @@ class CreateChannelModal extends React.Component<Props, State> {
       .then(() => {
         this.close();
         this.props.dispatch(
-          addToastWithTimeout('success', 'Channel successfully created!')
+          addToastWithTimeout('success', '频道创建成功!')
         );
         return;
       })
@@ -278,7 +278,7 @@ class CreateChannelModal extends React.Component<Props, State> {
         /* TODO(@mxstbr): Fix this */
         ariaHideApp={false}
         isOpen={isOpen}
-        contentLabel={'Create a Channel'}
+        contentLabel={'创建一个频道'}
         onRequestClose={this.close}
         shouldCloseOnOverlayClick={true}
         style={styles}
@@ -288,7 +288,7 @@ class CreateChannelModal extends React.Component<Props, State> {
           We pass the closeModal dispatch into the container to attach
           the action to the 'close' icon in the top right corner of all modals
         */}
-        <ModalContainer title={'Create a Channel'} closeModal={this.close}>
+        <ModalContainer title={'创建一个频道'} closeModal={this.close}>
           <Form>
             <Input
               id="name"
@@ -300,7 +300,7 @@ class CreateChannelModal extends React.Component<Props, State> {
             </Input>
 
             {nameError && (
-              <Error>Channel names can be up to 20 characters long.</Error>
+              <Error>频道名称过长.</Error>
             )}
 
             <UnderlineInput defaultValue={slug} onChange={this.changeSlug}>
@@ -309,24 +309,23 @@ class CreateChannelModal extends React.Component<Props, State> {
 
             {slugTaken && (
               <Error>
-                This url is already taken - feel free to change it if you’re set
-                on the name {name}!
+                改URL已经被使用，请重新选择一个 {name}!
               </Error>
             )}
 
-            {slugError && <Error>Slugs can be up to 24 characters long.</Error>}
+            {slugError && <Error>Slug最长不能超过24个字符.</Error>}
 
             <TextArea
               id="slug"
               defaultValue={description}
               onChange={this.changeDescription}
             >
-              Describe it in 140 characters or less
+              请输入不超过140个字符描述
             </TextArea>
 
             {descriptionError && (
               <Error>
-                Oop, that’s more than 140 characters - try trimming that up.
+                啊哦，长度超过限制了 - 试着精简点吧
               </Error>
             )}
 
@@ -340,13 +339,12 @@ class CreateChannelModal extends React.Component<Props, State> {
             </Checkbox>
 
             <UpsellDescription>
-              Private channels protect all conversations and messages, and all
-              new members must be manually approved.
+              私人频道里面得所有对话和消息都是受保护的，同时所有的新成员必须手动审核添加。
             </UpsellDescription>
 
             <Actions>
               <TextButton onClick={this.close} color={'warn.alt'}>
-                Cancel
+                取消
               </TextButton>
               <Button
                 disabled={
@@ -359,13 +357,13 @@ class CreateChannelModal extends React.Component<Props, State> {
                 loading={loading}
                 onClick={this.create}
               >
-                Create Channel
+                创建频道
               </Button>
             </Actions>
 
             {createError && (
               <Error>
-                Please fix any errors above before creating this community.
+                请修复提示得错误信息之后再创建频道.
               </Error>
             )}
           </Form>

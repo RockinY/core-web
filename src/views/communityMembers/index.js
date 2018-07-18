@@ -53,18 +53,18 @@ class CommunityMembersSettings extends React.Component<Props> {
 
     return (
       <ViewError
-        heading={'You don’t have permission to manage this community.'}
+        heading={'你没有浏览这个社区的权限.'}
         subheading={
-          'If you want to create your own community, you can get started below.'
+          '如果你想创建一个自己的社区，可以从下面开始.'
         }
       >
         <ButtonRow>
           <Link to={'/'}>
-            <OutlineButton large>Take me back</OutlineButton>
+            <OutlineButton large>返回</OutlineButton>
           </Link>
 
           <Link to={'/new/community'}>
-            <Button large>Create a community</Button>
+            <Button large>创建一个社区</Button>
           </Link>
         </ButtonRow>
       </ViewError>

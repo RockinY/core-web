@@ -109,7 +109,7 @@ class CommunityModeratorList extends React.Component<Props> {
         <ViewError
           refresh
           heading={
-            'We weren’t able to fetch the team that owns this community.'
+            '无法获取社区的管理组成员.'
           }
         />
       </Card>

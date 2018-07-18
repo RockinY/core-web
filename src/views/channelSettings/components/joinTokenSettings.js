@@ -49,10 +49,10 @@ class LoginTokenSettings extends React.Component<Props, State> {
 
       return (
         <SectionCard data-cy="login-with-token-settings">
-          <SectionTitle>Join channel via link</SectionTitle>
+          <SectionTitle>通过链接加入频道</SectionTitle>
           <SectionSubtitle>
-            Allow people to join this private channel by visiting a unique link.
-            Anyone with this link will be able to join this channel.
+            允许用户通过点击一个特定链接加入您的私人频道. 任何拥有这个特殊链接的人
+            都将可以加入这个频道.
           </SectionSubtitle>
 
           <LoginTokenToggle settings={joinSettings} id={channel.id} />
@@ -65,7 +65,7 @@ class LoginTokenSettings extends React.Component<Props, State> {
               }/join/${joinSettings.token}`}
               onSuccess={() =>
                 this.props.dispatch(
-                  addToastWithTimeout('success', 'Copied to clipboard')
+                  addToastWithTimeout('success', '已保存到剪切板')
                 )
               }
             >

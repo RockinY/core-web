@@ -76,7 +76,7 @@ class ToggleCommunityMembership extends React.Component<Props, State> {
         this.props.dispatch(
           addToastWithTimeout(
             'success',
-            `Joined the ${community.name} community!`
+            `成功加入社区 ${community.name}!`
           )
         );
 

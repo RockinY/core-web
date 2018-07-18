@@ -32,7 +32,7 @@ class ResetJoinToken extends React.Component<Props, State> {
           isLoading: false,
         });
         return this.props.dispatch(
-          addToastWithTimeout('success', 'Link reset!')
+          addToastWithTimeout('success', '重置链接!')
         );
       })
       .catch(err => {
@@ -59,7 +59,7 @@ class ResetJoinToken extends React.Component<Props, State> {
           onClick={this.reset}
           dataCy="refresh-join-link-token"
         >
-          Reset this link
+          重置这个链接
         </OutlineButton>
       </div>
     );

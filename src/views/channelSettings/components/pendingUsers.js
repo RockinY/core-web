@@ -52,13 +52,12 @@ class PendingUsers extends React.Component<Props> {
 
       return (
         <SectionCard>
-          <SectionTitle>Pending Members</SectionTitle>
+          <SectionTitle>等待成员</SectionTitle>
           {pendingUsers &&
             pendingUsers.length > 0 && (
               <SectionSubtitle>
-                Approving requests will allow a person to view all threads and
-                messages in this channel, as well as allow them to post their
-                own threads.
+                通过用户的请求会允许用户浏览频道下面所有的话题和消息，同时也会允许他们在上面
+                发表他们自己的话题
               </SectionSubtitle>
             )}
 
@@ -92,7 +91,7 @@ class PendingUsers extends React.Component<Props> {
                               </DropdownAction>
                               <DropdownSectionText>
                                 <DropdownSectionTitle>
-                                  Send Direct Message
+                                  直接发送消息
                                 </DropdownSectionTitle>
                               </DropdownSectionText>
                             </DropdownSection>
@@ -108,11 +107,10 @@ class PendingUsers extends React.Component<Props> {
 
                               <DropdownSectionText>
                                 <DropdownSectionTitle>
-                                  Approve
+                                  通过
                                 </DropdownSectionTitle>
                                 <DropdownSectionSubtitle>
-                                  This user will be able to see and join all
-                                  conversations in this channel
+                                  这个用户将可以浏览频道下的所有对话
                                 </DropdownSectionSubtitle>
                               </DropdownSectionText>
                             </DropdownSection>
@@ -128,10 +126,10 @@ class PendingUsers extends React.Component<Props> {
 
                               <DropdownSectionText>
                                 <DropdownSectionTitle>
-                                  Block
+                                  屏蔽
                                 </DropdownSectionTitle>
                                 <DropdownSectionSubtitle>
-                                  Block this user from joining this channel
+                                  屏蔽用户对这个频道的加入申请
                                 </DropdownSectionSubtitle>
                               </DropdownSectionText>
                             </DropdownSection>

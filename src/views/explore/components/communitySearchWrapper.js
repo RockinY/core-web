@@ -80,25 +80,25 @@ const CommunitySearchWrapper = props => {
   return (
     <ViewSegment goop={3} background="constellations">
       <ThisContent>
-        <ThisTagline>Find a community for you!</ThisTagline>
+        <ThisTagline>寻找一个感兴趣的社区!</ThisTagline>
         <ThisCopy>
-          Try searching for topics like "crypto" or for products like "React"
+          试着搜索一下「 潮流 」或者「 酷猿信息技术 」
         </ThisCopy>
         {props.children}
         <SecondaryContent>
-          <SecondaryTagline>...or create your own community</SecondaryTagline>
+          <SecondaryTagline>...或者创建你自己的社区</SecondaryTagline>
           <SecondaryCopy>
-            Building communities on Spectrum is easy and free!
+            在云社上面创建社区是永远免费的！
           </SecondaryCopy>
           {props.currentUser ? (
             <Link
               to={'/new/community'}
             >
-              <PrimaryCTA>Get Started</PrimaryCTA>
+              <PrimaryCTA>开始</PrimaryCTA>
             </Link>
           ) : (
             <Link to={`/login?r=${CLIENT_URL}/new/community`}>
-              <PrimaryCTA>Get Started</PrimaryCTA>
+              <PrimaryCTA>开始</PrimaryCTA>
             </Link>
           )}
         </SecondaryContent>

@@ -493,7 +493,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Not connected to the internet - check your internet connection or try again'
+          '无法连接到网络，请检查您得网络连接之后再次尝试'
         )
       );
     }
@@ -505,7 +505,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
       return dispatch(
         addToastWithTimeout(
           'error',
-          'Error connecting to the server - hang tight while we try to reconnect'
+          '无法连接到服务器，我们正在努力重新连接'
         )
       );
     }
@@ -587,7 +587,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
           : this.props.history.push(`?thread=${id}`);
 
         this.props.dispatch(
-          addToastWithTimeout('success', 'Thread published!')
+          addToastWithTimeout('success', '话题已发布!')
         );
 
         this.props.dispatch(closeComposer('', ''));
@@ -646,7 +646,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
         .catch(() => {
           this.setState({
             error:
-              "Oops, that URL didn't seem to want to work. You can still publish your story anyways 👍",
+              "啊哦，链接似乎出了点问题。但是没关系，你得话题仍然能够正常发布",
             fetchingLinkPreview: false,
           });
         });
@@ -707,7 +707,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
                 onChange={this.changeTitle}
                 style={ThreadTitle}
                 value={this.state.title}
-                placeholder={'What do you want to talk about?'}
+                placeholder={'想说点什么?'}
                 innerRef={ref => (this.titleTextarea = ref)}
                 autoFocus
               />
@@ -718,7 +718,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
                 style={ThreadDescription}
                 editorRef={editor => (this.bodyEditor = editor)}
                 editorKey="thread-composer"
-                placeholder="Put your text, photos, code, or embeds here..."
+                placeholder="输入任何你想要得文字，图片或者代码..."
                 className={'threadComposer'}
                 showLinkPreview={true}
                 linkPreview={{
@@ -767,7 +767,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
                     hoverColor="warn.alt"
                     onClick={this.closeComposer}
                   >
-                    Cancel
+                    取消
                   </TextButton>
                   <Button
                     onClick={this.publishThread}
@@ -775,7 +775,7 @@ class ThreadComposerWithData extends React.Component<Props, State> {
                     disabled={!title || isPublishing || networkDisabled}
                     color={'brand'}
                   >
-                    Publish
+                    发布
                   </Button>
                 </FlexRow>
               </Actions>
