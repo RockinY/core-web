@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "PORT=5000 react-scripts start",
+    "dev": "PORT=5000 react-scripts start",
     "build": "react-scripts build",
     "production:prepare": "touch .env && env > .env && yarn run build",
     "production:start": "serve -s build",
