@@ -319,7 +319,7 @@ class ActionBar extends React.Component<Props, State> {
                   }`}
                   onSuccess={() =>
                     this.props.dispatch(
-                      addToastWithTimeout('success', 'Copied to clipboard')
+                      addToastWithTimeout('success', '已复制到剪切板')
                     )
                   }
                 >
@@ -347,7 +347,7 @@ class ActionBar extends React.Component<Props, State> {
                   }`}
                   onSuccess={() =>
                     this.props.dispatch(
-                      addToastWithTimeout('success', 'Copied to clipboard')
+                      addToastWithTimeout('success', '已复制到剪切板')
                     )
                   }
                 >
