@@ -53,7 +53,7 @@ class LikeButtonPure extends React.Component<LikeButtonProps> {
       <LikeButtonWrapper hasReacted={hasReacted}>
         <IconButton
           glyph={'thumbsup'}
-          tipText={hasReacted ? 'Unlike thread' : 'Like thread'}
+          tipText={hasReacted ? '不喜欢' : '喜欢'}
           tipLocation={tipLocation}
           onClick={this.handleClick}
         />

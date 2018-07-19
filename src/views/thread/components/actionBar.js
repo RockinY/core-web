@@ -270,7 +270,7 @@ class ActionBar extends React.Component<Props, State> {
 
             {!thread.channel.isPrivate && (
               <ShareButtons>
-                <ShareButton
+                {/* <ShareButton
                   facebook
                   tipText={'分享'}
                   tipLocation={'bottom-right'}
@@ -288,9 +288,9 @@ class ActionBar extends React.Component<Props, State> {
                       size={24}
                     />
                   </a>
-                </ShareButton>
+                </ShareButton> */}
 
-                <ShareButton
+                {/* <ShareButton
                   twitter
                   tipText={'推特'}
                   tipLocation={'bottom-right'}
@@ -310,7 +310,7 @@ class ActionBar extends React.Component<Props, State> {
                       size={24}
                     />
                   </a>
-                </ShareButton>
+                </ShareButton> */}
 
                 <Clipboard
                   style={{ background: 'none' }}
