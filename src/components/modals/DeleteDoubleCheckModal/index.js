@@ -243,7 +243,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
 
           <Actions>
             <TextButton onClick={this.close} color={'warn.alt'}>
-              Cancel
+              取消
             </TextButton>
             <Button
               loading={this.state.isLoading}

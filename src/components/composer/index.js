@@ -701,7 +701,7 @@ class ComposerWithData extends Component<Props, State> {
 
           <FlexRow>
             <TextButton hoverColor="warn.alt" onClick={this.onCancelClick}>
-              Cancel
+              取消
             </TextButton>
             <Button
               data-cy="composer-publish-button"
@@ -715,7 +715,7 @@ class ComposerWithData extends Component<Props, State> {
               }
               color={'brand'}
             >
-              Publish
+              发布
             </Button>
           </FlexRow>
         </Actions>
