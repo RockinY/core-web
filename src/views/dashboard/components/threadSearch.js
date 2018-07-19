@@ -82,10 +82,10 @@ class ThreadSearch extends React.Component<Props, State> {
     const { value } = this.state;
 
     const placeholder = filter.communityId
-      ? 'Search this community...'
+      ? '搜索这个社区...'
       : filter.channelId
-        ? 'Search this channel...'
-        : 'Search for conversations...';
+        ? '搜索这个频道...'
+        : '搜索这个对话...';
 
     return (
       <SearchForm
