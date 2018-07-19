@@ -6,6 +6,7 @@ import compose from 'recompose/compose';
 import Link from '../../../components/link';
 import Icon from '../../../components/icons';
 import Reputation from '../../../components/reputation';
+import UpsellExploreCommunities from './upsellExploreCommunities';
 import SidebarChannels from './sidebarChannels';
 import {
   CommunityListItem,
@@ -147,6 +148,17 @@ class CommunityList extends React.Component<Props> {
               <CommunityListName>探索更多社区</CommunityListName>
             </CommunityListItem>
           </Link>
+          {// if user has joined less than 5 communities, upsell some popular ones
+          communities.length < 5 && (
+            <ErrorBoundary fallbackComponent={null}>
+              <UpsellExploreCommunities
+                activeCommunity={activeCommunity}
+                communities={communities}
+                handleOnClick={this.handleOnClick}
+                curatedContentType={'top-communities-by-members'}
+              />
+            </ErrorBoundary>
+          )}
         </Fixed>
       </CommunityListWrapper>
     );
