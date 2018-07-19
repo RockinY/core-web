@@ -446,7 +446,7 @@ class UserWithData extends React.Component<Props, State> {
               loading={isLoading}
               onClick={this.save}
             >
-              Save
+              保存
             </Button>
           </Actions>
 

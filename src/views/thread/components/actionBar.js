@@ -247,7 +247,7 @@ class ActionBar extends React.Component<Props, State> {
           <div style={{ display: 'flex' }} />
           <div style={{ display: 'flex' }}>
             <EditDone data-cy="cancel-thread-edit-button">
-              <TextButton onClick={this.props.toggleEdit}>Cancel</TextButton>
+              <TextButton onClick={this.props.toggleEdit}>取消</TextButton>
             </EditDone>
             <EditDone>
               <Button
@@ -256,7 +256,7 @@ class ActionBar extends React.Component<Props, State> {
                 onClick={this.props.saveEdit}
                 dataCy="save-thread-edit-button"
               >
-                Save
+                保存
               </Button>
             </EditDone>
           </div>
@@ -494,7 +494,7 @@ class ActionBar extends React.Component<Props, State> {
                                     onClick={this.triggerChangeChannel}
                                     dataCy={'thread-dropdown-move'}
                                   >
-                                    Move thread
+                                    移动话题
                                   </TextButton>
                                 </FlyoutRow>
                               )}

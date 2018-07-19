@@ -278,10 +278,10 @@ class EditForm extends React.Component<Props, State> {
     if (!community) {
       return (
         <SectionCard>
-          <FormTitle>This community doesn’t exist yet.</FormTitle>
-          <Description>Want to make it?</Description>
+          <FormTitle>该社区暂时还不存在.</FormTitle>
+          <Description>你想现在创建它吗?</Description>
           <Actions>
-            <Button>Create</Button>
+            <Button>创建</Button>
           </Actions>
         </SectionCard>
       );
@@ -289,7 +289,7 @@ class EditForm extends React.Component<Props, State> {
 
     return (
       <SectionCard>
-        <SectionTitle>Community Settings</SectionTitle>
+        <SectionTitle>社区设置</SectionTitle>
         <Form onSubmit={this.save}>
           <ImageInputWrapper>
             <CoverInput
@@ -313,14 +313,14 @@ class EditForm extends React.Component<Props, State> {
             defaultValue={name}
             onChange={this.changeName}
           >
-            Name
+            名子
           </Input>
           <UnderlineInput defaultValue={slug} disabled>
             spectrum.chat/
           </UnderlineInput>
 
           {nameError && (
-            <Error>Community names can be up to 20 characters long.</Error>
+            <Error>社区名最长不能超过20个字符.</Error>
           )}
 
           <TextArea
@@ -328,7 +328,7 @@ class EditForm extends React.Component<Props, State> {
             onChange={this.changeDescription}
             dataCy="community-settings-description-input"
           >
-            Description
+            描述
           </TextArea>
 
           <Input
@@ -336,7 +336,7 @@ class EditForm extends React.Component<Props, State> {
             onChange={this.changeWebsite}
             dataCy="community-settings-website-input"
           >
-            Optional: Add your community’s website
+            可选: 给社区添加一个网址
           </Input>
 
           <Actions>
@@ -346,13 +346,13 @@ class EditForm extends React.Component<Props, State> {
               disabled={photoSizeError}
               type="submit"
             >
-              Save
+              保存
             </Button>
             <TertiaryActionContainer>
               {community.communityPermissions.isOwner && (
                 <IconButton
                   glyph="delete"
-                  tipText={`Delete ${name}`}
+                  tipText={`删除 ${name}`}
                   tipLocation="top-right"
                   color="text.placeholder"
                   hoverColor={'warn.alt'}
@@ -364,7 +364,7 @@ class EditForm extends React.Component<Props, State> {
 
           {photoSizeError && (
             <Notice style={{ marginTop: '16px' }}>
-              Photo uploads should be less than 3mb
+              上传的图片不能超过3MB
             </Notice>
           )}
         </Form>
