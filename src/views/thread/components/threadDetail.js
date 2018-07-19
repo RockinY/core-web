@@ -150,9 +150,9 @@ class ThreadDetailPure extends React.Component<Props, State> {
           isLockingThread: false,
         });
         if (setThreadLock.isLocked) {
-          return dispatch(addToastWithTimeout('neutral', 'Thread locked.'));
+          return dispatch(addToastWithTimeout('neutral', '话题已锁定'));
         } else {
-          return dispatch(addToastWithTimeout('success', 'Thread unlocked!'));
+          return dispatch(addToastWithTimeout('success', '话题已解锁'));
         }
       })
       .catch(err => {
@@ -248,9 +248,8 @@ class ThreadDetailPure extends React.Component<Props, State> {
     const filesToUpload = Object.keys(jsonBody.entityMap)
       .filter(
         key =>
-          jsonBody.entityMap[key].type === 'image' &&
-          jsonBody.entityMap[key].data.file &&
-          jsonBody.entityMap[key].data.file.constructor === File
+          jsonBody.entityMap[key].type.toLowerCase() === 'image' &&
+          jsonBody.entityMap[key].data.file
       )
       .map(key => jsonBody.entityMap[key].data.file);
 

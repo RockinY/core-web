@@ -472,7 +472,11 @@ class ComposerWithData extends Component<Props, State> {
 
     // Get the images
     const filesToUpload = Object.keys(jsonBody.entityMap)
-      .filter(key => jsonBody.entityMap[key].type === 'image')
+      .filter(
+        key =>
+          jsonBody.entityMap[key].type.toLowerCase() === 'image' &&
+          jsonBody.entityMap[key].data.file
+      )
       .map(key => jsonBody.entityMap[key].data.file);
 
     // this.props.mutate comes from a higher order component defined at the
