@@ -219,7 +219,7 @@ class EditForm extends React.Component<Props, State> {
         // community was returned
         if (community !== undefined) {
           this.props.dispatch(
-            addToastWithTimeout('success', '社区已被创建!')
+            addToastWithTimeout('success', '社区保存成功!')
           );
         }
         return;
@@ -316,7 +316,7 @@ class EditForm extends React.Component<Props, State> {
             社区名
           </Input>
           <UnderlineInput defaultValue={slug} disabled>
-            spectrum.chat/
+            {process.env.REACT_APP_CLIENT_URL}/
           </UnderlineInput>
 
           {nameError && (
