@@ -313,7 +313,7 @@ class EditForm extends React.Component<Props, State> {
             defaultValue={name}
             onChange={this.changeName}
           >
-            名子
+            社区名
           </Input>
           <UnderlineInput defaultValue={slug} disabled>
             spectrum.chat/
