@@ -2,18 +2,18 @@
 
 export const convertTimestampToDate = (timestamp: number) => {
   let monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    '1月',
+    '2月',
+    '3月',
+    '4月',
+    '5月',
+    '6月',
+    '7月',
+    '8月',
+    '9月',
+    '10月',
+    '11月',
+    '12月',
   ];
   let date = new Date(timestamp);
   let day = date.getDate();
@@ -29,8 +29,8 @@ export const convertTimestampToDate = (timestamp: number) => {
   }
   let minutes = date.getMinutes();
   minutes = minutes >= 10 ? minutes : '0' + minutes.toString(); // turns 4 minutes into 04 minutes
-  let ampm = hours >= 12 ? 'pm' : 'am'; // todo: support 24hr time
-  return `${month} ${day}, ${year} · ${cleanHours}:${minutes}${ampm}`;
+  let ampm = hours >= 12 ? '下午' : '上午'; // todo: support 24hr time
+  return `${year}年 ${month} ${day}日 · ${ampm}${cleanHours}:${minutes}`;
 };
 
 export const convertTimestampToTime = (timestamp: Date) => {
@@ -44,6 +44,6 @@ export const convertTimestampToTime = (timestamp: Date) => {
   }
   let minutes = date.getMinutes();
   minutes = minutes >= 10 ? minutes : '0' + minutes.toString(); // turns 4 minutes into 04 minutes
-  let ampm = hours >= 12 ? 'pm' : 'am'; // todo: support 24hr time
-  return `${cleanHours}:${minutes}${ampm}`;
+  let ampm = hours >= 12 ? '下午' : '上午'; // todo: support 24hr time
+  return `${ampm}${cleanHours}:${minutes}`;
 };

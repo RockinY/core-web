@@ -457,7 +457,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
 
           {thread.modifiedAt && (
             <Edited>
-              {'· '}(Edited{' '}
+              {'· '}(上次编辑{' '}
               {timeDifference(Date.now(), editedTimestamp).toLowerCase()})
             </Edited>
           )}
