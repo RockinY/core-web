@@ -260,18 +260,18 @@ class Editor extends React.Component<Props, State> {
                         <label htmlFor="embed-input">
                           <Icon
                             glyph={'embed'}
-                            tipText={'嵌入一个URL'}
+                            tipText={'插入一个链接'}
                             onClick={this.toggleEmbedInputState}
                           />
                           <input
                             id="embed-input"
                             type="url"
-                            placeholder="输入一个URL进行嵌入"
+                            placeholder="请输入一个外部链接"
                             value={this.state.embedUrl}
                             onChange={this.changeEmbedUrl}
                           />
                         </label>
-                        <button onClick={this.addEmbed}>Embed</button>
+                        <button onClick={this.addEmbed}>插入</button>
                       </EmbedUI>
                     </Action>
                   </Expander>
