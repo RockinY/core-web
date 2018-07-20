@@ -210,7 +210,7 @@ class Sidebar extends React.Component<Props> {
                             <RelatedTitle>{t.content.title}</RelatedTitle>
                             <RelatedCount>
                               {t.messageCount.toLocaleString()}{' '}
-                              {t.messageCount === 1 ? 'message' : 'messages'}
+                              条消息
                             </RelatedCount>
                           </Link>
                         </SidebarRelatedThread>
