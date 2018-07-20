@@ -36,6 +36,7 @@
     "graphql-tag": "^2.9.2",
     "history": "^4.7.2",
     "hoist-non-react-statics": "^2.5.5",
+    "ioredis": "^3.2.2",
     "is-electron": "^2.1.0",
     "offline-plugin": "^5.0.3",
     "prismjs": "^1.15.0",
