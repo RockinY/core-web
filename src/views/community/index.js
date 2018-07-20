@@ -121,6 +121,8 @@ class CommunityView extends React.Component<Props, State> {
     } = this.props;
     const { communitySlug } = params;
 
+    console.log(community);
+
     if (community && community.id) {
       // at this point the community exists and was fetched
       const { title, description } = generateMetaInfo({
@@ -310,7 +312,7 @@ class CommunityView extends React.Component<Props, State> {
                   onClick={() => this.handleSegmentClick('members')}
                   selected={selectedView === 'members'}
                 >
-                  Members ({community.metaData &&
+                  成员 ({community.metaData &&
                     community.metaData.members &&
                     community.metaData.members.toLocaleString()})
                 </DesktopSegment>
@@ -373,7 +375,7 @@ class CommunityView extends React.Component<Props, State> {
             </Content>
             <Extras>
               <ErrorBoundary fallbackComponent={null}>
-                <ColumnHeading>Channels</ColumnHeading>
+                <ColumnHeading>频道</ColumnHeading>
                 <ChannelList
                   id={community.id}
                   communitySlug={communitySlug.toLowerCase()}
@@ -381,7 +383,7 @@ class CommunityView extends React.Component<Props, State> {
               </ErrorBoundary>
 
               <ErrorBoundary fallbackComponent={null}>
-                <ColumnHeading>Team</ColumnHeading>
+                <ColumnHeading>团队成员</ColumnHeading>
                 <ModeratorList
                   id={community.id}
                   first={20}

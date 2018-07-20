@@ -14,7 +14,7 @@ const PhotoContainer = styled.div`
   background-color: ${({ theme }) => theme.bg.reverse};
   background-image: ${props =>
     props.coverURL
-      ? `url("${optimize(props.coverURL)}`
+      ? `url("${optimize(props.coverURL)}")`
       : 'none'};
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ export const CoverPhoto = (props: Object) => {
               color="text.reverse"
               opacity="0.5"
               hoverColor="text.reverse"
-              tipText={`Edit profile`}
+              tipText={`修改`}
               tipLocation={'left'}
             />
           </Link>
@@ -54,7 +54,7 @@ export const CoverPhoto = (props: Object) => {
             color="text.reverse"
             hoverColor="text.reverse"
             onClick={props.onClick}
-            tipText={`Message ${props.user.name}`}
+            tipText={`给${props.user.name}发送消息`}
             tipLocation={'left'}
           />
         ) : null}
