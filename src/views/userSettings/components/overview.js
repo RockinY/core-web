@@ -4,8 +4,6 @@ import type { GetCurrentUserSettingsType } from '../../../graphql/queries/user/g
 import UserEditForm from './editForm';
 import EmailSettings from './emailSettings';
 import NotificationSettings from './notificationSettings';
-import DeleteAccountForm from './deleteAccountForm';
-import DownloadDataForm from './downloadDataForm';
 import { SectionsContainer, Column } from '../../../components/settingsViews/style';
 import { ErrorBoundary, SettingsFallback } from '../../../components/error';
 import { isDesktopApp } from '../../../utils/isDesktopApp';
@@ -25,13 +23,6 @@ class Overview extends React.Component<Props> {
             <UserEditForm user={user} />
           </ErrorBoundary>
 
-          <ErrorBoundary fallbackComponent={SettingsFallback}>
-            <DeleteAccountForm id={user.id} />
-          </ErrorBoundary>
-
-          <ErrorBoundary fallbackComponent={SettingsFallback}>
-            <DownloadDataForm user={user} />
-          </ErrorBoundary>
         </Column>
         <Column>
           <ErrorBoundary fallbackComponent={SettingsFallback}>
