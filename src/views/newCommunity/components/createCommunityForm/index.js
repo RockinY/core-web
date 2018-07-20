@@ -413,7 +413,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
             onChange={this.changeSlug}
             dataCy='community-slug-input'
           >
-            spectrum.chat/
+            {process.env.REACT_APP_CLIENT_URL}/
           </UnderlineInput>
 
           {slugTaken && (

@@ -263,7 +263,7 @@ class CommunityWithData extends React.Component<Props, State> {
             名字
           </Input>
           <UnderlineInput defaultValue={slug} disabled>
-            spectrum.chat/
+            {process.env.REACT_APP_CLIENT_URL}/
           </UnderlineInput>
 
           {nameError && (
