@@ -83,7 +83,7 @@ class BrandedLogin extends React.Component<Props, State> {
       })
       .then(() => {
         this.setState({ messageLengthError: false, isLoading: false });
-        return this.props.dispatch(addToastWithTimeout('success', 'Saved!'));
+        return this.props.dispatch(addToastWithTimeout('success', '已保存!'));
       })
       .catch(err => {
         this.setState({ messageLengthError: false, isLoading: false });

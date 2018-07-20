@@ -224,7 +224,7 @@ class ChannelWithData extends React.Component<Props, State> {
             ) : (
               <Description>
                 云社上的任何成员都可以加入你的频道并在上面发布话题和消息，同时频道的成员也是
-                对外公开的. 如果你相创建私人频道请先注册会员.
+                对外公开的. 如果你想创建私人频道请先注册会员.
               </Description>
             )}
 

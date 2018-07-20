@@ -19,7 +19,7 @@ const buildArray = (meta: Object): Array<any> => {
           {},
           {
             icon: 'post',
-            label: 'Threads',
+            label: '话题',
             count: meta[item],
           }
         );
@@ -30,7 +30,7 @@ const buildArray = (meta: Object): Array<any> => {
           {},
           {
             icon: 'channel',
-            label: 'Channels',
+            label: '频道',
             count: meta[item],
           }
         );
@@ -41,7 +41,7 @@ const buildArray = (meta: Object): Array<any> => {
           {},
           {
             icon: 'person',
-            label: 'Subscribers',
+            label: '订阅者',
             count: meta[item],
           }
         );
@@ -52,7 +52,7 @@ const buildArray = (meta: Object): Array<any> => {
           {},
           {
             icon: 'person',
-            label: 'Members',
+            label: '成员',
             count: meta[item],
           }
         );

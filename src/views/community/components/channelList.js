@@ -141,7 +141,7 @@ class ChannelList extends React.Component<Props> {
                             tipLocation={'top-left'}
                             tipText={
                               channel.channelPermissions.receiveNotifications
-                                ? '关闭同时'
+                                ? '关闭通知'
                                 : '开启通知'
                             }
                           >

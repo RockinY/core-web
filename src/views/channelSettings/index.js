@@ -158,7 +158,7 @@ class ChannelSettings extends React.Component<Props> {
       const subnavItems = [
         {
           to: `/${channel.community.slug}/${channel.slug}/settings`,
-          label: 'Overview',
+          label: '概述',
           activeLabel: 'settings',
         },
       ];

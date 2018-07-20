@@ -296,7 +296,7 @@ class CreateChannelModal extends React.Component<Props, State> {
               onChange={this.changeName}
               autoFocus={true}
             >
-              Channel Name
+              频道名
             </Input>
 
             {nameError && (
@@ -335,7 +335,7 @@ class CreateChannelModal extends React.Component<Props, State> {
               onChange={this.changePrivate}
               dataCy="create-channel-modal-toggle-private-checkbox"
             >
-              Private channel · $10/mo
+              私人频道 · 会员专属
             </Checkbox>
 
             <UpsellDescription>

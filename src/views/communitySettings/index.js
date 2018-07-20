@@ -84,20 +84,20 @@ class CommunitySettings extends React.Component<Props> {
           label: '成员',
           activeLabel: 'members',
         },
-        {
-          to: `/${community.slug}/settings/analytics`,
-          label: '分析',
-          activeLabel: 'analytics',
-        },
+        // {
+        //   to: `/${community.slug}/settings/analytics`,
+        //   label: '分析',
+        //   activeLabel: 'analytics',
+        // },
       ];
 
-      if (community.communityPermissions.isOwner) {
-        subnavItems.push({
-          to: `/${community.slug}/settings/billing`,
-          label: '会员',
-          activeLabel: 'billing',
-        });
-      }
+      // if (community.communityPermissions.isOwner) {
+      //   subnavItems.push({
+      //     to: `/${community.slug}/settings/billing`,
+      //     label: '会员',
+      //     activeLabel: 'billing',
+      //   });
+      // }
 
       const subheading = {
         to: `/${community.slug}`,

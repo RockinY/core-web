@@ -100,14 +100,14 @@ class UserSettings extends React.Component<Props> {
       const subnavItems = [
         {
           to: `/users/${user.username}/settings`,
-          label: 'Overview',
+          label: '概述',
           activeLabel: 'settings',
         },
       ];
 
       const subheading = {
         to: `/users/${user.username}`,
-        label: `Return to profile`,
+        label: `返回个人主页`,
       };
 
       const avatar = {
