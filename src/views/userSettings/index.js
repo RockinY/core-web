@@ -130,7 +130,7 @@ class UserSettings extends React.Component<Props> {
             <Header
               avatar={avatar}
               subheading={subheading}
-              heading={'My Settings'}
+              heading={'我的设置'}
             />
 
             <Subnav items={subnavItems} activeTab={activeTab} />
