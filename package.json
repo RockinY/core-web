@@ -20,6 +20,7 @@
     "apollo-link-ws": "^1.0.8",
     "apollo-upload-client": "^8.0.0",
     "apollo-utilities": "^1.0.12",
+    "common-tags": "^1.8.0",
     "css.escape": "^1.5.1",
     "debounce": "^1.1.0",
     "draft-js": "^0.10.5",
