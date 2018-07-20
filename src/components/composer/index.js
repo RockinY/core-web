@@ -628,7 +628,7 @@ class ComposerWithData extends Component<Props, State> {
       <Container>
         <Titlebar provideBack title={'新的对话'} noComposer />
         <Dropdowns>
-          <span>To:</span>
+          <span>创建到:</span>
           {!dataExists ? (
             <LoadingSelect />
           ) : (

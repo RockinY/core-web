@@ -263,7 +263,7 @@ class ChannelWithData extends React.Component<Props, State> {
 
             {slug === 'general' && (
               <GeneralNotice>
-                通用频道是您社区的默认频道. 它们无法被删除和私有化，但是你仍然可以对它们进行
+                这是您社区的默认频道. 它们无法被删除和私有化，但是你仍然可以对它们进行
                 名称和描述的修改.
               </GeneralNotice>
             )}
