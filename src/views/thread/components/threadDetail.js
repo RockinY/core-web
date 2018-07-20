@@ -182,9 +182,9 @@ class ThreadDetailPure extends React.Component<Props, State> {
         thread.channel.name
       } 的主人, 你有权力对此操作. 同时话题的主人将会收到话题被删除的通知.`;
     } else if (thread.isAuthor) {
-      message = '你确定相删除这个话题吗?';
+      message = '你确定想删除这个话题吗?';
     } else {
-      message = '你确定相删除这个话题吗?';
+      message = '你确定想删除这个话题吗?';
     }
 
     return dispatch(

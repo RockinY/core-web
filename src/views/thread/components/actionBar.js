@@ -241,6 +241,9 @@ class ActionBar extends React.Component<Props, State> {
     const shouldRenderEditThreadAction = this.shouldRenderEditThreadAction();
     const shouldRenderDeleteThreadAction = this.shouldRenderDeleteThreadAction();
 
+    // $FlowFixMe
+    const copyLink = `${process.env.REACT_APP_CLIENT_URL}/thread/${thread.id}`
+
     if (isEditing) {
       return (
         <ActionBarContainer>
@@ -314,9 +317,7 @@ class ActionBar extends React.Component<Props, State> {
 
                 <Clipboard
                   style={{ background: 'none' }}
-                  data-clipboard-text={`https://spectrum.chat/thread/${
-                    thread.id
-                  }`}
+                  data-clipboard-text={copyLink}
                   onSuccess={() =>
                     this.props.dispatch(
                       addToastWithTimeout('success', '已复制到剪切板')
