@@ -84,7 +84,8 @@
     "styled-components": "^3.2.6",
     "subscriptions-transport-ws": "^0.9.9",
     "toobusy-js": "^0.5.1",
-    "validator": "^10.4.0"
+    "validator": "^10.4.0",
+    "ws": "^5.2.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

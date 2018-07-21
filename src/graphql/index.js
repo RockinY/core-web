@@ -1,4 +1,5 @@
 // @flow
+import ws from 'ws'
 import { ApolloClient } from 'apollo-client'
 import { createUploadLink } from 'apollo-upload-client'
 import { RetryLink } from 'apollo-link-retry'
@@ -7,6 +8,7 @@ import {
   IntrospectionFragmentMatcher
 } from 'apollo-cache-inmemory'
 import { split } from 'apollo-link'
+import { SubscriptionClient } from "subscriptions-transport-ws"
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 import introspectionQueryResultData from './schema.json'
@@ -21,12 +23,11 @@ type CreateClientOptions = {
   token?: ?string
 }
 
-export const wsLink = new WebSocketLink({
-  uri: process.env.REACT_APP_WS_URI,
-  options: {
-    reconnect: true
-  }
-})
+const subscriptionClient = new SubscriptionClient(process.env.REACT_APP_WS_URI, {
+  reconnect: true
+}, ws)
+
+export const wsLink = new WebSocketLink(subscriptionClient)
 
 export const createClient = (options?: CreateClientOptions = {}) => {
   const cache = new InMemoryCache({
