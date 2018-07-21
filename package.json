@@ -24,6 +24,7 @@
     "apollo-upload-client": "^8.0.0",
     "apollo-utilities": "^1.0.12",
     "body-parser": "^1.18.3",
+    "bufferutil": "^4.0.0",
     "common-tags": "^1.8.0",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-beta.3",
@@ -51,6 +52,7 @@
     "is-electron": "^2.1.0",
     "isomorphic-fetch": "^2.2.1",
     "keygrip": "^1.0.2",
+    "node-gyp": "^3.7.0",
     "offline-plugin": "^5.0.3",
     "passport": "^0.4.0",
     "prismjs": "^1.15.0",
@@ -84,6 +86,7 @@
     "styled-components": "^3.2.6",
     "subscriptions-transport-ws": "^0.9.9",
     "toobusy-js": "^0.5.1",
+    "utf-8-validate": "^5.0.1",
     "validator": "^10.4.0",
     "ws": "^5.2.2"
   },
