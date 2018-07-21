@@ -1,5 +1,4 @@
 // @flow
-import ws from 'ws'
 import { ApolloClient } from 'apollo-client'
 import { createUploadLink } from 'apollo-upload-client'
 import { RetryLink } from 'apollo-link-retry'
@@ -25,7 +24,7 @@ type CreateClientOptions = {
 
 const subscriptionClient = new SubscriptionClient(process.env.REACT_APP_WS_URI, {
   reconnect: true
-}, ws)
+})
 
 export const wsLink = new WebSocketLink(subscriptionClient)
 
