@@ -17,7 +17,7 @@ import { Provider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
 import Loadable from 'react-loadable';
 import { getBundles } from 'react-loadable/webpack';
-import Raven from 'shared/raven';
+import Raven from '../../utils/raven';
 import introspectionQueryResultData from 'shared/graphql/schema.json';
 // $FlowIssue
 import stats from '../../build/react-loadable.json';

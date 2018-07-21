@@ -43,6 +43,7 @@
     "offline-plugin": "^5.0.3",
     "prismjs": "^1.15.0",
     "query-string": "5",
+    "raven": "^2.6.3",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
     "react-clipboard.js": "^2.0.0",
