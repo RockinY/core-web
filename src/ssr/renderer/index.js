@@ -1,8 +1,7 @@
 // @flow
 // Server-side renderer for our React code
-const debug = require('debug')('hyperion:renderer');
+const debug = require('debug')('service-ssr:renderer');
 import React from 'react';
-// $FlowIssue
 import { renderToNodeStream } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
@@ -18,12 +17,11 @@ import { HelmetProvider } from 'react-helmet-async';
 import Loadable from 'react-loadable';
 import { getBundles } from 'react-loadable/webpack';
 import Raven from '../../utils/raven';
-import introspectionQueryResultData from 'shared/graphql/schema.json';
-// $FlowIssue
-import stats from '../../build/react-loadable.json';
+import introspectionQueryResultData from '../../graphql/schema.json';
+import stats from '../../../build/react-loadable.json';
 
-import getSharedApolloClientOptions from 'shared/graphql/apollo-client-options';
-import { getFooter, getHeader } from './html-template';
+import getSharedApolloClientOptions from '../../graphql/apolloClientOptions';
+import { getFooter, getHeader } from './htmlTemplate';
 import createCacheStream from '../create-cache-stream';
 
 // Browser shim has to come before any client imports

@@ -1,7 +1,14 @@
 const OfflinePlugin = require('offline-plugin')
+const { ReactLoadablePlugin } = require('react-loadable/webpack')
 
 module.exports = function override(config, env) {
   //do stuff with the webpack config...
+  config.plugins.push(
+    new ReactLoadablePlugin({
+      filename: './build/react-loadable.json',
+    })
+  )
+  
   config.plugins.push(
     new OfflinePlugin({
       caches: process.env.NODE_ENV === 'development' ? {} : 'all',
