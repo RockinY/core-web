@@ -1,5 +1,10 @@
 const OfflinePlugin = require('offline-plugin')
 const { ReactLoadablePlugin } = require('react-loadable/webpack')
+const rewireStyledComponents = require('react-app-rewire-styled-components')
+const { injectBabelPlugin } = require('react-app-rewired')
+const swPrecachePlugin = require('sw-precache-webpack-plugin')
+
+const isServiceWorkerPlugin = plugin => plugin instanceof swPrecachePlugin
 
 module.exports = function override(config, env) {
   //do stuff with the webpack config...
@@ -7,6 +12,12 @@ module.exports = function override(config, env) {
     new ReactLoadablePlugin({
       filename: './build/react-loadable.json',
     })
+  )
+
+  config = injectBabelPlugin('react-loadable/babel', config)
+
+  config.plugins = config.plugins.filter(
+    plugin => !isServiceWorkerPlugin(plugin)
   )
   
   config.plugins.push(
@@ -41,5 +52,5 @@ module.exports = function override(config, env) {
       AppCache: false
     })
   )
-  return config;
+  return rewireStyledComponents(config, env, { ssr: true });
 }

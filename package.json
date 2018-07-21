@@ -62,6 +62,7 @@
     "raven": "^2.6.3",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
+    "react-app-rewire-styled-components": "^3.0.2",
     "react-clipboard.js": "^2.0.0",
     "react-dom": "^16.4.0",
     "react-flip-move": "^3.0.2",
@@ -108,7 +109,8 @@
     "flow-bin": "^0.72.0",
     "raw-loader": "^0.5.1",
     "react-app-rewired": "^1.5.2",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "sw-precache-webpack-plugin": "^0.11.5"
   },
   "standard": {
     "parser": "babel-eslint",
