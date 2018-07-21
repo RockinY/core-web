@@ -85,14 +85,14 @@ app.use(threadParamRedirect);
 let jsFiles;
 try {
   jsFiles = fs.readdirSync(
-    path.resolve(__dirname, '..', 'build', 'static', 'js')
+    path.resolve(__dirname, '../..', 'build', 'static', 'js')
   );
 } catch (err) {
   // In development that folder might not exist, so ignore errors here
   console.error(err);
 }
 app.use(
-  express.static(path.resolve(__dirname, '..', 'build'), {
+  express.static(path.resolve(__dirname, '../..', 'build'), {
     index: false,
     setHeaders: (res, path) => {
       // Don't cache the serviceworker in the browser
@@ -108,7 +108,7 @@ app.get('/static/js/:name', (req: express$Request, res, next) => {
   const existingFile = jsFiles.find(file => file.startsWith(req.params.name));
   if (existingFile)
     return res.sendFile(
-      path.resolve(__dirname, '..', 'build', 'static', 'js', req.params.name)
+      path.resolve(__dirname, '../..', 'build', 'static', 'js', req.params.name)
     );
   const match = req.params.name.match(/(\w+?)\.(\w+?\.)?js/i);
   if (!match) return next();
@@ -121,7 +121,7 @@ app.get('/static/js/:name', (req: express$Request, res, next) => {
 // so we just tell Express to serve those too
 if (process.env.NODE_ENV === 'development') {
   app.use(
-    express.static(path.resolve(__dirname, '..', 'public'), { index: false })
+    express.static(path.resolve(__dirname, '../..', 'public'), { index: false })
   );
 }
 
@@ -131,7 +131,7 @@ app.get('*', (req: express$Request, res, next) => {
     req.headers['user-agent'] &&
     req.headers['user-agent'].indexOf('Electron') > -1
   ) {
-    return res.sendFile(path.resolve(__dirname, '../build/index.html'));
+    return res.sendFile(path.resolve(__dirname, '../../build/index.html'));
   }
   next();
 });
