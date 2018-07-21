@@ -1,9 +1,7 @@
 // @flow
-const debug = require('debug')('service-ssr');
+import 'dotenv/config'
 import 'raf/polyfill';
-debug('Service ssr starting...');
-debug('logging with debug enabled');
-require('isomorphic-fetch'); // prevent https://github.com/withspectrum/spectrum/issues/3032
+import 'isomorphic-fetch'; // prevent https://github.com/withspectrum/spectrum/issues/3032
 import fs from 'fs';
 import express from 'express';
 import Loadable from 'react-loadable';
@@ -19,6 +17,10 @@ import passport from 'passport'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import threadParamRedirect from './middlewares/threadParam'
+
+const debug = require('debug')('service-ssr');
+debug('Service ssr starting...');
+debug('logging with debug enabled');
 
 const PORT = process.env.SSR_PORT || 3006;
 const serverUrl = process.env.REACT_APP_SERVER_URL || 'http://localhost:3000'

@@ -10,7 +10,8 @@
     "deploy": "yarn run production:prepare && yarn run production:start",
     "fix": "standard --fix",
     "reset": "rm -rf ./node_modules && yarn",
-    "build:ssr": "backpack build"
+    "build:ssr": "backpack build",
+    "dev:ssr": "DEBUG=service-ssr* backpack"
   },
   "dependencies": {
     "abab": "^1.0.4",
