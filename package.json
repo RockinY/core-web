@@ -9,7 +9,8 @@
     "production:start": "serve -s build",
     "deploy": "yarn run production:prepare && yarn run production:start",
     "fix": "standard --fix",
-    "reset": "rm -rf ./node_modules && yarn"
+    "reset": "rm -rf ./node_modules && yarn",
+    "build:ssr": "backpack build"
   },
   "dependencies": {
     "abab": "^1.0.4",
@@ -83,7 +84,15 @@
     "validator": "^10.4.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
+    "babel-plugin-syntax-async-generators": "^6.13.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
     "backpack-core": "^0.7.0",
     "eslint-plugin-flowtype": "^2.47.1",
     "flow-bin": "^0.72.0",
