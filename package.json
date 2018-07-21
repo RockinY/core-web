@@ -7,11 +7,13 @@
     "build": "react-app-rewired build",
     "production:prepare": "touch .env && env > .env && yarn run build",
     "production:start": "serve -s build",
-    "deploy": "yarn run production:prepare && yarn run production:start",
+    "deploy": "yarn run production:prepare && yarn run production:start && yarn run deploy:ssr",
     "fix": "standard --fix",
     "reset": "rm -rf ./node_modules && yarn",
     "build:ssr": "backpack build",
-    "dev:ssr": "DEBUG=service-ssr* backpack"
+    "dev:ssr": "DEBUG=service-ssr* backpack",
+    "start:ssr": "node ./build-ssr/main",
+    "deploy:ssr": "yarn run build:ssr && yarn run start:ssr"
   },
   "dependencies": {
     "abab": "^1.0.4",
