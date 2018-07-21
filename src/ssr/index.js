@@ -1,17 +1,17 @@
 // @flow
-const debug = require('debug')('hyperion');
+const debug = require('debug')('service-ssr');
 import 'raf/polyfill';
-debug('Hyperion starting...');
+debug('Service ssr starting...');
 debug('logging with debug enabled');
 require('isomorphic-fetch'); // prevent https://github.com/withspectrum/spectrum/issues/3032
 import fs from 'fs';
 import express from 'express';
 import Loadable from 'react-loadable';
 import path from 'path';
-import { getUser } from 'api/models/user';
-import Raven from 'shared/raven';
-import toobusy from 'shared/middlewares/toobusy';
-import addSecurityMiddleware from 'shared/middlewares/security';
+import { getUser } from './model';
+import Raven from '../utils/raven';
+import toobusy from './middlewares/toobusy';
+import addSecurityMiddleware from './middlewares/security';
 
 const PORT = process.env.PORT || 3006;
 
