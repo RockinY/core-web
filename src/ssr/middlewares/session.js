@@ -4,7 +4,9 @@
  * if the contents of req.session were altered
  */
 import session from 'cookie-session'
-import { cookieKeygrip } from '../utils/cookie'
+import Keygrip from 'keygrip'
+
+const cookieKeygrip = new Keygrip([process.env.SESSION_COOKIE_SECRET])
 
 const ONE_YEAR = 31556952000
 

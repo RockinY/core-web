@@ -16,10 +16,13 @@
   ],
   "plugins": [
     "babel-plugin-transform-class-properties",
+    ["styled-components", { "ssr": true }],
     "transform-flow-strip-types",
     "transform-object-rest-spread",
     "syntax-dynamic-import",
     "syntax-async-generators",
+    "react-loadable/babel",
+    "babel-plugin-transform-react-jsx",
     "transform-async-generator-functions"
   ]
 }
