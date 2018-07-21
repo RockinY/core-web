@@ -1,7 +1,7 @@
 // @flow
 // Cache unauthenticated requests in Redis
 import redis from './redis';
-const debug = require('debug')('hyperion:cache');
+const debug = require('debug')('service-ssr:cache');
 
 if (process.env.DISABLE_CACHE) {
   console.log(
@@ -21,6 +21,7 @@ const cache = (
     debug(`${req.method} request came in, not caching`);
     return next();
   }
+  // $FlowFixMe
   if (req.user) {
     req.user.id &&
       typeof req.user.id === 'string' &&

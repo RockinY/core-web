@@ -2,6 +2,7 @@
 // Server-side renderer for our React code
 const debug = require('debug')('service-ssr:renderer');
 import React from 'react';
+// $FlowIssue
 import { renderToNodeStream } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
@@ -22,29 +23,28 @@ import stats from '../../../build/react-loadable.json';
 
 import getSharedApolloClientOptions from '../../graphql/apolloClientOptions';
 import { getFooter, getHeader } from './htmlTemplate';
-import createCacheStream from '../create-cache-stream';
+import createCacheStream from '../createCacheStream';
 
 // Browser shim has to come before any client imports
-import './browser-shim';
-const Routes = require('../../src/routes').default;
-import { initStore } from '../../src/store';
+import './browserShim';
+import Routes from '../../routes'
+import { initStore } from '../../store'
 
 const IS_PROD = process.env.NODE_ENV === 'production';
 const FORCE_DEV = process.env.FORCE_DEV;
 
-if (!IS_PROD || FORCE_DEV) debug('Querying API at localhost:3001/api');
+const apiUrl = process.env.REACT_APP_API_URI || 'http://localhost:3000/api'
+
+debug(`Querying API at ${apiUrl}`);
 
 const renderer = (req: express$Request, res: express$Response) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
   debug(`server-side render ${req.url}`);
-  debug(`querying API at https://${req.hostname}/api`);
+  debug(`querying API at ${apiUrl}`);
   // HTTP Link for queries and mutations including file uploads
   const httpLink = createHttpLink({
-    uri:
-      IS_PROD && !FORCE_DEV
-        ? `https://${req.hostname}/api`
-        : 'http://localhost:3001/api',
+    uri: apiUrl,
     credentials: 'include',
     headers: {
       cookie: req.headers.cookie,
@@ -69,6 +69,7 @@ const renderer = (req: express$Request, res: express$Response) => {
 
   const initialReduxState = {
     users: {
+      // $FlowFixMe
       currentUser: req.user ? req.user : null,
     },
     dashboardFeed: {
@@ -105,6 +106,7 @@ const renderer = (req: express$Request, res: express$Response) => {
   );
 
   debug('get data from tree');
+  // $FlowFixMe
   getDataFromTree(frontend)
     .then(() => {
       debug('got data from tree');
@@ -122,6 +124,7 @@ const renderer = (req: express$Request, res: express$Response) => {
       const { helmet } = helmetContext;
       debug('write header');
       let response = res;
+      // $FlowFixMe
       if (!req.user) {
         response = createCacheStream(req.path);
         response.pipe(res);

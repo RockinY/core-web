@@ -1,7 +1,7 @@
 // @flow
 import { Transform } from 'stream';
 import redis from './redis';
-const debug = require('debug')('hyperion:create-cache-stream');
+const debug = require('debug')('service-ssr:create-cache-stream');
 
 const createCacheStream = (key: string) => {
   debug('create cache stream for', key);
