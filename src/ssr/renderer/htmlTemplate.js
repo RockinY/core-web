@@ -66,6 +66,7 @@ export const getFooter = ({
       <script>window.__DATA__=${serialize(data)}</script>
       <script defer="defer" type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Symbol.iterator"></script>
       ${bundles.map(src => createScriptTag({ src }))}
+      ${createScriptTag({ src: `/static/js/${mainBundle}` })}
     </body>
     </html>
   `;
