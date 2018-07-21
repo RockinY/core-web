@@ -37,8 +37,10 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "helmet": "^3.12.2",
     "history": "^4.7.2",
     "hoist-non-react-statics": "^2.5.5",
+    "hpp": "^0.2.2",
     "ioredis": "^3.2.2",
     "is-electron": "^2.1.0",
     "isomorphic-fetch": "^2.2.1",
@@ -74,6 +76,7 @@
     "striptags": "2.x",
     "styled-components": "^3.2.6",
     "subscriptions-transport-ws": "^0.9.9",
+    "toobusy-js": "^0.5.1",
     "validator": "^10.4.0"
   },
   "devDependencies": {
