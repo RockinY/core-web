@@ -16,6 +16,7 @@ RUN yarn global add serve
 COPY . .
 
 EXPOSE 5000
+EXPOSE 3006
 
 # Start the server
 CMD [ "yarn", "run", "deploy" ]
