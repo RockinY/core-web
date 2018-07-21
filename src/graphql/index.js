@@ -12,6 +12,7 @@ import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 import introspectionQueryResultData from './schema.json'
 import getSharedApolloClientOptions from './apolloClientOptions'
+import ws from 'isomorphic-ws'
 
 // Fixes a bug with ReactNative, see https://github.com/facebook/react-native/issues/9599
 if (typeof global.self === 'undefined') {
@@ -24,7 +25,7 @@ type CreateClientOptions = {
 
 const subscriptionClient = new SubscriptionClient(process.env.REACT_APP_WS_URI, {
   reconnect: true
-})
+}, ws)
 
 export const wsLink = new WebSocketLink(subscriptionClient)
 
