@@ -17,6 +17,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
+    "@storybook/addon-centered": "^3.4.8",
     "@storybook/react": "^3.4.8",
     "abab": "^1.0.4",
     "apollo-cache-inmemory": "^1.2.1",
