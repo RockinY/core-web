@@ -100,6 +100,7 @@
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-graphql": "^3.4.8",
     "@storybook/addon-notes": "^3.4.8",
+    "@storybook/addon-options": "^3.4.8",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",

@@ -1,4 +1,10 @@
 import { configure } from '@storybook/react'
+import { setOptions } from '@storybook/addon-options'
+
+setOptions({
+  hierarchySeparator: /\/|\./,
+  hierarchyRootSeparator: /\|/
+})
 
 function importAll(req) {
   req.keys().forEach(filename => req(filename));
