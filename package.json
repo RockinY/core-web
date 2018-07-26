@@ -16,6 +16,7 @@
     "deploy:ssr": "yarn run build:ssr && yarn run start:ssr"
   },
   "dependencies": {
+    "@storybook/react": "^3.4.8",
     "abab": "^1.0.4",
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
