@@ -1,13 +1,11 @@
 // @flow
-type QueryParams = {
-  [key: string]: string,
-};
+type imageStyle = 'thumbnail' | 'medium' | 'big'
 
 /**
- * Optimize an image
+ * Optimize an image using build-in ali-oss processes
  */
-export const optimize = (src: string, params?: QueryParams = {}): string => {
-  return src
+export const optimize = (src: string, style: imageStyle): string => {
+  return `${src}?x-oss-process=${style}`
 };
 
 export const FREE_USER_MAX_IMAGE_SIZE_BYTES = 3000000;

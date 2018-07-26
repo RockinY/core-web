@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Manager, Reference } from 'react-popper'
 import AvatarImage from './image'
+import { optimize } from '../../utils/images'
 import { Status, AvatarLink, AvatarNoLink } from './style'
 
 const LinkHandler = props => {
@@ -37,8 +38,7 @@ export default class Avatar extends Component<AvatarProps, State> {
       mobileSize
     } = this.props
 
-    // TODO: add actual optimize method
-    const optimizedAvatar = src
+    const optimizedAvatar = optimize(src, 'thumbnail')
     const communityFallback = '/img/default_community.svg'
     const userFallback = '/img/default_avatar.svg'
 

@@ -50,11 +50,7 @@ class Avatar extends React.Component<Props> {
 
     const optimizedAvatar =
       src &&
-      optimize(src, {
-        w: size.toString(),
-        dpr: '2',
-        format: 'png',
-      });
+      optimize(src, 'medium');
     const communityFallback = '/img/default_community.svg';
     const source = [optimizedAvatar, communityFallback];
 

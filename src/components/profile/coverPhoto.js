@@ -14,7 +14,7 @@ const PhotoContainer = styled.div`
   background-color: ${({ theme }) => theme.bg.reverse};
   background-image: ${props =>
     props.coverURL
-      ? `url("${optimize(props.coverURL)}")`
+      ? `url("${optimize(props.coverURL, 'big')}")`
       : 'none'};
   background-size: cover;
   background-repeat: no-repeat;
