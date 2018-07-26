@@ -5,7 +5,7 @@ type imageStyle = 'thumbnail' | 'medium' | 'big'
  * Optimize an image using build-in ali-oss processes
  */
 export const optimize = (src: string, style: imageStyle): string => {
-  return `${src}?x-oss-process=${style}`
+  return `${src}?x-oss-process=style/${style}`
 };
 
 export const FREE_USER_MAX_IMAGE_SIZE_BYTES = 3000000;
