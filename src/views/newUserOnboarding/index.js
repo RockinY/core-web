@@ -169,7 +169,7 @@ class NewUserOnboarding extends Component<Props, State> {
                 <TopCommunities
                   joinedCommunity={this.joinedCommunity}
                   hasJoined={joinedCommunities > 0}
-                  curatedContentType={'top-communities-by-members'}
+                  curatedContentType={'recommended'}
                 />
                 <CreateUpsellContainer extra={joinedCommunities > 0}>
                   <UpsellCreateCommunity close={this.props.close} />
