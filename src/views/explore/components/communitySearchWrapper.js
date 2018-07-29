@@ -78,7 +78,7 @@ const CommunitySearchWrapper = props => {
   `;
 
   return (
-    <ViewSegment goop={3} background="constellations">
+    <ViewSegment background="constellations">
       <ThisContent>
         <ThisTagline>寻找一个感兴趣的社区!</ThisTagline>
         <ThisCopy>
@@ -94,11 +94,11 @@ const CommunitySearchWrapper = props => {
             <Link
               to={'/new/community'}
             >
-              <PrimaryCTA>开始</PrimaryCTA>
+              <PrimaryCTA>创建属于自己的社区</PrimaryCTA>
             </Link>
           ) : (
             <Link to={`/login?r=${CLIENT_URL}/new/community`}>
-              <PrimaryCTA>开始</PrimaryCTA>
+              <PrimaryCTA>创建属于自己的社区</PrimaryCTA>
             </Link>
           )}
         </SecondaryContent>
