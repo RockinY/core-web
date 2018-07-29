@@ -38,7 +38,7 @@ type State = {
 
 class CollectionSwitcher extends React.Component<Props, State> {
   state = {
-    selectedView: 'top-communities-by-members',
+    selectedView: 'recommended',
   };
 
   handleSegmentClick(selectedView) {
