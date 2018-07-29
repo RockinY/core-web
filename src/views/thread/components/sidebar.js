@@ -195,7 +195,7 @@ class Sidebar extends React.Component<Props> {
           threadsToRender.length > 0 && (
             <ErrorBoundary fallbackComponent={null}>
               <SidebarSection data-cy="thread-sidebar-more-threads">
-                <SidebarSectionTitle>More conversations</SidebarSectionTitle>
+                <SidebarSectionTitle>更多对话</SidebarSectionTitle>
                 <SidebarRelatedThreadList>
                   {threadsToRender.map(t => {
                     return (
