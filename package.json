@@ -7,7 +7,7 @@
     "build": "react-app-rewired build",
     "production:prepare": "touch .env && env > .env && yarn run build",
     "production:start": "serve -s build",
-    "deploy": "yarn run production:prepare && yarn run production:start",
+    "deploy": "yarn run production:prepare && yarn run deploy:ssr",
     "fix": "standard --fix",
     "reset": "rm -rf ./node_modules && yarn",
     "build:ssr": "backpack build",
