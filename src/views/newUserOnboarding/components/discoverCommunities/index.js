@@ -25,9 +25,7 @@ class TopCommunitiesPure extends React.Component<Props> {
       joinedCommunity,
     } = this.props;
     // don't display communities where the user is blocked
-    const filteredCommunities = communities.filter(
-      community => community && !community.communityPermissions.isBlocked
-    );
+    const filteredCommunities = []
 
     if (!error && filteredCommunities.length > 0) {
       return (
