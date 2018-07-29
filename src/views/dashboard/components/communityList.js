@@ -155,7 +155,7 @@ class CommunityList extends React.Component<Props> {
                 activeCommunity={activeCommunity}
                 communities={communities}
                 handleOnClick={this.handleOnClick}
-                curatedContentType={'top-communities-by-members'}
+                curatedContentType={'recommended'}
               />
             </ErrorBoundary>
           )}
