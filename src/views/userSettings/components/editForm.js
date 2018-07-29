@@ -336,7 +336,7 @@ class UserWithData extends React.Component<Props, State> {
       <SectionCard>
         <Location>
           <Icon glyph="view-back" size={16} />
-          <Link to={`/users/${username}`}>Return to Profile</Link>
+          <Link to={`/users/${username}`}>返回个人主页</Link>
         </Location>
         <SectionTitle>个人主页设置</SectionTitle>
         <Form onSubmit={this.save}>
@@ -376,7 +376,7 @@ class UserWithData extends React.Component<Props, State> {
             onChange={this.changeName}
             placeholder={"What's your name?"}
           >
-            Name
+            姓名
           </Input>
 
           {nameError && <Error>名字最多不能超过50个字符.</Error>}
@@ -384,7 +384,7 @@ class UserWithData extends React.Component<Props, State> {
           {/* $FlowFixMe */}
           <UsernameSearch
             type={'text'}
-            label="Username"
+            label="用户名"
             size={'small'}
             username={username}
             onValidationResult={this.handleUsernameValidation}

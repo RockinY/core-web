@@ -22,8 +22,7 @@ export const Nav = styled.nav`
       -webkit-app-region: drag;
       user-select: none;
     `}
-  background: ${({ theme }) =>
-    process.env.NODE_ENV === 'production' ? theme.bg.reverse : theme.warn.alt};
+  background: ${({ theme }) => theme.bg.reverse};
 
   @media (max-width: 768px) {
     padding: 0;
@@ -94,10 +93,7 @@ export const Tab = styled(Link)`
   align-items: center;
   justify-items: center;
   padding: ${isDesktopApp() ? '0 12px' : '0 16px'};
-  color: ${({ theme }) =>
-    process.env.NODE_ENV === 'production'
-      ? theme.text.placeholder
-      : theme.warn.border};
+  color: ${({ theme }) => theme.text.placeholder};
   transition: ${Transition.hover.off};
 
   > div {
@@ -126,20 +122,14 @@ export const Tab = styled(Link)`
     &:hover,
     &:focus {
       box-shadow: inset 0 ${isDesktopApp() ? '-2px' : '-4px'} 0
-        ${({ theme }) =>
-          process.env.NODE_ENV === 'production'
-            ? theme.text.placeholder
-            : theme.warn.border};
+        ${({ theme }) => theme.text.placeholder};
       color: ${props => props.theme.text.reverse};
       transition: ${Transition.hover.on};
     }
   }
 
   @media (max-width: 768px) {
-    color: ${props =>
-      process.env.NODE_ENV === 'production'
-        ? props.theme.text.placeholder
-        : props.theme.warn.border};
+    color: ${props => props.theme.text.placeholder};
     padding: 0;
     grid-template-columns: 'auto';
     grid-template-rows: 'auto auto';

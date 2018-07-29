@@ -40,7 +40,7 @@ class DownloadDataForm extends React.Component<Props> {
         <SectionCardFooter>
           <Link
             href={
-              process.env.NODE_ENV === 'production'
+              process.env.NODE_ENV !== 'development'
                 ? '/api/user.json'
                 : 'http://localhost:3000/api/user.json'
             }

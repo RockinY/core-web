@@ -30,7 +30,6 @@ import './browserShim';
 import Routes from '../../routes'
 import { initStore } from '../../store'
 
-const IS_PROD = process.env.NODE_ENV === 'production';
 const FORCE_DEV = process.env.FORCE_DEV;
 
 const apiUrl = process.env.REACT_APP_API_URI || 'http://localhost:3000/api'
