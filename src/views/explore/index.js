@@ -30,7 +30,7 @@ class Explore extends React.Component<Props> {
       <AppViewWrapper>
         <Wrapper data-cy="explore-page" id="main">
           <Head title={title} description={description} />
-          <Titlebar title={'Explore'} noComposer />
+          <Titlebar title={'探索'} noComposer />
           <ErrorBoundary fallbackComponent={null}>
             <CommunitySearchWrapper
               currentUser={this.props.currentUser}

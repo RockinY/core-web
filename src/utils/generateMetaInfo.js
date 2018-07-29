@@ -75,8 +75,8 @@ function generateMetaInfo (input: Input): Meta {
   switch (type) {
     case 'explore': {
       return {
-        title: 'Explore · Xlab',
-        description: 'Explore some of the communities on xlab'
+        title: '探索 · 云社',
+        description: '在云社发现更多有趣的社区'
       }
     }
     case 'thread': {
