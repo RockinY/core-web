@@ -2,18 +2,18 @@
 export const theme = {
   bg: {
     default: '#FFFFFF',
-    reverse: '#16171A',
+    reverse: '#172B4D',
     wash: '#F5F8FC',
     border: '#DFE7EF',
     hairline: '#A3AFBF',
     inactive: '#DFE7EF'
   },
   brand: {
-    default: '#4400CC',
-    alt: '#7B16FF',
+    default: '#36B37E',
+    alt: '#57D9A3',
     wash: '#E8E5FF',
     border: '#DDD9FF',
-    dark: '#2A0080'
+    dark: '#006644'
   },
   generic: {
     default: '#E6ECF7',

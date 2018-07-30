@@ -62,22 +62,6 @@ class Nav extends React.Component<Props, State> {
             <Logo />
             <Icon glyph={'logo'} />
           </LogoTab>
-          <FeaturesTab
-            dark={this.props.dark}
-            selected={this.props.location === 'features'}
-            to="/features"
-            data-cy="navbar-splash-features"
-          >
-            特征
-          </FeaturesTab>
-          <SupportTab
-            dark={this.props.dark}
-            selected={this.props.location === 'support'}
-            to="/support"
-            data-cy="navbar-splash-support"
-          >
-            支持
-          </SupportTab>
           <AuthTab dark={this.props.dark}>
             {this.props.currentUser ? (
               <Link to={'/'} data-cy="navbar-splash-profile">
