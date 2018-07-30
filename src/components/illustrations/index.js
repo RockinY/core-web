@@ -43,7 +43,7 @@ export const ClusterFour = styled(Cluster)`
 export const Constellations = styled.div`
   position: absolute;
   background-color: transparent;
-  background: url('/img/constellations.svg') center top no-repeat;
+  /* background: url('/img/constellations.svg') center top no-repeat; */
   background-size: cover 100%;
   z-index: ${zIndex.background};
   height: calc(100% + 4px);

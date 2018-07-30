@@ -25,7 +25,7 @@ export const Primary = styled(Default)`
   background-color: ${({ theme }) => theme.space.dark};
   background-image: ${({ theme }) =>
     `radial-gradient(farthest-corner at 50% 100%,
-      ${hexa(theme.brand.alt, 0.75)}, ${theme.space.dark}
+      ${hexa(theme.brand.alt, 0.75)}, ${theme.bg.reverse}
     )`};
   color: ${({ theme }) => theme.text.reverse};
 `
