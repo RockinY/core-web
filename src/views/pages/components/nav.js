@@ -12,8 +12,6 @@ import {
   Tabs,
   LogoTab,
   MenuTab,
-  SupportTab,
-  FeaturesTab,
   AuthTab,
   LogoLink,
   AuthLink,

@@ -39,6 +39,7 @@ type Props = Object;
 export const Overview = (props: Props) => {
   const ThisContent = styled(Content)`
     max-width: 100vw;
+    min-height: 560px;
     margin-top: 92px;
     margin-bottom: 80px;
 
@@ -142,31 +143,6 @@ export const Overview = (props: Props) => {
   return (
     <Section background="constellations" goop={0}>
       <ThisContent>
-        <ThisText>
-          <ThisTagline>更有趣的互联网论坛.</ThisTagline>
-          <ThisCopy>论坛真的很久没有更新了</ThisCopy>
-          <ThisCopy>
-            但是，这并不表示我们不需要一个更加「 现代 」更加「 美观 」的新一代论坛，这就是我们想给大家带来的体验，永久免费～还不快来体验
-          </ThisCopy>
-          <ThisCopy>
-            来这里发现你的兴趣所在～
-          </ThisCopy>
-          <Actions>
-            <Link
-              to="/login"
-            >
-              <ThisPrimaryCTA icon="welcome">我要加入</ThisPrimaryCTA>
-            </Link>
-            <Link
-              to="/new/community"
-            >
-              <ThisSecondaryCTA icon="plus-fill">
-                创建你的社区
-              </ThisSecondaryCTA>
-            </Link>
-          </Actions>
-        </ThisText>
-        <Img src={'/img/diagram.svg'} alt="" />
       </ThisContent>
     </Section>
   );
