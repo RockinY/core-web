@@ -128,9 +128,9 @@ class UserView extends React.Component<Props, State> {
 
       const nullHeading = `${
         user.firstName ? user.firstName : user.name
-      } hasn’t ${
-        selectedView === 'creator' ? 'created' : 'joined'
-      } any conversations yet.`;
+      }还没有${
+        selectedView === 'creator' ? '创建' : '加入'
+      }任何话题.`;
 
       const Feed =
         selectedView === 'creator'
