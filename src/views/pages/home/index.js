@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
-import { storeItem, getItemFromStorage } from '../../../utils/localStorage';
-import { Overview, Centralized, CommunitySearch, Chat } from '../view';
+import { Overview } from '../view';
 import PageFooter from '../components/footer';
 import { Wrapper } from '../style';
 
@@ -10,28 +9,10 @@ type State = {
 };
 
 class Splash extends React.Component<{}, State> {
-  constructor() {
-    super();
-
-    const preferredSigninMethod = getItemFromStorage('preferred_signin_method');
-
-    this.state = {
-      preferredSigninMethod,
-    };
-  }
-
-  trackSignin = (type: string, method: string) => {
-    storeItem('preferred_signin_method', method);
-  };
-
   render() {
     return (
       <Wrapper data-cy="home-page">
         <Overview />
-        <Centralized />
-        <CommunitySearch />
-        <Chat />
-        {/* <Yours /> */}
         <PageFooter />
       </Wrapper>
     );

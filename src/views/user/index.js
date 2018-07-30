@@ -146,7 +146,7 @@ class UserView extends React.Component<Props, State> {
           />
           <Titlebar
             title={user.name}
-            subtitle={'Posts By'}
+            subtitle={'发布自'}
             provideBack={true}
             backRoute={'/'}
             noComposer
