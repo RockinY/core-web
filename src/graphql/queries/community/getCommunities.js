@@ -63,6 +63,30 @@ export const getCommunitiesBySlug = graphql(
   getCommunitiesBySlugOptions
 )
 
+const getTopCommunitiesQuery = gql`
+  query getTopCommunities($amount: Int) {
+    topCommunities(amount: $amount) {
+      ...communityInfo
+      ...communityMetaData
+    }
+  }
+  ${communityInfoFragment}
+  ${communityMetaDataFragment}
+`
+
+const getTopCommunitiesOptions = {
+  options: ({ amount }) => ({
+    variables: {
+      amount
+    }
+  })
+}
+
+export const getTopCommunities = graphql(
+  getTopCommunitiesQuery,
+  getTopCommunitiesOptions
+)
+
 const getCommunitiesByCuratedContentTypeQuery = gql`
   query getCommunitiesCollection($curatedContentType: String) {
     communities(curatedContentType: $curatedContentType) {

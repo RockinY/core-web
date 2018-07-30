@@ -3,8 +3,8 @@ import truncate from './truncate'
 import striptags from 'striptags'
 
 const DEFAULT_META = {
-  title: 'Xlab',
-  description: 'Where community lives'
+  title: '云社',
+  description: '一个有趣的论坛'
 }
 
 const HIDE_FROM_CRAWLERS = '<meta name="robots" content="noindex, nofollow">'
