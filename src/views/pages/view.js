@@ -39,7 +39,6 @@ type Props = Object;
 export const Overview = (props: Props) => {
   const ThisContent = styled(Content)`
     max-width: 100vw;
-    min-height: 560px;
     margin-top: 92px;
     margin-bottom: 80px;
 
@@ -143,6 +142,34 @@ export const Overview = (props: Props) => {
   return (
     <Section background="constellations" goop={0}>
       <ThisContent>
+        <ThisText>
+          <ThisTagline>The community platform for the future.</ThisTagline>
+          <ThisCopy>The internet was built for communities.</ThisCopy>
+          <ThisCopy>
+            But, as the web has changed and improved radically, community
+            software has hardly improved since the heyday of messageboards and
+            IRC.
+          </ThisCopy>
+          <ThisCopy>
+            Spectrum makes it easy to grow safe, successful online communities
+            that are built to last.
+          </ThisCopy>
+          <Actions>
+            <Link
+              to="/login"
+            >
+              <ThisPrimaryCTA icon="welcome">Join Spectrum</ThisPrimaryCTA>
+            </Link>
+            <Link
+              to="/new/community"
+            >
+              <ThisSecondaryCTA icon="plus-fill">
+                Create your community
+              </ThisSecondaryCTA>
+            </Link>
+          </Actions>
+        </ThisText>
+        <Img src={'/img/diagram.svg'} alt="" />
       </ThisContent>
     </Section>
   );
