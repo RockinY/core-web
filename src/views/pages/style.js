@@ -291,7 +291,7 @@ export const License = styled.div`
   display: flex;
   justify-content: center;
   padding: 8px;
-  font-size: 8px;
+  font-size: 10px;
   color: ${({ theme }) => theme.text.placeholder};
 
   a:hover {
