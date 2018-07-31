@@ -33,6 +33,7 @@ import {
   SecondaryCTA,
   Content,
 } from './style';
+import Search from '../explore/components/search'
 
 type Props = Object;
 
@@ -145,15 +146,13 @@ export const Overview = (props: Props) => {
       <ThisContent>
         <ThisText>
           <ThisTagline>相信我，这才是你一直想要的社区.</ThisTagline>
-          <ThisCopy>The internet was built for communities.</ThisCopy>
+          <ThisCopy></ThisCopy>
+          <Search />
           <ThisCopy>
-            But, as the web has changed and improved radically, community
-            software has hardly improved since the heyday of messageboards and
-            IRC.
+            社区论坛一直伴随着互联网的发展直接，然鹅...现在的论坛使用起来竟然还是十多年前的感觉。
           </ThisCopy>
           <ThisCopy>
-            Spectrum makes it easy to grow safe, successful online communities
-            that are built to last.
+            云社的出现正是基于这样的现状，它拥有其他社区所不具备实时互动性，针对社区版主，云社赋予了其最大的管理权限，同时如果你愿意的话，还可以创建一个完全的私密社区.
           </ThisCopy>
           <Actions>
             <Link
