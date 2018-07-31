@@ -5,7 +5,8 @@ import {
   FooterGrid,
   Masthead,
   Support,
-  Safety
+  Safety,
+  License
 } from '../style';
 import Link from '../../../components/link';
 import { Logo } from '../../../components/logo';
@@ -18,7 +19,6 @@ export default () => {
           <Link to="/">
             <Logo />
           </Link>
-          <span>苏ICP备18033476号-1</span>
         </Masthead>
         <Support>
           <span>服务</span>
@@ -31,6 +31,9 @@ export default () => {
           <Link to="/terms">服务条款</Link>
         </Safety>
       </FooterGrid>
+      <License>
+        <span>©2018 南京酷猿信息技术有限公司 · <a href="http://www.miitbeian.gov.cn" target="_blank">苏ICP备18033476号-1</a></span>
+      </License>
     </Footer>
   );
 };

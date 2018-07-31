@@ -279,12 +279,25 @@ export const Footer = styled.div`
   display: flex;
   justify-content: stretch;
   align-content: stretch;
+  flex-direction: column;
   flex: auto;
   position: relative;
-  padding: 32px;
+  padding: 32px 32px 0 32px;
   background-color: ${({ theme }) => theme.bg.reverse};
   color: ${({ theme }) => theme.text.reverse};
 `;
+
+export const License = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  font-size: 8px;
+  color: ${({ theme }) => theme.text.placeholder};
+
+  a:hover {
+    text-decoration: underline;
+  }
+`
 
 export const FooterGrid = styled.div`
   flex: auto;
