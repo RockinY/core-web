@@ -32,7 +32,7 @@ export default () => {
         </Safety>
       </FooterGrid>
       <License>
-        <span>©2018 南京酷猿信息技术有限公司 · <a href="http://www.miitbeian.gov.cn" target="_blank">苏ICP备18033476号-1</a></span>
+        <span>©2018 南京酷猿信息技术有限公司 · <a href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener noreferrer">苏ICP备18033476号-1</a></span>
       </License>
     </Footer>
   );
