@@ -59,12 +59,12 @@ injectGlobal`
 
   ::-moz-selection {
     /* Code for Firefox */
-    background: #3818e5;
+    background: #006644;
     color: #ffffff;
   }
 
   ::selection {
-    background: #3818e5;
+    background: #006644;
     color: #ffffff;
   }
 
@@ -178,7 +178,7 @@ injectGlobal`
 
   .markdown blockquote {
     color: #828c99;
-    border-left: 4px solid #7b16ff;
+    border-left: 4px solid #36B37E;
     padding: 4px 8px 4px 16px;
     font-size: 24px;
     font-weight: 300;
@@ -192,7 +192,7 @@ injectGlobal`
   }
 
   .markdown a {
-    color: #3818e5;
+    color: #57D9A3;
     font-weight: 500;
     text-decoration: none;
     font-size: inherit;
