@@ -104,7 +104,7 @@ class Nav extends React.Component<Props, State> {
                 to="/support"
                 selected={this.props.location === 'support'}
               >
-                <Icon glyph="like" />支持
+                <Icon glyph="like" />帮助
               </DropdownLink>
               <DropdownLink
                 to="/explore"

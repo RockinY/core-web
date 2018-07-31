@@ -22,7 +22,7 @@ export default () => {
         </Masthead>
         <Support>
           <span>服务</span>
-          <Link to={`/spectrum`}>加入社区</Link>
+          <Link to={`/yunshe`}>加入社区</Link>
           <a href="mailto:lby89757@hotmai.com">发送邮件</a>
         </Support>
         <Safety>

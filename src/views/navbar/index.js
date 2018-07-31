@@ -279,7 +279,7 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-support"
           >
             <Icon glyph="like" />
-            <Label>支持</Label>
+            <Label>帮助</Label>
           </SupportTab>
         </Nav>
       );
