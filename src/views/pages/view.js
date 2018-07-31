@@ -116,6 +116,7 @@ export const Overview = (props: Props) => {
 
   const ThisPrimaryCTA = styled(PrimaryCTA)`
     font-size: 16px;
+    border: 2px solid ${props => props.theme.bg.default};
   `;
 
   const Img = styled.img`
@@ -143,7 +144,7 @@ export const Overview = (props: Props) => {
     <Section background="constellations" goop={0}>
       <ThisContent>
         <ThisText>
-          <ThisTagline>The community platform for the future.</ThisTagline>
+          <ThisTagline>相信我，这才是你一直想要的社区.</ThisTagline>
           <ThisCopy>The internet was built for communities.</ThisCopy>
           <ThisCopy>
             But, as the web has changed and improved radically, community
@@ -158,18 +159,16 @@ export const Overview = (props: Props) => {
             <Link
               to="/login"
             >
-              <ThisPrimaryCTA icon="welcome">Join Spectrum</ThisPrimaryCTA>
+              <ThisPrimaryCTA icon="welcome">体验一下云社</ThisPrimaryCTA>
             </Link>
             <Link
               to="/new/community"
             >
-              <ThisSecondaryCTA icon="plus-fill">
-                Create your community
-              </ThisSecondaryCTA>
+              <ThisSecondaryCTA icon="plus-fill">创建自己的社区</ThisSecondaryCTA>
             </Link>
           </Actions>
         </ThisText>
-        <Img src={'/img/diagram.svg'} alt="" />
+        <Img src={'https://xlabsample.oss-cn-hangzhou.aliyuncs.com/mix/waterfall.png?x-oss-process=style/big'} alt="" />
       </ThisContent>
     </Section>
   );
