@@ -87,7 +87,7 @@ class ThreadSlider extends Component {
                         to={this.props.location.pathname}
                         onClick={this.closeSlider}
                       >
-                        <CloseLabel>Close</CloseLabel>
+                        <CloseLabel>关闭</CloseLabel>
                         <CloseButton>
                           <Icon glyph="view-forward" size={24} />
                         </CloseButton>

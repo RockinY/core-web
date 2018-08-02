@@ -82,7 +82,7 @@ class ChangeChannelModal extends React.Component<Props, State> {
         /* TODO(@mxstbr): Fix this */
         ariaHideApp={false}
         isOpen={isOpen}
-        contentLabel={'Reputation'}
+        contentLabel={'贡献值'}
         onRequestClose={this.closeModal}
         shouldCloseOnOverlayClick={true}
         style={modalStyles}

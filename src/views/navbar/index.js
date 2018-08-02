@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import queryString from 'query-string';
 import Icon from '../../components/icons';
+import { LogoCloud } from '../../components/logo'
 import { ProfileDropdown } from './components/profileDropdown';
 import MessagesTab from './components/messagesTab';
 import NotificationsTab from './components/notificationsTab';
@@ -19,7 +20,7 @@ import {
   Tab,
   Label,
   Navatar,
-  SkipLink,
+  SkipLink
 } from './style';
 import { isViewingMarketingPage } from '../../utils/isViewingMarketingPage';
 import { isDesktopApp } from '../../utils/isDesktopApp';
@@ -155,7 +156,7 @@ class Navbar extends React.Component<Props, State> {
             onClick={() => this.trackNavigationClick('logo')}
             data-cy="navbar-logo"
           >
-            <Icon glyph="logo" size={28} />
+            <LogoCloud size={28} />
           </Logo>
 
           <SkipLink
@@ -245,7 +246,7 @@ class Navbar extends React.Component<Props, State> {
             hidden={this.state.isSkipLinkFocused}
             data-cy="navbar-logo"
           >
-            <Icon glyph="logo" size={28} />
+            <LogoCloud size={28} />
           </Logo>
 
           <SkipLink

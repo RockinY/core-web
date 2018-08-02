@@ -24,7 +24,7 @@ const FirstRequest = ({ onSubscribe, onDismiss, loading }) => (
         glyph="view-close"
         color="text.placeholder"
         hoverColor="warn.alt"
-        tipText="Dismiss"
+        tipText="取消"
         tipLocation="top-left"
         onClick={onDismiss}
       />

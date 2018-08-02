@@ -174,7 +174,7 @@ const UserWithData = ({
             {user.username && `@${user.username}`}
             {user.isPro && <Badge type="pro" />}
             <Reputation
-              tipText={'Total rep across all communities'}
+              tipText={'所有社区的贡献值'}
               size={'large'}
               reputation={
                 user.contextPermissions
@@ -235,7 +235,7 @@ const UserWithData = ({
                       @{user.username}
                       {user.isPro && <Badge type="pro" />}
                       <Reputation
-                        tipText={'Total rep across all communities'}
+                        tipText={'所有社区的贡献值'}
                         size={'large'}
                         reputation={
                           user.contextPermissions
@@ -252,7 +252,7 @@ const UserWithData = ({
               <Link to={`../users/${currentUser.username}/settings`}>
                 <ProfileHeaderAction
                   glyph="settings"
-                  tipText={'Edit profile'}
+                  tipText={'编辑'}
                   tipLocation={'top-left'}
                 />
               </Link>
@@ -262,7 +262,7 @@ const UserWithData = ({
                 color="text.alt"
                 hoverColor="brand.alt"
                 onClick={() => initMessage()}
-                tipText={`Message ${user.name}`}
+                tipText={`给${user.name}发消息`}
                 tipLocation={'top-left'}
               />
             )}

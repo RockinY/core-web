@@ -117,7 +117,7 @@ class CommunityList extends React.Component<Props> {
                   <Reputation
                     ignoreClick
                     size={'mini'}
-                    tipText={`Rep in ${c.name}`}
+                    tipText={`${c.name}的贡献`}
                     reputation={c.communityPermissions.reputation}
                   />
                 </CommunityListMeta>

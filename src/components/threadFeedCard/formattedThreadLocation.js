@@ -50,7 +50,7 @@ const FormattedThreadLocation = props => {
                   <Lock>
                     <Icon
                       glyph="private"
-                      tipText={'Private channel'}
+                      tipText={'私人频道'}
                       tipLocation="top-right"
                       size={12}
                     />

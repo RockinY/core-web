@@ -68,7 +68,7 @@ class RepExplainerModal extends React.Component<Props> {
                 />
                 <RepWrapper>
                   <Reputation
-                    tipText={'你得所有威望'}
+                    tipText={'你的所有威望'}
                     reputation={currentUser.totalReputation}
                     ignoreClick
                   />

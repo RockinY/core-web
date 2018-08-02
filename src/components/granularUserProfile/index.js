@@ -104,7 +104,7 @@ class GranularUserProfile extends React.Component<Props> {
         {description && <Description>{description}</Description>}
         {messageButton && (
           <MessageIcon
-            tipText={name ? `Message ${name}` : 'Message'}
+            tipText={name ? `给${name}发消息` : '消息'}
             tipLocation={'top-left'}
             onClick={this.initMessage}
           >

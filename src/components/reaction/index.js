@@ -90,7 +90,7 @@ class Reaction extends React.Component<Props, State> {
           glyph="like-fill"
           size={16}
           color={'text.reverse'}
-          tipText={me ? 'Likes' : hasReacted ? 'Unlike' : 'Like'}
+          tipText={me ? '点赞' : hasReacted ? '取消点赞' : '点赞'}
           tipLocation={me ? 'top-left' : 'top-right'}
         />
         <span>{count}</span>

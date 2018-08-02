@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import compose from 'recompose/compose'
 import { withRouter } from 'react-router'
 import Link from '../../components/link'
-import Icon from '../../components/icons'
+import { LogoCloud } from '../../components/logo'
 import ThreadSearch from '../dashboard/components/threadSearch'
 import { IconButton } from '../../components/buttons'
 import { TitleBar, Text, Subtitle, Title } from './style'
@@ -72,7 +72,7 @@ class Titlebar extends Component {
         ) : hasSearch ? (
           <ThreadSearch filter={filter} darkContext />
         ) : (
-          <Icon glyph='logo' />
+          <LogoCloud />
         )}
         {noComposer ? null : messageComposer ? (
           <Link to={`/messages/new`}>

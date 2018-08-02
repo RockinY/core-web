@@ -250,7 +250,7 @@ class ChannelWithData extends React.Component<Props, State> {
                 <TertiaryActionContainer>
                   <IconButton
                     glyph="delete"
-                    tipText={`Delete ${name}`}
+                    tipText={`删除 ${name}`}
                     tipLocation="top-right"
                     color="text.placeholder"
                     hoverColor="warn.alt"

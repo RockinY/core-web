@@ -149,7 +149,7 @@ const Action = (props: ActionProps) => {
     default:
       return (
         <ActionWrapper>
-          <Icon glyph="share" tipText={'Share'} tipLocation={'top'} size={24} />
+          <Icon glyph="share" tipText={'分享'} tipLocation={'top'} size={24} />
         </ActionWrapper>
       );
     case 'reply':

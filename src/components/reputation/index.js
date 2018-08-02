@@ -26,7 +26,7 @@ class Reputation extends React.Component<Props> {
 
   render() {
     const {
-      tipText = 'Reputation',
+      tipText = '贡献值',
       tipLocation = 'top-right',
       reputation,
     } = this.props;
