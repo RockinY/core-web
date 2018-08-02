@@ -18,41 +18,38 @@ class Support extends React.Component<{}> {
   render() {
     return (
       <Wrapper data-cy="support-page">
-        <Section goop={2} color={'bg.reverse'}>
+        <Section color={'bg.reverse'}>
           <FourUp>
             <div style={{ gridArea: 'copy' }}>
-              <Heading>What can we help you with?</Heading>
+              <Heading>有什么能够帮助到您的吗？</Heading>
 
               <Copy>
-                Questions, feedback, or just need to get in touch? You’ve come
-                to the right place.
+                对我们的产品有建议反馈，或者纯粹只是想联系我们，下面有你想要的信息
               </Copy>
             </div>
             <PlanSection style={{ gridArea: 'one' }}>
               <div>
-                <PlanPrice>Found an issue?</PlanPrice>
+                <PlanPrice>产品使用问题?</PlanPrice>
                 <PlanDescription>
-                  Join our Hugs n Bugs channel to check if there’s already a fix
-                  or report a new issue.
+                  加入云社的八阿哥频道，在那里汇报你所遇到的问题，一般很快我们就会给你答复的.
                 </PlanDescription>
               </div>
 
-              <Link to={'/spectrum/hugs-n-bugs'}>
+              <Link to={'/yunshe/bugs'}>
                 <Button
                   gradientTheme={'warn'}
                   icon={'bug'}
                 >
-                  Join Hugs-n-Bugs
+                  发现新问题
                 </Button>
               </Link>
             </PlanSection>
 
             <PlanSection style={{ gridArea: 'two' }}>
               <div>
-                <PlanPrice>Looking for a feature?</PlanPrice>
+                <PlanPrice>有新的想法?</PlanPrice>
                 <PlanDescription>
-                  Jump into our Feature Requests channel and tell us what you
-                  want or add onto existing requests from others.
+                  产品还不够理想，或者有新的需求想提出来，加入我们的新需求频道吧，我们非常欢迎你的任何意见。
                 </PlanDescription>
               </div>
 
@@ -61,49 +58,34 @@ class Support extends React.Component<{}> {
                   gradientTheme={'space'}
                   icon={'idea'}
                 >
-                  Request a feature
+                  提出新需求
                 </Button>
               </Link>
             </PlanSection>
 
             <PlanSection style={{ gridArea: 'three' }}>
               <div>
-                <PlanPrice>What we’ve been working on</PlanPrice>
+                <PlanPrice>了解我们的最新动态</PlanPrice>
                 <PlanDescription>
-                  We post news, release notes, and threads from all over
-                  Spectrum on Twitter, or directly in our community.
+                  我们会不定期的在官方频道下面发布最新开发动态及技术分享，加入我们的社区来支持我们吧
                 </PlanDescription>
               </div>
-
-              <a
-                href={'https://twitter.com/withspectrum'}
-                target={'_blank'}
-                rel={'noopener noreferrer'}
-              >
-                <Button
-                  gradientTheme={'social.twitter'}
-                  icon={'twitter'}
-                >
-                  Follow us on Twitter
-                </Button>
-              </a>
 
               <Link to={'/spectrum'}>
                 <Button
                   gradientTheme={'brand'}
-                  icon={'logo'}
+                  icon={'support'}
                 >
-                  Join our community
+                  加入云社区
                 </Button>
               </Link>
             </PlanSection>
 
             <PlanSection style={{ gridArea: 'four' }}>
               <div>
-                <PlanPrice>Anything else?</PlanPrice>
+                <PlanPrice>邮件通知我们</PlanPrice>
                 <PlanDescription>
-                  Concerned about something on Spectrum? Shoot us an email and
-                  we’ll take care of it right away.
+                  还有其他问题想更直接的接触我们的话，您可以给我们直接发送邮件
                 </PlanDescription>
               </div>
 
@@ -112,7 +94,7 @@ class Support extends React.Component<{}> {
                   gradientTheme={'special'}
                   icon={'email'}
                 >
-                  Email us
+                  给我发邮件
                 </Button>
               </a>
             </PlanSection>
