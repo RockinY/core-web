@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Button, IconButton } from '../../../components/buttons';
 import Link from '../../../components/link';
 import Icon from '../../../components/icons';
-import { Logo } from '../../../components/logo';
+import { Logo, GreenLogo, LogoCloud } from '../../../components/logo';
 import Avatar from '../../../components/avatar';
 import Head from '../../../components/head';
 import {
@@ -58,7 +58,7 @@ class Nav extends React.Component<Props, State> {
             data-cy="navbar-splash-about"
           >
             <Logo />
-            <Icon glyph={'logo'} />
+            <LogoCloud />
           </LogoTab>
           <AuthTab dark={this.props.dark}>
             {this.props.currentUser ? (
@@ -92,14 +92,8 @@ class Nav extends React.Component<Props, State> {
             />
             <MenuContainer open={this.state.menuIsOpen}>
               <LogoLink to="/">
-                <Logo />
+                <GreenLogo />
               </LogoLink>
-              <DropdownLink
-                to="/features"
-                selected={this.props.location === 'features'}
-              >
-                <Icon glyph="checkmark" />特征
-              </DropdownLink>
               <DropdownLink
                 to="/support"
                 selected={this.props.location === 'support'}

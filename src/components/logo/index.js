@@ -37,6 +37,14 @@ export const Logo = () => {
   )
 }
 
+export const GreenLogo = () => {
+  return (
+    <LogoWrapper>
+      <Img src="/img/logo-green.png" />
+    </LogoWrapper>
+  )
+}
+
 export const LogoCloud = () => {
   return (
     <LogoCloudStyle src="/img/badge.png" />

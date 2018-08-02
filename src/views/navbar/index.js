@@ -262,7 +262,7 @@ class Navbar extends React.Component<Props, State> {
             {...this.getTabProps(match.url === '/' && match.isExact)}
             to="/"
           >
-            <Icon glyph="logo" />
+            <Icon glyph="home" />
             <Label>关于</Label>
           </HomeTab>
           <ExploreTab
