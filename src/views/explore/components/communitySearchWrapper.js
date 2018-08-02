@@ -80,16 +80,14 @@ const CommunitySearchWrapper = props => {
   return (
     <ViewSegment background="constellations">
       <ThisContent>
-        <ThisTagline>寻找一个感兴趣的社区!</ThisTagline>
+        <ThisTagline>正在寻找一个感兴趣的社区？</ThisTagline>
         <ThisCopy>
-          试着搜索一下「 潮流 」或者「 酷猿信息技术 」
         </ThisCopy>
         {props.children}
         <SecondaryContent>
-          <SecondaryTagline>...或者创建你自己的社区</SecondaryTagline>
-          <SecondaryCopy>
-            在云社上面创建社区是永远免费的！
-          </SecondaryCopy>
+          <SecondaryTagline>或者创建属于你自己的社区</SecondaryTagline>
+          <ThisCopy>
+        </ThisCopy>
           {props.currentUser ? (
             <Link
               to={'/new/community'}
