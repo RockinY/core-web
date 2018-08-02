@@ -58,7 +58,9 @@ class Nav extends React.Component<Props, State> {
             data-cy="navbar-splash-about"
           >
             <Logo />
-            <LogoCloud />
+            <div>
+              <LogoCloud />
+            </div>
           </LogoTab>
           <AuthTab dark={this.props.dark}>
             {this.props.currentUser ? (
