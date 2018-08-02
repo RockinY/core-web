@@ -86,8 +86,7 @@ const CommunitySearchWrapper = props => {
         {props.children}
         <SecondaryContent>
           <SecondaryTagline>或者创建属于你自己的社区</SecondaryTagline>
-          <ThisCopy>
-        </ThisCopy>
+          <SecondaryCopy></SecondaryCopy>
           {props.currentUser ? (
             <Link
               to={'/new/community'}

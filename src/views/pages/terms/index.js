@@ -5,12 +5,10 @@ import { Wrapper } from '../style';
 import {
   ContentContainer,
   Heading,
-  Copy,
   Section,
   SectionTitle,
   SectionDescription,
 } from '../pricing/style';
-import { PrivacyTermsList } from './style';
 
 class Terms extends React.Component<{}> {
   
