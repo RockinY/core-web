@@ -35,7 +35,7 @@ class Support extends React.Component<{}> {
                 </PlanDescription>
               </div>
 
-              <Link to={'/yunshe/bugs'}>
+              <Link to={'/yunshe'}>
                 <Button
                   gradientTheme={'warn'}
                   icon={'bug'}
@@ -53,7 +53,7 @@ class Support extends React.Component<{}> {
                 </PlanDescription>
               </div>
 
-              <Link to={'/spectrum/feature-requests'}>
+              <Link to={'/yunshe'}>
                 <Button
                   gradientTheme={'space'}
                   icon={'idea'}
@@ -71,7 +71,7 @@ class Support extends React.Component<{}> {
                 </PlanDescription>
               </div>
 
-              <Link to={'/spectrum'}>
+              <Link to={'/yunshe'}>
                 <Button
                   gradientTheme={'brand'}
                   icon={'support'}
@@ -89,7 +89,7 @@ class Support extends React.Component<{}> {
                 </PlanDescription>
               </div>
 
-              <a href={'mailto:hi@spectrum.chat'}>
+              <a href={'mailto:hi@corran.cn'}>
                 <Button
                   gradientTheme={'special'}
                   icon={'email'}
