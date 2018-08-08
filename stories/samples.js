@@ -1,1 +1,0 @@
-export const AVATAR_URL = 'https://xlabstorage.oss-cn-hangzhou.aliyuncs.com/samples/avatar.jpeg'

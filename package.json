@@ -13,12 +13,9 @@
     "build:ssr": "backpack build",
     "dev:ssr": "DEBUG=service-ssr* backpack",
     "start:ssr": "node ./build-ssr/main",
-    "deploy:ssr": "yarn run build:ssr && yarn run start:ssr",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "deploy:ssr": "yarn run build:ssr && yarn run start:ssr"
   },
   "dependencies": {
-    "@storybook/addon-centered": "^3.4.8",
-    "@storybook/react": "^3.4.8",
     "abab": "^1.0.4",
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
@@ -98,10 +95,6 @@
     "ws": "^5.2.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.8",
-    "@storybook/addon-graphql": "^3.4.8",
-    "@storybook/addon-notes": "^3.4.8",
-    "@storybook/addon-options": "^3.4.8",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
