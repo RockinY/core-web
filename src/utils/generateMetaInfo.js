@@ -55,7 +55,7 @@ function setDefault (input: MaybeMeta): Meta {
   const title = input.title || DEFAULT_META.title
   var description = input.description || DEFAULT_META.description
   if (input.title && !input.description) {
-    description = 'on xlab, ' + DEFAULT_META.description.toLowerCase()
+    description = DEFAULT_META.description
   }
   return {
     title: title,

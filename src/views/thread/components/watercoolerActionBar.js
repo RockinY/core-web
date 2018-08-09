@@ -68,6 +68,7 @@ class WatercoolerActionBar extends React.Component<Props, State> {
   render() {
     const { thread, currentUser } = this.props;
     const { notificationStateLoading } = this.state;
+    const clientUrl = process.env.REACT_APP_CLIENT_URL || 'https://yunshe.fun'
 
     return (
       <WatercoolerActionBarContainer>
@@ -114,7 +115,7 @@ class WatercoolerActionBar extends React.Component<Props, State> {
 
               <Clipboard
                 style={{ background: 'none' }}
-                data-clipboard-text={`https://spectrum.chat/thread/${
+                data-clipboard-text={`${clientUrl}/thread/${
                   thread.id
                 }`}
                 onSuccess={() =>

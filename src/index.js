@@ -17,7 +17,7 @@ import { initStore } from './store'
 import { getItemFromStorage } from './utils/localStorage'
 import Routes from './routes'
 
-const storedData: ?Object = getItemFromStorage('xlab');
+const storedData: ?Object = getItemFromStorage('yunshe');
 const params = queryString.parse(history.location.search);
 
 // Always redirect ?thread=asdfxyz to the thread view

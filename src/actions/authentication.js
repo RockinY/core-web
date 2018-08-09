@@ -3,7 +3,7 @@ import { clearApolloStore } from '../graphql'
 
 export const logout = dispatch => {
   // clear localStorage
-  removeItemFromStorage('spectrum');
+  removeItemFromStorage('yunshe');
 
   // clear Apollo's query cache
   clearApolloStore();
@@ -36,7 +36,7 @@ export const saveUserDataToLocalStorage = (user: Object) => async dispatch => {
 
   // save this object to localstorage. This will be used in the future to hydrate
   // the store when users visit the homepage
-  storeItem('spectrum', obj);
+  storeItem('yunshe', obj);
 
   // dispatch to the store and save the user
   dispatch({

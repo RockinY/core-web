@@ -343,9 +343,7 @@ class ActionBar extends React.Component<Props, State> {
               <ShareButtons>
                 <Clipboard
                   style={{ background: 'none' }}
-                  data-clipboard-text={`https://spectrum.chat/thread/${
-                    thread.id
-                  }`}
+                  data-clipboard-text={copyLink}
                   onSuccess={() =>
                     this.props.dispatch(
                       addToastWithTimeout('success', '已复制到剪切板')

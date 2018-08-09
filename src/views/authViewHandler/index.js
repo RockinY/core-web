@@ -42,7 +42,7 @@ class AuthViewHandler extends React.Component<Props, State> {
 
     if (!user) {
       // clear localstorage first
-      return removeItemFromStorage('spectrum');
+      return removeItemFromStorage('yunshe');
     }
 
     if (prev.data.user !== user && user !== null) {

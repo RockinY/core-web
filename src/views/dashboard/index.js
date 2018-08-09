@@ -265,7 +265,7 @@ class Dashboard extends React.Component<Props, State> {
       );
 
     // if the user reached here it most likely that they have a user in localstorage but we weren't able to auth them - either because of a bad session token or otherwise. In this case we should clear local storage and load the home page to get them to log in again
-    removeItemFromStorage('spectrum');
+    removeItemFromStorage('yunshe');
     window.location.href = '/';
     return null;
   }

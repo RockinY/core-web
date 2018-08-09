@@ -39,7 +39,7 @@ class ViewError extends React.Component<Props> {
     } = this.props
 
     if (clearStorage) {
-      removeItemFromStorage('xlab')
+      removeItemFromStorage('yunshe')
     }
 
     const moji = emoji || '😌'
