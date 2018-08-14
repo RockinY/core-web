@@ -7,6 +7,7 @@ import { SERVER_URL, CLIENT_URL } from '../../constants'
 import { Container } from './style'
 import { GithubSigninButton } from './github'
 import { AlipaySigninButton } from './alipay'
+import { WechatSigninButton } from './wechat'
 
 type Props = {
   redirectPath: ?string,
@@ -49,6 +50,12 @@ class LoginButtonSet extends React.Component<Props> {
 
     return (
       <Container>
+        <WechatSigninButton
+          onClickHandler={this.saveLoginMethod}
+          href={`${SERVER_URL}/auth/wechat${postAuthRedirectPath}`}
+          preferred={nonePreferred ? true : preferredSigninMethod === 'wechat'}
+          showAfter={preferredSigninMethod === 'wechat'}
+        />
         <AlipaySigninButton
           onClickHandler={this.saveLoginMethod}
           href={`${SERVER_URL}/auth/alipay${postAuthRedirectPath}`}

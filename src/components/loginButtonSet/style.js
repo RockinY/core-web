@@ -89,3 +89,14 @@ export const AlipayButton = styled(SigninButton)`
     color: ${props => props.theme.text.default};
   }
 `
+
+export const WechatButton = styled(SigninButton)`
+  background: ${props =>
+    props.preferred ? props.theme.social.wechat.default : 'none'};
+  color: ${props =>
+    props.preferred ? '#fff' : props.theme.social.wechat.default};
+
+  &:after {
+    color: ${props => props.theme.text.default};
+  }
+`

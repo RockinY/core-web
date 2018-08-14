@@ -40,6 +40,10 @@ export const theme = {
       default: '#1296db',
       alt: '#108EE9'
     },
+    wechat: {
+      default: '#1AAD19',
+      alt: '#2BA245'
+    },
     ph: {
       default: '#D85537',
       alt: '#D85537'
