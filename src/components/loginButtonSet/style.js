@@ -67,44 +67,23 @@ export const Label = styled.span`
   color: currentColor;
 `
 
-export const TwitterButton = styled(SigninButton)`
-  background: ${props =>
-    props.preferred ? props.theme.social.twitter.default : 'none'};
-  color: ${props =>
-    props.preferred ? '#fff' : props.theme.social.twitter.default};
-
-  &:after {
-    color: ${props => props.theme.social.twitter.default};
-  }
-`
-
-export const FacebookButton = styled(SigninButton)`
-  background: ${props =>
-    props.preferred ? props.theme.social.facebook.default : 'none'};
-  color: ${props =>
-    props.preferred ? '#fff' : props.theme.social.facebook.default};
-
-  &:after {
-    color: ${props => props.theme.social.facebook.default};
-  }
-`
-
-export const GoogleButton = styled(SigninButton)`
-  background: ${props =>
-    props.preferred ? props.theme.social.google.default : 'none'};
-  color: ${props =>
-    props.preferred ? '#fff' : props.theme.social.google.default};
-
-  &:after {
-    color: ${props => props.theme.social.google.default};
-  }
-`
 
 export const GithubButton = styled(SigninButton)`
   background: ${props =>
     props.preferred ? props.theme.social.github.default : 'none'};
   color: ${props =>
     props.preferred ? '#fff' : props.theme.social.github.default};
+
+  &:after {
+    color: ${props => props.theme.text.default};
+  }
+`
+
+export const AlipayButton = styled(SigninButton)`
+  background: ${props =>
+    props.preferred ? props.theme.social.alipay.default : 'none'};
+  color: ${props =>
+    props.preferred ? '#fff' : props.theme.social.alipay.default};
 
   &:after {
     color: ${props => props.theme.text.default};

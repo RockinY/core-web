@@ -36,6 +36,10 @@ export const theme = {
       default: '#16171A',
       alt: '#828C99'
     },
+    alipay: {
+      default: '#1296db',
+      alt: '#108EE9'
+    },
     ph: {
       default: '#D85537',
       alt: '#D85537'

@@ -6,6 +6,7 @@ import queryString from 'query-string'
 import { SERVER_URL, CLIENT_URL } from '../../constants'
 import { Container } from './style'
 import { GithubSigninButton } from './github'
+import { AlipaySigninButton } from './alipay'
 
 type Props = {
   redirectPath: ?string,
@@ -48,6 +49,12 @@ class LoginButtonSet extends React.Component<Props> {
 
     return (
       <Container>
+        <AlipaySigninButton
+          onClickHandler={this.saveLoginMethod}
+          href={`${SERVER_URL}/auth/alipay${postAuthRedirectPath}`}
+          preferred={nonePreferred ? true : preferredSigninMethod === 'alipay'}
+          showAfter={preferredSigninMethod === 'alipay'}
+        />
         <GithubSigninButton
           onClickHandler={this.saveLoginMethod}
           href={`${SERVER_URL}/auth/github${postAuthRedirectPath}`}
