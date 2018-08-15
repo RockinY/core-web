@@ -7,10 +7,12 @@ import RepExplainerModal from './RepExplainerModal';
 import ChangeChannelModal from './ChangeChannelModal';
 import RestoreChannelModal from './RestoreChannelModal';
 import ChatInputLoginModal from './ChatInputLoginModal';
+import UpgradeModal from './UpgradeModal';
 
 const MODAL_COMPONENTS = {
   CREATE_CHANNEL_MODAL: CreateChannelModal,
   DELETE_DOUBLE_CHECK_MODAL: DeleteDoubleCheckModal,
+  UPGRADE_MODAL: UpgradeModal,
   REP_EXPLAINER_MODAL: RepExplainerModal,
   CHANGE_CHANNEL: ChangeChannelModal,
   RESTORE_CHANNEL_MODAL: RestoreChannelModal,

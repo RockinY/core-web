@@ -3,7 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from '../../../components/link';
 import Dropdown from '../../../components/dropdown';
+import { openModal } from '../../../actions/modals';
 import { SERVER_URL } from '../../../constants';
+import Badge from '../../../components/badges';
+import { connect } from 'react-redux';
 
 const UserProfileDropdown = styled(Dropdown)`
   width: 200px;
@@ -41,7 +44,7 @@ const UserProfileDropdownListItem = styled.li`
 
 type ProfileProps = Object;
 
-export const ProfileDropdown = (props: ProfileProps) => {
+const ProfileDropdown = (props: ProfileProps) => {
   return (
     <UserProfileDropdown className={'dropdown'}>
       <UserProfileDropdownList>
@@ -51,6 +54,15 @@ export const ProfileDropdown = (props: ProfileProps) => {
               设置
             </UserProfileDropdownListItem>
           </Link>
+        )}
+        {props.user && !props.user.isPro && (
+          <UserProfileDropdownListItem
+            onClick={() =>
+              props.dispatch(openModal('UPGRADE_MODAL', { user: props.user }))
+            }
+          >
+            升级为<Badge type="pro" />
+          </UserProfileDropdownListItem>
         )}
         <Link to={`/about`}>
           <UserProfileDropdownListItem>
@@ -68,3 +80,5 @@ export const ProfileDropdown = (props: ProfileProps) => {
     </UserProfileDropdown>
   );
 };
+
+export default connect()(ProfileDropdown);
