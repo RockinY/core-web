@@ -6,26 +6,27 @@ import ModalContainer from '../modalContainer'
 import { closeModal } from '../../../actions/modals'
 import { connect } from 'react-redux'
 import { Button, OutlineButton } from '../../buttons'
+import getPaymentPlans from '../../../graphql/queries/user/getCurrentUserPaymentPlans'
 import type { Dispatch } from 'redux'
 import {
   modalStyles,
-  Section,
-  SectionActions,
-  SectionError,
-  Subheading,
-  Padding,
+  PaymentPlanSelector,
+  PaymentPlanOption,
+  PaymentPlanOptionLabel,
+  PaymentPlanOptionBody
 } from './style';
 
 type Props = {
   dispatch: Dispatch<Object>,
   isOpen: boolean,
   user: Object,
+  data: Object
 };
 
 type State = {
   isOpen: boolean,
   upgradeError: string,
-  isLoading: boolean,
+  selectedPlanIndex: number
 };
 
 class UpgradeModal extends React.Component<Props, State> {
@@ -36,7 +37,7 @@ class UpgradeModal extends React.Component<Props, State> {
     this.state = {
       isOpen: props.isOpen,
       upgradeError: '',
-      isLoading: false,
+      selectedPlanIndex: 0
     };
   }
 
@@ -44,9 +45,16 @@ class UpgradeModal extends React.Component<Props, State> {
     this.props.dispatch(closeModal());
   };
 
+  handlePlanSwitch = (index) => {
+    this.setState({selectedPlanIndex: index})
+  }
+
   render() {
-    const { user } = this.props;
-    const { upgradeError, isOpen, isLoading } = this.state;
+    console.log(this.props);
+    
+    const { user, data } = this.props;
+    const { upgradeError, isOpen, selectedPlanIndex } = this.state;
+    const paymentPlans = data.user ? data.user.paymentPlans : []
 
     return (
       <Modal
@@ -65,7 +73,24 @@ class UpgradeModal extends React.Component<Props, State> {
           title={!user.isPro ? '升级为会员' : '续费会员'}
           closeModal={this.closeModal}
         >
-          hello
+          <PaymentPlanSelector>
+            {paymentPlans.map((plan, index) => (
+              <PaymentPlanOption
+                selected={index === selectedPlanIndex}
+                onClick={() => this.handlePlanSwitch(index)}
+              >
+                <PaymentPlanOptionLabel>
+                  <input
+                    type='radio'
+                    checked={index === selectedPlanIndex}
+                  />
+                </PaymentPlanOptionLabel>
+                <PaymentPlanOptionBody>
+                  {`${plan.duration}天会员期限充值 - ${plan.price / 100}元`}
+                </PaymentPlanOptionBody>
+              </PaymentPlanOption>
+            ))}
+          </PaymentPlanSelector>
         </ModalContainer>
       </Modal>
     )
@@ -73,8 +98,11 @@ class UpgradeModal extends React.Component<Props, State> {
 }
 
 const mapStateToProps = state => ({
-  isOpen: state.modals.isOpen,
+  isOpen: state.modals.isOpen
 });
 
 // $FlowFixMe
-export default compose(connect(mapStateToProps))(UpgradeModal);
+export default compose(
+  connect(mapStateToProps),
+  getPaymentPlans
+)(UpgradeModal);

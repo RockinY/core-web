@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { Gradient, Transition, zIndex } from '../../globals';
 import { isMobile } from '../../../utils/utils';
 
@@ -184,3 +184,61 @@ export const Profile = styled.div`
     line-height: 1.5;
   }
 `;
+
+export const PaymentPlanSelector = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 2px solid ${p => p.theme.bg.border};
+  overflow: hidden;
+`
+
+export const PaymentPlanOption = styled.div`
+  display: flex;
+  flex: 1 0 50%;
+  padding: 16px;
+  background: ${p => p.selected ? p.theme.bg.default : p.theme.bg.wash};
+  cursor: pointer;
+
+  input {
+    width: 18px;
+    height: 18px;
+    border-radius: 24px;
+    border: 2px solid ${p => p.theme.bg.border};
+  }
+
+  input:checked {
+    box-shadow: inset 0 0 0 4px ${p => p.theme.brand.alt};
+    border: 2px solid ${p => p.theme.brand.alt};
+  }
+
+  ${props =>
+    props.selected
+      ? css`
+          p {
+            color: ${props.theme.text.default};
+          }
+        `  
+      : css`
+          p {
+            color: ${props.theme.text.alt};
+          }
+        `
+  }
+`
+
+export const PaymentPlanOptionLabel = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+`
+
+export const PaymentPlanOptionBody = styled.div`
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+`
