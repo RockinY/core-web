@@ -5,7 +5,7 @@ import Modal from 'react-modal'
 import ModalContainer from '../modalContainer'
 import { closeModal } from '../../../actions/modals'
 import { connect } from 'react-redux'
-import { Button, OutlineButton } from '../../buttons'
+import { Button } from '../../buttons'
 import getPaymentPlans from '../../../graphql/queries/user/getCurrentUserPaymentPlans'
 import type { Dispatch } from 'redux'
 import {
@@ -26,7 +26,6 @@ type Props = {
 
 type State = {
   isOpen: boolean,
-  upgradeError: string,
   selectedPlanIndex: number
 };
 
@@ -37,7 +36,6 @@ class UpgradeModal extends React.Component<Props, State> {
 
     this.state = {
       isOpen: props.isOpen,
-      upgradeError: '',
       selectedPlanIndex: 0
     };
   }
@@ -54,7 +52,7 @@ class UpgradeModal extends React.Component<Props, State> {
     console.log(this.props);
     
     const { user, data } = this.props;
-    const { upgradeError, isOpen, selectedPlanIndex } = this.state;
+    const { isOpen, selectedPlanIndex } = this.state;
     const paymentPlans = data.user ? data.user.paymentPlans : []
 
     return (
