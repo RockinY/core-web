@@ -242,3 +242,7 @@ export const PaymentPlanOptionBody = styled.div`
   font-weight: 400;
   line-height: 1.4;
 `
+
+export const PaymentButtonsContainer = styled.div`
+  padding: 16px;
+`

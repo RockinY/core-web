@@ -13,7 +13,8 @@ import {
   PaymentPlanSelector,
   PaymentPlanOption,
   PaymentPlanOptionLabel,
-  PaymentPlanOptionBody
+  PaymentPlanOptionBody,
+  PaymentButtonsContainer
 } from './style';
 
 type Props = {
@@ -91,6 +92,15 @@ class UpgradeModal extends React.Component<Props, State> {
               </PaymentPlanOption>
             ))}
           </PaymentPlanSelector>
+
+          <PaymentButtonsContainer>
+            <Button
+              icon={'alipay'}
+              gradientTheme={'social.alipay'}
+            >
+              支付宝支付
+            </Button>
+          </PaymentButtonsContainer>
         </ModalContainer>
       </Modal>
     )
