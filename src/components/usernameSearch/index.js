@@ -30,7 +30,7 @@ class UsernameSearch extends React.Component<Props, State> {
     const { username } = props;
 
     this.state = {
-      username: slugg(username),
+      username: username,
       isSearching: false,
     };
 
@@ -47,8 +47,8 @@ class UsernameSearch extends React.Component<Props, State> {
     this.search(username);
   }
 
-  handleChange = e => {
-    const username = slugg(e.target.value.trim());
+  handleChange = e => {    
+    const username = e.target.value.trim();
 
     this.setState({
       isSearching: false,
