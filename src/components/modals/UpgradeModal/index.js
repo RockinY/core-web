@@ -7,6 +7,7 @@ import { closeModal } from '../../../actions/modals'
 import { connect } from 'react-redux'
 import { Button } from '../../buttons'
 import getPaymentPlans from '../../../graphql/queries/user/getCurrentUserPaymentPlans'
+import payWithAlipay from '../../../graphql/mutations/payment/payWithAlipay'
 import type { Dispatch } from 'redux'
 import {
   modalStyles,
@@ -19,6 +20,7 @@ import {
 
 type Props = {
   dispatch: Dispatch<Object>,
+  payWithAlipay: Function,
   isOpen: boolean,
   user: Object,
   data: Object
@@ -28,6 +30,8 @@ type State = {
   isOpen: boolean,
   selectedPlanIndex: number
 };
+
+type paymentMethod = 'alipay'
 
 class UpgradeModal extends React.Component<Props, State> {
   // $FlowFixMe
@@ -46,6 +50,21 @@ class UpgradeModal extends React.Component<Props, State> {
 
   handlePlanSwitch = (index) => {
     this.setState({selectedPlanIndex: index})
+  }
+
+  handlePaymentClick = (method: paymentMethod) => {
+    const { data, payWithAlipay } = this.props;
+    const { selectedPlanIndex } = this.state;
+    const paymentPlans = data.user ? data.user.paymentPlans : []
+    const selectedPlan = paymentPlans[selectedPlanIndex]
+
+    if (selectedPlan && method === 'alipay') {
+      payWithAlipay(selectedPlan.id)
+        .then((data) => {
+          const payemntUrl = data.data.payWithAlipay
+          window.location.href = payemntUrl
+        })
+    }
   }
 
   render() {
@@ -95,6 +114,7 @@ class UpgradeModal extends React.Component<Props, State> {
             <Button
               icon={'alipay'}
               gradientTheme={'social.alipay'}
+              onClick={() => this.handlePaymentClick('alipay')}
             >
               支付宝支付
             </Button>
@@ -112,5 +132,6 @@ const mapStateToProps = state => ({
 // $FlowFixMe
 export default compose(
   connect(mapStateToProps),
-  getPaymentPlans
+  getPaymentPlans,
+  payWithAlipay
 )(UpgradeModal);
