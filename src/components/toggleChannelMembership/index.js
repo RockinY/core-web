@@ -60,21 +60,15 @@ class ToggleChannelMembership extends React.Component<Props, State> {
           toggleChannelSubscription.channelPermissions.isPending;
         let str = '';
         if (isPending) {
-          str = `Requested to join ${toggleChannelSubscription.name} in ${
-            toggleChannelSubscription.community.name
-          }`;
+          str = `请求加入社区${toggleChannelSubscription.community.name}的${toggleChannelSubscription.name}频道`;
         }
 
         if (!isPending && isMember) {
-          str = `Joined ${toggleChannelSubscription.name} in ${
-            toggleChannelSubscription.community.name
-          }!`;
+          str = `加入了社区${toggleChannelSubscription.community.name}的${toggleChannelSubscription.name}频道`;
         }
 
         if (!isPending && !isMember) {
-          str = `Left the channel ${toggleChannelSubscription.name} in ${
-            toggleChannelSubscription.community.name
-          }.`;
+          str = `离开了社区${toggleChannelSubscription.community.name}的${toggleChannelSubscription.name}频道`;
         }
 
         const type = isMember || isPending ? 'success' : 'neutral';

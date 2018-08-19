@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import slugg from 'slugg';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import { withApollo } from 'react-apollo';
