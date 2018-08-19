@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import compose from 'recompose/compose';
 import { withRouter } from 'react-router';
-import slugg from 'slugg';
+import { slugify } from 'transliteration'
 import { CHANNEL_SLUG_BLACKLIST } from '../../../utils/slugBlacklists';
 import { withApollo } from 'react-apollo';
 import { closeModal } from '../../../actions/modals';
@@ -15,6 +15,7 @@ import type { GetChannelType } from '../../../graphql/queries/channel/getChannel
 import type { GetCommunityType } from '../../../graphql/queries/community/getCommunity';
 import createChannelMutation from '../../../graphql/mutations/channel/createChannel';
 import type { Dispatch } from 'redux';
+import Badge from '../../badges'
 
 import ModalContainer from '../modalContainer';
 import { TextButton, Button } from '../../buttons';
@@ -80,7 +81,7 @@ class CreateChannelModal extends React.Component<Props, State> {
   changeName = e => {
     const name = e.target.value;
     let lowercaseName = name.toLowerCase().trim();
-    let slug = slugg(lowercaseName);
+    let slug = slugify(lowercaseName);
 
     if (name.length >= 20) {
       this.setState({
@@ -103,7 +104,7 @@ class CreateChannelModal extends React.Component<Props, State> {
   changeSlug = e => {
     let slug = e.target.value;
     let lowercaseSlug = slug.toLowerCase().trim();
-    slug = slugg(lowercaseSlug);
+    slug = slugify(lowercaseSlug);
 
     if (slug.length >= 24) {
       return this.setState({
@@ -335,7 +336,7 @@ class CreateChannelModal extends React.Component<Props, State> {
               onChange={this.changePrivate}
               dataCy="create-channel-modal-toggle-private-checkbox"
             >
-              私人频道 · 会员专属
+              私人频道 <Badge type='pro' />
             </Checkbox>
 
             <UpsellDescription>
