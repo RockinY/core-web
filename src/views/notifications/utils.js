@@ -105,29 +105,29 @@ export const parseActors = (actors, currentUser, removeCurrentUser) => {
 export const parseEvent = event => {
   switch (event) {
     case 'MESSAGE_CREATED': {
-      return <span>replied</span>;
+      return <span>回复了</span>;
     }
     case 'THREAD_REACTION_CREATED':
     case 'REACTION_CREATED': {
-      return <span>liked</span>;
+      return <span>点赞了</span>;
     }
     case 'CHANNEL_CREATED': {
-      return <span>created a channel</span>;
+      return <span>创建了新的频道</span>;
     }
     case 'USER_JOINED_COMMUNITY': {
-      return <span>joined</span>;
+      return <span>加入了</span>;
     }
     case 'PRIVATE_CHANNEL_REQUEST_SENT': {
-      return <span>requested to join</span>;
+      return <span>请求加入频道</span>;
     }
     case 'PRIVATE_CHANNEL_REQUEST_APPROVED': {
-      return <span>approved your request to join</span>;
+      return <span>同意了你的频道加入请求</span>;
     }
     case 'PRIVATE_COMMUNITY_REQUEST_SENT': {
-      return <span>requested to join</span>;
+      return <span>请求加入社区</span>;
     }
     case 'PRIVATE_COMMUNITY_REQUEST_APPROVED': {
-      return <span>approved your request to join</span>;
+      return <span>同意了你的社区加入请求</span>;
     }
     default: {
       console.error('Not a valid event type');
@@ -144,7 +144,7 @@ export const parseNotificationDate = date => {
 
 const threadToString = (context, currentUser) => {
   const isAuthor = context.payload.creatorId === currentUser.id;
-  const str = isAuthor ? 'in your thread' : 'in';
+  const str = isAuthor ? '你的话题' : '';
   return (
     <span>
       {' '}
@@ -162,7 +162,7 @@ const threadToString = (context, currentUser) => {
 };
 
 const threadReactionToString = context => {
-  const str = 'your thread';
+  const str = '你的话题';
   return (
     <span>
       {' '}
@@ -180,7 +180,7 @@ const threadReactionToString = context => {
 };
 
 const messageToString = () => {
-  return <span> your reply</span>;
+  return <span>你的回复</span>;
 };
 
 const communityToString = context => {
