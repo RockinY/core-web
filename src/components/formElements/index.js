@@ -89,7 +89,7 @@ export const CoverInput = (props: InputProps) => {
           hoverColor={'bg.default'}
           icon={'photo'}
         >
-          添加个人背景图片
+          添加背景图片
         </FauxOutlineButton>
       </InputOverlay>
       <CoverImage
