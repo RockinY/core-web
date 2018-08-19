@@ -15,6 +15,7 @@ import type { CreateCommunityType } from '../../../../graphql/mutations/communit
 import { getCommunityBySlugQuery } from '../../../../graphql/queries/community/getCommunity'
 import { Button } from '../../../../components/buttons'
 import Badge from '../../../../components/badges'
+import { openModal } from '../../../../actions/modals';
 import {
   Input,
   UnderlineInput,
@@ -332,9 +333,14 @@ class CreateCommunityForm extends React.Component<Props, State> {
   }
 
   setPrivate = () => {
-    return this.setState({
-      isPrivate: true
-    })
+    const { currentUser, dispatch } = this.props
+    if (currentUser.isPro) {
+      return this.setState({
+        isPrivate: true
+      })
+    } else {
+      return dispatch(openModal('UPGRADE_MODAL', { user: currentUser }))
+    }
   }
 
   setPublic = () => {
@@ -568,9 +574,13 @@ class CreateCommunityForm extends React.Component<Props, State> {
   }
 }
 
+const mapStateToProps = state => ({
+  currentUser: state.users.currentUser
+})
+
 export default compose(
   createCommunityMutation,
   withRouter,
-  connect(),
+  connect(mapStateToProps),
   withApollo
 )(CreateCommunityForm)
