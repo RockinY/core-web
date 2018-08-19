@@ -319,7 +319,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
         const { createCommunity } = data
         this.props.communityCreated(createCommunity)
         this.props.dispatch(
-          addToastWithTimeout('success', '社区已创建')
+          addToastWithTimeout('success', '社区创建成功')
         )
       })
       .catch(err => {
@@ -401,7 +401,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
             autoFocus={!window.innerWidth < 768}
             dataCy='community-name-input'
           >
-            我该怎么称呼你的社区呢?
+            我该怎么称呼你的社区?
           </Input>
 
           {nameError && (
@@ -510,7 +510,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
               </PrivacyOptionLabel>
               <PrivacyOptionText>
                 社区的会员必须经过管理员审核才能浏览社区内容，或者进行社区内对话.
-                私有社区无法被直接搜索或被推荐给其他人员. 对话的内容也无法被直接搜索.
+                私有社区无法被直接搜索或被分享给非社区成员. 对话的内容也无法被直接搜索.
               </PrivacyOptionText>
             </PrivacyOption>
           </PrivacySelector>
