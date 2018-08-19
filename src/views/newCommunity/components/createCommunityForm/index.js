@@ -14,6 +14,7 @@ import createCommunityMutation from '../../../../graphql/mutations/community/cre
 import type { CreateCommunityType } from '../../../../graphql/mutations/community/createCommunity'
 import { getCommunityBySlugQuery } from '../../../../graphql/queries/community/getCommunity'
 import { Button } from '../../../../components/buttons'
+import Badge from '../../../../components/badges'
 import {
   Input,
   UnderlineInput,
@@ -507,6 +508,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
                   data-cy='community-private-selector-input'
                 />
                 私有
+                <Badge type='pro' />
               </PrivacyOptionLabel>
               <PrivacyOptionText>
                 社区的会员必须经过管理员审核才能浏览社区内容，或者进行社区内对话.
