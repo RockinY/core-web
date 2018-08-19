@@ -130,15 +130,15 @@ class NewCommunity extends React.Component<Props, State> {
     const { activeStep, community } = this.state
     switch (activeStep) {
       case 1: {
-        return '在云社创建社区是免费的，首先请告诉我们你想创建一个什么样的社区.'
+        return '在云社创建公有社区永远免费，首先请告诉我们你想创建一个什么样的社区.'
       }
       case 2: {
         return `开始为${
           community ? `社区 - ${community.name}` : '你的社区'
-        }邀请一些朋友，或者如果你还没有准备好你也可以之后再选择邀请.`
+        }邀请一些朋友.`
       }
       case 3: {
-        return "已经基本完成了，去你的社区里面发布一些内容吧!"
+        return "社区创建完成了，去你的社区里面发布一些内容吧!"
       }
       default: {
         return '创建一个社区'

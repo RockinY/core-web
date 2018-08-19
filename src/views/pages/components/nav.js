@@ -106,7 +106,7 @@ class Nav extends React.Component<Props, State> {
                 to="/explore"
                 selected={this.props.location === 'explore'}
               >
-                <Icon glyph="explore" />探索
+                <Icon glyph="explore" />发现
               </DropdownLink>
               {this.props.currentUser ? (
                 <AuthLink to={'/'}>

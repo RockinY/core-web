@@ -188,7 +188,7 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-explore"
           >
             <Icon glyph="explore" size={isDesktopApp() ? 28 : 32} />
-            <Label>探索</Label>
+            <Label>发现</Label>
           </ExploreTab>
 
           <NotificationsTab
@@ -272,7 +272,7 @@ class Navbar extends React.Component<Props, State> {
             data-cy="navbar-explore"
           >
             <Icon glyph="explore" />
-            <Label>探索</Label>
+            <Label>发现</Label>
           </ExploreTab>
           <SupportTab
             {...this.getTabProps(history.location.pathname === '/support')}
