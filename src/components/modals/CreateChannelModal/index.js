@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import compose from 'recompose/compose';
 import { withRouter } from 'react-router';
-import { slugify } from 'transliteration'
 import { CHANNEL_SLUG_BLACKLIST } from '../../../utils/slugBlacklists';
 import { withApollo } from 'react-apollo';
 import { closeModal } from '../../../actions/modals';
@@ -83,7 +82,7 @@ class CreateChannelModal extends React.Component<Props, State> {
   changeName = e => {
     const name = e.target.value;
     let lowercaseName = name.toLowerCase().trim();
-    let slug = slugify(lowercaseName);
+    let slug = lowercaseName;
 
     if (name.length >= 20) {
       this.setState({
@@ -106,7 +105,7 @@ class CreateChannelModal extends React.Component<Props, State> {
   changeSlug = e => {
     let slug = e.target.value;
     let lowercaseSlug = slug.toLowerCase().trim();
-    slug = slugify(lowercaseSlug);
+    slug = lowercaseSlug;
 
     if (slug.length >= 24) {
       return this.setState({

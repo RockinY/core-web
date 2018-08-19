@@ -3,7 +3,6 @@ import Link from '../../../../components/link'
 import compose from 'recompose/compose'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { slugify } from 'transliteration'
 import { withApollo } from 'react-apollo'
 import { Notice } from '../../../../components/listItems/style'
 import Avatar from '../../../../components/avatar'
@@ -107,7 +106,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
     let lowercaseName = name
       .toLowerCase()
       .trim()
-    let slug = slugify(lowercaseName)
+    let slug = lowercaseName
 
     if (name.length >= 20) {
       this.setState({
@@ -139,7 +138,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
     let lowercaseSlug = slug
       .toLowerCase()
       .trim()
-    slug = slugify(lowercaseSlug)
+    slug = lowercaseSlug
 
     if (slug.length >= 24) {
       this.setState({
