@@ -55,7 +55,7 @@ class ToggleCommunityMembership extends React.Component<Props, State> {
       .removeCommunityMember({ input })
       .then(({ data }: RemoveCommunityMemberType) => {
         this.props.dispatch(
-          addToastWithTimeout('neutral', `Left ${community.name}.`)
+          addToastWithTimeout('neutral', `离开了${community.name}.`)
         );
 
         this.props.onLeave && this.props.onLeave(data.removeCommunityMember);
