@@ -16,6 +16,7 @@ import type { GetCommunityType } from '../../../graphql/queries/community/getCom
 import createChannelMutation from '../../../graphql/mutations/channel/createChannel';
 import type { Dispatch } from 'redux';
 import Badge from '../../badges'
+import { openModal } from '../../../actions/modals';
 
 import ModalContainer from '../modalContainer';
 import { TextButton, Button } from '../../buttons';
@@ -49,6 +50,7 @@ type Props = {
   isOpen: boolean,
   community: GetCommunityType,
   createChannel: Function,
+  currentUser: Object
 };
 
 class CreateChannelModal extends React.Component<Props, State> {
@@ -189,10 +191,14 @@ class CreateChannelModal extends React.Component<Props, State> {
 
   changePrivate = e => {
     const value = e.target.checked;
-
-    this.setState({
-      isPrivate: value,
-    });
+    const { currentUser, dispatch } = this.props
+    if (currentUser.isPro) {
+      return this.setState({
+        isPrivate: value
+      })
+    } else {
+      return dispatch(openModal('UPGRADE_MODAL', { user: currentUser }))
+    }
   };
 
   create = e => {
