@@ -185,7 +185,7 @@ class NotificationsPure extends React.Component<Props, State> {
       return (
         <FlexCol style={{ flex: '1 1 auto', maxHeight: 'calc(100% - 48px)' }}>
           <Head title={title} description={description} />
-          <Titlebar title={'Notifications'} provideBack={false} noComposer />
+          <Titlebar title={'通知'} provideBack={false} noComposer />
           <AppViewWrapper>
             <Column type={'primary'}>
               {!isDesktopApp() &&
