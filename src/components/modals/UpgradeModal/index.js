@@ -85,17 +85,13 @@ class UpgradeModal extends React.Component<Props, State> {
       <Modal
         ariaHideApp={false}
         isOpen={isOpen}
-        contentLabel={
-          !user.isPro ? '升级为会员' : '续费会员'
-        }
         onRequestClose={this.closeModal}
         shouldCloseOnOverlayClick={true}
         style={modalStyles}
         closeTimeoutMS={330}
       >
         <ModalContainer
-          noHeader={!user.isPro}
-          title={!user.isPro ? '升级为会员' : '续费会员'}
+          noHeader={true}
           closeModal={this.closeModal}
         >
           <PaymentPlanSelector>
