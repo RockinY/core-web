@@ -165,7 +165,7 @@ class NewCommunity extends React.Component<Props, State> {
     const { activeStep, community, hasInvitedPeople } = this.state
     const title = this.title()
     const description = this.description()
-    if (user && user.email) {
+    if (user) {
       return (
         <AppViewWrapper>
           <Titlebar
@@ -218,32 +218,6 @@ class NewCommunity extends React.Component<Props, State> {
                   </Actions>
                 )}
 
-            </Container>
-          </Column>
-        </AppViewWrapper>
-      )
-    }
-
-    if (user && !user.email) {
-      return (
-        <AppViewWrapper>
-          <Titlebar
-            title={'创建一个社区'}
-            provideBack
-            backRoute={'/'}
-            noComposer
-          />
-
-          <Column type='primary'>
-            <Container bg={null}>
-              <Title>
-                {user.pendingEmail ? '确认' : '添加'}你的邮件地址
-              </Title>
-              <Description>
-                创建社区之前, 请{' '}
-                {user.pendingEmail ? '确认' : '添加'}你的邮件地址. 该邮件地址
-                将会被用于发送更新提示和社区设置变更.
-              </Description>
             </Container>
           </Column>
         </AppViewWrapper>
