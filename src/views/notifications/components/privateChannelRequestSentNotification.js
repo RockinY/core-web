@@ -107,7 +107,7 @@ class MiniPrivateChannelRequestSentWithMutation extends React.Component<Props> {
         <Content>
           <TextContent pointer={false}>
             {' '}
-            {actors.asString} {event} the{' '}
+            {actors.asString} {event} {' '}
             <Link to={`/${context.slug}/${channel.slug}`}>{channel.name}</Link>{' '}
             频道在{context.asString} {date}{' '}
           </TextContent>

@@ -169,7 +169,7 @@ class MiniPrivateCommunityRequestSentWithMutation extends React.Component<
           <Content style={{ padding: '0 16px 16px' }}>
             <TextContent pointer={false}>
               {' '}
-              {actors.asString} {event} the{' '}
+              {actors.asString} {event} {' '}
               <Link to={`/${notification.context.payload.slug}`}>
                 {notification.context.payload.name}
               </Link>{' '}
