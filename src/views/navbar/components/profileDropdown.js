@@ -34,6 +34,7 @@ const UserProfileDropdownListItem = styled.li`
   border-bottom: 2px solid ${props => props.theme.bg.border};
   background: ${props => props.theme.bg.default};
   justify-content: center;
+  align-items: center;
 
   &:hover {
     cursor: pointer;
