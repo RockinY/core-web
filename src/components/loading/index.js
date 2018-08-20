@@ -27,6 +27,7 @@ import {
   ShimmerSelect,
   Cover,
   LoadingOverlay,
+  LoadingOverlayModal,
   LoadingNavbarContainer,
   LogoLink,
   Logo,
@@ -98,6 +99,18 @@ export const LoadingGallery = (): React$Element<any> => (
   <LoadingOverlay>
     <Spinner size={'32'} color={'bg.default'} />
   </LoadingOverlay>
+);
+
+export const LoadingModal = ({
+  size,
+  color,
+}: {
+  size?: Number,
+  color?: String,
+}): React$Element<any> => (
+  <LoadingOverlayModal>
+    <Spinner size={size} color={color} />
+  </LoadingOverlayModal>
 );
 
 export const LoadingNavbar = (): React$Element<any> => (

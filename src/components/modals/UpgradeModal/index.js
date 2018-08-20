@@ -9,6 +9,7 @@ import { Button } from '../../buttons'
 import getPaymentPlans from '../../../graphql/queries/user/getCurrentUserPaymentPlans'
 import payWithAlipay from '../../../graphql/mutations/payment/payWithAlipay'
 import type { Dispatch } from 'redux'
+import { LoadingModal } from '../../loading'
 import {
   modalStyles,
   PaymentPlanSelector,
@@ -73,6 +74,12 @@ class UpgradeModal extends React.Component<Props, State> {
     const { user, data } = this.props;
     const { isOpen, selectedPlanIndex } = this.state;
     const paymentPlans = data.user ? data.user.paymentPlans : []
+
+    if (data.loading && !data.user) {
+      return (
+        <LoadingModal />
+      )
+    }
 
     return (
       <Modal
