@@ -37,6 +37,7 @@ import {
 } from './style'
 import { FormContainer, Form, Actions } from '../../style'
 import type { Dispatch } from 'redux'
+import { slugify } from '../../../../utils/pinyin'
 
 type State = {
   name: ?string,
@@ -106,7 +107,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
     let lowercaseName = name
       .toLowerCase()
       .trim()
-    let slug = lowercaseName
+    let slug = slugify(lowercaseName)
 
     if (name.length >= 20) {
       this.setState({
@@ -138,7 +139,7 @@ class CreateCommunityForm extends React.Component<Props, State> {
     let lowercaseSlug = slug
       .toLowerCase()
       .trim()
-    slug = lowercaseSlug
+    slug = slugify(lowercaseSlug)
 
     if (slug.length >= 24) {
       this.setState({

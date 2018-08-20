@@ -9,6 +9,7 @@ import { withApollo } from 'react-apollo';
 import { closeModal } from '../../../actions/modals';
 import { addToastWithTimeout } from '../../../actions/toasts';
 import { throttle } from '../../../utils/utils';
+import { slugify } from '../../../utils/pinyin'
 import { getChannelBySlugAndCommunitySlugQuery } from '../../../graphql/queries/channel/getChannel';
 import type { GetChannelType } from '../../../graphql/queries/channel/getChannel';
 import type { GetCommunityType } from '../../../graphql/queries/community/getCommunity';
@@ -82,7 +83,7 @@ class CreateChannelModal extends React.Component<Props, State> {
   changeName = e => {
     const name = e.target.value;
     let lowercaseName = name.toLowerCase().trim();
-    let slug = lowercaseName;
+    let slug = slugify(lowercaseName);
 
     if (name.length >= 20) {
       this.setState({
@@ -105,7 +106,7 @@ class CreateChannelModal extends React.Component<Props, State> {
   changeSlug = e => {
     let slug = e.target.value;
     let lowercaseSlug = slug.toLowerCase().trim();
-    slug = lowercaseSlug;
+    slug = slugify(lowercaseSlug);
 
     if (slug.length >= 24) {
       return this.setState({

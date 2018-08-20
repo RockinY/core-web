@@ -6317,6 +6317,10 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+pinyinlite@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/pinyinlite/-/pinyinlite-1.2.1.tgz#48b30f68a4f1daf193756d9b6ea66acb233fa4fb"
+
 pkg-conf@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/pkg-conf/-/pkg-conf-2.1.0.tgz#2126514ca6f2abfebd168596df18ba57867f0058"
