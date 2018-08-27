@@ -548,7 +548,8 @@ class ThreadComposerWithData extends React.Component<Props, State> {
       .filter(
         key =>
           jsonBody.entityMap[key].type.toLowerCase() === 'image' &&
-          jsonBody.entityMap[key].data.file
+          jsonBody.entityMap[key].data.file &&
+          Object.keys(jsonBody.entityMap[key].data.file).length > 0
       )
       .map(key => jsonBody.entityMap[key].data.file);
 
