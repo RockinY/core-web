@@ -71,7 +71,7 @@ class UpgradeModal extends React.Component<Props, State> {
   render() {
     console.log(this.props);
     
-    const { user, data } = this.props;
+    const { data } = this.props;
     const { isOpen, selectedPlanIndex } = this.state;
     const paymentPlans = data.user ? data.user.paymentPlans : []
 

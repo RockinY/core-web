@@ -198,7 +198,6 @@ export const StyledIconButton = styled.button`
         : props.color
           ? eval(`props.theme.${props.color}`)
           : props.theme.brand.alt};
-    transform: ${props => (props.disabled ? 'none' : 'scale(1.05)')};
     box-shadow: none;
     opacity: 1;
   }
