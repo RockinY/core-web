@@ -17,7 +17,7 @@ import deleteThreadMutation from '../../../graphql/mutations/thread/deleteThread
 import editThreadMutation from '../../../graphql/mutations/thread/editThread';
 import pinThreadMutation from '../../../graphql/mutations/community/pinCommunityThread';
 import type { GetThreadType } from '../../../graphql/queries/thread/getThread';
-import Editor from '../../../components/richTextEditor';
+import Editor from '../../../components/editor';
 import { toJSON, toPlainText, toState } from '../../../utils/draft';
 import Textarea from 'react-textarea-autosize';
 import ActionBar from './actionBar';

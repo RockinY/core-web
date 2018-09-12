@@ -7,7 +7,7 @@ import debounce from 'debounce';
 import { closeComposer } from '../../../actions/composer';
 import { changeActiveThread } from '../../../actions/dashboardFeed';
 import { addToastWithTimeout } from '../../../actions/toasts';
-import Editor from '../../richTextEditor';
+import Editor from '../../editor';
 import {
   toPlainText,
   fromPlainText,

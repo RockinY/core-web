@@ -12,7 +12,7 @@ import { URL } from '../../utils/regexps';
 import { closeComposer } from '../../actions/composer';
 import { changeActiveThread } from '../../actions/dashboardFeed';
 import { addToastWithTimeout } from '../../actions/toasts';
-import Editor from '../richTextEditor';
+import Editor from '../editor';
 import {
   toPlainText,
   fromPlainText,
@@ -677,6 +677,7 @@ class ComposerWithData extends Component<Props, State> {
             ref={'titleTextarea'}
             autoFocus={!threadSliderIsOpen}
           />
+
 
           <Editor
             version={2}
