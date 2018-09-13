@@ -28,7 +28,7 @@ import { renderLanguageSelect } from './LanguageSelect'
 import createEmbedPlugin from '../plugins/embed'
 import createDividerPlugin from '../plugins/divider'
 import createLinkPlugin from '../plugins/link'
-import createMentionPlugin, { defaultSuggestionFilter } from '../plugins/mentions'
+import createMentionPlugin from '../plugins/mentions'
 
 /* Focus */
 const focusPlugin = createFocusPlugin()

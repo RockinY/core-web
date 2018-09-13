@@ -9,7 +9,6 @@ export default class Image extends Component {
   render () {    
     const {
       block,
-      selection,
       blockProps,
       contentState
     } = this.props;

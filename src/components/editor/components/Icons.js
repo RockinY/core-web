@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Tooltip from './Tooltip'
 
 type Props = {
@@ -138,6 +138,8 @@ export const Glyph = ({ glyph }: GlyphProps) => {
           <path d='M27.74,11.09a1.41,1.41,0,0,1-.42,1l-11,11-2.06,2.06a1.43,1.43,0,0,1-1,.42,1.4,1.4,0,0,1-1-.42l-2.06-2.06L4.68,17.6a1.4,1.4,0,0,1-.42-1,1.41,1.41,0,0,1,.42-1l2.06-2.06a1.41,1.41,0,0,1,1-.42,1.4,1.4,0,0,1,1,.42L13.26,18,23.2,8a1.37,1.37,0,0,1,1-.43,1.4,1.4,0,0,1,1,.43l2.06,2.06A1.4,1.4,0,0,1,27.74,11.09Z' />
         </g>
       )
+    default:
+      return null
   }
 }
 

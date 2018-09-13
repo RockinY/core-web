@@ -22,6 +22,7 @@ const colorStyleFn = (styles) => {
 const colorStyleMap = {}
 colors.map((c, i) => {
   colorStyleMap[`color-${c.replace('#', '')}`] = { background: c, color: '#fff' }
+  return c
 })
 
 export default {

@@ -1,5 +1,4 @@
 // @flow
-import React from 'react'
 import createStore from '../createStore'
 import decorateComponentWithProps from 'decorate-component-with-props'
 import Sidebar from './components/Sidebar'

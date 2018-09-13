@@ -1,6 +1,4 @@
-
 // @flow
-import React from 'react';
 import PrismDecorator from 'draft-js-prism';
 
 type Options = {

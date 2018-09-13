@@ -15,7 +15,7 @@ class Link extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      url: props && props.url || '',
+      url: props.url || '',
       error: null
     }
   }
@@ -78,8 +78,7 @@ class Link extends Component {
   }
 
   render () {
-    const { theme, entitySelected, position } = this.props
-    const { error } = this.state
+    const { position } = this.props
 
     return (
       <ToolbarWrapper style={position} show={true}>

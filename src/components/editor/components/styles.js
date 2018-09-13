@@ -1,6 +1,5 @@
 // @flow
 import styled, { css } from 'styled-components'
-import { colors } from '../theme'
 
 const baseButton = css`
   display: flex;
@@ -37,11 +36,11 @@ export const StyledIconButton = styled.button`
   width: 32px;
   height: 32px;
   background-color: transparent;
-  color: colors.reverse;
+  color: {p => p.theme.bg.default};
   opacity: ${props => (props.opacity ? props.opacity : 1)};
 
   &:hover {
-    color: colors.reverse;
+    color: {p => p.theme.bg.default};
     box-shadow: none;
     opacity: 1;
   }

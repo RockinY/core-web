@@ -37,13 +37,12 @@ export default class Entry extends Component<Props> {
   };
 
   render() {
-    const { mention, searchValue, isFocused, id } = this.props;
+    const { mention, isFocused, id } = this.props;
     return (
       <EntryComponent
         onMouseDown={this.onMouseDown}
         onMouseUp={this.onMouseUp}
         onMouseEnter={this.onMouseEnter}
-        role="option"
         id={id}
         mention={mention}
         isFocused={isFocused}

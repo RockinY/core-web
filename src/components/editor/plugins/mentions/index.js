@@ -75,7 +75,6 @@ export default (config = {}) => {
   const {
     mentionPrefix = '',
     positionSuggestions = defaultPositionSuggestions,
-    mentionComponent,
     mentionSuggestionsComponent = MentionSuggestions,
     entityMutability = 'SEGMENTED',
     mentionTrigger = '@',

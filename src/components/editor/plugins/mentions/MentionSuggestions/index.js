@@ -6,7 +6,6 @@ import Entry from './Entry';
 import addMention from '../modifiers/addMention';
 import decodeOffsetKey from '../utils/decodeOffsetKey';
 import getSearchText from '../utils/getSearchText';
-import defaultEntryComponent from './Entry/defaultEntryComponent';
 import { SuggestionWrapper } from './Entry/styles'
 import OutsideClickHandler from '../../../components/OutsideClickHandler'
 
