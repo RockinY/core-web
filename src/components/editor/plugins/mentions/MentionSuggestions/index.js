@@ -7,7 +7,7 @@ import addMention from '../modifiers/addMention';
 import decodeOffsetKey from '../utils/decodeOffsetKey';
 import getSearchText from '../utils/getSearchText';
 import { SuggestionWrapper } from './Entry/styles'
-import OutsideClickHandler from '../../../components/OutsideClickHandler'
+import OutsideClickHandler from '../../../../outsideClickHandler'
 
 type Props = {
   entityMutability: 'SEGMENTED' | 'IMMUTABLE' | 'MUTABLE',

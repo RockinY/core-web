@@ -10,7 +10,7 @@ import {
 } from '../../../components/Button'
 import MediaInput from './MediaInput'
 import addImageFn from '../../image/addImage'
-import OutsideClickHandler from '../../../components/OutsideClickHandler'
+import OutsideClickHandler from '../../../../outsideClickHandler'
 import { BlockCodeButton } from '../../button'
 import EmbedInput from './EmbedInput'
 import addEmbed from '../../embed/addEmbed'

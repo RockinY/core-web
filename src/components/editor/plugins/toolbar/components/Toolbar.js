@@ -3,7 +3,7 @@ import { getVisibleSelectionRect } from 'draft-js'
 import {
   ToolbarWrapper
 } from './styles'
-import OutsideClickHandler from '../../../components/OutsideClickHandler'
+import OutsideClickHandler from '../../../../outsideClickHandler'
 import { RichUtils } from 'draft-js'
 
 class Toolbar extends Component {
