@@ -4,7 +4,6 @@ import { Loading } from '../loading';
 /* styles */
 import './styles/global'
 import './styles/prism'
-import 'draft-js/dist/Draft.css'
 
 const RichTextEditor = Loadable({
   loader: () => import('./components/Editor'),
