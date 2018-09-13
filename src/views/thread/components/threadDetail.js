@@ -249,8 +249,7 @@ class ThreadDetailPure extends React.Component<Props, State> {
       .filter(
         key =>
           jsonBody.entityMap[key].type.toLowerCase() === 'image' &&
-          jsonBody.entityMap[key].data.file &&
-          jsonBody.entityMap[key].data.file !== {}
+          jsonBody.entityMap[key].data.file
       )
       .map(key => jsonBody.entityMap[key].data.file);
 

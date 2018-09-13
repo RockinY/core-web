@@ -18,6 +18,7 @@ export const blinkBorder = keyframes`
 export const ImageContainer = styled.div`
   position: relative;
   pointer-events: none;
+  margin-top: 10px;
   ${props =>
     props.active &&
     css`
