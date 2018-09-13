@@ -20,7 +20,8 @@ import addDividerDots from '../../divider/addDivider'
 type Props = {
   store: Object,
   editorState: any,
-  onChange: Function
+  onChange: Function,
+  readOnly?: boolean
 };
 
 type ToolbarPosition = {
@@ -135,8 +136,12 @@ class Sidebar extends React.Component<Props, State> {
   }
 
   render () {
-    const { store } = this.props
-    const { position, inserting, show, embedding } = this.state
+    const { store, readOnly } = this.props
+    let { position, inserting, show, embedding } = this.state
+
+    if (readOnly) {
+      show = false
+    }
 
     return (
       <OutsideClickHandler onOutsideClick={this.closeSidebar}>
