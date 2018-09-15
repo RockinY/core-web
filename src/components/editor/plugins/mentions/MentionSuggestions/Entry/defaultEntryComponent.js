@@ -1,26 +1,45 @@
 import React from 'react';
 import {
-  Avatar,
-  EntryText,
-  EntryWrapper
+  SearchSpinnerContainer,
+  SearchResult,
+  SearchResultNull,
+  SearchResultUsername,
+  SearchResultDisplayName,
+  SearchResultTextContainer,
+  SearchResultImage,
 } from './styles'
 
 const defaultEntryComponent = (props) => {
   const {
     mention,
+    isFocused,
     ...parentProps
   } = props;
+  const user = mention
 
   return (
-    <EntryWrapper {...parentProps}>
-      <Avatar
-        src={mention.avatar}
-        role="presentation"
+    <SearchResult
+      focused={isFocused}
+      {...parentProps}
+    >
+      <SearchResultImage
+        user={user}
+        isOnline={user.isOnline}
+        size={32}
+        radius={32}
+        src={user.profilePhoto}
       />
-      <EntryText>
-        {mention.name}
-      </EntryText>
-    </EntryWrapper>
+      <SearchResultTextContainer>
+        <SearchResultDisplayName>
+          {user.name}
+        </SearchResultDisplayName>
+        {user.username && (
+          <SearchResultUsername>
+            @{user.username}
+          </SearchResultUsername>
+        )}
+      </SearchResultTextContainer>
+    </SearchResult>
   );
 };
 

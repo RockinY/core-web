@@ -6,14 +6,20 @@ import Entry from './Entry';
 import addMention from '../modifiers/addMention';
 import decodeOffsetKey from '../utils/decodeOffsetKey';
 import getSearchText from '../utils/getSearchText';
-import { SuggestionWrapper } from './Entry/styles'
+import {
+  SearchResultsDropdown,
+  SearchResult,
+  SearchResultTextContainer,
+  SearchResultNull
+} from './Entry/styles'
 import OutsideClickHandler from '../../../../outsideClickHandler'
 
 type Props = {
   entityMutability: 'SEGMENTED' | 'IMMUTABLE' | 'MUTABLE',
   entryComponent: Function,
   onAddMention: Function,
-  suggestions: Array<Object>
+  suggestions: Array<Object>,
+  searchIsLoading: boolean
 }
 
 type State = {
@@ -306,19 +312,20 @@ export class MentionSuggestions extends Component<Props, State> {
   };
 
   render() {
+    const { suggestions } = this.props
     if (!this.state.isActive) {
       return null;
     }
 
     return (
       <OutsideClickHandler onOutsideClick={this.closeDropdown}>
-        <SuggestionWrapper
+        <SearchResultsDropdown
           role='listbox'
           id={`mentions-list-${this.key}`}
           innerRef={(element) => { this.popover = element }}
         >
           {
-            this.props.suggestions.map((mention, index) => (
+            suggestions.map((mention, index) => (
               <Entry
                 key={mention.id != null ? mention.id : mention.name}
                 onMentionSelect={this.onMentionSelect}
@@ -331,7 +338,16 @@ export class MentionSuggestions extends Component<Props, State> {
               />
             ))
           }
-        </SuggestionWrapper>
+          {suggestions.length === 0 && (
+            <SearchResult>
+              <SearchResultTextContainer>
+                <SearchResultNull>
+                  没有用户符合
+                </SearchResultNull>
+              </SearchResultTextContainer>
+            </SearchResult>
+          )}
+        </SearchResultsDropdown>
       </OutsideClickHandler>
     )
   }

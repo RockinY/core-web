@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PluginEditor, { composeDecorators } from 'draft-js-plugins-editor'
 import addImageFn from '../plugins/image/addImage'
+import { searchUsersQuery } from '../../../graphql/queries/search/searchUsers';
+import { withApollo } from 'react-apollo';
+import compose from 'recompose/compose';
 import Prism from 'prismjs'
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-scala';
@@ -103,7 +106,6 @@ const plugins = [
 ]
 
 type Props = {
-  mentionSearchAsync: Function,
   editorState: any
 }
 
@@ -133,11 +135,41 @@ class Editor extends Component<Props, State> {
   };
 
   onSearchChange = ({ value }) => {
-    const { mentionSearchAsync } = this.props
-    if (mentionSearchAsync) {
-      this.props.mentionSearchAsync(value)
-        .then((data) => { this.setState({suggestions: data.suggestions}) })
-    }
+    const { client } = this.props
+
+    if (!value || value === '') return
+
+    client
+      .query({
+        query: searchUsersQuery,
+        variables: {
+          queryString: value,
+          type: 'USERS',
+        },
+      })
+      .then(({ data: { search } }) => {
+        
+        if (
+          !search ||
+          !search.searchResultsConnection ||
+          search.searchResultsConnection.edges.length === 0
+        ) {
+          this.setState({
+            suggestions: []
+          });
+          return
+        }
+
+        let suggestedUsers = search.searchResultsConnection.edges.map(s => s.node);
+
+        this.setState({
+          suggestions: suggestedUsers
+        });
+        return;
+      })
+      .catch(err => {
+        console.error('Error searching users', err);
+      });
   }
 
   render () {
@@ -170,4 +202,6 @@ class Editor extends Component<Props, State> {
   }
 }
 
-export default Editor
+export default compose(
+  withApollo
+)(Editor);
