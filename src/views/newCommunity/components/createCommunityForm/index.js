@@ -333,14 +333,9 @@ class CreateCommunityForm extends React.Component<Props, State> {
   }
 
   setPrivate = () => {
-    const { currentUser, dispatch } = this.props
-    if (currentUser.isPro) {
-      return this.setState({
-        isPrivate: true
-      })
-    } else {
-      return dispatch(openModal('UPGRADE_MODAL', { user: currentUser }))
-    }
+    return this.setState({
+      isPrivate: true
+    })
   }
 
   setPublic = () => {
@@ -514,7 +509,6 @@ class CreateCommunityForm extends React.Component<Props, State> {
                   data-cy='community-private-selector-input'
                 />
                 私有
-                <Badge type='pro' />
               </PrivacyOptionLabel>
               <PrivacyOptionText>
                 社区的会员必须经过管理员审核才能浏览社区内容，或者进行社区内对话.

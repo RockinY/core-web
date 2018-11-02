@@ -191,14 +191,9 @@ class CreateChannelModal extends React.Component<Props, State> {
 
   changePrivate = e => {
     const value = e.target.checked;
-    const { currentUser, dispatch } = this.props
-    if (currentUser.isPro) {
-      return this.setState({
-        isPrivate: value
-      })
-    } else {
-      return dispatch(openModal('UPGRADE_MODAL', { user: currentUser }))
-    }
+    return this.setState({
+      isPrivate: value
+    })
   };
 
   create = e => {
@@ -342,7 +337,7 @@ class CreateChannelModal extends React.Component<Props, State> {
               onChange={this.changePrivate}
               dataCy="create-channel-modal-toggle-private-checkbox"
             >
-              私人频道 <Badge type='pro' />
+              私人频道
             </Checkbox>
 
             <UpsellDescription>

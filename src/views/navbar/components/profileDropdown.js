@@ -56,15 +56,6 @@ const ProfileDropdown = (props: ProfileProps) => {
             </UserProfileDropdownListItem>
           </Link>
         )}
-        {props.user && !props.user.isPro && (
-          <UserProfileDropdownListItem
-            onClick={() =>
-              props.dispatch(openModal('UPGRADE_MODAL', { user: props.user }))
-            }
-          >
-            升级为<Badge type="pro" />
-          </UserProfileDropdownListItem>
-        )}
         <Link to={`/about`}>
           <UserProfileDropdownListItem>
             云社
