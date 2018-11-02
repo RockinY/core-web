@@ -15,11 +15,6 @@ export default () => {
   return (
     <Footer>
       <FooterGrid>
-        <Masthead>
-          <Link to="/">
-            <Logo />
-          </Link>
-        </Masthead>
         <Support>
           <span>服务</span>
           <Link to={`/yunshe`}>加入社区</Link>
