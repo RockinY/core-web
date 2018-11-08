@@ -9,9 +9,11 @@
 // A new notification is coming in, yay!
 // eslint-disable-next-line
 self.addEventListener('push', function(event) {
+  console.log('PUSH MESSAGE RECEIVED')
   var notificationData = {};
 
   try {
+    console.log(event.data)
     notificationData = event.data.json();
   } catch (e) {
     console.log('event.data.json() failed', e);
